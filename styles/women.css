@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,800;1,900&display=swap');
+
+body {
+  background: #ffffff;
+  font-family: "Nunito", sans-serif;
+  overflow: hidden;
+}
+
+#TimedShopMainLogo {
+  float:left;
+  margin-left:4%;
+  margin-top:1%;
+}
+
+.navMenu {
+  position: absolute;
+  top: 5%;
+  left: 22.5%;
+  width: 100%;
+}
+
+.navMenu a {
+  float:left;
+  text-align: center;
+  color: #2A2A2A;
+  text-decoration: none;
+  font-size: 1.125em;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 5%;
+  margin-right:2%;
+}
+#LogIn {
+  margin-left:28%;
+}
+
+.navMenu a:hover {
+  color: #5A189A;
+}
+
+#women{
+  width:100px;
+  color: #5A189A;
+}
+
+@media screen and (max-width:1080px){
+  .navMenu a{
+    margin-right:2%;
+    margin-left:2%;
+  }
+  #LogIn{
+    margin-left:10%;
+  }
+}
+.icon-badge-container {
+  position:relative;
+}
+
+.icon-badge-icon {
+  position: relative;
+  width:23px;
+}
+
+@media screen and (min-width:800px){
+  .icon-badge{
+    margin:0;
+    position:absolute;
+    top:-10;
+    right:20;
+  }
+}
+@media screen and (max-width: 800px) {
+  .navMenu a {
+    width:100%;
+    display: flex;
+    justify-content: center;
+  }
+  .navMenu{
+    left:0;
+    top:15vw;
+  }
+  
+  #LogIn{
+    margin-left:2%;
+  }
+  #cart{
+    width:100%;
+  }
+  #TimedShopMainLogo{
+    margin:0;
+    width:100%;
+    display: flex;
+    justify-content: center;
+  }
+  #women{
+    width:100%;
+  }
+}
+
+
+.icon-badge {
+  background-color: #FF2C2C;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  width:21px;
+  height:21px;
+  border-radius: 100%;
+}
