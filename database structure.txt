@@ -1,0 +1,48 @@
+main directories: women/men
+
+women:
+	-product id:
+			-number of products available
+			-product name
+			-product type
+			-product price
+			-product available sizes
+			-product available colors
+			-product other info
+
+
+men:
+	-product id:
+			-number of products available
+			-product name
+			-product type
+			-product price
+			-product available sizes
+			-product available colors
+			-product other info
+
+
+purchases:
+	-purchase number:
+			-purchase date
+			-product name
+			-product price
+			-product size
+			-product color
+			-delivery location
+			-client credentials
+
+
+
+product id:
+	-women:0
+	-men:1
+	-hoodies:2
+	-tshirts:3
+	-shirts:4
+	-sweatshirts:5
+	+model number	
+	
+
+	Example: women-tshirt-model01: 0301
+		 men-hoodie-model02: 1202
