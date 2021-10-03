@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-analytics.js";
-import { collection, addDoc, getFirestore } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js"; 
+import { collection, addDoc, getDocs, getFirestore } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js"; 
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -21,6 +21,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore();
+
+// const querySnapshot = await getDocs(collection(db, "women"));
+// querySnapshot.forEach((doc) => {
+//   console.log(`${doc.id} => ${doc.data()}`);
+// });
+
 
 
 

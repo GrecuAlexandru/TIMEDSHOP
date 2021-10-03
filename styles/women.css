@@ -3,7 +3,7 @@
 body {
   background: #ffffff;
   font-family: "Nunito", sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 #TimedShopMainLogo {
@@ -16,7 +16,7 @@ body {
   position: absolute;
   top: 5%;
   left: 22.5%;
-  width: 100%;
+  width: 101.4%;
 }
 
 .navMenu a {
@@ -42,7 +42,6 @@ body {
   width:100px;
   color: #5A189A;
 }
-
 @media screen and (max-width:1080px){
   .navMenu a{
     margin-right:2%;
@@ -106,4 +105,79 @@ body {
   width:21px;
   height:21px;
   border-radius: 100%;
+}
+
+
+
+#sectionSpecifier {
+  float:left;
+  color: #2A2A2A;
+  background-color: #E3C8FF;
+  border-radius: 10px;
+  border: solid #2A2A2A;
+  border-width: 1 1px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:92.36vw;
+  height: 8vh;
+  margin-left:3.9vw;
+  margin-top:4vh;
+  font-size: 2.5vw;
+  font-weight: bold;
+}
+
+#fullProductsDiv {
+  float:left;
+  width:92.36vw;
+  height: 80vh;
+  margin-left:3.9vw;
+  margin-top:5.5vh;
+}
+
+#customizer {
+  float:left;
+  width:20.745vw;
+  height: 80vh;
+  border-radius: 10px;
+  border: solid #2A2A2A;
+  border-width: 1 1px;
+}
+
+#productOutput{
+  float:left;
+  width:71.5vw;
+  height: 150vh;
+}
+
+.product {
+  float:left;
+  width:20.58vw;
+  height:60vh;
+  margin-left:3.1289vw;
+  border-radius: 10px 10px 0px 0px;
+  border: solid #2A2A2A;
+  border-width: 1 1px;
+  margin-bottom: 14.49vh;
+  background-color: #E3C8FF;
+}
+
+.productImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:17vw;
+  height: fit-content;
+}
+
+.productDividerLine {
+  float:left;
+  margin-left:-1px;
+  width:20.58vw;
+  height:16.47vh;
+  border-radius: 0px 0px 10px 10px;
+  border: solid #2A2A2A;
+  border-width: 1 1px;
+  background-color: #ffffff;
 }
