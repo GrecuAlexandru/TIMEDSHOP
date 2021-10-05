@@ -42,7 +42,12 @@ product id:
 	-shirts:4
 	-sweatshirts:5
 	+model number	
-	
+	+photo number
 
-	Example: women-tshirt-model01: 0301
-		 men-hoodie-model02: 1202
+	Example: women-tshirt-model01-photo01: 030101
+		 men-hoodie-model02-photo03: 120203
+
+
+Image compress:
+				1. Compress from Photoshop to 50% quality (400x600, 3:2)
+				2. Compress from https://imagecompressor.com/ to 70% quality
