@@ -28,8 +28,103 @@
     </div>
 
     <div id="fullProductsDiv">
+        <div id="sorter">
+            <a id="sortBy">SORT BY:</a>
+            <div class="dropdown">
+                <button onclick="dropdownFunction()" class="dropbtn"><a id="dropdownTitle">New Arrival</a><img id="dropdownArrowImg" src="resources/icons/dropdownArrow.svg"></button>
+                <div id="myDropdown" class="dropdown-content">
+                  <a id="newArrival" onclick="newArrivalClicked()">New Arrival</a>
+                  <a id="PriceLH" onclick="PriceLHClicked()">Price (Low to High)</a>
+                  <a id="PriceHL" onclick="PriceHLClicked()">Pirce (Hight to Low)</a>
+                </div>
+            </div>
+        </div>
         <div id="customizer">
+            <div id="clothingDiv">
+                <div class="bigDot"></div>
+                <a id="clothingText">CLOTHING</a>
+                <div class="bigDot"></div>
+            </div>
+            <div id="clothingCheckboxList">
+                <label class="checkBoxContainer">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    <a class="checkBoxText">Hoodies</a>
+                </label>
+                <div class="checkBoxDivider"></div>
+                <label class="checkBoxContainer">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    <a class="checkBoxText">T-shirts & Tops</a>
+                </label>
+                <div class="checkBoxDivider"></div>
+                <label class="checkBoxContainer">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    <a class="checkBoxText">Shirts</a>
+                </label>
+                <div class="checkBoxDivider"></div>
+                <label class="checkBoxContainer">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    <a class="checkBoxText">Sweatshirts</a>
+                </label>
+            </div>
 
+            <div id="clothingDiv">
+                <div class="bigDot"></div>
+                <a id="clothingText">SIZE</a>
+                <div class="bigDot"></div>
+            </div>
+            <div id="sizeCheckboxList">
+                <label class="checkBoxContainer">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    <a class="checkBoxText">S</a>
+                </label>
+                <div class="checkBoxDivider"></div>
+                <label class="checkBoxContainer">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    <a class="checkBoxText">M</a>
+                </label>
+                <div class="checkBoxDivider"></div>
+                <label class="checkBoxContainer">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    <a class="checkBoxText">L</a>
+                </label>
+                <div class="checkBoxDivider"></div>
+                <label class="checkBoxContainer">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    <a class="checkBoxText">XL</a>
+                </label>
+                <div class="checkBoxDivider"></div>
+                <label class="checkBoxContainer">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    <a class="checkBoxText">XXL</a>
+                </label>
+            </div>
+
+            <div id="clothingDiv">
+                <div class="bigDot"></div>
+                <a id="clothingText">PRICE</a>
+                <div class="bigDot"></div>
+            </div>
+
+            <div id="rangeSlider" class="range-slider">
+                <div class="range-group">
+                    <input class="range-input" value="10" min="1" max="300" step="1" type="range" />
+                    <input class="range-input" value="300" min="1" max="300" step="1" type="range" />
+                </div>
+                <div class="number-group">
+                    <input class="number-input" id="numberInputLeft" type="number" value="10" min="0" max="300" />
+                    <input class="number-input" id="numberInputRight" type="number" value="300" min="0" max="300" />
+                </div>
+            
+            </div>
         </div>
         <div id="productOutput">
             <!--
@@ -61,5 +156,8 @@
             -->
         </div>
     </div>
+
+    <script src="resources/women/priceSlider.js"></script>
+    <script src="resources/women/dropdown.js"></script>
 </body>
 </html>
