@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-analytics.js";
-import { collection, addDoc, getDocs, getFirestore } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js"; 
+import { collection, addDoc, getDocs, getFirestore, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js"; 
 import { getStorage, ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-storage.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -24,8 +24,8 @@ const db = getFirestore();
 const storage = getStorage(app);
 
 const productOutput = document.getElementById("productOutput");
-
-// const querySnapshot = await getDocs(collection(db, "women"));
+// const q = query(collection(db, "women"), orderBy("date", "asc"));
+// const querySnapshot = await getDocs(q);
 // querySnapshot.forEach((doc) => {
 //   //product item
 //   var product = document.createElement("div");
@@ -131,7 +131,4 @@ const productOutput = document.getElementById("productOutput");
 //   document.getElementById("productOutput").appendChild(product);
 
 // });
-
-
-
 

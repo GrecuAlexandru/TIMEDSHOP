@@ -4,6 +4,8 @@ body {
   background: #ffffff;
   font-family: "Nunito", sans-serif;
   overflow-x: hidden;
+  min-height: 100vh; 
+  margin:0;
 }
 
 #TimedShopMainLogo {
@@ -270,6 +272,7 @@ body {
   float:left;
   width:71.5vw;
   height: 150vh;
+  margin-top:-10.15vh;
 }
 
 .product {
@@ -597,3 +600,104 @@ body {
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+#paginationDiv{
+  width:100%;
+  float:left;
+  display:flex;
+  justify-content: center;
+}
+#paginationBox {
+  display: flex;
+  width:30vw;
+  height: 6vh;
+  margin-left:3.1289vw;
+}
+#previousButton{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size:1vw;
+  font-weight: 400;
+  font-family: "Nunito", sans-serif;
+  width:5vw;
+  border: none;
+  border: solid #2A2A2A;
+  border-width: 1 1px;
+  border-radius: 10px 0px 0px 10px;
+  background-color: #ffffff;
+  color: #2A2A2A;
+  cursor: pointer;
+}
+#nextButton{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size:1vw;
+  font-weight: 400;
+  font-family: "Nunito", sans-serif;
+  width:5vw;
+  border: none;
+  border: solid #2A2A2A;
+  border-width: 1 1px;
+  border-radius: 0px 10px 10px 0px;
+  background-color: #ffffff;
+  color: #2A2A2A;
+  border-left-width: 0px;
+  cursor: pointer;
+}
+.pageNumber{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size:1vw;
+  font-weight: 400;
+  font-family: "Nunito", sans-serif;
+  width:5vw;
+  border: none;
+  border: solid #2A2A2A;
+  border-width: 1 1px;
+  border-left-width: 0px;
+  background-color: #ffffff;
+  color: #2A2A2A;
+  cursor: pointer;
+  text-decoration: none;
+}
+.pageDots{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size:1vw;
+  font-weight: 400;
+  font-family: "Nunito", sans-serif;
+  width:5vw;
+  border: none;
+  border: solid #2A2A2A;
+  border-width: 1 1px;
+  background-color: #ffffff;
+  border-left-width: 0px;
+  color: #2A2A2A;
+}
+#previousButton:hover, #previousButton:focus {
+  background-color: #e7e7e7;
+}
+#nextButton:hover, #nextButton:focus {
+  background-color: #e7e7e7;
+}
+.pageNumber:hover, .pageNumber:focus {
+  background-color: #e7e7e7;
+}
+#selectedPage {
+  background-color: #E3C8FF;
+}
+#footer{
+  position: absolute;
+  background-color: red;
+  width:100vw;
+  height: 20vh;
+  margin-top:390vh;
+}
