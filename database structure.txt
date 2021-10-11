@@ -48,6 +48,11 @@ product id:
 		 men-hoodie-model02-photo03: 120203
 
 
+product price: original price
+product sale: price after sale
+%sale = (sale / price) * 100
+
+
 Image compress:
 				1. Compress from Photoshop to 50% quality (400x600, 3:2)
 				2. Compress from https://imagecompressor.com/ to 70% quality
