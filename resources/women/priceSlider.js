@@ -37,7 +37,6 @@
 
 			rangeS[0].value = number1;
 			rangeS[1].value = number2;
-
 		}
 	});
 

@@ -141,7 +141,7 @@ body {
 #customizer {
   float:left;
   width:20.745vw;
-  height: 85vh;
+  height: 93vh;
   border-radius: 10px;
   border: solid #2A2A2A;
   border-width: 1 1px;
@@ -420,17 +420,17 @@ body {
   width:100%;
 }
 .range-slider .number-group .number-input:first-of-type {
-  margin-right:4.6vw;
+  margin-right:4.4vw;
 }
 .range-slider .number-group .number-input:last-of-type {
-  margin-left: 4.6vw;
+  margin-left: 4.4vw;
 }
 .range-slider .number-group .number-input::-webkit-outer-spin-button, .range-slider .number-group .number-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 .range-slider .range-group .range-input {
   position:absolute;
-  left:5.9vw;
+  left:5.6vw;
   -webkit-appearance: none;
   width: 17.2vw;
   margin-top:-4vh;
@@ -700,4 +700,27 @@ body {
   width:100vw;
   height: 20vh;
   margin-top:390vh;
+}
+
+#submitPriceButton{
+  width: 84%;
+  height: 5.5vh;
+  text-align: center;
+  color: #2A2A2A;
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  font-size: 1.1vw;
+  border-radius: 6px;
+  border: solid #2A2A2A;
+  border-width: 1 1px;
+  background-color: #E3C8FF;
+  margin-top:5vh;
+  cursor:pointer;
+}
+
+#submitPriceButton:hover, #previousButton:focus {
+  background-color: #c894ff;
+}
+#submitPriceButton:hover, #nextButton:focus {
+  background-color: #c894ff;
 }

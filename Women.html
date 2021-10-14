@@ -47,25 +47,25 @@
             </div>
             <div id="clothingCheckboxList">
                 <label class="checkBoxContainer">
-                    <input type="checkbox">
+                    <input type="checkbox" id="hoodiesCheckbox" onclick="hoodiesCheckboxPress()">
                     <span class="checkmark"></span>
                     <a class="checkBoxText">Hoodies</a>
                 </label>
                 <div class="checkBoxDivider"></div>
                 <label class="checkBoxContainer">
-                    <input type="checkbox">
+                    <input type="checkbox" id="tshirtsCheckbox" onclick="tshirtsCheckboxPress()">
                     <span class="checkmark"></span>
                     <a class="checkBoxText">T-shirts & Tops</a>
                 </label>
                 <div class="checkBoxDivider"></div>
                 <label class="checkBoxContainer">
-                    <input type="checkbox">
+                    <input type="checkbox" id="shirtsCheckbox" onclick="shirtsCheckboxPress()">
                     <span class="checkmark"></span>
                     <a class="checkBoxText">Shirts</a>
                 </label>
                 <div class="checkBoxDivider"></div>
                 <label class="checkBoxContainer">
-                    <input type="checkbox">
+                    <input type="checkbox" id="sweatshirtsCheckbox" onclick="sweatshirtsCheckboxPress()">
                     <span class="checkmark"></span>
                     <a class="checkBoxText">Sweatshirts</a>
                 </label>
@@ -78,31 +78,31 @@
             </div>
             <div id="sizeCheckboxList">
                 <label class="checkBoxContainer">
-                    <input type="checkbox">
+                    <input type="checkbox" id="SCheckbox" onclick="SCheckboxPress()">
                     <span class="checkmark"></span>
                     <a class="checkBoxText">S</a>
                 </label>
                 <div class="checkBoxDivider"></div>
                 <label class="checkBoxContainer">
-                    <input type="checkbox">
+                    <input type="checkbox" id="MCheckbox" onclick="MCheckboxPress()">
                     <span class="checkmark"></span>
                     <a class="checkBoxText">M</a>
                 </label>
                 <div class="checkBoxDivider"></div>
                 <label class="checkBoxContainer">
-                    <input type="checkbox">
+                    <input type="checkbox" id="LCheckbox" onclick="LCheckboxPress()">
                     <span class="checkmark"></span>
                     <a class="checkBoxText">L</a>
                 </label>
                 <div class="checkBoxDivider"></div>
                 <label class="checkBoxContainer">
-                    <input type="checkbox">
+                    <input type="checkbox" id="XLCheckbox" onclick="XLCheckboxPress()">
                     <span class="checkmark"></span>
                     <a class="checkBoxText">XL</a>
                 </label>
                 <div class="checkBoxDivider"></div>
                 <label class="checkBoxContainer">
-                    <input type="checkbox">
+                    <input type="checkbox" id="XXLCheckbox" onclick="XXLCheckboxPress()">
                     <span class="checkmark"></span>
                     <a class="checkBoxText">XXL</a>
                 </label>
@@ -116,15 +116,16 @@
 
             <div id="rangeSlider" class="range-slider">
                 <div class="range-group">
-                    <input class="range-input" value="10" min="1" max="300" step="1" type="range" />
-                    <input class="range-input" value="300" min="1" max="300" step="1" type="range" />
+                    <input class="range-input" id="sliderMin" value="10" min="1" max="300" step="1" type="range" />
+                    <input class="range-input" id="sliderMax" value="300" min="1" max="300" step="1" type="range" />
                 </div>
                 <div class="number-group">
-                    <input class="number-input" id="numberInputLeft" type="number" value="10" min="0" max="300" />
-                    <input class="number-input" id="numberInputRight" type="number" value="300" min="0" max="300" />
+                    <input class="number-input" id="numberInputLeft" type="number" value="10" min="1" max="300" />
+                    <input class="number-input" id="numberInputRight" type="number" value="300" min="1" max="300" />
                 </div>
-            
+                
             </div>
+            <button onclick="ApplyFilterButton()" id="submitPriceButton">APPLY</button>
         </div>
         <div id="productOutput">
             <!--
