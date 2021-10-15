@@ -306,6 +306,12 @@ body {
   background-color: #ffffff;
 }
 
+.productSaleDiv{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 .productName {
   color:#7A7A7A;
   font-size:1.5vw;
@@ -315,13 +321,29 @@ body {
   justify-content: center;
   align-items: center;
 }
-
+.productSaleDivDot{
+  color:#7A7A7A;
+  font-size:0.8vw;
+  font-weight: 400;
+  margin-bottom: 3px;
+  margin-left:0.5vw;
+  margin-right:0.5vw;  
+}
 .productPriceBeforeSale {
   color:#7A7A7A;
   font-size:0.8vw;
   font-weight: 400;
   display: flex;
   text-decoration: line-through;
+  justify-content: center;
+  align-items: center;
+}
+
+.productSaleAmount{
+  color:#7A7A7A;
+  font-size:0.8vw;
+  font-weight: 400;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -386,6 +408,9 @@ body {
 }
 
 .product:hover .productPriceBeforeSale {
+  display:none;
+}
+.product:hover .productSaleDiv{
   display:none;
 }
 
