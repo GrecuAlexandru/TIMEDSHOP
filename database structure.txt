@@ -51,3 +51,6 @@ product id:
 Image compress:
 				1. Compress from Photoshop to 50% quality (400x600, 3:2)
 				2. Compress from https://imagecompressor.com/ to 70% quality
+
+Image product page (about 200kb):
+				1. Compress from Photoshop to 50% quality (1080x1620), disable `Convert to sRGB`, white background, !NO MARGIN BOTTOM!

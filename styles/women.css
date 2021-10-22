@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,800;1,900&display=swap");
 
 body {
   background: #ffffff;
   font-family: "Nunito", sans-serif;
   overflow-x: hidden;
-  min-height: 100vh; 
-  margin:0;
+  min-height: 100vh;
+  margin: 0;
 }
 
 #TimedShopMainLogo {
-  float:left;
-  margin-left:4%;
-  margin-top:1%;
+  float: left;
+  margin-left: 4%;
+  margin-top: 1%;
 }
 
 .navMenu {
@@ -22,130 +22,126 @@ body {
 }
 
 .navMenu a {
-  float:left;
+  float: left;
   text-align: center;
-  color: #2A2A2A;
+  color: #2a2a2a;
   text-decoration: none;
   font-size: 1.125em;
   text-transform: uppercase;
   font-weight: 700;
   width: 5%;
-  margin-right:2%;
+  margin-right: 2%;
 }
 #LogIn {
-  margin-left:28%;
+  margin-left: 28%;
 }
 
 .navMenu a:hover {
-  color: #5A189A;
+  color: #5a189a;
 }
 
-#women{
-  width:100px;
-  color: #5A189A;
+#women {
+  width: 100px;
+  color: #5a189a;
 }
-@media screen and (max-width:1080px){
-  .navMenu a{
-    margin-right:2%;
-    margin-left:2%;
+@media screen and (max-width: 1080px) {
+  .navMenu a {
+    margin-right: 2%;
+    margin-left: 2%;
   }
-  #LogIn{
-    margin-left:10%;
+  #LogIn {
+    margin-left: 10%;
   }
 }
 .icon-badge-container {
-  position:relative;
+  position: relative;
 }
 
 .icon-badge-icon {
   position: relative;
-  width:23px;
+  width: 23px;
 }
 
-@media screen and (min-width:800px){
-  .icon-badge{
-    margin:0;
-    position:absolute;
-    top:-10;
-    right:20;
+@media screen and (min-width: 800px) {
+  .icon-badge {
+    margin: 0;
+    position: absolute;
+    top: -10;
+    right: 20;
   }
 }
 @media screen and (max-width: 800px) {
   .navMenu a {
-    width:100%;
+    width: 100%;
     display: flex;
     justify-content: center;
   }
-  .navMenu{
-    left:0;
-    top:15vw;
+  .navMenu {
+    left: 0;
+    top: 15vw;
   }
-  
-  #LogIn{
-    margin-left:2%;
+
+  #LogIn {
+    margin-left: 2%;
   }
-  #cart{
-    width:100%;
+  #cart {
+    width: 100%;
   }
-  #TimedShopMainLogo{
-    margin:0;
-    width:100%;
+  #TimedShopMainLogo {
+    margin: 0;
+    width: 100%;
     display: flex;
     justify-content: center;
   }
-  #women{
-    width:100%;
+  #women {
+    width: 100%;
   }
 }
 
-
 .icon-badge {
-  background-color: #FF2C2C;
+  background-color: #ff2c2c;
   font-size: 15px;
   color: white;
   text-align: center;
-  width:21px;
-  height:21px;
+  width: 21px;
+  height: 21px;
   border-radius: 100%;
 }
 
-
-
 #sectionSpecifier {
-  float:left;
-  color: #2A2A2A;
-  background-color: #E3C8FF;
+  float: left;
+  color: #2a2a2a;
+  background-color: #e3c8ff;
   border-radius: 10px;
-  border: solid #2A2A2A;
+  border: solid #2a2a2a;
   border-width: 1 1px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  width:92.36vw;
+  width: 92.36vw;
   height: 8vh;
-  margin-left:3.9vw;
-  margin-top:4vh;
+  margin-left: 3.9vw;
+  margin-top: 4vh;
   font-size: 2.5vw;
   font-weight: bold;
 }
 
 #fullProductsDiv {
-  float:left;
-  width:92.36vw;
-  height: 80vh;
-  margin-left:3.9vw;
-  margin-top:5.5vh;
+  float: left;
+  width: 96vw;
+  height: 300vh;
+  margin-left: 3.9vw;
+  margin-top: 5.5vh;
 }
-
 #customizer {
-  float:left;
-  width:20.745vw;
+  float: left;
+  width: 20.745vw;
   height: 93vh;
   border-radius: 10px;
-  border: solid #2A2A2A;
+  border: solid #2a2a2a;
   border-width: 1 1px;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -155,27 +151,27 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  margin-top:3vh;
+  margin-top: 3vh;
   margin-bottom: 3vh;
 }
 
 #clothingText {
-  color: #2A2A2A;
+  color: #2a2a2a;
   font-size: 1.3vw;
   font-weight: bold;
-  margin-left:0.5vw;
+  margin-left: 0.5vw;
   margin-right: 0.5vw;
 }
 
 .bigDot {
-  width:10px;
+  width: 10px;
   height: 10px;
-  background-color: #2A2A2A;
+  background-color: #2a2a2a;
   border-radius: 10px;
 }
 #clothingCheckboxList {
   border-radius: 10px;
-  border: solid #2A2A2A;
+  border: solid #2a2a2a;
   border-width: 1 1px;
   width: 84%;
   display: flex;
@@ -184,7 +180,7 @@ body {
 }
 #sizeCheckboxList {
   border-radius: 10px;
-  border: solid #2A2A2A;
+  border: solid #2a2a2a;
   border-width: 1 1px;
   width: 84%;
   display: flex;
@@ -195,24 +191,24 @@ body {
   position: relative;
   cursor: pointer;
   padding-left: 1vw;
-  padding-top:1vh;
-  padding-bottom:1vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  display:flex;
+  display: flex;
   flex-direction: row;
 }
 
 .checkBoxDivider {
-  width:100%;
+  width: 100%;
   height: 1;
-  background-color: #2A2A2A;
+  background-color: #2a2a2a;
 }
 .checkBoxText {
-  margin-left:1vw;
-  font-size:1vw;
+  margin-left: 1vw;
+  font-size: 1vw;
 }
 .checkBoxContainer input {
   position: absolute;
@@ -229,7 +225,7 @@ body {
   align-self: center;
   background-color: #ffffff;
   border-radius: 0.25vw;
-  border: solid #7A7A7A;
+  border: solid #7a7a7a;
   border-width: 1 1px;
 }
 
@@ -240,7 +236,7 @@ body {
 
 /* When the checkbox is checked, add a blue background */
 .checkBoxContainer input:checked ~ .checkmark {
-  background-color: #E3C8FF;
+  background-color: #e3c8ff;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -259,138 +255,172 @@ body {
 .checkBoxContainer .checkmark:after {
   width: 0.15vw;
   height: 0.3vw;
-  border: solid #2A2A2A;
+  border: solid #2a2a2a;
   border-width: 0 2px 2px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  margin-left:0.25vw;
-  margin-top:0.25vh;
+  margin-left: 0.25vw;
+  margin-top: 0.25vh;
 }
 
-#productOutput{
-  float:left;
-  width:71.5vw;
+#productOutput {
+  float: left;
+  width: 71.5vw;
   height: 150vh;
-  margin-top:-10.15vh;
 }
 
 .product {
-  float:left;
-  width:20.58vw;
-  height:60vh;
-  margin-left:3.1289vw;
+  float: left;
+  width: 20.58vw;
+  height: 29.4vw;
+  margin-left: 3.1289vw;
   border-radius: 10px 10px 0px 0px;
-  border: solid #2A2A2A;
+  border: solid #2a2a2a;
   border-width: 1 1px;
   margin-bottom: 10vh;
-  background-color: #E3C8FF;
+  background-color: #e3c8ff;
+  text-decoration: none;
+}
+.product:visited {
+  text-decoration: none;
+  color: #2a2a2a;
+}
+.product:hover {
+  text-decoration: none;
+  color: #2a2a2a;
+}
+.product:focus {
+  text-decoration: none;
+  color: #2a2a2a;
+}
+.product:active {
+  text-decoration: none;
+  color: #2a2a2a;
 }
 
 .productImage {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width:17vw;
+  width: 17vw;
   height: fit-content;
 }
 
 .productDividerLine {
-  float:left;
-  margin-left:-1px;
-  width:20.58vw;
-  height:12vh;
+  float: left;
+  margin-left: -1px;
+  width: 20.58vw;
+  height: 12vh;
   border-radius: 0px 0px 10px 10px;
-  border: solid #2A2A2A;
+  border: solid #2a2a2a;
   border-width: 1 1px;
   background-color: #ffffff;
+  text-decoration: none;
 }
 
-.productSaleDiv{
+@media screen and (max-width: 1570px) {
+  .product {
+    margin-left: 1vw;
+    width: 22.58vw;
+  }
+  .productDividerLine {
+    width: 22.58vw;
+  }
+}
+.productSaleDiv {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 .productName {
-  color:#7A7A7A;
-  font-size:1.5vw;
+  color: #7a7a7a;
+  font-size: 1.5vw;
   font-weight: 400;
   display: flex;
-  margin-top:0.5vh;
+  margin-top: 0.5vh;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 }
-.productSaleDivDot{
-  color:#7A7A7A;
-  font-size:0.8vw;
+.productSaleDivDot {
+  color: #7a7a7a;
+  font-size: 0.8vw;
   font-weight: 400;
   margin-bottom: 3px;
-  margin-left:0.5vw;
-  margin-right:0.5vw;  
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+  text-decoration: none;
 }
 .productPriceBeforeSale {
-  color:#7A7A7A;
-  font-size:0.8vw;
+  color: #7a7a7a;
+  font-size: 0.8vw;
   font-weight: 400;
   display: flex;
   text-decoration: line-through;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 }
 
-.productSaleAmount{
-  color:#7A7A7A;
-  font-size:0.8vw;
+.productSaleAmount {
+  color: #7a7a7a;
+  font-size: 0.8vw;
   font-weight: 400;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 }
 
-.productPrice{
-  color:#2A2A2A;
-  font-weight:700;
-  font-size:1.7vw;
+.productPrice {
+  color: #2a2a2a;
+  font-weight: 700;
+  font-size: 1.7vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 }
 
-.productImageDiv{
+.productImageDiv {
   position: relative;
 }
 .productSecondImage {
-  display:none;
+  display: none;
   position: absolute;
-  left:2vw;
-  top:0;
-  width:17vw;
-  z-index:9009;
+  left: 2vw;
+  top: 0;
+  width: 17vw;
+  z-index: 9009;
 }
 
-.productAvailableSizes{
-  display:none;
-  margin-left:2vw;
-  margin-top:2.5vh;
-  font-size:1vw;
+.productAvailableSizes {
+  display: none;
+  margin-left: 2vw;
+  margin-top: 2.5vh;
+  font-size: 1vw;
+  text-decoration: none;
 }
-.productColors{
-  display:none;
-  margin-left:2vw;
-  margin-top:1vh;
-  font-size:1vw;
+.productColors {
+  display: none;
+  margin-left: 2vw;
+  margin-top: 1vh;
+  font-size: 1vw;
   flex-direction: row;
   align-items: center;
+  text-decoration: none;
 }
 
 .productColorCircle {
   width: 1vw;
   height: 1vw;
   border-radius: 100%;
-  border: solid #2A2A2A;
+  border: solid #2a2a2a;
   border-width: 1 1px;
-  margin-left:0.5vw;
+  margin-left: 0.5vw;
 }
 .product:hover .productSecondImage {
   display: inline;
@@ -400,65 +430,73 @@ body {
 }
 
 .product:hover .productName {
-  display:none;
+  display: none;
 }
 
 .product:hover .productPrice {
-  display:none;
+  display: none;
 }
 
 .product:hover .productPriceBeforeSale {
-  display:none;
+  display: none;
 }
-.product:hover .productSaleDiv{
-  display:none;
+.product:hover .productSaleDiv {
+  display: none;
 }
 
-.product:hover .productAvailableSizes{
-  display:flex;
+.product:hover .productAvailableSizes {
+  display: flex;
 }
 
 .product:hover .productColors {
-  display:flex;
+  display: flex;
 }
-
-
-
 
 .range-slider {
   display: flex;
   align-items: center;
 }
-.range-slider .number-group .number-input {
-  width: 4vw;
+.textbox {
+  width: 5vw;
   height: 3.5vh;
   text-align: center;
-  color: #2A2A2A;
+  color: #2a2a2a;
   font-weight: bold;
   font-size: 0.9vw;
   border-radius: 6px;
-  border: solid #2A2A2A;
+  border: solid #2a2a2a;
   border-width: 1 1px;
-  margin-top:3vh;
 }
-.number-group{
-  width:100%;
+.range-slider .number-group .number-input {
+  text-align: center;
+  color: #2a2a2a;
+  font-weight: bold;
+  font-size: 0.9vw;
+  border: 0;
 }
-.range-slider .number-group .number-input:first-of-type {
-  margin-right:4.4vw;
+.number-group {
+  width: 100%;
+  margin-top: 2vh;
 }
-.range-slider .number-group .number-input:last-of-type {
-  margin-left: 4.4vw;
+.textbox:first-of-type {
+  margin-right: 3.5vw;
 }
-.range-slider .number-group .number-input::-webkit-outer-spin-button, .range-slider .number-group .number-input::-webkit-inner-spin-button {
+.textbox:last-of-type {
+  margin-left: 3.5vw;
+}
+#numberInputRight {
+  margin-right: 0.25vw;
+}
+.range-slider .number-group .number-input::-webkit-outer-spin-button,
+.range-slider .number-group .number-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 .range-slider .range-group .range-input {
-  position:absolute;
-  left:5.6vw;
+  position: absolute;
+  left: 5.6vw;
   -webkit-appearance: none;
   width: 17.2vw;
-  margin-top:-4vh;
+  margin-top: -4vh;
 }
 .range-slider .range-group .range-input:focus {
   outline: 0;
@@ -468,7 +506,7 @@ body {
   height: 8px;
   cursor: pointer;
   animation: 0.2s;
-  background: #E3C8FF;
+  background: #e3c8ff;
   border-radius: 10px;
   box-shadow: none;
   border: 0;
@@ -479,7 +517,7 @@ body {
   height: 18px;
   width: 18px;
   border-radius: 50%;
-  background: #2A2A2A;
+  background: #2a2a2a;
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -4px;
@@ -489,21 +527,21 @@ body {
   height: 2px;
   cursor: pointer;
   animation: 0.2s;
-  background: #2A2A2A;
+  background: #2a2a2a;
   border-radius: 1px;
   box-shadow: none;
   border: 0;
-  margin-top:-2px;
+  margin-top: -2px;
 }
 .range-slider .range-group .range-input::-moz-range-thumb {
   z-index: 2;
   position: relative;
   box-shadow: 0px 0px 0px #000;
-  border: 1px solid #2A2A2A;
+  border: 1px solid #2a2a2a;
   height: 18px;
   width: 18px;
   border-radius: 50%;
-  background: #2A2A2A;
+  background: #2a2a2a;
   cursor: pointer;
 }
 .range-slider .range-group .range-input::-ms-track {
@@ -515,8 +553,9 @@ body {
   border-color: transparent;
   color: transparent;
 }
-.range-slider .range-group .range-input::-ms-fill-lower, .range-slider .range-group .range-input::-ms-fill-upper {
-  background: #2A2A2A;
+.range-slider .range-group .range-input::-ms-fill-lower,
+.range-slider .range-group .range-input::-ms-fill-upper {
+  background: #2a2a2a;
   border-radius: 1px;
   box-shadow: none;
   border: 0;
@@ -527,31 +566,77 @@ body {
   height: 18px;
   width: 18px;
   border-radius: 50%;
-  background: #2A2A2A;
+  background: #2a2a2a;
   cursor: pointer;
 }
 
-
-#sorter{
-  width:20.745vw;
+#leftBar {
+  float: left;
+  display: flex;
+  flex-direction: column;
+  width: 20.745vw;
+}
+#sorter {
+  float: left;
+  width: 20.745vw;
   height: 8vh;
   border-radius: 10px;
-  border: solid #2A2A2A;
+  border: solid #2a2a2a;
   border-width: 1 1px;
-  display:flex;
+  display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom:2vh;
+  margin-bottom: 2vh;
 }
-#sortBy{
-  font-size:1.1vw;
+#search{
+  float: left;
+  width: 20.745vw;
+  height: 6vh;
+  border-radius: 10px;
+  border: solid #2a2a2a;
+  border-width: 1 1px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 2vh;
+}
+#searchInput{
+  margin-left:1vw;
+  border: 0;
+  background-color: transparent;
+  float: left;
+  outline: none;
+  width:100%;
+  font-size:1.2vw;
+  font-family: "Nunito", sans-serif;
+}
+#searchIcon{
+  width:1.5vw;
+  height: 1.5vw;
+}
+#searchButton{
+  border:0;
+  width: 5vw;
+  background-color:#e3c8ff;
+  border-radius: 0px 10px 10px 0px;
+  border: solid #2a2a2a;
+  border-width: 1 1px;
+  margin-right:-1px;
+  height: 102%;
+  cursor:pointer;
+}
+#searchButton:hover{
+  background-color:#c894ff;
+}
+#sortBy {
+  font-size: 1.1vw;
   font-weight: bold;
-  margin-left:1.3vw;
+  margin-left: 1.3vw;
 }
 /* Dropdown Button */
 .dropbtn {
   background-color: #ffffff;
-  color: #2A2A2A;
+  color: #2a2a2a;
   width: 13vw;
   height: 6vh;
   font-size: 1vw;
@@ -560,22 +645,23 @@ body {
   border: none;
   cursor: pointer;
   border-radius: 10px;
-  border: solid #2A2A2A;
+  border: solid #2a2a2a;
   border-width: 1 1px;
-  margin-left:1vw;
+  margin-left: 1vw;
 }
-#dropdownTitle{
+#dropdownTitle {
   pointer-events: none;
 }
 .dropbtn img {
-  width:25px;
+  width: 25px;
   pointer-events: none;
-  margin-top:0.7vh;
-  margin-right:0.5vw;
-  float:right;
+  margin-top: 0.7vh;
+  margin-right: 0.5vw;
+  float: right;
 }
 /* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
+.dropbtn:hover,
+.dropbtn:focus {
   background-color: #e7e7e7;
 }
 
@@ -590,162 +676,244 @@ body {
   display: none;
   position: absolute;
   width: 12.4vw;
-  left:1.3vw;
-  top:3vw;
+  left: 1.3vw;
+  top: 3vw;
   z-index: 1;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: #2A2A2A;
+  color: #2a2a2a;
   padding: 1vh 1.2vw;
   text-decoration: none;
   display: block;
   background-color: #ffffff;
 }
-#PriceHL{
-  margin-bottom:-1px;
-  border: solid #2A2A2A;
+#PriceHL {
+  margin-bottom: -1px;
+  border: solid #2a2a2a;
   border-width: 1 1px;
   border-radius: 0px 0px 10px 10px;
 }
-#PriceLH{
-  border-left: solid #2A2A2A;
-  border-right: solid #2A2A2A;
+#PriceLH {
+  border-left: solid #2a2a2a;
+  border-right: solid #2a2a2a;
   border-width: 1 1px;
 }
-#newArrival{
-  margin-top:-1px;
-  border: solid #2A2A2A;
+#newArrival {
+  margin-top: -1px;
+  border: solid #2a2a2a;
   border-width: 1 1px;
   border-radius: 10px 10px 0px 0px;
 }
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #e7e7e7}
+.dropdown-content a:hover {
+  background-color: #e7e7e7;
+}
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
+.show {
+  display: block;
+}
 
-#paginationDiv{
-  width:100%;
-  float:left;
-  display:flex;
+#paginationDiv {
+  width: 100%;
+  float: left;
+  display: flex;
   justify-content: center;
 }
 #paginationBox {
   display: flex;
-  width:30vw;
+  width: 30vw;
   height: 6vh;
-  margin-left:3.1289vw;
+  margin-left: 3.1289vw;
 }
-#previousButton{
-  display:flex;
+#previousButton {
+  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size:1vw;
+  font-size: 1vw;
   font-weight: 400;
   font-family: "Nunito", sans-serif;
-  width:5vw;
+  width: 5vw;
   border: none;
-  border: solid #2A2A2A;
+  border: solid #2a2a2a;
   border-width: 1 1px;
   border-radius: 10px 0px 0px 10px;
   background-color: #ffffff;
-  color: #2A2A2A;
+  color: #2a2a2a;
   cursor: pointer;
 }
-#nextButton{
-  display:flex;
+#nextButton {
+  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size:1vw;
+  font-size: 1vw;
   font-weight: 400;
   font-family: "Nunito", sans-serif;
-  width:5vw;
+  width: 5vw;
   border: none;
-  border: solid #2A2A2A;
+  border: solid #2a2a2a;
   border-width: 1 1px;
   border-radius: 0px 10px 10px 0px;
   background-color: #ffffff;
-  color: #2A2A2A;
+  color: #2a2a2a;
   border-left-width: 0px;
   cursor: pointer;
 }
-.pageNumber{
-  display:flex;
+.pageNumber {
+  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size:1vw;
+  font-size: 1vw;
   font-weight: 400;
   font-family: "Nunito", sans-serif;
-  width:5vw;
+  width: 5vw;
   border: none;
-  border: solid #2A2A2A;
+  border: solid #2a2a2a;
   border-width: 1 1px;
   border-left-width: 0px;
   background-color: #ffffff;
-  color: #2A2A2A;
+  color: #2a2a2a;
   cursor: pointer;
   text-decoration: none;
 }
-.pageDots{
-  display:flex;
+.pageDots {
+  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size:1vw;
+  font-size: 1vw;
   font-weight: 400;
   font-family: "Nunito", sans-serif;
-  width:5vw;
+  width: 5vw;
   border: none;
-  border: solid #2A2A2A;
+  border: solid #2a2a2a;
   border-width: 1 1px;
   background-color: #ffffff;
   border-left-width: 0px;
-  color: #2A2A2A;
+  color: #2a2a2a;
 }
-#previousButton:hover, #previousButton:focus {
+#previousButton:hover,
+#previousButton:focus {
   background-color: #e7e7e7;
 }
-#nextButton:hover, #nextButton:focus {
+#nextButton:hover,
+#nextButton:focus {
   background-color: #e7e7e7;
 }
-.pageNumber:hover, .pageNumber:focus {
+.pageNumber:hover,
+.pageNumber:focus {
   background-color: #e7e7e7;
 }
 #selectedPage {
-  background-color: #E3C8FF;
+  background-color: #e3c8ff;
 }
-#footer{
+#footer {
   position: absolute;
   background-color: red;
-  width:100vw;
+  width: 100vw;
   height: 20vh;
-  margin-top:390vh;
+  margin-top: 390vh;
 }
 
-#submitPriceButton{
+#submitPriceButton {
   width: 84%;
   height: 5.5vh;
   text-align: center;
-  color: #2A2A2A;
+  color: #2a2a2a;
   font-family: "Nunito", sans-serif;
   font-weight: 800;
   font-size: 1.1vw;
   border-radius: 6px;
-  border: solid #2A2A2A;
+  border: solid #2a2a2a;
   border-width: 1 1px;
-  background-color: #E3C8FF;
-  margin-top:5vh;
-  cursor:pointer;
+  background-color: #e3c8ff;
+  margin-top: 5vh;
+  cursor: pointer;
+  margin-top: 6.8vh;
 }
 
-#submitPriceButton:hover, #previousButton:focus {
+#submitPriceButton:hover,
+#previousButton:focus {
   background-color: #c894ff;
 }
-#submitPriceButton:hover, #nextButton:focus {
+#submitPriceButton:hover,
+#nextButton:focus {
+  background-color: #c894ff;
+}
+
+#infoDiv {
+  float: left;
+  width: 20.745vw;
+  height: 25.7vh;
+  border-radius: 10px;
+  border: solid #2a2a2a;
+  border-width: 1 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  margin-top: 2vh;
+}
+#socialsDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3vh;
+}
+#instagram {
+  width: 2.5vw;
+  height: 2.5vw;
+}
+#facebook {
+  width: 2vw;
+  height: 2vw;
+  margin-left: 2vw;
+  margin-right: 1vw;
+}
+#tiktok {
+  width: 2vw;
+  height: 2vw;
+}
+#twitter {
+  width: 2.5vw;
+  height: 2.5vw;
+  margin-left: 1vw;
+  margin-right: 2vw;
+}
+#findMoreText {
+  margin-top: 3vh;
+  font-size: 1.1vw;
+  font-weight: 700;
+  color: #2a2a2a;
+}
+#aboutButton {
+  width: 84%;
+  height: 5.5vh;
+  text-align: center;
+  color: #2a2a2a;
+  line-height: 5.5vh;
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  font-size: 1.1vw;
+  border-radius: 6px;
+  border: solid #2a2a2a;
+  border-width: 1 1px;
+  background-color: #e3c8ff;
+  cursor: pointer;
+  margin-top: 2.8vh;
+  text-decoration: none;
+}
+
+#aboutButton:hover {
+  background-color: #c894ff;
+}
+
+#aboutButton:focus {
   background-color: #c894ff;
 }

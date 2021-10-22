@@ -1,0 +1,225 @@
+<html lang="en">
+  <head>
+    <link rel="icon" href="resources/icons/favicon.png" />
+    <link rel="stylesheet" href="styles/product.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <title>Timed - Women</title>
+    <script src="resources/productPage/product.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  </head>
+  <body>
+    <div id="TimedShopMainLogo">
+      <img src="resources/icons/TimedShopMainLogo.svg" alt="TIMED SHOP" />
+    </div>
+    <nav class="navMenu" id="navMenu">
+      <a href="Sale.html">SALE</a>
+      <a href="Women.html" id="women">WOMEN</a>
+      <a href="Men.html">MEN</a>
+      <a href="Accessories.html">ACCESSORIES</a>
+      <a href="LogIn.html" id="LogIn">LOG IN</a>
+      <a href="Register.html">REGISTER</a>
+      <a href="Cart.html" id="cart" class="icon-badge-container">
+        <img
+          class="icon-badge-icon"
+          alt="CART"
+          src="/resources/icons/Cart.svg"
+          onmouseover="this.src='resources/icons/CartPurple.svg'"
+          onmouseout="this.src='resources/icons/Cart.svg'"
+        />
+        <div class="icon-badge">6</div>
+      </a>
+      <div class="dot" id="dott"></div>
+    </nav>
+    <div id="mainDiv">
+      <div id="aboutProductDiv">
+        <a id="productTitle">GREY HOODIE</a>
+        <div id="productSaleDiv">
+          <a id="productPriceBeforeSale">$120.00</a>
+          <a id="productSaleDot">●</a>
+          <a id="productSaleAmount">40%</a>
+        </div>
+        <a id="productPrice">$100.00</a>
+        <div id="bottomAboutDivDiv">
+          <div id="bottomAboutDiv">
+            <div id="infoButtonsDiv">
+              <button id="infoButton" onclick="displayProductDetailsModal()">
+                Product Details
+              </button>
+            </div>
+
+            <div id="infoButtonsDiv">
+              <button id="infoButton" onclick="displayReturnDeliveryModal()">
+                Return & Delivery
+              </button>
+            </div>
+          </div>
+          <div id="scrollPhotosDiv">
+            <div id="photosDiv">
+              <img
+                class="smallImg"
+                id="smallImg1"
+                src="resources/icons/productPageImages/120101small.jpg"
+                alt="photo1"
+              />
+              <img
+                class="smallImg"
+                src="resources/icons/productPageImages/120102small.jpg"
+                alt="photo2"
+              />
+              <img
+                class="smallImg"
+                src="resources/icons/productPageImages/120103small.jpg"
+                alt="photo3"
+              />
+              <img
+                class="smallImg"
+                src="resources/icons/productPageImages/120104small.jpg"
+                alt="photo4"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="productImageDiv">
+        <div id="scrollLeftDiv">
+          <button id="scrollLeft">
+            <img id="arrowLeft" src="/resources/icons/Arrow.svg" />
+          </button>
+        </div>
+        <img
+          id="productImage"
+          src="resources/icons/productPageImages/120101big.jpg"
+        />
+        <div id="scrollRightDiv">
+          <button id="scrollRight">
+            <img id="arrowRight" src="/resources/icons/Arrow.svg" />
+          </button>
+        </div>
+      </div>
+      <div id="productOptionsDiv">
+        <div id="sizeDiv">
+          <div class="bigDot"></div>
+          <a id="sizeText">SIZE</a>
+          <div class="bigDot"></div>
+        </div>
+        <div id="sizeCheckboxList">
+          <label class="checkBoxContainer">
+            <input type="checkbox" id="SCheckbox" onclick="SCheckboxPress()" />
+            <span class="checkmark"></span>
+            <a class="checkBoxText">S</a>
+          </label>
+          <div class="checkBoxDivider"></div>
+          <label class="checkBoxContainer">
+            <input type="checkbox" id="MCheckbox" onclick="MCheckboxPress()" />
+            <span class="checkmark"></span>
+            <a class="checkBoxText">M</a>
+          </label>
+          <div class="checkBoxDivider"></div>
+          <label class="checkBoxContainer">
+            <input type="checkbox" id="LCheckbox" onclick="LCheckboxPress()" />
+            <span class="checkmark"></span>
+            <a class="checkBoxText">L</a>
+          </label>
+          <div class="checkBoxDivider"></div>
+          <label class="checkBoxContainer">
+            <input
+              type="checkbox"
+              id="XLCheckbox"
+              onclick="XLCheckboxPress()"
+            />
+            <span class="checkmark"></span>
+            <a class="checkBoxText">XL</a>
+          </label>
+          <div class="checkBoxDivider"></div>
+          <label class="checkBoxContainer">
+            <input
+              type="checkbox"
+              id="XXLCheckbox"
+              onclick="XXLCheckboxPress()"
+            />
+            <span class="checkmark"></span>
+            <a class="checkBoxText">XXL</a>
+          </label>
+        </div>
+        <div id="colorDiv">
+          <div class="bigDot"></div>
+          <a id="colorText">COLOR</a>
+          <div class="bigDot"></div>
+        </div>
+        <div id="colorsDiv">
+          <button class="colorBox"></button>
+          <button class="colorBox"></button>
+          <button class="colorBox"></button>
+          <button class="colorBox"></button>
+          <button class="colorBox"></button>
+          <button class="colorBox"></button>
+          <button class="colorBox"></button>
+        </div>
+        <div id="bottomAddToCartDiv">
+          <button id="addToCartButton">
+            ADD TO CART
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="productDetailsModal">
+      <div id="modalDiv">
+        <button
+          onclick="closeProductDetailsModal()"
+          title="Close"
+          id="productDetailsModalCloseButton"
+        >
+          <img
+            id="closePDImg"
+            src="/resources/icons/closeButton.svg"
+            alt="close"
+          />
+        </button>
+        <a id="titlePD">Product Details</a>
+        <div id="contentPD">
+          <a id="productSpecificType">Cruiser</a>
+          <a id="titleOfCriteria">THE ICONIC UNISEX HOODIE SWEATSHIRT</a>
+          <div id="criteriaDiv">
+            <ul id="criteriaUL">
+              <li>Set-in sleeve</li>
+              <li>Double layered hood in self fabric</li>
+              <li>
+                Round drawcords in matching body colour with metal tipping
+              </li>
+              <li>Metal eyelets</li>
+              <li>Inside herringbone back neck tape</li>
+              <li>Self fabric half moon at back neck</li>
+              <li>
+                Single needle topstitch at neckline and along hood opening
+              </li>
+              <li>1x1 rib at sleeve hem and bottom hem</li>
+              <li>
+                Armhole, sleeve hem and bottom hem with twin needle topstitch
+              </li>
+              <li>Kangaroo pocket at front</li>
+            </ul>
+          </div>
+          <a id="typeof">BRUSHED SWEATSHIRT</a>
+          <a id="madeOf"
+            >85% ORGANIC RING-SPUN COMBED COTTON, 15% RECYCLED POLYESTER</a
+          >
+        </div>
+      </div>
+    </div>
+    <div id="returnDeliveryModal">
+      <div id="modalDiv">
+        <button
+          onclick="closeReturnDeliveryModal()"
+          title="Close"
+          id="modalCloseButton"
+        >
+          Close
+        </button>
+        <h1>Return & Delivery</h1>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,5 +1,5 @@
 let params = new URLSearchParams(location.search);
-var currentPage = parseInt(params.get('page'));
+var currentPage = params.get("page");
 var sortBy = params.get('sortBy');
 var box1 = document.getElementById("box1");
 var box2 = document.getElementById("box2");
@@ -64,15 +64,13 @@ if(sortBy=="priceHL")
     document.getElementById("dropdownTitle").innerText="Price (High to Low)";
 
 
-sortByNewArrival.setAttribute("href", "/women.html?page="+currentPage+"&sortBy=newArrival"+"&type="+type+"&size="+size);
-sortByPriceHL.setAttribute("href", "/women.html?page="+currentPage+"&sortBy=priceHL"+"&type="+type+"&size="+size);
-sortByPriceLH.setAttribute("href", "/women.html?page="+currentPage+"&sortBy=priceLH"+"&type="+type+"&size="+size);
-
-
-if(isNaN(currentPage))
+sortByNewArrival.setAttribute("href", "/women.html?sortBy=newArrival"+"&type="+type+"&size="+size);
+sortByPriceHL.setAttribute("href", "/women.html?sortBy=priceHL"+"&type="+type+"&size="+size);
+sortByPriceLH.setAttribute("href", "/women.html?sortBy=priceLH"+"&type="+type+"&size="+size);
+if(sortBy==null)
 {
     currentPage = 1;
-    window.open("/women.html?page="+currentPage+"&sortBy=newArrival"+"&type="+type+"&size="+size,"_self")
+    window.open("/women.html?sortBy=newArrival"+"&type="+type+"&size="+size,"_self")
 }
 
 function hoodiesCheckboxPress(){
@@ -142,5 +140,5 @@ function ApplyFilterButton()
 {
     var minPrice = document.getElementById("sliderMin").value;
     var maxPrice = document.getElementById("sliderMax").value;
-    window.open("/women.html?page="+currentPage+"&sortBy="+sortBy+"&type="+type+"&size="+size+"&minPrice="+minPrice+"&maxPrice="+maxPrice,"_self");
+    window.open("/women.html?sortBy="+sortBy+"&type="+type+"&size="+size+"&minPrice="+minPrice+"&maxPrice="+maxPrice,"_self");
 }

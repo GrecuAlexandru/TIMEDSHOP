@@ -1,0 +1,566 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,800;1,900&display=swap");
+
+body {
+  background: #ffffff;
+  font-family: "Nunito", sans-serif;
+  overflow: hidden;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#TimedShopMainLogo {
+  float: left;
+  margin-left: 4vw;
+  margin-top: 2vh;
+}
+
+.navMenu {
+  position: absolute;
+  top: 5%;
+  left: 22.5%;
+  width: 101.4%;
+}
+
+.navMenu a {
+  float: left;
+  text-align: center;
+  color: #2a2a2a;
+  text-decoration: none;
+  font-size: 1.125em;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 5%;
+  margin-right: 2%;
+}
+#LogIn {
+  margin-left: 28%;
+}
+
+.navMenu a:hover {
+  color: #5a189a;
+}
+
+#women {
+  width: 100px;
+}
+@media screen and (max-width: 1080px) {
+  .navMenu a {
+    margin-right: 2%;
+    margin-left: 2%;
+  }
+  #LogIn {
+    margin-left: 10%;
+  }
+}
+.icon-badge-container {
+  position: relative;
+}
+
+.icon-badge-icon {
+  position: relative;
+  width: 23px;
+}
+
+@media screen and (min-width: 800px) {
+  .icon-badge {
+    margin: 0;
+    position: absolute;
+    top: -10;
+    right: 20;
+  }
+}
+@media screen and (max-width: 800px) {
+  .navMenu a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .navMenu {
+    left: 0;
+    top: 15vw;
+  }
+
+  #LogIn {
+    margin-left: 2%;
+  }
+  #cart {
+    width: 100%;
+  }
+  #TimedShopMainLogo {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  #women {
+    width: 100%;
+  }
+}
+
+.icon-badge {
+  background-color: #ff2c2c;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  width: 21px;
+  height: 21px;
+  border-radius: 100%;
+}
+
+#mainDiv{
+  float:left;
+  display: flex;
+  flex-direction: row;
+}
+
+#aboutProductDiv{
+  float: left;
+  width: 20.745vw;
+  height: 85vh;
+  border-radius: 10px;
+  border: solid #2a2a2a;
+  border-width: 1 1px;
+  display: flex;
+  flex-direction: column;
+  margin-top:4vh;
+  margin-left:4vw;
+}
+#productImageDiv{
+  width: 50.51vw;
+  float:left;
+}
+#productImage{
+  float:left;
+  position:fixed;
+  bottom:0;
+  width: 30vw;
+  margin-left:2.255vw;
+}
+#productOptionsDiv{
+  float:left;
+  width: 20.745vw;
+  height: 85vh;
+  border-radius: 10px;
+  border: solid #2a2a2a;
+  border-width: 1 1px;
+  display: flex;
+  margin-top:4vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+#productTitle{
+  font-size:2.2vw;
+  font-weight: 700;
+  margin-top:2vh;
+  margin-left:2vw;
+}
+#productPriceBeforeSale{
+  text-decoration: line-through;
+}
+#productSaleDiv{
+  margin-left:2.4vw;
+  margin-top:4vh;
+  font-size: 0.8vw;
+}
+
+#productPrice{
+  margin-left:2vw;
+  font-size:2.2vw;
+  font-weight: 700;
+}
+
+
+
+
+#bottomAboutDivDiv{
+  display:flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: 2vh;
+}
+#bottomAboutDiv{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#infoButtonsDiv{
+  display:flex;
+}
+
+#modalDiv{
+  width: 30vw;
+  height: auto;
+  background-color:white;
+  border-radius: 10px;
+  border: solid #2a2a2a;
+  border-width: 1 1px;
+}
+#productDetailsModal{
+  background-color: #2a2a2a5d;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  display:none;
+  align-items: center;
+  justify-content: center;
+}
+
+#infoButton {
+  display:inline-block;
+  width: 17.4vw;
+  height: 5.5vh;
+  text-align: center;
+  color: #2a2a2a;
+  text-decoration: none;
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  font-size: 1.1vw;
+  border-radius: 6px;
+  border: solid #2a2a2a;
+  border-width: 1 1px;
+  background-color: #e3c8ff;
+  margin-top: 2vh;
+  cursor: pointer;
+}
+#infoButton:hover{
+  background-color: #c894ff;
+}
+#infoButton:focus{
+  background-color: #c894ff;
+}
+
+#returnDeliveryModal{
+  background-color: #2a2a2a5d;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  display:none;
+  align-items: center;
+  justify-content: center;
+}
+
+#productDetailsModalCloseButton{
+  float:right;
+  border:0;
+  background-color: transparent;
+}
+
+#closePDImg{
+  width: 0.8vw;
+  height: 0.8vw;
+  padding:0.2vw;
+  background-color: transparent;
+  margin-top:0.3vw;
+  margin-right:0.2vw;
+  cursor: pointer;
+}
+
+#closePDImg:hover{
+  border-radius: 7px;
+  border-width: 1 1px;
+  background-color:#d3d3d3;
+}
+
+#titlePD{
+  position: absolute;
+  margin-left:9.8vw;
+  display:flex;
+  margin-top:1vh;
+  justify-content: center;
+  font-size: 1.5vw;
+  font-weight: 700;
+}
+
+#contentPD{
+  margin:2vw;
+  display:flex;
+  flex-direction: column;
+  margin-top:10vh;
+}
+
+#productSpecificType{
+  font-size:1.2vw;
+  font-weight: 700;
+}
+
+#titleOfCriteria{
+  font-size:1vw;
+  margin-top:0.5vh;
+}
+
+#criteriaUL{
+  padding-left:20;
+  margin-bottom:5vh;
+}
+
+#typeof{
+  font-size:0.7vw;
+  font-weight: 700;
+}
+
+#madeOf{
+  font-size:0.7vw;
+  font-weight: 700;
+}
+
+#scrollPhotosDiv{
+  margin-top:1vh;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content:center;
+}
+
+#photosDiv{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:center;
+}
+
+.smallImg{
+  width: 3.80vw;
+  margin:0.3vw;
+  height: auto;
+  border-radius: 10px;
+  border: solid #797979;
+  border-width: 1 1px;
+  cursor: pointer;
+}
+
+#smallImg1{
+  border: solid #5a189a;
+  border-width: 4 4px;
+}
+#scrollLeftDiv{
+  float:left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 8vw;
+}
+#scrollLeft{
+  width: 3vw;
+  height: 3vw;
+  background-color: white;
+  border-radius: 10px;
+  border: solid #2a2a2a;
+  border-width: 1 1px;
+  cursor: pointer;
+}
+#arrowLeft{
+  width: 1.5vw;
+  height: 1.5vw;
+}
+
+#scrollRightDiv{
+  float:right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 8vw;
+}
+#scrollRight{
+  width: 3vw;
+  height: 3vw;
+  background-color: white;
+  border-radius: 10px;
+  border: solid #2a2a2a;
+  border-width: 1 1px;
+  cursor: pointer;
+}
+#arrowRight{
+  width: 1.5vw;
+  height: 1.5vw;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+#scrollLeft:hover{
+  background-color: #e3c8ff;
+}
+
+#scrollRight:hover{
+  background-color: #e3c8ff;
+}
+
+#sizeDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+}
+
+#sizeText {
+  color: #2a2a2a;
+  font-size: 1.3vw;
+  font-weight: bold;
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+}
+
+.bigDot {
+  width: 10px;
+  height: 10px;
+  background-color: #2a2a2a;
+  border-radius: 10px;
+}
+
+#sizeCheckboxList {
+  border-radius: 10px;
+  border: solid #2a2a2a;
+  border-width: 1 1px;
+  width: 84%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.checkBoxContainer {
+  position: relative;
+  cursor: pointer;
+  padding-left: 1vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.checkBoxDivider {
+  width: 100%;
+  height: 1;
+  background-color: #2a2a2a;
+}
+.checkBoxText {
+  margin-left: 1vw;
+  font-size: 1vw;
+}
+.checkBoxContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  height: 0.8vw;
+  width: 0.8vw;
+  align-self: center;
+  background-color: #ffffff;
+  border-radius: 0.25vw;
+  border: solid #7a7a7a;
+  border-width: 1 1px;
+}
+
+/* On mouse-over, add a grey background color */
+.checkBoxContainer:hover input ~ .checkmark {
+  background-color: rgb(231, 231, 231);
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkBoxContainer input:checked ~ .checkmark {
+  background-color: #e3c8ff;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkBoxContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkBoxContainer .checkmark:after {
+  width: 0.15vw;
+  height: 0.3vw;
+  border: solid #2a2a2a;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-left: 0.25vw;
+  margin-top: 0.25vh;
+}
+
+#colorDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+}
+
+#colorText {
+  color: #2a2a2a;
+  font-size: 1.3vw;
+  font-weight: bold;
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+}
+
+#colorsDiv{
+  display: flex;
+  flex-wrap:wrap;
+  gap:1.225vw;
+  width: 17.4vw;
+}
+
+.colorBox{
+  width: 2.5vw;
+  height: 2.5vw;
+  border-radius: 10px;
+  border: solid #2a2a2a;
+  border-width: 1 1px;
+  background-color:red;
+  cursor: pointer;
+}
+#bottomAddToCartDiv{
+  display: flex;
+  height: 100%;
+  margin-bottom:3.4vh;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+#addToCartButton{
+  display:inline-block;
+  width: 17.4vw;
+  height: 5.5vh;
+  text-align: center;
+  color: #2a2a2a;
+  text-decoration: none;
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  font-size: 1.1vw;
+  border-radius: 6px;
+  border: solid #2a2a2a;
+  border-width: 1 1px;
+  background-color: #e3c8ff;
+  cursor: pointer;
+  align-self: flex-end;
+}

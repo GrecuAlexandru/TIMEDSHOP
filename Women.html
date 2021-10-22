@@ -36,177 +36,236 @@
     <div id="sectionSpecifier">WOMEN</div>
 
     <div id="fullProductsDiv">
-      <div id="sorter">
-        <a id="sortBy">SORT BY:</a>
-        <div class="dropdown">
-          <button onclick="dropdownFunction()" class="dropbtn">
-            <a id="dropdownTitle">New Arrival</a
-            ><img
-              id="dropdownArrowImg"
-              src="resources/icons/dropdownArrow.svg"
+      <div id="leftBar">
+        <div id="search">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search"
+            minlength="4"
+            maxlength="40"
+          />
+          <button id="searchButton">
+            <img
+              src="resources/icons/searchIcon.svg"
+              id="searchIcon"
+              alt="searchIcon"
             />
           </button>
-          <div id="myDropdown" class="dropdown-content">
-            <a id="newArrival" onclick="newArrivalClicked()">New Arrival</a>
-            <a id="PriceLH" onclick="PriceLHClicked()">Price (Low to High)</a>
-            <a id="PriceHL" onclick="PriceHLClicked()">Pirce (Hight to Low)</a>
+        </div>
+        <div id="sorter">
+          <a id="sortBy">SORT BY:</a>
+          <div class="dropdown">
+            <button onclick="dropdownFunction()" class="dropbtn">
+              <a id="dropdownTitle">New Arrival</a
+              ><img
+                id="dropdownArrowImg"
+                src="resources/icons/dropdownArrow.svg"
+              />
+            </button>
+            <div id="myDropdown" class="dropdown-content">
+              <a id="newArrival" onclick="newArrivalClicked()">New Arrival</a>
+              <a id="PriceLH" onclick="PriceLHClicked()">Price (Low to High)</a>
+              <a id="PriceHL" onclick="PriceHLClicked()"
+                >Pirce (Hight to Low)</a
+              >
+            </div>
           </div>
         </div>
-      </div>
-      <div id="customizer">
-        <div id="clothingDiv">
-          <div class="bigDot"></div>
-          <a id="clothingText">CLOTHING</a>
-          <div class="bigDot"></div>
-        </div>
-        <div id="clothingCheckboxList">
-          <label class="checkBoxContainer">
-            <input
-              type="checkbox"
-              id="hoodiesCheckbox"
-              onclick="hoodiesCheckboxPress()"
-            />
-            <span class="checkmark"></span>
-            <a class="checkBoxText">Hoodies</a>
-          </label>
-          <div class="checkBoxDivider"></div>
-          <label class="checkBoxContainer">
-            <input
-              type="checkbox"
-              id="tshirtsCheckbox"
-              onclick="tshirtsCheckboxPress()"
-            />
-            <span class="checkmark"></span>
-            <a class="checkBoxText">T-shirts & Tops</a>
-          </label>
-          <div class="checkBoxDivider"></div>
-          <label class="checkBoxContainer">
-            <input
-              type="checkbox"
-              id="shirtsCheckbox"
-              onclick="shirtsCheckboxPress()"
-            />
-            <span class="checkmark"></span>
-            <a class="checkBoxText">Shirts</a>
-          </label>
-          <div class="checkBoxDivider"></div>
-          <label class="checkBoxContainer">
-            <input
-              type="checkbox"
-              id="sweatshirtsCheckbox"
-              onclick="sweatshirtsCheckboxPress()"
-            />
-            <span class="checkmark"></span>
-            <a class="checkBoxText">Sweatshirts</a>
-          </label>
-        </div>
-
-        <div id="clothingDiv">
-          <div class="bigDot"></div>
-          <a id="clothingText">SIZE</a>
-          <div class="bigDot"></div>
-        </div>
-        <div id="sizeCheckboxList">
-          <label class="checkBoxContainer">
-            <input type="checkbox" id="SCheckbox" onclick="SCheckboxPress()" />
-            <span class="checkmark"></span>
-            <a class="checkBoxText">S</a>
-          </label>
-          <div class="checkBoxDivider"></div>
-          <label class="checkBoxContainer">
-            <input type="checkbox" id="MCheckbox" onclick="MCheckboxPress()" />
-            <span class="checkmark"></span>
-            <a class="checkBoxText">M</a>
-          </label>
-          <div class="checkBoxDivider"></div>
-          <label class="checkBoxContainer">
-            <input type="checkbox" id="LCheckbox" onclick="LCheckboxPress()" />
-            <span class="checkmark"></span>
-            <a class="checkBoxText">L</a>
-          </label>
-          <div class="checkBoxDivider"></div>
-          <label class="checkBoxContainer">
-            <input
-              type="checkbox"
-              id="XLCheckbox"
-              onclick="XLCheckboxPress()"
-            />
-            <span class="checkmark"></span>
-            <a class="checkBoxText">XL</a>
-          </label>
-          <div class="checkBoxDivider"></div>
-          <label class="checkBoxContainer">
-            <input
-              type="checkbox"
-              id="XXLCheckbox"
-              onclick="XXLCheckboxPress()"
-            />
-            <span class="checkmark"></span>
-            <a class="checkBoxText">XXL</a>
-          </label>
-        </div>
-
-        <div id="clothingDiv">
-          <div class="bigDot"></div>
-          <a id="clothingText">PRICE</a>
-          <div class="bigDot"></div>
-        </div>
-
-        <div id="rangeSlider" class="range-slider">
-          <div class="range-group">
-            <input
-              class="range-input"
-              id="sliderMin"
-              value="10"
-              min="1"
-              max="300"
-              step="1"
-              type="range"
-            />
-            <input
-              class="range-input"
-              id="sliderMax"
-              value="300"
-              min="1"
-              max="300"
-              step="1"
-              type="range"
-            />
+        <div id="customizer">
+          <div id="clothingDiv">
+            <div class="bigDot"></div>
+            <a id="clothingText">CLOTHING</a>
+            <div class="bigDot"></div>
           </div>
-          <div class="number-group">
-            <input
-              class="number-input"
-              id="numberInputLeft"
-              type="number"
-              value="10"
-              min="1"
-              max="300"
-            />
-            <input
-              class="number-input"
-              id="numberInputRight"
-              type="number"
-              value="300"
-              min="1"
-              max="300"
-            />
+          <div id="clothingCheckboxList">
+            <label class="checkBoxContainer">
+              <input
+                type="checkbox"
+                id="hoodiesCheckbox"
+                onclick="hoodiesCheckboxPress()"
+              />
+              <span class="checkmark"></span>
+              <a class="checkBoxText">Hoodies</a>
+            </label>
+            <div class="checkBoxDivider"></div>
+            <label class="checkBoxContainer">
+              <input
+                type="checkbox"
+                id="tshirtsCheckbox"
+                onclick="tshirtsCheckboxPress()"
+              />
+              <span class="checkmark"></span>
+              <a class="checkBoxText">T-shirts & Tops</a>
+            </label>
+            <div class="checkBoxDivider"></div>
+            <label class="checkBoxContainer">
+              <input
+                type="checkbox"
+                id="shirtsCheckbox"
+                onclick="shirtsCheckboxPress()"
+              />
+              <span class="checkmark"></span>
+              <a class="checkBoxText">Shirts</a>
+            </label>
+            <div class="checkBoxDivider"></div>
+            <label class="checkBoxContainer">
+              <input
+                type="checkbox"
+                id="sweatshirtsCheckbox"
+                onclick="sweatshirtsCheckboxPress()"
+              />
+              <span class="checkmark"></span>
+              <a class="checkBoxText">Sweatshirts</a>
+            </label>
           </div>
+
+          <div id="clothingDiv">
+            <div class="bigDot"></div>
+            <a id="clothingText">SIZE</a>
+            <div class="bigDot"></div>
+          </div>
+          <div id="sizeCheckboxList">
+            <label class="checkBoxContainer">
+              <input
+                type="checkbox"
+                id="SCheckbox"
+                onclick="SCheckboxPress()"
+              />
+              <span class="checkmark"></span>
+              <a class="checkBoxText">S</a>
+            </label>
+            <div class="checkBoxDivider"></div>
+            <label class="checkBoxContainer">
+              <input
+                type="checkbox"
+                id="MCheckbox"
+                onclick="MCheckboxPress()"
+              />
+              <span class="checkmark"></span>
+              <a class="checkBoxText">M</a>
+            </label>
+            <div class="checkBoxDivider"></div>
+            <label class="checkBoxContainer">
+              <input
+                type="checkbox"
+                id="LCheckbox"
+                onclick="LCheckboxPress()"
+              />
+              <span class="checkmark"></span>
+              <a class="checkBoxText">L</a>
+            </label>
+            <div class="checkBoxDivider"></div>
+            <label class="checkBoxContainer">
+              <input
+                type="checkbox"
+                id="XLCheckbox"
+                onclick="XLCheckboxPress()"
+              />
+              <span class="checkmark"></span>
+              <a class="checkBoxText">XL</a>
+            </label>
+            <div class="checkBoxDivider"></div>
+            <label class="checkBoxContainer">
+              <input
+                type="checkbox"
+                id="XXLCheckbox"
+                onclick="XXLCheckboxPress()"
+              />
+              <span class="checkmark"></span>
+              <a class="checkBoxText">XXL</a>
+            </label>
+          </div>
+
+          <div id="clothingDiv">
+            <div class="bigDot"></div>
+            <a id="clothingText">PRICE</a>
+            <div class="bigDot"></div>
+          </div>
+
+          <div id="rangeSlider" class="range-slider">
+            <div class="range-group">
+              <input
+                class="range-input"
+                id="sliderMin"
+                value="10"
+                min="1"
+                max="300"
+                step="1"
+                type="range"
+              />
+              <input
+                class="range-input"
+                id="sliderMax"
+                value="300"
+                min="1"
+                max="300"
+                step="1"
+                type="range"
+              />
+            </div>
+            <div class="number-group">
+              <span class="textbox">
+                &nbsp;&nbsp;$
+                <input
+                  class="number-input"
+                  id="numberInputLeft"
+                  type="number"
+                  value="10"
+                  min="1"
+                  max="300"
+                />
+              </span>
+              <span class="textbox">
+                &nbsp;&nbsp;$
+                <input
+                  class="number-input"
+                  id="numberInputRight"
+                  type="number"
+                  value="300"
+                  min="1"
+                  max="300"
+                />
+              </span>
+            </div>
+          </div>
+          <button onclick="ApplyFilterButton()" id="submitPriceButton">
+            APPLY
+          </button>
         </div>
-        <button onclick="ApplyFilterButton()" id="submitPriceButton">
-          APPLY
-        </button>
+        <div id="infoDiv">
+          <a id="findMoreText"> Want to learn more about us? </a>
+          <div id="socialsDiv">
+            <a id="instagram" href="https://www.instagram.com">
+              <img
+                src="resources/icons/socials/instagram.svg"
+                alt="instagram"
+              />
+            </a>
+            <a id="facebook">
+              <img src="resources/icons/socials/facebook.svg" alt="facebook" />
+            </a>
+            <a id="twitter">
+              <img src="resources/icons/socials/twitter.svg" alt="twitter" />
+            </a>
+            <a id="tiktok">
+              <img src="resources/icons/socials/tiktok.svg" alt="tiktok" />
+            </a>
+          </div>
+          <a id="aboutButton" href="/Accessories.html">ABOUT</a>
+        </div>
       </div>
       <div id="productOutput">
-          <!-- <div class="product" onmouseover="">
-              <div class="productImageDiv">
-                  <img src="resources/icons/greyHoodie.png" alt="Grey Hoodie" class="productImage">
-                  <img src="resources/icons/hoodieModel3by2.png" alt="Grey Hoodie Second Image" class="productSecondImage">
-              </div>
-              <div class="productDividerLine">
-                  <a class="productName">
-                      Grey Hoodie
-                  </a>
-                  <div class="productSaleDiv">
+        <!-- <div class="product" onmouseover="">
+          <div class="productImageDiv">
+            <img src="resources/icons/greyHoodie.png" alt="Grey Hoodie" class="productImage">
+            <img src="resources/icons/hoodieModel3by2.png" alt="Grey Hoodie Second Image" class="productSecondImage">
+          </div>
+          <div class="productDividerLine">
+            <a class="productName">
+              Grey Hoodie
+            </a>
+            <div class="productSaleDiv">
                     <a class="productPriceBeforeSale">
                         $100.00
                     </a>
@@ -232,7 +291,6 @@
           </div> -->
       </div>
     </div>
-
     <script src="resources/women/priceSlider.js"></script>
     <script src="resources/women/dropdown.js"></script>
     <script src="resources/women/pagination.js"></script>
@@ -255,19 +313,7 @@
       const storage = firebase.storage();
       let querySnapshot;
       params = new URLSearchParams(location.search);
-      // if(params.get("maxPages")==null)
-      // {
-      //   const docRef = doc(db, "women", "pages");
-      //   const docSnap = await getDoc(docRef);
 
-      //   if (docSnap.exists()) {
-      //     params.append("maxPages",docSnap.data().numberOfPages);
-      //     location.search = params;
-      //   } else {
-      //     // doc.data() will be undefined in this case
-      //     console.log("No such document!");
-      //   }
-      // }
       var minPrice, maxPrice;
       if (params.get("minPrice") == null && params.get("maxPrice") == null) {
         db.collection("women")
@@ -343,7 +389,6 @@
       }
       minPrice = parseInt(minPrice);
       maxPrice = parseInt(maxPrice);
-      var currentPage = 1;
       var sortBy = params.get("sortBy");
       if (params.get("type") != null) type = params.get("type");
       if (params.get("size") != null) size = params.get("size");
@@ -368,852 +413,831 @@
         if (size.includes("extral")) whereSize.push("XL");
         if (size.includes("extraxl")) whereSize.push("XXL");
       }
-      window.addEventListener('scroll',()=>{
+      window.addEventListener("scroll", () => {
         //console.log("windowHeight:",window.scrollY) //scrolled from top
         //console.log("windowInnerHeight:",window.innerHeight) //visible part of screen
-        if(window.scrollY + window.innerHeight >=
-        document.documentElement.scrollHeight){
+        if (
+          window.scrollY + window.innerHeight >=
+          document.documentElement.scrollHeight
+        ) {
           console.log("reached bottom");
-          loadProducts()
+          loadProducts();
         }
-      })
+      });
+      var currentPage = 1;
       var lastVisibleQueryFromPrevPage;
       loadProducts();
-      function loadProducts()
-      {
-      if (sortBy == "newArrival") {
-        if (currentPage > 1) {
-          if (whereSize.length - 1 != 0) {
-            if (whereType.length != 0) {
-              if(!isNaN(minPrice))
-              {
-                q = db
-                .collection("women")
-                .orderBy("price", "asc")
-                .where("price", "<=", maxPrice)
-                .where("price", ">=", minPrice)
-                .orderBy("date", "desc")
-                .where("type", "in", whereType)
-                .startAfter(lastVisibleQueryFromPrevPage);
-              }
-              else
-              {
-                q = db
-                  .collection("women")
-                  .orderBy("date", "desc")
-                  .where("type", "in", whereType)
-                  .startAfter(lastVisibleQueryFromPrevPage);
-              }
-              for (var i = 1; i <= whereSize.length - 1; i++) {
-                q = q.where(whereSize[i], "==", true);
-              }
-              q = q.limit(18);
-            } else {
-              if(!isNaN(minPrice))
-              {
-                q = db
-                  .collection("women")
-                  .orderBy("price", "asc")
-                  .where("price", "<=", maxPrice)
-                  .where("price", ">=", minPrice)
-                  .orderBy("date", "desc")
-                  .startAfter(lastVisibleQueryFromPrevPage);
-              }
-              else
-              {
-                q = db
-                  .collection("women")
-                  .orderBy("date", "desc")
-                  .startAfter(lastVisibleQueryFromPrevPage);
-              }
-              for (var i = 1; i <= whereSize.length - 1; i++) {
-                q = q.where(whereSize[i], "==", true);
-              }
-              q = q.limit(18);
-            }
-          } else if (whereType.length != 0)
-          {
-            if(!isNaN(minPrice))
-              q = db
-                .collection("women")
-                .orderBy("price", "asc")
-                .where("price", "<=", maxPrice)
-                .where("price", ">=", minPrice)
-                .orderBy("date", "desc")
-                .where("type", "in", whereType)
-                .startAfter(lastVisibleQueryFromPrevPage);
-            else
-              q = db
-                .collection("women")
-                .orderBy("date", "desc")
-                .where("type", "in", whereType)
-                .startAfter(lastVisibleQueryFromPrevPage);
-            q = q.limit(18);
-          }
-          else
-          {
-            if(!isNaN(minPrice))
-              q = db
-                .collection("women")
-                .orderBy("price", "asc")
-                .where("price", "<=", maxPrice)
-                .where("price", ">=", minPrice)
-                .orderBy("date", "desc")
-                .startAfter(lastVisibleQueryFromPrevPage);
-            else
-              q = db
-                .collection("women")
-                .orderBy("date", "desc")
-                .startAfter(lastVisibleQueryFromPrevPage);
-            q = q.limit(18);
-          }
-        } else {
-          if (whereSize.length - 1 != 0) {
-            if (whereType.length != 0) {
-              if(!isNaN(minPrice))
-                q = db
-                  .collection("women")
-                  .orderBy("price", "asc")
-                  .where("price", "<=", maxPrice)
-                  .where("price", ">=", minPrice)
-                  .orderBy("date", "desc")
-                  .where("type", "in", whereType);
-              else
-                q = db
-                  .collection("women")
-                  .orderBy("date", "desc")
-                  .where("type", "in", whereType);
-              for (var i = 1; i <= whereSize.length - 1; i++) {
-                q = q.where(whereSize[i], "==", true);
-              }
-              q = q.limit(18);
-            } else {
-              if(!isNaN(minPrice))
-                q = db
-                  .collection("women")
-                  .orderBy("price", "asc")
-                  .where("price", "<=", maxPrice)
-                  .where("price", ">=", minPrice)
-                  .orderBy("date", "desc");
-              else
-                q = db
-                  .collection("women")
-                  .orderBy("date", "desc");
-              for (var i = 1; i <= whereSize.length - 1; i++) {
-                q = q.where(whereSize[i], "==", true);
-              }
-              q = q.limit(18);
-            }
-          } else if (whereType.length != 0)
-          {
-            if(!isNaN(minPrice))
-              q = db
-                .collection("women")
-                .orderBy("price", "asc")
-                .where("price", "<=", maxPrice)
-                .where("price", ">=", minPrice)
-                .orderBy("date", "desc")
-                .where("type", "in", whereType);
-            else
-              q = db
-                .collection("women")
-                .orderBy("date", "desc")
-                .where("type", "in", whereType);
-            q = q.limit(18);
-          }
-          else
-          {
-            if(!isNaN(minPrice))
-              q = db
-                .collection("women")
-                .orderBy("price", "asc")
-                .where("price", "<=", maxPrice)
-                .where("price", ">=", minPrice)
-                .orderBy("date", "desc");
-            else
-              q = db
-                .collection("women")
-                .orderBy("date", "desc");
-            q = q.limit(18);
-          }
-        }
-        var resultsNumber = 0;
-        var idd = 1201;
-        q.get().then((querySnapshot) => {
-          querySnapshot.forEach((qdoc)=>{
-            console.log('asd');
-            resultsNumber++;
-            if(resultsNumber == currentPage*16)
-            {
-              currentPage++;
-            }
-            lastVisibleQueryFromPrevPage = querySnapshot.docs[querySnapshot.docs.length-1];
-            //var docRef;
-            //console.log(new Date(qdoc.data().date * 1000));
-            // for(var x = 1; x<=1; x++)
-            // {
-            //   idd++;
-            //   if(idd <= 1220)
-            //     docRef = setDoc(doc(db, "women",idd.toString()),qdoc.data());
-            // }
-
-            //product item
-            var product = document.createElement("div");
-            product.className = "product";
-
-            //productImageDiv
-            var productImageDiv = document.createElement("div");
-            productImageDiv.className = "productImageDiv";
-            product.appendChild(productImageDiv);
-
-            //productFirstImage
-            var productFirstImage = document.createElement("img");
-            productFirstImage.className = "productImage";
-            storage.ref().child(qdoc.id+"01.jpg").getDownloadURL()
-            .then((url) => {
-              productFirstImage.src = url;
-            })
-            .catch((error) => {
-              console.log(error);
-            });
-
-            //productSecondImage
-            var productSecondImage = document.createElement("img");
-            productSecondImage.className = "productSecondImage";
-            storage.ref().child(qdoc.id+"02.jpg").getDownloadURL()
-            .then((url) => {
-              productSecondImage.src = url;
-            })
-            .catch((error) => {
-              console.log(error);
-            });
-
-            //Append First and Second Image to productImageDiv
-            productImageDiv.appendChild(productFirstImage);
-            productImageDiv.appendChild(productSecondImage);
-            product.appendChild(productImageDiv);
-
-            //productDividerLine
-            var productDividerLine = document.createElement("div");
-            productDividerLine.className = "productDividerLine";
-            product.appendChild(productDividerLine);
-
-            //productName
-            var productName = document.createElement("a");
-            productName.className = "productName";
-            productName.innerText = qdoc.data().name;
-            productDividerLine.appendChild(productName);
-
-            //productPriceBeforeSale
-            if (!isNaN(qdoc.data().priceBeforeSale)) {
-              var productSaleDiv = document.createElement("div");
-              productSaleDiv.className = "productSaleDiv";
-
-              var productPriceBeforeSale = document.createElement("a");
-              productPriceBeforeSale.className = "productPriceBeforeSale";
-              productPriceBeforeSale.innerText =
-              "$" + qdoc.data().priceBeforeSale + ".00";
-              
-              var productSaleDot = document.createElement("a");
-              productSaleDot.className = "productSaleDivDot";
-              productSaleDot.innerText = "●";
-              
-              
-              var productSaleAmount = document.createElement("a");
-              productSaleAmount.className = "productSaleAmount";
-              productSaleAmount.innerText = (((Math.abs(qdoc.data().priceBeforeSale - qdoc.data().price))/qdoc.data().priceBeforeSale)*100).toFixed() + "%";
-              
-              productSaleDiv.appendChild(productPriceBeforeSale);
-              productSaleDiv.appendChild(productSaleDot);
-              productSaleDiv.appendChild(productSaleAmount);
-              productDividerLine.appendChild(productSaleDiv);
-            }
-
-            //productPrice
-            var productPrice = document.createElement("a");
-            productPrice.className = "productPrice";
-            var price = qdoc.data().price;
-            productPrice.innerText = "$" + price + ".00";
-            productDividerLine.appendChild(productPrice);
-
-            //productAvailableSizes
-            var productAvailableSizes = document.createElement("a");
-            productAvailableSizes.className = "productAvailableSizes";
-            let sizes = "";
-            var arraySize = qdoc.data().sizes.length;
-            for (let i = 0; i < arraySize; i++) {
-              if (i == arraySize - 1) {
-                sizes = sizes + qdoc.data().sizes[i];
-              } else {
-                sizes = sizes + qdoc.data().sizes[i] + ", ";
-              }
-            }
-            productAvailableSizes.innerText = "Available sizes: " + sizes;
-            productDividerLine.appendChild(productAvailableSizes);
-
-            //productAvailableColors
-            var productAvailableColors = document.createElement("div");
-            productAvailableColors.className = "productColors";
-            var productAvailableColorsText = document.createElement("a");
-            productAvailableColorsText.innerText = "Available colors:";
-            productAvailableColorsText.className = "productAvailableColorsText";
-            productAvailableColors.appendChild(productAvailableColorsText);
-            var productColorsLength = qdoc.data().colors.length;
-            var productColorCircle;
-            for (let i = 0; i < productColorsLength; i++) {
-            productColorCircle = document.createElement("div");
-            productColorCircle.className = "productColorCircle";
-            productColorCircle.style.backgroundColor = qdoc.data().colors[i];
-            productAvailableColors.appendChild(productColorCircle);
-          }
-          productDividerLine.appendChild(productAvailableColors);
-
-          product.appendChild(productDividerLine);
-
-          document
-          .getElementById("productOutput")
-          .insertBefore(product, paginationDiv);
-        })});
-      } else if(sortBy=="priceHL")
-      {
-        if (currentPage > 1) {
-          if (whereSize.length - 1 != 0) {
-            if (whereType.length != 0) {
-              if(!isNaN(minPrice))
-              {
-                q = db
-                .collection("women")
-                .orderBy("price", "desc")
-                .where("price", "<=", maxPrice)
-                .where("price", ">=", minPrice)
-                .where("type", "in", whereType)
-                .startAfter(lastVisibleQueryFromPrevPage);
-              }
-              else
-              {
-                q = db
-                  .collection("women")
-                  .orderBy("price", "desc")
-                  .where("type", "in", whereType)
-                  .startAfter(lastVisibleQueryFromPrevPage);
-              }
-              for (var i = 1; i <= whereSize.length - 1; i++) {
-                q = q.where(whereSize[i], "==", true);
-              }
-              q = q.limit(18);
-            } else {
-              if(!isNaN(minPrice))
-              {
-                q = db
-                  .collection("women")
-                  .orderBy("price", "desc")
-                  .where("price", "<=", maxPrice)
-                  .where("price", ">=", minPrice)
-                  .startAfter(lastVisibleQueryFromPrevPage);
-              }
-              else
-              {
-                q = db
-                  .collection("women")
-                  .orderBy("price", "desc")
-                  .startAfter(lastVisibleQueryFromPrevPage);
-              }
-              for (var i = 1; i <= whereSize.length - 1; i++) {
-                q = q.where(whereSize[i], "==", true);
-              }
-              q = q.limit(18);
-            }
-          } else if (whereType.length != 0)
-          {
-            if(!isNaN(minPrice))
-              q = db
-                .collection("women")
-                .orderBy("price", "desc")
-                .where("price", "<=", maxPrice)
-                .where("price", ">=", minPrice)
-                .where("type", "in", whereType)
-                .startAfter(lastVisibleQueryFromPrevPage);
-            else
-              q = db
-                .collection("women")
-                .orderBy("price", "desc")
-                .where("type", "in", whereType)
-                .startAfter(lastVisibleQueryFromPrevPage);
-            q = q.limit(18);
-          }
-          else
-          {
-            if(!isNaN(minPrice))
-              q = db
-                .collection("women")
-                .orderBy("price", "desc")
-                .where("price", "<=", maxPrice)
-                .where("price", ">=", minPrice)
-                .startAfter(lastVisibleQueryFromPrevPage);
-            else
-              q = db
-                .collection("women")
-                .orderBy("price", "desc")
-                .startAfter(lastVisibleQueryFromPrevPage);
-            q = q.limit(18);
-          }
-        } else {
-          if (whereSize.length - 1 != 0) {
-            if (whereType.length != 0) {
-              if(!isNaN(minPrice))
-                q = db
-                  .collection("women")
-                  .orderBy("price", "desc")
-                  .where("price", "<=", maxPrice)
-                  .where("price", ">=", minPrice)
-                  .where("type", "in", whereType);
-              else
-                q = db
-                  .collection("women")
-                  .orderBy("price", "desc")
-                  .where("type", "in", whereType);
-              for (var i = 1; i <= whereSize.length - 1; i++) {
-                q = q.where(whereSize[i], "==", true);
-              }
-              q = q.limit(18);
-            } else {
-              if(!isNaN(minPrice))
-                q = db
-                  .collection("women")
-                  .orderBy("price", "desc")
-                  .where("price", "<=", maxPrice)
-                  .where("price", ">=", minPrice)
-              else
-                q = db
-                  .collection("women")
-                  .orderBy("price", "desc");
-              for (var i = 1; i <= whereSize.length - 1; i++) {
-                q = q.where(whereSize[i], "==", true);
-              }
-              q = q.limit(18);
-            }
-          } else if (whereType.length != 0)
-          {
-            if(!isNaN(minPrice))
-              q = db
-                .collection("women")
-                .orderBy("price", "desc")
-                .where("price", "<=", maxPrice)
-                .where("price", ">=", minPrice)
-                .where("type", "in", whereType);
-            else
-              q = db
-                .collection("women")
-                .orderBy("price", "desc")
-                .where("type", "in", whereType);
-            q = q.limit(18);
-          }
-          else
-          {
-            if(!isNaN(minPrice))
-              q = db
-                .collection("women")
-                .orderBy("price", "desc")
-                .where("price", "<=", maxPrice)
-                .where("price", ">=", minPrice)
-            else
-              q = db
-                .collection("women")
-                .orderBy("price", "desc");
-            q = q.limit(18);
-          }
-        }
-        var resultsNumber = 0;
-        var idd = 1201;
-        q.get().then((querySnapshot) => {
-          querySnapshot.forEach((qdoc)=>{
-            console.log('asd');
-            resultsNumber++;
-            if(resultsNumber == currentPage*16)
-            {
-              currentPage++;
-            }
-            lastVisibleQueryFromPrevPage = querySnapshot.docs[querySnapshot.docs.length-1];
-            //var docRef;
-            //console.log(new Date(qdoc.data().date * 1000));
-            // for(var x = 1; x<=1; x++)
-            // {
-            //   idd++;
-            //   if(idd <= 1220)
-            //     docRef = setDoc(doc(db, "women",idd.toString()),qdoc.data());
-            // }
-
-            //product item
-            var product = document.createElement("div");
-            product.className = "product";
-
-            //productImageDiv
-            var productImageDiv = document.createElement("div");
-            productImageDiv.className = "productImageDiv";
-            product.appendChild(productImageDiv);
-
-            //productFirstImage
-            var productFirstImage = document.createElement("img");
-            productFirstImage.className = "productImage";
-            storage.ref().child(qdoc.id+"01.jpg").getDownloadURL()
-            .then((url) => {
-              productFirstImage.src = url;
-            })
-            .catch((error) => {
-              console.log(error);
-            });
-
-            //productSecondImage
-            var productSecondImage = document.createElement("img");
-            productSecondImage.className = "productSecondImage";
-            storage.ref().child(qdoc.id+"02.jpg").getDownloadURL()
-            .then((url) => {
-              productSecondImage.src = url;
-            })
-            .catch((error) => {
-              console.log(error);
-            });
-
-            //Append First and Second Image to productImageDiv
-            productImageDiv.appendChild(productFirstImage);
-            productImageDiv.appendChild(productSecondImage);
-            product.appendChild(productImageDiv);
-
-            //productDividerLine
-            var productDividerLine = document.createElement("div");
-            productDividerLine.className = "productDividerLine";
-            product.appendChild(productDividerLine);
-
-            //productName
-            var productName = document.createElement("a");
-            productName.className = "productName";
-            productName.innerText = qdoc.data().name;
-            productDividerLine.appendChild(productName);
-
-            //productPriceBeforeSale
-            if (!isNaN(qdoc.data().priceBeforeSale)) {
-              var productPriceBeforeSale = document.createElement("a");
-              productPriceBeforeSale.className = "productPriceBeforeSale";
-              productPriceBeforeSale.innerText =
-              "$" + qdoc.data().priceBeforeSale + ".00";
-              productDividerLine.appendChild(productPriceBeforeSale);
-            }
-
-            //productPrice
-            var productPrice = document.createElement("a");
-            productPrice.className = "productPrice";
-            var price = qdoc.data().price;
-            productPrice.innerText = "$" + price + ".00";
-            productDividerLine.appendChild(productPrice);
-
-            //productAvailableSizes
-            var productAvailableSizes = document.createElement("a");
-            productAvailableSizes.className = "productAvailableSizes";
-            let sizes = "";
-            var arraySize = qdoc.data().sizes.length;
-            for (let i = 0; i < arraySize; i++) {
-              if (i == arraySize - 1) {
-                sizes = sizes + qdoc.data().sizes[i];
-              } else {
-                sizes = sizes + qdoc.data().sizes[i] + ", ";
-              }
-            }
-            productAvailableSizes.innerText = "Available sizes: " + sizes;
-            productDividerLine.appendChild(productAvailableSizes);
-
-            //productAvailableColors
-            var productAvailableColors = document.createElement("div");
-            productAvailableColors.className = "productColors";
-            var productAvailableColorsText = document.createElement("a");
-            productAvailableColorsText.innerText = "Available colors:";
-            productAvailableColorsText.className = "productAvailableColorsText";
-            productAvailableColors.appendChild(productAvailableColorsText);
-            var productColorsLength = qdoc.data().colors.length;
-            var productColorCircle;
-            for (let i = 0; i < productColorsLength; i++) {
-            productColorCircle = document.createElement("div");
-            productColorCircle.className = "productColorCircle";
-            productColorCircle.style.backgroundColor = qdoc.data().colors[i];
-            productAvailableColors.appendChild(productColorCircle);
-          }
-          productDividerLine.appendChild(productAvailableColors);
-
-          product.appendChild(productDividerLine);
-
-          document
-          .getElementById("productOutput")
-          .insertBefore(product, paginationDiv);
-        })});
-        } else if(sortBy=="priceLH")
-        {
+      function loadProducts() {
+        if (sortBy == "newArrival") {
           if (currentPage > 1) {
-          if (whereSize.length - 1 != 0) {
-            if (whereType.length != 0) {
-              if(!isNaN(minPrice))
-              {
-                q = db
-                .collection("women")
-                .orderBy("price", "asc")
-                .where("price", "<=", maxPrice)
-                .where("price", ">=", minPrice)
-                .where("type", "in", whereType)
-                .startAfter(lastVisibleQueryFromPrevPage);
+            if (whereSize.length - 1 != 0) {
+              if (whereType.length != 0) {
+                if (!isNaN(minPrice)) {
+                  q = db
+                    .collection("women")
+                    .orderBy("price", "asc")
+                    .where("price", "<=", maxPrice)
+                    .where("price", ">=", minPrice)
+                    .orderBy("date", "desc")
+                    .where("type", "in", whereType)
+                    .startAfter(lastVisibleQueryFromPrevPage);
+                } else {
+                  q = db
+                    .collection("women")
+                    .orderBy("date", "desc")
+                    .where("type", "in", whereType)
+                    .startAfter(lastVisibleQueryFromPrevPage);
+                }
+                for (var i = 1; i <= whereSize.length - 1; i++) {
+                  q = q.where(whereSize[i], "==", true);
+                }
+                q = q.limit(18);
+              } else {
+                if (!isNaN(minPrice)) {
+                  q = db
+                    .collection("women")
+                    .orderBy("price", "asc")
+                    .where("price", "<=", maxPrice)
+                    .where("price", ">=", minPrice)
+                    .orderBy("date", "desc")
+                    .startAfter(lastVisibleQueryFromPrevPage);
+                } else {
+                  q = db
+                    .collection("women")
+                    .orderBy("date", "desc")
+                    .startAfter(lastVisibleQueryFromPrevPage);
+                }
+                for (var i = 1; i <= whereSize.length - 1; i++) {
+                  q = q.where(whereSize[i], "==", true);
+                }
+                q = q.limit(18);
               }
+            } else if (whereType.length != 0) {
+              if (!isNaN(minPrice))
+                q = db
+                  .collection("women")
+                  .orderBy("price", "asc")
+                  .where("price", "<=", maxPrice)
+                  .where("price", ">=", minPrice)
+                  .orderBy("date", "desc")
+                  .where("type", "in", whereType)
+                  .startAfter(lastVisibleQueryFromPrevPage);
               else
-              {
+                q = db
+                  .collection("women")
+                  .orderBy("date", "desc")
+                  .where("type", "in", whereType)
+                  .startAfter(lastVisibleQueryFromPrevPage);
+              q = q.limit(18);
+            } else {
+              if (!isNaN(minPrice))
+                q = db
+                  .collection("women")
+                  .orderBy("price", "asc")
+                  .where("price", "<=", maxPrice)
+                  .where("price", ">=", minPrice)
+                  .orderBy("date", "desc")
+                  .startAfter(lastVisibleQueryFromPrevPage);
+              else
+                q = db
+                  .collection("women")
+                  .orderBy("date", "desc")
+                  .startAfter(lastVisibleQueryFromPrevPage);
+              q = q.limit(18);
+            }
+          } else {
+            if (whereSize.length - 1 != 0) {
+              if (whereType.length != 0) {
+                if (!isNaN(minPrice))
+                  q = db
+                    .collection("women")
+                    .orderBy("price", "asc")
+                    .where("price", "<=", maxPrice)
+                    .where("price", ">=", minPrice)
+                    .orderBy("date", "desc")
+                    .where("type", "in", whereType);
+                else
+                  q = db
+                    .collection("women")
+                    .orderBy("date", "desc")
+                    .where("type", "in", whereType);
+                for (var i = 1; i <= whereSize.length - 1; i++) {
+                  q = q.where(whereSize[i], "==", true);
+                }
+                q = q.limit(18);
+              } else {
+                if (!isNaN(minPrice))
+                  q = db
+                    .collection("women")
+                    .orderBy("price", "asc")
+                    .where("price", "<=", maxPrice)
+                    .where("price", ">=", minPrice)
+                    .orderBy("date", "desc");
+                else q = db.collection("women").orderBy("date", "desc");
+                for (var i = 1; i <= whereSize.length - 1; i++) {
+                  q = q.where(whereSize[i], "==", true);
+                }
+                q = q.limit(18);
+              }
+            } else if (whereType.length != 0) {
+              if (!isNaN(minPrice))
+                q = db
+                  .collection("women")
+                  .orderBy("price", "asc")
+                  .where("price", "<=", maxPrice)
+                  .where("price", ">=", minPrice)
+                  .orderBy("date", "desc")
+                  .where("type", "in", whereType);
+              else
+                q = db
+                  .collection("women")
+                  .orderBy("date", "desc")
+                  .where("type", "in", whereType);
+              q = q.limit(18);
+            } else {
+              if (!isNaN(minPrice))
+                q = db
+                  .collection("women")
+                  .orderBy("price", "asc")
+                  .where("price", "<=", maxPrice)
+                  .where("price", ">=", minPrice)
+                  .orderBy("date", "desc");
+              else q = db.collection("women").orderBy("date", "desc");
+              q = q.limit(18);
+            }
+          }
+          var resultsNumber = 0;
+          var idd = 1201;
+          q.get().then((querySnapshot) => {
+            querySnapshot.forEach((qdoc) => {
+              resultsNumber++;
+              if (resultsNumber == currentPage * 16) {
+                currentPage++;
+              }
+              lastVisibleQueryFromPrevPage =
+                querySnapshot.docs[querySnapshot.docs.length - 1];
+              //var docRef;
+              //console.log(new Date(qdoc.data().date * 1000));
+              // for(var x = 1; x<=1; x++)
+              // {
+              //   idd++;
+              //   if(idd <= 1220)
+              //     docRef = setDoc(doc(db, "women",idd.toString()),qdoc.data());
+              // }
+
+              //product item
+              var product = document.createElement("a");
+              product.setAttribute("href", "/product.html?id=" + qdoc.id);
+              product.className = "product";
+
+              //productImageDiv
+              var productImageDiv = document.createElement("div");
+              productImageDiv.className = "productImageDiv";
+              product.appendChild(productImageDiv);
+
+              //productFirstImage
+              var productFirstImage = document.createElement("img");
+              productFirstImage.className = "productImage";
+              storage
+                .ref()
+                .child(qdoc.id + "01.jpg")
+                .getDownloadURL()
+                .then((url) => {
+                  productFirstImage.src = url;
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+
+              //productSecondImage
+              var productSecondImage = document.createElement("img");
+              productSecondImage.className = "productSecondImage";
+              storage
+                .ref()
+                .child(qdoc.id + "02.jpg")
+                .getDownloadURL()
+                .then((url) => {
+                  productSecondImage.src = url;
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+
+              //Append First and Second Image to productImageDiv
+              productImageDiv.appendChild(productFirstImage);
+              productImageDiv.appendChild(productSecondImage);
+              product.appendChild(productImageDiv);
+
+              //productDividerLine
+              var productDividerLine = document.createElement("div");
+              productDividerLine.className = "productDividerLine";
+              product.appendChild(productDividerLine);
+
+              //productName
+              var productName = document.createElement("a");
+              productName.className = "productName";
+              productName.innerText = qdoc.data().name;
+              productDividerLine.appendChild(productName);
+
+              //productPriceBeforeSale
+              if (!isNaN(qdoc.data().priceBeforeSale)) {
+                var productSaleDiv = document.createElement("div");
+                productSaleDiv.className = "productSaleDiv";
+
+                var productPriceBeforeSale = document.createElement("a");
+                productPriceBeforeSale.className = "productPriceBeforeSale";
+                productPriceBeforeSale.innerText =
+                  "$" + qdoc.data().priceBeforeSale + ".00";
+
+                var productSaleDot = document.createElement("a");
+                productSaleDot.className = "productSaleDivDot";
+                productSaleDot.innerText = "●";
+
+                var productSaleAmount = document.createElement("a");
+                productSaleAmount.className = "productSaleAmount";
+                productSaleAmount.innerText =
+                  (
+                    (Math.abs(qdoc.data().priceBeforeSale - qdoc.data().price) /
+                      qdoc.data().priceBeforeSale) *
+                    100
+                  ).toFixed() + "%";
+
+                productSaleDiv.appendChild(productPriceBeforeSale);
+                productSaleDiv.appendChild(productSaleDot);
+                productSaleDiv.appendChild(productSaleAmount);
+                productDividerLine.appendChild(productSaleDiv);
+              }
+
+              //productPrice
+              var productPrice = document.createElement("a");
+              productPrice.className = "productPrice";
+              var price = qdoc.data().price;
+              productPrice.innerText = "$" + price + ".00";
+              productDividerLine.appendChild(productPrice);
+
+              //productAvailableSizes
+              var productAvailableSizes = document.createElement("a");
+              productAvailableSizes.className = "productAvailableSizes";
+              let sizes = "";
+              var arraySize = qdoc.data().sizes.length;
+              for (let i = 0; i < arraySize; i++) {
+                if (i == arraySize - 1) {
+                  sizes = sizes + qdoc.data().sizes[i];
+                } else {
+                  sizes = sizes + qdoc.data().sizes[i] + ", ";
+                }
+              }
+              productAvailableSizes.innerText = "Available sizes: " + sizes;
+              productDividerLine.appendChild(productAvailableSizes);
+
+              //productAvailableColors
+              var productAvailableColors = document.createElement("div");
+              productAvailableColors.className = "productColors";
+              var productAvailableColorsText = document.createElement("a");
+              productAvailableColorsText.innerText = "Available colors:";
+              productAvailableColorsText.className =
+                "productAvailableColorsText";
+              productAvailableColors.appendChild(productAvailableColorsText);
+              var productColorsLength = qdoc.data().colors.length;
+              var productColorCircle;
+              for (let i = 0; i < productColorsLength; i++) {
+                productColorCircle = document.createElement("div");
+                productColorCircle.className = "productColorCircle";
+                productColorCircle.style.backgroundColor =
+                  qdoc.data().colors[i];
+                productAvailableColors.appendChild(productColorCircle);
+              }
+              productDividerLine.appendChild(productAvailableColors);
+
+              product.appendChild(productDividerLine);
+
+              document
+                .getElementById("productOutput")
+                .insertBefore(product, paginationDiv);
+            });
+          });
+        } else if (sortBy == "priceHL") {
+          if (currentPage > 1) {
+            if (whereSize.length - 1 != 0) {
+              if (whereType.length != 0) {
+                if (!isNaN(minPrice)) {
+                  q = db
+                    .collection("women")
+                    .orderBy("price", "desc")
+                    .where("price", "<=", maxPrice)
+                    .where("price", ">=", minPrice)
+                    .where("type", "in", whereType)
+                    .startAfter(lastVisibleQueryFromPrevPage);
+                } else {
+                  q = db
+                    .collection("women")
+                    .orderBy("price", "desc")
+                    .where("type", "in", whereType)
+                    .startAfter(lastVisibleQueryFromPrevPage);
+                }
+                for (var i = 1; i <= whereSize.length - 1; i++) {
+                  q = q.where(whereSize[i], "==", true);
+                }
+                q = q.limit(18);
+              } else {
+                if (!isNaN(minPrice)) {
+                  q = db
+                    .collection("women")
+                    .orderBy("price", "desc")
+                    .where("price", "<=", maxPrice)
+                    .where("price", ">=", minPrice)
+                    .startAfter(lastVisibleQueryFromPrevPage);
+                } else {
+                  q = db
+                    .collection("women")
+                    .orderBy("price", "desc")
+                    .startAfter(lastVisibleQueryFromPrevPage);
+                }
+                for (var i = 1; i <= whereSize.length - 1; i++) {
+                  q = q.where(whereSize[i], "==", true);
+                }
+                q = q.limit(18);
+              }
+            } else if (whereType.length != 0) {
+              if (!isNaN(minPrice))
+                q = db
+                  .collection("women")
+                  .orderBy("price", "desc")
+                  .where("price", "<=", maxPrice)
+                  .where("price", ">=", minPrice)
+                  .where("type", "in", whereType)
+                  .startAfter(lastVisibleQueryFromPrevPage);
+              else
+                q = db
+                  .collection("women")
+                  .orderBy("price", "desc")
+                  .where("type", "in", whereType)
+                  .startAfter(lastVisibleQueryFromPrevPage);
+              q = q.limit(18);
+            } else {
+              if (!isNaN(minPrice))
+                q = db
+                  .collection("women")
+                  .orderBy("price", "desc")
+                  .where("price", "<=", maxPrice)
+                  .where("price", ">=", minPrice)
+                  .startAfter(lastVisibleQueryFromPrevPage);
+              else
+                q = db
+                  .collection("women")
+                  .orderBy("price", "desc")
+                  .startAfter(lastVisibleQueryFromPrevPage);
+              q = q.limit(18);
+            }
+          } else {
+            if (whereSize.length - 1 != 0) {
+              if (whereType.length != 0) {
+                if (!isNaN(minPrice))
+                  q = db
+                    .collection("women")
+                    .orderBy("price", "desc")
+                    .where("price", "<=", maxPrice)
+                    .where("price", ">=", minPrice)
+                    .where("type", "in", whereType);
+                else
+                  q = db
+                    .collection("women")
+                    .orderBy("price", "desc")
+                    .where("type", "in", whereType);
+                for (var i = 1; i <= whereSize.length - 1; i++) {
+                  q = q.where(whereSize[i], "==", true);
+                }
+                q = q.limit(18);
+              } else {
+                if (!isNaN(minPrice))
+                  q = db
+                    .collection("women")
+                    .orderBy("price", "desc")
+                    .where("price", "<=", maxPrice)
+                    .where("price", ">=", minPrice);
+                else q = db.collection("women").orderBy("price", "desc");
+                for (var i = 1; i <= whereSize.length - 1; i++) {
+                  q = q.where(whereSize[i], "==", true);
+                }
+                q = q.limit(18);
+              }
+            } else if (whereType.length != 0) {
+              if (!isNaN(minPrice))
+                q = db
+                  .collection("women")
+                  .orderBy("price", "desc")
+                  .where("price", "<=", maxPrice)
+                  .where("price", ">=", minPrice)
+                  .where("type", "in", whereType);
+              else
+                q = db
+                  .collection("women")
+                  .orderBy("price", "desc")
+                  .where("type", "in", whereType);
+              q = q.limit(18);
+            } else {
+              if (!isNaN(minPrice))
+                q = db
+                  .collection("women")
+                  .orderBy("price", "desc")
+                  .where("price", "<=", maxPrice)
+                  .where("price", ">=", minPrice);
+              else q = db.collection("women").orderBy("price", "desc");
+              q = q.limit(18);
+            }
+          }
+          var resultsNumber = 0;
+          var idd = 1201;
+          q.get().then((querySnapshot) => {
+            querySnapshot.forEach((qdoc) => {
+              console.log("asd");
+              resultsNumber++;
+              if (resultsNumber == currentPage * 16) {
+                currentPage++;
+              }
+              lastVisibleQueryFromPrevPage =
+                querySnapshot.docs[querySnapshot.docs.length - 1];
+              //var docRef;
+              //console.log(new Date(qdoc.data().date * 1000));
+              // for(var x = 1; x<=1; x++)
+              // {
+              //   idd++;
+              //   if(idd <= 1220)
+              //     docRef = setDoc(doc(db, "women",idd.toString()),qdoc.data());
+              // }
+
+              //product item
+              var product = document.createElement("div");
+              product.setAttribute("href", "/product.html?id=" + qdoc.id);
+              product.className = "product";
+
+              //productImageDiv
+              var productImageDiv = document.createElement("div");
+              productImageDiv.className = "productImageDiv";
+              product.appendChild(productImageDiv);
+
+              //productFirstImage
+              var productFirstImage = document.createElement("img");
+              productFirstImage.className = "productImage";
+              storage
+                .ref()
+                .child(qdoc.id + "01.jpg")
+                .getDownloadURL()
+                .then((url) => {
+                  productFirstImage.src = url;
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+
+              //productSecondImage
+              var productSecondImage = document.createElement("img");
+              productSecondImage.className = "productSecondImage";
+              storage
+                .ref()
+                .child(qdoc.id + "02.jpg")
+                .getDownloadURL()
+                .then((url) => {
+                  productSecondImage.src = url;
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+
+              //Append First and Second Image to productImageDiv
+              productImageDiv.appendChild(productFirstImage);
+              productImageDiv.appendChild(productSecondImage);
+              product.appendChild(productImageDiv);
+
+              //productDividerLine
+              var productDividerLine = document.createElement("div");
+              productDividerLine.className = "productDividerLine";
+              product.appendChild(productDividerLine);
+
+              //productName
+              var productName = document.createElement("a");
+              productName.className = "productName";
+              productName.innerText = qdoc.data().name;
+              productDividerLine.appendChild(productName);
+
+              //productPriceBeforeSale
+              if (!isNaN(qdoc.data().priceBeforeSale)) {
+                var productPriceBeforeSale = document.createElement("a");
+                productPriceBeforeSale.className = "productPriceBeforeSale";
+                productPriceBeforeSale.innerText =
+                  "$" + qdoc.data().priceBeforeSale + ".00";
+                productDividerLine.appendChild(productPriceBeforeSale);
+              }
+
+              //productPrice
+              var productPrice = document.createElement("a");
+              productPrice.className = "productPrice";
+              var price = qdoc.data().price;
+              productPrice.innerText = "$" + price + ".00";
+              productDividerLine.appendChild(productPrice);
+
+              //productAvailableSizes
+              var productAvailableSizes = document.createElement("a");
+              productAvailableSizes.className = "productAvailableSizes";
+              let sizes = "";
+              var arraySize = qdoc.data().sizes.length;
+              for (let i = 0; i < arraySize; i++) {
+                if (i == arraySize - 1) {
+                  sizes = sizes + qdoc.data().sizes[i];
+                } else {
+                  sizes = sizes + qdoc.data().sizes[i] + ", ";
+                }
+              }
+              productAvailableSizes.innerText = "Available sizes: " + sizes;
+              productDividerLine.appendChild(productAvailableSizes);
+
+              //productAvailableColors
+              var productAvailableColors = document.createElement("div");
+              productAvailableColors.className = "productColors";
+              var productAvailableColorsText = document.createElement("a");
+              productAvailableColorsText.innerText = "Available colors:";
+              productAvailableColorsText.className =
+                "productAvailableColorsText";
+              productAvailableColors.appendChild(productAvailableColorsText);
+              var productColorsLength = qdoc.data().colors.length;
+              var productColorCircle;
+              for (let i = 0; i < productColorsLength; i++) {
+                productColorCircle = document.createElement("div");
+                productColorCircle.className = "productColorCircle";
+                productColorCircle.style.backgroundColor =
+                  qdoc.data().colors[i];
+                productAvailableColors.appendChild(productColorCircle);
+              }
+              productDividerLine.appendChild(productAvailableColors);
+
+              product.appendChild(productDividerLine);
+
+              document
+                .getElementById("productOutput")
+                .insertBefore(product, paginationDiv);
+            });
+          });
+        } else if (sortBy == "priceLH") {
+          if (currentPage > 1) {
+            if (whereSize.length - 1 != 0) {
+              if (whereType.length != 0) {
+                if (!isNaN(minPrice)) {
+                  q = db
+                    .collection("women")
+                    .orderBy("price", "asc")
+                    .where("price", "<=", maxPrice)
+                    .where("price", ">=", minPrice)
+                    .where("type", "in", whereType)
+                    .startAfter(lastVisibleQueryFromPrevPage);
+                } else {
+                  q = db
+                    .collection("women")
+                    .orderBy("price", "asc")
+                    .where("type", "in", whereType)
+                    .startAfter(lastVisibleQueryFromPrevPage);
+                }
+                for (var i = 1; i <= whereSize.length - 1; i++) {
+                  q = q.where(whereSize[i], "==", true);
+                }
+                q = q.limit(18);
+              } else {
+                if (!isNaN(minPrice)) {
+                  q = db
+                    .collection("women")
+                    .orderBy("price", "asc")
+                    .where("price", "<=", maxPrice)
+                    .where("price", ">=", minPrice)
+                    .startAfter(lastVisibleQueryFromPrevPage);
+                } else {
+                  q = db
+                    .collection("women")
+                    .orderBy("price", "asc")
+                    .startAfter(lastVisibleQueryFromPrevPage);
+                }
+                for (var i = 1; i <= whereSize.length - 1; i++) {
+                  q = q.where(whereSize[i], "==", true);
+                }
+                q = q.limit(18);
+              }
+            } else if (whereType.length != 0) {
+              if (!isNaN(minPrice))
+                q = db
+                  .collection("women")
+                  .orderBy("price", "asc")
+                  .where("price", "<=", maxPrice)
+                  .where("price", ">=", minPrice)
+                  .where("type", "in", whereType)
+                  .startAfter(lastVisibleQueryFromPrevPage);
+              else
                 q = db
                   .collection("women")
                   .orderBy("price", "asc")
                   .where("type", "in", whereType)
                   .startAfter(lastVisibleQueryFromPrevPage);
-              }
-              for (var i = 1; i <= whereSize.length - 1; i++) {
-                q = q.where(whereSize[i], "==", true);
-              }
               q = q.limit(18);
             } else {
-              if(!isNaN(minPrice))
-              {
+              if (!isNaN(minPrice))
                 q = db
                   .collection("women")
                   .orderBy("price", "asc")
                   .where("price", "<=", maxPrice)
                   .where("price", ">=", minPrice)
                   .startAfter(lastVisibleQueryFromPrevPage);
-              }
               else
-              {
                 q = db
                   .collection("women")
                   .orderBy("price", "asc")
                   .startAfter(lastVisibleQueryFromPrevPage);
-              }
-              for (var i = 1; i <= whereSize.length - 1; i++) {
-                q = q.where(whereSize[i], "==", true);
-              }
               q = q.limit(18);
             }
-          } else if (whereType.length != 0)
-          {
-            if(!isNaN(minPrice))
-              q = db
-                .collection("women")
-                .orderBy("price", "asc")
-                .where("price", "<=", maxPrice)
-                .where("price", ">=", minPrice)
-                .where("type", "in", whereType)
-                .startAfter(lastVisibleQueryFromPrevPage);
-            else
-              q = db
-                .collection("women")
-                .orderBy("price", "asc")
-                .where("type", "in", whereType)
-                .startAfter(lastVisibleQueryFromPrevPage);
-            q = q.limit(18);
-          }
-          else
-          {
-            if(!isNaN(minPrice))
-              q = db
-                .collection("women")
-                .orderBy("price", "asc")
-                .where("price", "<=", maxPrice)
-                .where("price", ">=", minPrice)
-                .startAfter(lastVisibleQueryFromPrevPage);
-            else
-              q = db
-                .collection("women")
-                .orderBy("price", "asc")
-                .startAfter(lastVisibleQueryFromPrevPage);
-            q = q.limit(18);
-          }
-        } else {
-          if (whereSize.length - 1 != 0) {
-            if (whereType.length != 0) {
-              if(!isNaN(minPrice))
-                q = db
-                  .collection("women")
-                  .orderBy("price", "asc")
-                  .where("price", "<=", maxPrice)
-                  .where("price", ">=", minPrice)
-                  .where("type", "in", whereType);
-              else
-                q = db
-                  .collection("women")
-                  .orderBy("price", "asc")
-                  .where("type", "in", whereType);
-              for (var i = 1; i <= whereSize.length - 1; i++) {
-                q = q.where(whereSize[i], "==", true);
-              }
-              q = q.limit(18);
-            } else {
-              if(!isNaN(minPrice))
-                q = db
-                  .collection("women")
-                  .orderBy("price", "asc")
-                  .where("price", "<=", maxPrice)
-                  .where("price", ">=", minPrice)
-              else
-                q = db
-                  .collection("women")
-                  .orderBy("price", "asc");
-              for (var i = 1; i <= whereSize.length - 1; i++) {
-                q = q.where(whereSize[i], "==", true);
-              }
-              q = q.limit(18);
-            }
-          } else if (whereType.length != 0)
-          {
-            if(!isNaN(minPrice))
-              q = db
-                .collection("women")
-                .orderBy("price", "asc")
-                .where("price", "<=", maxPrice)
-                .where("price", ">=", minPrice)
-                .where("type", "in", whereType);
-            else
-              q = db
-                .collection("women")
-                .orderBy("price", "asc")
-                .where("type", "in", whereType);
-            q = q.limit(18);
-          }
-          else
-          {
-            if(!isNaN(minPrice))
-              q = db
-                .collection("women")
-                .orderBy("price", "asc")
-                .where("price", "<=", maxPrice)
-                .where("price", ">=", minPrice)
-            else
-              q = db
-                .collection("women")
-                .orderBy("price", "asc");
-            q = q.limit(18);
-          }
-        }
-        var resultsNumber = 0;
-        var idd = 1201;
-        q.get().then((querySnapshot) => {
-          querySnapshot.forEach((qdoc)=>{
-            console.log('asd');
-            resultsNumber++;
-            if(resultsNumber == currentPage*16)
-            {
-              currentPage++;
-            }
-            lastVisibleQueryFromPrevPage = querySnapshot.docs[querySnapshot.docs.length-1];
-            //var docRef;
-            //console.log(new Date(qdoc.data().date * 1000));
-            // for(var x = 1; x<=1; x++)
-            // {
-            //   idd++;
-            //   if(idd <= 1220)
-            //     docRef = setDoc(doc(db, "women",idd.toString()),qdoc.data());
-            // }
-
-            //product item
-            var product = document.createElement("div");
-            product.className = "product";
-
-            //productImageDiv
-            var productImageDiv = document.createElement("div");
-            productImageDiv.className = "productImageDiv";
-            product.appendChild(productImageDiv);
-
-            //productFirstImage
-            var productFirstImage = document.createElement("img");
-            productFirstImage.className = "productImage";
-            storage.ref().child(qdoc.id+"01.jpg").getDownloadURL()
-            .then((url) => {
-              productFirstImage.src = url;
-            })
-            .catch((error) => {
-              console.log(error);
-            });
-
-            //productSecondImage
-            var productSecondImage = document.createElement("img");
-            productSecondImage.className = "productSecondImage";
-            storage.ref().child(qdoc.id+"02.jpg").getDownloadURL()
-            .then((url) => {
-              productSecondImage.src = url;
-            })
-            .catch((error) => {
-              console.log(error);
-            });
-
-            //Append First and Second Image to productImageDiv
-            productImageDiv.appendChild(productFirstImage);
-            productImageDiv.appendChild(productSecondImage);
-            product.appendChild(productImageDiv);
-
-            //productDividerLine
-            var productDividerLine = document.createElement("div");
-            productDividerLine.className = "productDividerLine";
-            product.appendChild(productDividerLine);
-
-            //productName
-            var productName = document.createElement("a");
-            productName.className = "productName";
-            productName.innerText = qdoc.data().name;
-            productDividerLine.appendChild(productName);
-
-            //productPriceBeforeSale
-            if (!isNaN(qdoc.data().priceBeforeSale)) {
-              var productPriceBeforeSale = document.createElement("a");
-              productPriceBeforeSale.className = "productPriceBeforeSale";
-              productPriceBeforeSale.innerText =
-              "$" + qdoc.data().priceBeforeSale + ".00";
-              productDividerLine.appendChild(productPriceBeforeSale);
-            }
-
-            //productPrice
-            var productPrice = document.createElement("a");
-            productPrice.className = "productPrice";
-            var price = qdoc.data().price;
-            productPrice.innerText = "$" + price + ".00";
-            productDividerLine.appendChild(productPrice);
-
-            //productAvailableSizes
-            var productAvailableSizes = document.createElement("a");
-            productAvailableSizes.className = "productAvailableSizes";
-            let sizes = "";
-            var arraySize = qdoc.data().sizes.length;
-            for (let i = 0; i < arraySize; i++) {
-              if (i == arraySize - 1) {
-                sizes = sizes + qdoc.data().sizes[i];
+          } else {
+            if (whereSize.length - 1 != 0) {
+              if (whereType.length != 0) {
+                if (!isNaN(minPrice))
+                  q = db
+                    .collection("women")
+                    .orderBy("price", "asc")
+                    .where("price", "<=", maxPrice)
+                    .where("price", ">=", minPrice)
+                    .where("type", "in", whereType);
+                else
+                  q = db
+                    .collection("women")
+                    .orderBy("price", "asc")
+                    .where("type", "in", whereType);
+                for (var i = 1; i <= whereSize.length - 1; i++) {
+                  q = q.where(whereSize[i], "==", true);
+                }
+                q = q.limit(18);
               } else {
-                sizes = sizes + qdoc.data().sizes[i] + ", ";
+                if (!isNaN(minPrice))
+                  q = db
+                    .collection("women")
+                    .orderBy("price", "asc")
+                    .where("price", "<=", maxPrice)
+                    .where("price", ">=", minPrice);
+                else q = db.collection("women").orderBy("price", "asc");
+                for (var i = 1; i <= whereSize.length - 1; i++) {
+                  q = q.where(whereSize[i], "==", true);
+                }
+                q = q.limit(18);
               }
+            } else if (whereType.length != 0) {
+              if (!isNaN(minPrice))
+                q = db
+                  .collection("women")
+                  .orderBy("price", "asc")
+                  .where("price", "<=", maxPrice)
+                  .where("price", ">=", minPrice)
+                  .where("type", "in", whereType);
+              else
+                q = db
+                  .collection("women")
+                  .orderBy("price", "asc")
+                  .where("type", "in", whereType);
+              q = q.limit(18);
+            } else {
+              if (!isNaN(minPrice))
+                q = db
+                  .collection("women")
+                  .orderBy("price", "asc")
+                  .where("price", "<=", maxPrice)
+                  .where("price", ">=", minPrice);
+              else q = db.collection("women").orderBy("price", "asc");
+              q = q.limit(18);
             }
-            productAvailableSizes.innerText = "Available sizes: " + sizes;
-            productDividerLine.appendChild(productAvailableSizes);
-
-            //productAvailableColors
-            var productAvailableColors = document.createElement("div");
-            productAvailableColors.className = "productColors";
-            var productAvailableColorsText = document.createElement("a");
-            productAvailableColorsText.innerText = "Available colors:";
-            productAvailableColorsText.className = "productAvailableColorsText";
-            productAvailableColors.appendChild(productAvailableColorsText);
-            var productColorsLength = qdoc.data().colors.length;
-            var productColorCircle;
-            for (let i = 0; i < productColorsLength; i++) {
-            productColorCircle = document.createElement("div");
-            productColorCircle.className = "productColorCircle";
-            productColorCircle.style.backgroundColor = qdoc.data().colors[i];
-            productAvailableColors.appendChild(productColorCircle);
           }
-          productDividerLine.appendChild(productAvailableColors);
+          var resultsNumber = 0;
+          var idd = 1201;
+          q.get().then((querySnapshot) => {
+            querySnapshot.forEach((qdoc) => {
+              console.log("asd");
+              resultsNumber++;
+              if (resultsNumber == currentPage * 16) {
+                currentPage++;
+              }
+              lastVisibleQueryFromPrevPage =
+                querySnapshot.docs[querySnapshot.docs.length - 1];
+              //var docRef;
+              //console.log(new Date(qdoc.data().date * 1000));
+              // for(var x = 1; x<=1; x++)
+              // {
+              //   idd++;
+              //   if(idd <= 1220)
+              //     docRef = setDoc(doc(db, "women",idd.toString()),qdoc.data());
+              // }
 
-          product.appendChild(productDividerLine);
+              //product item
+              var product = document.createElement("div");
+              product.setAttribute("href", "/product.html?id=" + qdoc.id);
+              product.className = "product";
 
-          document
-          .getElementById("productOutput")
-          .insertBefore(product, paginationDiv);
-        })});
+              //productImageDiv
+              var productImageDiv = document.createElement("div");
+              productImageDiv.className = "productImageDiv";
+              product.appendChild(productImageDiv);
+
+              //productFirstImage
+              var productFirstImage = document.createElement("img");
+              productFirstImage.className = "productImage";
+              storage
+                .ref()
+                .child(qdoc.id + "01.jpg")
+                .getDownloadURL()
+                .then((url) => {
+                  productFirstImage.src = url;
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+
+              //productSecondImage
+              var productSecondImage = document.createElement("img");
+              productSecondImage.className = "productSecondImage";
+              storage
+                .ref()
+                .child(qdoc.id + "02.jpg")
+                .getDownloadURL()
+                .then((url) => {
+                  productSecondImage.src = url;
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+
+              //Append First and Second Image to productImageDiv
+              productImageDiv.appendChild(productFirstImage);
+              productImageDiv.appendChild(productSecondImage);
+              product.appendChild(productImageDiv);
+
+              //productDividerLine
+              var productDividerLine = document.createElement("div");
+              productDividerLine.className = "productDividerLine";
+              product.appendChild(productDividerLine);
+
+              //productName
+              var productName = document.createElement("a");
+              productName.className = "productName";
+              productName.innerText = qdoc.data().name;
+              productDividerLine.appendChild(productName);
+
+              //productPriceBeforeSale
+              if (!isNaN(qdoc.data().priceBeforeSale)) {
+                var productPriceBeforeSale = document.createElement("a");
+                productPriceBeforeSale.className = "productPriceBeforeSale";
+                productPriceBeforeSale.innerText =
+                  "$" + qdoc.data().priceBeforeSale + ".00";
+                productDividerLine.appendChild(productPriceBeforeSale);
+              }
+
+              //productPrice
+              var productPrice = document.createElement("a");
+              productPrice.className = "productPrice";
+              var price = qdoc.data().price;
+              productPrice.innerText = "$" + price + ".00";
+              productDividerLine.appendChild(productPrice);
+
+              //productAvailableSizes
+              var productAvailableSizes = document.createElement("a");
+              productAvailableSizes.className = "productAvailableSizes";
+              let sizes = "";
+              var arraySize = qdoc.data().sizes.length;
+              for (let i = 0; i < arraySize; i++) {
+                if (i == arraySize - 1) {
+                  sizes = sizes + qdoc.data().sizes[i];
+                } else {
+                  sizes = sizes + qdoc.data().sizes[i] + ", ";
+                }
+              }
+              productAvailableSizes.innerText = "Available sizes: " + sizes;
+              productDividerLine.appendChild(productAvailableSizes);
+
+              //productAvailableColors
+              var productAvailableColors = document.createElement("div");
+              productAvailableColors.className = "productColors";
+              var productAvailableColorsText = document.createElement("a");
+              productAvailableColorsText.innerText = "Available colors:";
+              productAvailableColorsText.className =
+                "productAvailableColorsText";
+              productAvailableColors.appendChild(productAvailableColorsText);
+              var productColorsLength = qdoc.data().colors.length;
+              var productColorCircle;
+              for (let i = 0; i < productColorsLength; i++) {
+                productColorCircle = document.createElement("div");
+                productColorCircle.className = "productColorCircle";
+                productColorCircle.style.backgroundColor =
+                  qdoc.data().colors[i];
+                productAvailableColors.appendChild(productColorCircle);
+              }
+              productDividerLine.appendChild(productAvailableColors);
+
+              product.appendChild(productDividerLine);
+
+              document
+                .getElementById("productOutput")
+                .insertBefore(product, paginationDiv);
+            });
+          });
         }
       }
     </script>
