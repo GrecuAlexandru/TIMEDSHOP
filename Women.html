@@ -233,7 +233,7 @@
             APPLY
           </button>
         </div>
-        <div id="infoDiv">
+        <!-- <div id="infoDiv">
           <a id="findMoreText"> Want to learn more about us? </a>
           <div id="socialsDiv">
             <a id="instagram" href="https://www.instagram.com">
@@ -253,7 +253,7 @@
             </a>
           </div>
           <a id="aboutButton" href="/Accessories.html">ABOUT</a>
-        </div>
+        </div> -->
       </div>
       <div id="productOutput">
         <!-- <div class="product" onmouseover="">
@@ -291,6 +291,49 @@
           </div> -->
       </div>
     </div>
+    <div id="footer">
+      <div id="followUsDiv">
+        <a id="followUsText"> FOLLOW US </a>
+        <div id="iconsDiv">
+          <div id="iconsDivTop">
+            <a id="instagram" href="https://www.instagram.com">
+              <img src="resources/icons/socials/instagram.svg" alt="instagram" />
+            </a>
+            <a id="tiktok">
+              <img src="resources/icons/socials/tiktok.svg" alt="tiktok" />
+            </a>
+          </div>
+          <div id="iconsDivBottom">
+            <a id="twitter">
+              <img src="resources/icons/socials/twitter.svg" alt="twitter" />
+            </a>
+            <a id="facebook">
+              <img src="resources/icons/socials/facebook.svg" alt="facebook" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div id="helpAndInfoDiv">
+        <a id="helpAndInfoText">
+          HELP AND INFORMATION
+        </a>
+        <div id="HILinks">
+          <a class="alink">Help</a>
+          <a class="alink">Privacy Policy</a>
+          <a class="alink">Terms & Conditions</a>
+          <a class="alink">Delivery</a>
+          <a class="alink">Return</a>
+          <a class="alink">FAQ</a>
+        </div>
+      </div>
+      <div id="timedShopDiv">
+        <a id="timedShopText">TIMED SHOP</a>
+        <div id="timedShopLinks">
+          <a class="alink">About</a>
+          <a class="alink">Contact</a>
+        </div>
+      </div>
+    </div>
     <script src="resources/women/priceSlider.js"></script>
     <script src="resources/women/dropdown.js"></script>
     <script src="resources/women/pagination.js"></script>
@@ -313,7 +356,7 @@
       const storage = firebase.storage();
       let querySnapshot;
       params = new URLSearchParams(location.search);
-
+      let footer = document.getElementById("footer");
       var minPrice, maxPrice;
       if (params.get("minPrice") == null && params.get("maxPrice") == null) {
         db.collection("women")
@@ -414,19 +457,31 @@
         if (size.includes("extraxl")) whereSize.push("XXL");
       }
       window.addEventListener("scroll", () => {
-        //console.log("windowHeight:",window.scrollY) //scrolled from top
-        //console.log("windowInnerHeight:",window.innerHeight) //visible part of screen
+        // console.log("scrollHeight:",document.documentElement.scrollHeight);
+        // console.log("windowHeight:",window.scrollY) //scrolled from top
+        // console.log("windowInnerHeight:",window.innerHeight) //visible part of screen
         if (
           window.scrollY + window.innerHeight >=
           document.documentElement.scrollHeight
         ) {
+          loadProducts()
           console.log("reached bottom");
-          loadProducts();
+          // if(!doneOnce)
+          // {
+          //   loadProducts(resultsNumber);
+          //   doneOnce=1;
+          // }
+          // else if(resultsNumber > previousResultsNumber)
+          // {
+          //   console.log("cocococo")
+          //   loadProducts(resultsNumber);
+          //   previousResultsNumber = resultsNumber;
+          // }
         }
       });
+      loadProducts();
       var currentPage = 1;
       var lastVisibleQueryFromPrevPage;
-      loadProducts();
       function loadProducts() {
         if (sortBy == "newArrival") {
           if (currentPage > 1) {
@@ -567,22 +622,39 @@
             }
           }
           var resultsNumber = 0;
-          var idd = 1201;
+          var idd = 1221;
+          var numberOfProducts = 0;
           q.get().then((querySnapshot) => {
             querySnapshot.forEach((qdoc) => {
               resultsNumber++;
               if (resultsNumber == currentPage * 16) {
                 currentPage++;
               }
+              console.log(document.getElementById("productOutput").children.length);
+              numberOfProducts = document.getElementById("productOutput").children.length;
+              if(numberOfProducts<=6)
+              {
+                document.getElementById("fullProductsDiv").style.height = "150vh";
+              }
+              else
+              {
+
+                var marginTop = 150 + (~~((numberOfProducts-6)/3)*70);
+                if(numberOfProducts % 3 != 0)
+                {
+                  marginTop+=70;
+                }
+                document.getElementById("fullProductsDiv").style.height = marginTop+"vh"; 
+              }
               lastVisibleQueryFromPrevPage =
                 querySnapshot.docs[querySnapshot.docs.length - 1];
-              //var docRef;
-              //console.log(new Date(qdoc.data().date * 1000));
+              // var docRef;
+              // console.log(new Date(qdoc.data().date * 1000));
               // for(var x = 1; x<=1; x++)
               // {
               //   idd++;
-              //   if(idd <= 1220)
-              //     docRef = setDoc(doc(db, "women",idd.toString()),qdoc.data());
+              //   if(idd <= 1240)
+              //     db.collection("women").doc(idd.toString()).set(qdoc.data())
               // }
 
               //product item
@@ -606,7 +678,7 @@
                   productFirstImage.src = url;
                 })
                 .catch((error) => {
-                  console.log(error);
+                  //console.log(error);
                 });
 
               //productSecondImage
@@ -620,7 +692,7 @@
                   productSecondImage.src = url;
                 })
                 .catch((error) => {
-                  console.log(error);
+                  //console.log(error);
                 });
 
               //Append First and Second Image to productImageDiv
