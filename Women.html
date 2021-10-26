@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
     <title>Timed - Women</title>
-    <script type="module" src="resources/women/women.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js" integrity="sha256-EXPXz4W6pQgfYY3yTpnDa3OH8/EPn16ciVsPQ/ypsjk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js" integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous"></script>
   </head>
   <body>
     <div id="TimedShopMainLogo">
@@ -40,12 +41,12 @@
         <div id="search">
           <input
             type="text"
-            id="searchInput"
+            id="searchbox"
             placeholder="Search"
             minlength="4"
             maxlength="40"
           />
-          <button id="searchButton">
+          <button id="searchButton" onclick="searchPress()">
             <img
               src="resources/icons/searchIcon.svg"
               id="searchIcon"
@@ -338,6 +339,14 @@
     <script src="resources/women/dropdown.js"></script>
     <script src="resources/women/pagination.js"></script>
     <script>
+      var currentSearchPage = 0;
+      var isSearching = false;
+      var resultsSearchNumber = 0;
+      var totalResults = 0;
+      let searchInput = document.getElementById("searchbox");
+      var lastSearchInputValue = "123456789";
+    </script>
+    <script>
       // Initialize Firebase
       // TODO: Replace with your project's customized code snippet
       var config = {
@@ -464,25 +473,29 @@
           window.scrollY + window.innerHeight >=
           document.documentElement.scrollHeight
         ) {
-          loadProducts()
           console.log("reached bottom");
-          // if(!doneOnce)
-          // {
-          //   loadProducts(resultsNumber);
-          //   doneOnce=1;
-          // }
-          // else if(resultsNumber > previousResultsNumber)
-          // {
-          //   console.log("cocococo")
-          //   loadProducts(resultsNumber);
-          //   previousResultsNumber = resultsNumber;
-          // }
+          console.log(isSearching);
+          if(isSearching)
+          {
+            if(totalResults > resultsSearchNumber)
+            {
+              searchPress();
+              isSearching = true;
+            }
+          }
+          else
+          {
+            loadProducts()
+            isSearching = false;
+          }
         }
       });
-      loadProducts();
+      if(!isSearching)
+        loadProducts();
       var currentPage = 1;
       var lastVisibleQueryFromPrevPage;
       function loadProducts() {
+        isSearching = false;
         if (sortBy == "newArrival") {
           if (currentPage > 1) {
             if (whereSize.length - 1 != 0) {
@@ -627,10 +640,9 @@
           q.get().then((querySnapshot) => {
             querySnapshot.forEach((qdoc) => {
               resultsNumber++;
-              if (resultsNumber == currentPage * 16) {
+              if (resultsNumber == currentPage * 18) {
                 currentPage++;
               }
-              console.log(document.getElementById("productOutput").children.length);
               numberOfProducts = document.getElementById("productOutput").children.length;
               if(numberOfProducts<=6)
               {
@@ -920,12 +932,28 @@
           }
           var resultsNumber = 0;
           var idd = 1201;
+          var numberOfProducts = 0;
           q.get().then((querySnapshot) => {
             querySnapshot.forEach((qdoc) => {
               console.log("asd");
               resultsNumber++;
-              if (resultsNumber == currentPage * 16) {
+              if (resultsNumber == currentPage * 18) {
                 currentPage++;
+              }
+              numberOfProducts = document.getElementById("productOutput").children.length;
+              if(numberOfProducts<=6)
+              {
+                document.getElementById("fullProductsDiv").style.height = "150vh";
+              }
+              else
+              {
+
+                var marginTop = 150 + (~~((numberOfProducts-6)/3)*70);
+                if(numberOfProducts % 3 != 0)
+                {
+                  marginTop+=70;
+                }
+                document.getElementById("fullProductsDiv").style.height = marginTop+"vh"; 
               }
               lastVisibleQueryFromPrevPage =
                 querySnapshot.docs[querySnapshot.docs.length - 1];
@@ -1181,12 +1209,27 @@
           }
           var resultsNumber = 0;
           var idd = 1201;
+          var numberOfProducts = 0;
           q.get().then((querySnapshot) => {
             querySnapshot.forEach((qdoc) => {
-              console.log("asd");
               resultsNumber++;
-              if (resultsNumber == currentPage * 16) {
+              if (resultsNumber == currentPage * 18) {
                 currentPage++;
+              }
+              numberOfProducts = document.getElementById("productOutput").children.length;
+              if(numberOfProducts<=6)
+              {
+                document.getElementById("fullProductsDiv").style.height = "150vh";
+              }
+              else
+              {
+
+                var marginTop = 150 + (~~((numberOfProducts-6)/3)*70);
+                if(numberOfProducts % 3 != 0)
+                {
+                  marginTop+=70;
+                }
+                document.getElementById("fullProductsDiv").style.height = marginTop+"vh"; 
               }
               lastVisibleQueryFromPrevPage =
                 querySnapshot.docs[querySnapshot.docs.length - 1];
@@ -1313,5 +1356,6 @@
         }
       }
     </script>
+    <script src="resources/women/search.js"></script>
   </body>
 </html>

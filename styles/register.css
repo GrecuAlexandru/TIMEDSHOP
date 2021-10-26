@@ -1,0 +1,466 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,800;1,900&display=swap");
+
+body {
+  background: #ffffff;
+  font-family: "Nunito", sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#TimedShopMainLogo {
+  float: left;
+  margin-left: 4vw;
+  margin-top: 2vh;
+}
+
+.navMenu {
+  position: absolute;
+  top: 5%;
+  left: 22.5%;
+  width: 101.4%;
+}
+
+.navMenu a {
+  float: left;
+  text-align: center;
+  color: #2a2a2a;
+  text-decoration: none;
+  font-size: 1.125em;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 5%;
+  margin-right: 2%;
+}
+#LogIn {
+  margin-left: 28%;
+}
+
+.navMenu a:hover {
+  color: #5a189a;
+}
+
+#women {
+  width: 100px;
+}
+@media screen and (max-width: 1080px) {
+  .navMenu a {
+    margin-right: 2%;
+    margin-left: 2%;
+  }
+  #LogIn {
+    margin-left: 10%;
+  }
+}
+.icon-badge-container {
+  position: relative;
+}
+
+.icon-badge-icon {
+  position: relative;
+  width: 23px;
+}
+
+@media screen and (min-width: 800px) {
+  .icon-badge {
+    margin: 0;
+    position: absolute;
+    top: -10;
+    right: 20;
+  }
+}
+@media screen and (max-width: 800px) {
+  .navMenu a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .navMenu {
+    left: 0;
+    top: 15vw;
+  }
+
+  #LogIn {
+    margin-left: 2%;
+  }
+  #cart {
+    width: 100%;
+  }
+  #TimedShopMainLogo {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  #women {
+    width: 100%;
+  }
+}
+
+.icon-badge {
+  background-color: #ff2c2c;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  width: 21px;
+  height: 21px;
+  border-radius: 100%;
+}
+
+#footer {
+  border-top: 1px solid #2a2a2a;
+  float: left;
+  width: 100%;
+  height: 30vh;
+  background-color: #e3c8ff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  z-index: 999;
+}
+#followUsDiv {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5vh;
+}
+#followUsText {
+  font-size: 1.3vw;
+  font-weight: 700;
+  color: #2a2a2a;
+}
+#iconsDiv {
+  display: flex;
+  flex-direction: column;
+}
+#instagram {
+  width: 2.5vw;
+  height: 2.5vw;
+  margin: 0.3vw;
+}
+#facebook {
+  margin-top: 0.5vh;
+  width: 2vw;
+  height: 2vw;
+  margin: 0.55vw;
+}
+#tiktok {
+  margin-top: 0.5vh;
+  width: 2vw;
+  height: 2vw;
+  margin: 0.4vw;
+}
+#twitter {
+  width: 2.5vw;
+  height: 2.5vw;
+  margin: 0.3vw;
+}
+
+#iconsDivTop {
+  display: flex;
+  justify-content: space-evenly;
+}
+#iconsDivBottom {
+  display: flex;
+  justify-content: space-evenly;
+}
+#helpAndInfoDiv {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5vh;
+}
+#helpAndInfoText {
+  font-size: 1.3vw;
+  font-weight: 700;
+  color: #2a2a2a;
+}
+#HILinks {
+  display: flex;
+  flex-direction: column;
+}
+
+#timedShopDiv {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5vh;
+}
+#timedShopText {
+  font-size: 1.3vw;
+  font-weight: 700;
+  color: #2a2a2a;
+}
+#timedShopLinks {
+  display: flex;
+  flex-direction: column;
+}
+.alink {
+  font-size: 0.9vw;
+  margin-top: 0.5vh;
+  color: #4b4b4b;
+  text-decoration: none;
+}
+
+#leftBubble {
+  float: left;
+  width: 62.5vw;
+  height: 62.5vw;
+  background-color: #e3c8ff;
+  border-radius: 100%;
+  position: absolute;
+  bottom: -40vw;
+  left: -30vw;
+}
+
+#rightBubble {
+  float: right;
+  width: 62.5vw;
+  height: 62.5vw;
+  background-color: #e3c8ff;
+  border-radius: 100%;
+  position: absolute;
+  top: 10vw;
+  right: -25vw;
+}
+#smallBubble {
+  float: left;
+  width: 12vw;
+  height: 12vw;
+  background-color: #e3c8ff;
+  border-radius: 100%;
+  position: absolute;
+  top: 10vw;
+  left: 10vw;
+}
+#mainDiv {
+  width: 100%;
+  height: 100%;
+  float: left;
+  display: flex;
+  justify-content: center;
+}
+#registerContainer {
+  float: left;
+  width: 46vh;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  border: solid #2a2a2a;
+  border-width: 1 1px;
+  margin-top: 5vh;
+  position: relative;
+}
+#registerTitle {
+  color: #2a2a2a;
+  font-size: 5vh;
+  font-weight: 700;
+  margin-top: 3vh;
+  margin-bottom: 2vh;
+}
+.registerInput {
+  border-radius: 6px;
+  border: solid #2a2a2a;
+  border-width: 1 1px;
+  width: 40vh;
+  height: 5.5vh;
+  margin-top: 2vh;
+  color: #2a2a2a;
+  font-family: "Nunito", sans-serif;
+  font-size: 2vh;
+  font-weight: 400;
+  padding: 1vw;
+}
+#genderDiv {
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: row;
+  width: 40vh;
+  justify-content: center;
+  align-items: center;
+}
+#genderText {
+  font-size: 2vh;
+  font-weight: 400;
+  color:#2a2a2a;
+  margin-right: 3vw;
+}
+#male {
+  border-radius: 7px;
+  border: solid #2a2a2a;
+  border-width: 1 1px;
+  width: 8.7vh;
+  height: 4vh;
+  background-color: white;
+  cursor: pointer;
+  font-size:1.7vh;
+  font-family: "Nunito", sans-serif;
+}
+#male:hover {
+  background-color: #e7e7e7;
+}
+#female {
+  border-radius: 7px;
+  border: solid #2a2a2a;
+  border-width: 1 1px;
+  width: 8.7vh;
+  height: 4vh;
+  background-color: white;
+  cursor: pointer;
+  font-size:1.7vh;
+  font-family: "Nunito", sans-serif;
+}
+#female:hover {
+  background-color: #e7e7e7;
+}
+#other {
+  border-radius: 7px;
+  border: solid #2a2a2a;
+  border-width: 1 1px;
+  width: 8.7vh;
+  height: 4vh;
+  background-color: white;
+  cursor: pointer;
+  font-size:1.7vh;
+  font-family: "Nunito", sans-serif;
+}
+#other:hover {
+  background-color: #e7e7e7;
+}
+
+#confirmButton {
+  width: 40vh;
+  height: 5.5vh;
+  text-align: center;
+  color: #2a2a2a;
+  text-decoration: none;
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  font-size: 2.6vh;
+  border-radius: 6px;
+  color:#2a2a2a;
+  border: solid #2a2a2a;
+  border-width: 1 1px;
+  background-color: #e3c8ff;
+  cursor: pointer;
+  margin-top:2vh;
+  position: absolute;
+  bottom:3vh;
+}
+#confirmButton:hover {
+  background-color: #c894ff;
+}
+#firstNameError{
+  display:none;
+  align-self:flex-start;
+  color:#ff2c2c;
+  margin-left:2vw;
+  font-size: 0.8vw;
+  font-weight: 400;
+}
+#lastNameError{
+  display:none;
+  align-self:flex-start;
+  color:#ff2c2c;
+  margin-left:2vw;
+  font-size: 0.8vw;
+  font-weight: 400;
+}
+#emailError{
+  display:none;
+  align-self:flex-start;
+  color:#ff2c2c;
+  margin-left:2vw;
+  font-size: 0.8vw;
+  font-weight: 400;
+}
+#passwordError{
+  display:none;
+  align-self:flex-start;
+  color:#ff2c2c;
+  margin-left:2vw;
+  font-size: 0.8vw;
+  font-weight: 400;
+}
+#confirmPasswordError{
+  display:none;
+  align-self:flex-start;
+  color:#ff2c2c;
+  margin-left:2vw;
+  font-size: 0.8vw;
+  font-weight: 400;
+}
+#genderError{
+  display:none;
+  align-self:flex-start;
+  color:#ff2c2c;
+  margin-left:2vw;
+  font-size: 0.8vw;
+  font-weight: 400;
+}
+
+#accountCreatedDiv{
+  float: left;
+  width: 46vh;
+  height: 40vh;
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  border: solid #2a2a2a;
+  border-width: 1 1px;
+  position: relative;
+}
+
+#accountCreatedTitle{
+  color: #2a2a2a;
+  font-size: 3vh;
+  font-weight: 700;
+  margin-top: 3vh;
+  margin-bottom: 2vh;
+}
+
+#verificationSentDiv{
+  display: inline;
+  margin:2vh;
+}
+#verificationText1{
+  color: #2a2a2a;
+  font-size:2vh;
+}
+
+#verificationText2{
+  color: #2a2a2a;
+  font-size:2vh;
+}
+
+#emailHighlight{
+  color:#2a2a2a;
+  font-size: 2vh;
+  font-weight: 700;
+}
+
+#okButton {
+  width: 40vh;
+  height: 5.5vh;
+  text-align: center;
+  color: #2a2a2a;
+  text-decoration: none;
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  font-size: 2.6vh;
+  border-radius: 6px;
+  color:#2a2a2a;
+  border: solid #2a2a2a;
+  border-width: 1 1px;
+  background-color: #e3c8ff;
+  cursor: pointer;
+  margin-top:2vh;
+  position: absolute;
+  bottom:3vh;
+  left:3vh;
+}
+#okButton:hover {
+  background-color: #c894ff;
+}

@@ -6,6 +6,8 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 #TimedShopMainLogo {
@@ -600,7 +602,7 @@ body {
   align-items: center;
   margin-bottom: 2vh;
 }
-#searchInput{
+#searchbox{
   margin-left:1vw;
   border: 0;
   background-color: transparent;
@@ -924,13 +926,13 @@ body {
   margin-top:0.5vh;
   width: 2vw;
   height: 2vw;
-  margin:0.3vw;
+  margin:0.55vw;
 }
 #tiktok {
   margin-top:0.5vh;
   width: 2vw;
   height: 2vw;
-  margin:0.3vw;
+  margin:0.4vw;
 }
 #twitter {
   width: 2.5vw;
