@@ -239,27 +239,27 @@ body {
     display: flex;
     justify-content: center;
 }
-#registerContainer {
+#loginContainer {
     float: left;
     width: 46vh;
-    height: 85vh;
+    height: 50vh;
     display: flex;
     align-items: center;
     flex-direction: column;
     border-radius: 10px;
     border: solid #2a2a2a;
     border-width: 1 1px;
-    margin-top: 3vh;
+    margin-top: 5vh;
     position: relative;
 }
-#registerTitle {
+#loginTitle {
     color: #2a2a2a;
     font-size: 5vh;
     font-weight: 700;
     margin-top: 3vh;
     margin-bottom: 2vh;
 }
-.registerInput {
+.loginInput {
     border-radius: 6px;
     border: solid #2a2a2a;
     border-width: 1 1px;
@@ -271,62 +271,6 @@ body {
     font-size: 2vh;
     font-weight: 400;
     padding: 1vw;
-}
-#genderDiv {
-    margin-top: 2vh;
-    display: flex;
-    flex-direction: row;
-    width: 40vh;
-    justify-content: center;
-    align-items: center;
-}
-#genderText {
-    font-size: 2vh;
-    font-weight: 400;
-    color: #2a2a2a;
-    margin-right: 3vw;
-}
-#male {
-    border-radius: 7px;
-    border: solid #2a2a2a;
-    border-width: 1 1px;
-    width: 8.7vh;
-    height: 4vh;
-    background-color: white;
-    cursor: pointer;
-    font-size: 1.7vh;
-    font-family: "Nunito", sans-serif;
-}
-#male:hover {
-    background-color: #e7e7e7;
-}
-#female {
-    border-radius: 7px;
-    border: solid #2a2a2a;
-    border-width: 1 1px;
-    width: 8.7vh;
-    height: 4vh;
-    background-color: white;
-    cursor: pointer;
-    font-size: 1.7vh;
-    font-family: "Nunito", sans-serif;
-}
-#female:hover {
-    background-color: #e7e7e7;
-}
-#other {
-    border-radius: 7px;
-    border: solid #2a2a2a;
-    border-width: 1 1px;
-    width: 8.7vh;
-    height: 4vh;
-    background-color: white;
-    cursor: pointer;
-    font-size: 1.7vh;
-    font-family: "Nunito", sans-serif;
-}
-#other:hover {
-    background-color: #e7e7e7;
 }
 
 #confirmButton {
@@ -351,22 +295,6 @@ body {
 #confirmButton:hover {
     background-color: #c894ff;
 }
-#firstNameError {
-    display: none;
-    align-self: flex-start;
-    color: #ff2c2c;
-    margin-left: 2vw;
-    font-size: 0.8vw;
-    font-weight: 400;
-}
-#lastNameError {
-    display: none;
-    align-self: flex-start;
-    color: #ff2c2c;
-    margin-left: 2vw;
-    font-size: 0.8vw;
-    font-weight: 400;
-}
 #emailError {
     display: none;
     align-self: flex-start;
@@ -383,85 +311,75 @@ body {
     font-size: 0.8vw;
     font-weight: 400;
 }
-#confirmPasswordError {
-    display: none;
-    align-self: flex-start;
-    color: #ff2c2c;
-    margin-left: 2vw;
-    font-size: 0.8vw;
-    font-weight: 400;
-}
-#genderError {
-    display: none;
-    align-self: flex-start;
-    color: #ff2c2c;
-    margin-left: 2vw;
-    font-size: 0.8vw;
-    font-weight: 400;
-}
 
-#accountCreatedDiv {
-    float: left;
-    width: 46vh;
-    height: 20vh;
-    display: none;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 10px;
-    border: solid #2a2a2a;
-    border-width: 1 1px;
-    position: relative;
-    margin-top: -20vh;
-}
-
-#accountCreatedTitle {
-    color: #2a2a2a;
-    font-size: 3vh;
-    font-weight: 700;
-    margin-top: 3vh;
-    margin-bottom: 2vh;
-}
-
-#verificationSentDiv {
-    display: inline;
-    margin: 2vh;
-}
-#verificationText1 {
-    color: #2a2a2a;
-    font-size: 2vh;
-}
-
-#verificationText2 {
-    color: #2a2a2a;
-    font-size: 2vh;
-}
-
-#emailHighlight {
-    color: #2a2a2a;
-    font-size: 2vh;
-    font-weight: 700;
-}
-
-#okButton {
-    width: 40vh;
-    height: 5.5vh;
-    text-align: center;
-    color: #2a2a2a;
-    text-decoration: none;
-    font-family: "Nunito", sans-serif;
-    font-weight: 800;
-    font-size: 2.6vh;
-    border-radius: 6px;
-    color: #2a2a2a;
-    border: solid #2a2a2a;
-    border-width: 1 1px;
-    background-color: #e3c8ff;
-    cursor: pointer;
-    margin-top: 2vh;
+.checkBoxContainer {
     position: absolute;
-    bottom: 3vh;
-    left: 3vh;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    margin-left: 3vh;
+    bottom: 10vh;
 }
-#okButton:hover {
-    background-color: #c894ff;
+.checkBoxText {
+    margin-left: 1vw;
+    font-size: 1vw;
+    margin-top: 0.2vh;
+}
+.checkBoxContainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    height: 0.8vw;
+    width: 0.8vw;
+    align-self: center;
+    background-color: #ffffff;
+    border-radius: 0.25vw;
+    border: solid #2a2a2a;
+    border-width: 1 1px;
+}
+
+/* On mouse-over, add a grey background color */
+.checkBoxContainer:hover input ~ .checkmark {
+    background-color: rgb(231, 231, 231);
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkBoxContainer input:checked ~ .checkmark {
+    background-color: #e3c8ff;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.checkBoxContainer input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkBoxContainer .checkmark:after {
+    width: 0.15vw;
+    height: 0.3vw;
+    border: solid #2a2a2a;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-left: 0.25vw;
+    margin-top: 0.25vh;
 }

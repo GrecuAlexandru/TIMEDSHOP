@@ -1,23 +1,23 @@
 {
-  "name": "timedshop",
-  "description": "",
-  "version": "1.0.0",
-  "main": "index.html",
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GrecuAlexandru/TIMEDSHOP.git"
-  },
-  "author": "Grecu Alexandru",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/GrecuAlexandru/TIMEDSHOP/issues"
-  },
-  "homepage": "https://github.com/GrecuAlexandru/TIMEDSHOP#readme",
-  "dependencies": {
-    "firebase": "^9.1.1"
-  }
+    "name": "timedshop",
+    "description": "",
+    "version": "1.0.0",
+    "main": "index.html",
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/GrecuAlexandru/TIMEDSHOP.git"
+    },
+    "author": "Grecu Alexandru",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/GrecuAlexandru/TIMEDSHOP/issues"
+    },
+    "homepage": "https://github.com/GrecuAlexandru/TIMEDSHOP#readme",
+    "dependencies": {
+        "firebase": "^9.1.1"
+    }
 }

@@ -1,0 +1,225 @@
+<html lang="en">
+    <head>
+        <link rel="icon" href="resources/icons/favicon.png" />
+        <link rel="stylesheet" href="styles/cart.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8" />
+        <title>Timed - Product</title>
+        <script src="resources/productPage/productDetails.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    </head>
+    <body>
+        <div id="TimedShopMainLogo">
+            <img src="resources/icons/TimedShopMainLogo.svg" alt="TIMED SHOP" />
+        </div>
+        <nav class="navMenu" id="navMenu">
+            <a href="Sale.html">SALE</a>
+            <a href="Women.html" id="women">WOMEN</a>
+            <a href="Men.html">MEN</a>
+            <a href="Accessories.html">ACCESSORIES</a>
+            <a onclick="signOut()" id="account">
+                <img
+                    alt="ACCOUNT"
+                    src="/resources/icons/User.svg"
+                    onmouseover="this.src='resources/icons/UserPurple.svg'"
+                    onmouseout="this.src='resources/icons/User.svg'"
+                />
+            </a>
+            <a href="LogIn.html" id="LogIn">LOG IN</a>
+            <a href="Register.html" id="register">REGISTER</a>
+            <a href="Cart.html" id="cart" class="icon-badge-container">
+                <img
+                    class="icon-badge-icon"
+                    alt="CART"
+                    src="/resources/icons/Cart.svg"
+                    onmouseover="this.src='resources/icons/CartPurple.svg'"
+                    onmouseout="this.src='resources/icons/Cart.svg'"
+                />
+                <div id="cartCount" class="icon-badge">6</div>
+            </a>
+            <div class="dot" id="dott"></div>
+        </nav>
+
+        <div id="mainDiv">
+            <div id="leftDiv">
+                <a id="cartTitle">CART</a>
+                <div id="cartOutput">
+                    <div class="cartItem">
+                        <img class="cartImage" src="resources/icons/productPageImages/120101.jpg" alt="img">
+                        <div class="cartTextDiv">
+                            <a class="cartItemTitle">Grey Hoodie</a>
+                            <a
+                                onclick="closeImage()"
+                                class="removeButton"
+                            >
+                                Remove
+                            </a>
+                            <a class="cartItemType">Men's hoodie</a>
+                            <div class="cartItemOptions">
+                                <a class="cartItemSizeTitle">Size:</a>
+                                <select class="sizeSelected">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="XL">XL</option>
+                                    <option value="2XL">2XL</option>
+                                </select>
+                                <a class="cartItemColorTitle">Color:</a>
+                                <select class="colorSelected" style="background-color: red;">
+                                    <option value="red" style="background-color: red;"></option>
+                                    <option value="green" style="background-color: green;"></option>
+                                    <option value="blue"></option>
+                                    <option value="yellow"></option>
+                                </select>
+                                <a class="cartItemQuantityTitle">Quantity:</a>
+                                <select class="quantitySelected">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <a class="cartItemPrice">$200.00</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="rightDiv">
+                <a id="summaryTitle">SUMMARY</a>
+                <div id="summaryDiv">
+                    <div id="subtotalDiv">
+                        <a id="subtotalText">Subtotal: </a>
+                        <a id="subtotalValue">$200.00</a>
+                    </div>
+                    <div id="taxDiv">
+                        <a id="taxText">Estimated Tax: </a>
+                        <a id="taxValue">-</a>
+                    </div>
+                    <div id="divider"></div>
+                    <div id="totalDiv">
+                        <a id="totalText">Total: </a>
+                        <a id="totalValue">$200.00</a>
+                    </div>
+                    <div id="divider"></div>
+                    <button id="checkoutButton" onclick="checkout()">
+                        CHECKOUT
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div id="followUsDiv">
+                <a id="followUsText"> FOLLOW US </a>
+                <div id="iconsDiv">
+                    <div id="iconsDivTop">
+                        <a id="instagram" href="https://www.instagram.com">
+                            <img
+                                src="resources/icons/socials/instagram.svg"
+                                alt="instagram"
+                            />
+                        </a>
+                        <a id="tiktok">
+                            <img
+                                src="resources/icons/socials/tiktok.svg"
+                                alt="tiktok"
+                            />
+                        </a>
+                    </div>
+                    <div id="iconsDivBottom">
+                        <a id="twitter">
+                            <img
+                                src="resources/icons/socials/twitter.svg"
+                                alt="twitter"
+                            />
+                        </a>
+                        <a id="facebook">
+                            <img
+                                src="resources/icons/socials/facebook.svg"
+                                alt="facebook"
+                            />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="helpAndInfoDiv">
+                <a id="helpAndInfoText"> HELP AND INFORMATION </a>
+                <div id="HILinks">
+                    <a class="alink">Help</a>
+                    <a class="alink">Privacy Policy</a>
+                    <a class="alink">Terms & Conditions</a>
+                    <a class="alink">Delivery</a>
+                    <a class="alink">Return</a>
+                    <a class="alink">FAQ</a>
+                </div>
+            </div>
+            <div id="timedShopDiv">
+                <a id="timedShopText">TIMED SHOP</a>
+                <div id="timedShopLinks">
+                    <a class="alink">About</a>
+                    <a class="alink">Contact</a>
+                </div>
+            </div>
+        </div>
+        <script>
+            // Initialize Firebase
+            // TODO: Replace with your project's customized code snippet
+            var config = {
+                apiKey: "AIzaSyCkBvDNzSvorpEdz2twDAVI09x-FaVsDGg",
+                authDomain: "timedshop-a5a66.firebaseapp.com",
+                projectId: "timedshop-a5a66",
+                storageBucket: "timedshop-a5a66.appspot.com",
+                messagingSenderId: "172835576987",
+                appId: "1:172835576987:web:2e588ca7a77cc008affa3e",
+                measurementId: "G-3VCHXLRX5K",
+            };
+            firebase.initializeApp(config);
+            const db = firebase.firestore();
+            const storage = firebase.storage();
+            let cartCount = document.getElementById("cartCount");
+            firebase.auth().onAuthStateChanged((user) => {
+                if (user) {
+                    var uid = user.uid;
+                    console.log("logged in user: ", user.email);
+                    document.getElementById("LogIn").style.display = "none";
+                    document.getElementById("register").style.display = "none";
+                    document.getElementById("account").style.display = "flex";
+                    db.collection("users")
+                        .doc(uid)
+                        .get()
+                        .then((data) => {
+                            cartCount.innerText = data.data().cart.length;
+                            data.data().cart.forEach((cartData)=>{
+                                console.log(cartData);
+
+                            })
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                        });
+                } else {
+                    // User is signed out
+                    console.log("sign out");
+                    document.getElementById("account").style.display = "none";
+                    document.getElementById("LogIn").style.display = "flex";
+                    document.getElementById("register").style.display = "flex";
+                }
+            });
+
+            function signOut() {
+                firebase
+                    .auth()
+                    .signOut()
+                    .then(() => {
+                        // Sign-out successful.
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
+            }
+        </script>
+    </body>
+</html>

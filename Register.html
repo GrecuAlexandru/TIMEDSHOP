@@ -1,152 +1,165 @@
 <html lang="en">
-  <head>
-    <link rel="icon" href="resources/icons/favicon.png" />
-    <link rel="stylesheet" href="styles/register.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="UTF-8" />
-    <title>Timed - Women</title>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="resources/productPage/productDetails.js"></script>
-  </head>
+    <head>
+        <link rel="icon" href="resources/icons/favicon.png" />
+        <link rel="stylesheet" href="styles/register.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8" />
+        <title>Register - Timed</title>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    </head>
 
-  <body>
-    <div id="TimedShopMainLogo">
-      <img src="resources/icons/TimedShopMainLogo.svg" alt="TIMED SHOP" />
-    </div>
-    <nav class="navMenu" id="navMenu">
-      <a href="Sale.html">SALE</a>
-      <a href="Women.html" id="women">WOMEN</a>
-      <a href="Men.html">MEN</a>
-      <a href="Accessories.html">ACCESSORIES</a>
-      <a href="LogIn.html" id="LogIn">LOG IN</a>
-      <a href="Register.html">REGISTER</a>
-      <a href="Cart.html" id="cart" class="icon-badge-container">
-        <img
-          class="icon-badge-icon"
-          alt="CART"
-          src="/resources/icons/Cart.svg"
-          onmouseover="this.src='resources/icons/CartPurple.svg'"
-          onmouseout="this.src='resources/icons/Cart.svg'"
-        />
-        <div class="icon-badge">6</div>
-      </a>
-      <div class="dot" id="dott"></div>
-    </nav>
+    <body>
+        <div id="TimedShopMainLogo">
+            <img src="resources/icons/TimedShopMainLogo.svg" alt="TIMED SHOP" />
+        </div>
+        <nav class="navMenu" id="navMenu">
+            <a href="Sale.html">SALE</a>
+            <a href="Women.html" id="women">WOMEN</a>
+            <a href="Men.html">MEN</a>
+            <a href="Accessories.html">ACCESSORIES</a>
+            <a href="LogIn.html" id="LogIn">LOG IN</a>
+            <a href="Register.html" style="color: #5a189a">REGISTER</a>
+            <a href="Cart.html" id="cart" class="icon-badge-container">
+                <img
+                    class="icon-badge-icon"
+                    alt="CART"
+                    src="/resources/icons/Cart.svg"
+                    onmouseover="this.src='resources/icons/CartPurple.svg'"
+                    onmouseout="this.src='resources/icons/Cart.svg'"
+                />
+                <div class="icon-badge">6</div>
+            </a>
+            <div class="dot" id="dott"></div>
+        </nav>
 
-    <div id="smallBubble"></div>
-    <div id="leftBubble"></div>
-    <div id="rightBubble"></div>
-    <div id="mainDiv">
-      <div id="registerContainer">
-        <a id="registerTitle">REGISTER</a>
-        <input
-          class="registerInput"
-          id="firstName"
-          placeholder="First Name"
-          minlength="1"
-          maxlength="50"
-        />
-        <a id="firstNameError">Error!</a>
-        <input
-          class="registerInput"
-          id="lastName"
-          placeholder="Last Name"
-          minlengh="1"
-          maxlength="50"
-        />
-        <a id="lastNameError">Error!</a>
-        <input
-          class="registerInput"
-          id="email"
-          placeholder="Email"
-          maxlength="100"
-        />
-        <a id="emailError">Error!</a>
-        <input
-          class="registerInput"
-          id="password"
-          type="password"
-          placeholder="Password"
-          maxlength="50"
-        />
-        <a id="passwordError">Error!</a>
-        <input
-          class="registerInput"
-          id="confirmPassword"
-          type="password"
-          placeholder="Confirm Password"
-          maxlength="50"
-        />
-        <a id="confirmPasswordError">Error!</a>
-        <div id="genderDiv">
-          <a id="genderText">Gender</a>
-          <div id="genderContainer">
-            <button id="male" onclick="selectGender('male')">Male</button>
-            <button id="female" onclick="selectGender('female')">Female</button>
-            <button id="other" onclick="selectGender('other')">Other</button>
-          </div>
-        </div>
-        <a id="genderError">Error!</a>
-        <button id="confirmButton" onclick="confirmPressed()">Confirm</button>
-      </div>
+        <div id="smallBubble"></div>
+        <div id="leftBubble"></div>
+        <div id="rightBubble"></div>
+        <div id="mainDiv">
+            <div id="registerContainer">
+                <a id="registerTitle">REGISTER</a>
+                <input
+                    class="registerInput"
+                    id="firstName"
+                    placeholder="First Name"
+                    minlength="1"
+                    maxlength="50"
+                />
+                <a id="firstNameError">Error!</a>
+                <input
+                    class="registerInput"
+                    id="lastName"
+                    placeholder="Last Name"
+                    minlengh="1"
+                    maxlength="50"
+                />
+                <a id="lastNameError">Error!</a>
+                <input
+                    class="registerInput"
+                    id="email"
+                    placeholder="Email"
+                    maxlength="100"
+                />
+                <a id="emailError">Error!</a>
+                <input
+                    class="registerInput"
+                    id="password"
+                    type="password"
+                    placeholder="Password"
+                    maxlength="50"
+                />
+                <a id="passwordError">Error!</a>
+                <input
+                    class="registerInput"
+                    id="confirmPassword"
+                    type="password"
+                    placeholder="Confirm Password"
+                    maxlength="50"
+                />
+                <a id="confirmPasswordError">Error!</a>
+                <div id="genderDiv">
+                    <a id="genderText">Gender</a>
+                    <div id="genderContainer">
+                        <button id="male" onclick="selectGender('male')">
+                            Male
+                        </button>
+                        <button id="female" onclick="selectGender('female')">
+                            Female
+                        </button>
+                        <button id="other" onclick="selectGender('other')">
+                            Other
+                        </button>
+                    </div>
+                </div>
+                <a id="genderError">Error!</a>
+                <button id="confirmButton" onclick="confirmPressed()">
+                    Confirm
+                </button>
+            </div>
 
-      <div id="accountCreatedDiv">
-        <a id="accountCreatedTitle">Account created successfully!</a>
-        <div id="verificationSentDiv">
-          <a id="verificationText1">An email has been sent to </a
-          ><a id="emailHighlight">alexandru.grecu27@gmail.com</a
-          ><a id="verificationText2">. You must verify your account in order to make purchases.</a>
-          <button id="okButton" onclick="okPressed()">OK</button>
+            <div id="accountCreatedDiv">
+                <a id="accountCreatedTitle">Account created successfully!</a>
+                <div id="verificationSentDiv">
+                    <button id="okButton" onclick="okPressed()">OK</button>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <div id="footer">
-      <div id="followUsDiv">
-        <a id="followUsText"> FOLLOW US </a>
-        <div id="iconsDiv">
-          <div id="iconsDivTop">
-            <a id="instagram" href="https://www.instagram.com">
-              <img
-                src="resources/icons/socials/instagram.svg"
-                alt="instagram"
-              />
-            </a>
-            <a id="tiktok">
-              <img src="resources/icons/socials/tiktok.svg" alt="tiktok" />
-            </a>
-          </div>
-          <div id="iconsDivBottom">
-            <a id="twitter">
-              <img src="resources/icons/socials/twitter.svg" alt="twitter" />
-            </a>
-            <a id="facebook">
-              <img src="resources/icons/socials/facebook.svg" alt="facebook" />
-            </a>
-          </div>
+        <div id="footer">
+            <div id="followUsDiv">
+                <a id="followUsText"> FOLLOW US </a>
+                <div id="iconsDiv">
+                    <div id="iconsDivTop">
+                        <a id="instagram" href="https://www.instagram.com">
+                            <img
+                                src="resources/icons/socials/instagram.svg"
+                                alt="instagram"
+                            />
+                        </a>
+                        <a id="tiktok">
+                            <img
+                                src="resources/icons/socials/tiktok.svg"
+                                alt="tiktok"
+                            />
+                        </a>
+                    </div>
+                    <div id="iconsDivBottom">
+                        <a id="twitter">
+                            <img
+                                src="resources/icons/socials/twitter.svg"
+                                alt="twitter"
+                            />
+                        </a>
+                        <a id="facebook">
+                            <img
+                                src="resources/icons/socials/facebook.svg"
+                                alt="facebook"
+                            />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="helpAndInfoDiv">
+                <a id="helpAndInfoText"> HELP AND INFORMATION </a>
+                <div id="HILinks">
+                    <a class="alink">Help</a>
+                    <a class="alink">Privacy Policy</a>
+                    <a class="alink">Terms & Conditions</a>
+                    <a class="alink">Delivery</a>
+                    <a class="alink">Return</a>
+                    <a class="alink">FAQ</a>
+                </div>
+            </div>
+            <div id="timedShopDiv">
+                <a id="timedShopText">TIMED SHOP</a>
+                <div id="timedShopLinks">
+                    <a class="alink">About</a>
+                    <a class="alink">Contact</a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div id="helpAndInfoDiv">
-        <a id="helpAndInfoText"> HELP AND INFORMATION </a>
-        <div id="HILinks">
-          <a class="alink">Help</a>
-          <a class="alink">Privacy Policy</a>
-          <a class="alink">Terms & Conditions</a>
-          <a class="alink">Delivery</a>
-          <a class="alink">Return</a>
-          <a class="alink">FAQ</a>
-        </div>
-      </div>
-      <div id="timedShopDiv">
-        <a id="timedShopText">TIMED SHOP</a>
-        <div id="timedShopLinks">
-          <a class="alink">About</a>
-          <a class="alink">Contact</a>
-        </div>
-      </div>
-    </div>
-    <script src="resources/register/register.js"></script>
-  </body>
+        <script src="resources/register/register.js"></script>
+    </body>
 </html>

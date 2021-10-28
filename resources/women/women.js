@@ -1,6 +1,6 @@
 // import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
 // import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-analytics.js";
-// import { doc, where, collection,deleteDoc, setDoc, addDoc, getDoc, deleteField, updateDoc, getDocs, getFirestore, query, orderBy, limit, startAfter, startAt } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js"; 
+// import { doc, where, collection,deleteDoc, setDoc, addDoc, getDoc, deleteField, updateDoc, getDocs, getFirestore, query, orderBy, limit, startAfter, startAt } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js";
 // import { getStorage, ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-storage.js";
 // // TODO: Add SDKs for Firebase products that you want to use
 // // https://firebase.google.com/docs/web/setup#available-libraries
@@ -28,7 +28,7 @@
 // // {
 // //   const docRef = doc(db, "women", "pages");
 // //   const docSnap = await getDoc(docRef);
-  
+
 // //   if (docSnap.exists()) {
 // //     params.append("maxPages",docSnap.data().numberOfPages);
 // //     location.search = params;
@@ -42,7 +42,7 @@
 // {
 //   const docRef = doc(db, "women", "pages");
 //   const docSnap = await getDoc(docRef);
-    
+
 //   if (docSnap.exists()) {
 //     document.getElementById("sliderMin").value = docSnap.data().minPrice;
 //     document.getElementById("sliderMin").min = docSnap.data().minPrice;
@@ -50,7 +50,7 @@
 //     document.getElementById("numberInputLeft").value = docSnap.data().minPrice;
 //     document.getElementById("numberInputLeft").min = docSnap.data().minPrice;
 //     document.getElementById("numberInputLeft").max = docSnap.data().maxPrice;
-  
+
 //     document.getElementById("sliderMax").value = docSnap.data().maxPrice;
 //     document.getElementById("sliderMax").max = docSnap.data().maxPrice;
 //     document.getElementById("sliderMax").min = docSnap.data().minPrice;
@@ -147,7 +147,7 @@
 //     {
 //       var lastVisibleQueryFromPrevPage = q.docs[q.docs.length - 1];
 //       console.log(lastVisibleQueryFromPrevPage.id);
-  
+
 //       if(whereSize.length-1 != 0)
 //       {
 //         if(whereType.length != 0)
@@ -172,7 +172,7 @@
 //       else if(whereType.length != 0)
 //         q = query(collection(db, "women"), orderBy("price", "asc"), where("price", "<=", maxPrice),where("price", ">=", minPrice), orderBy("date", "desc"), where("type", "in", whereType), startAfter(lastVisibleQueryFromPrevPage), limit(18));
 //       else
-//         q = query(collection(db, "women"), orderBy("price", "asc"), where("price", "<=", maxPrice),where("price", ">=", minPrice), orderBy("date", "desc"), startAfter(lastVisibleQueryFromPrevPage), limit(18)); 
+//         q = query(collection(db, "women"), orderBy("price", "asc"), where("price", "<=", maxPrice),where("price", ">=", minPrice), orderBy("date", "desc"), startAfter(lastVisibleQueryFromPrevPage), limit(18));
 //     }
 //     else
 //     {
@@ -201,7 +201,7 @@
 //         q = query(collection(db, "women"), orderBy("price", "asc"), where("price", "<=", maxPrice),where("price", ">=", minPrice), orderBy("date", "desc"), where("type", "in", whereType), limit(18));
 //       else
 //         q = query(collection(db, "women"), orderBy("price", "asc"), where("price", "<=", maxPrice),where("price", ">=", minPrice), orderBy("date", "desc"), limit(18));
-    
+
 //         var lastVisibleQueryFromPrevPage = q.docs[q.docs.length - 1];
 //     }
 //     var idd = 1201;
@@ -215,16 +215,16 @@
 //       //   if(idd <= 1220)
 //       //     docRef = setDoc(doc(db, "women",idd.toString()),qdoc.data());
 //       // }
-  
+
 //       //product item
 //       var product = document.createElement("div");
 //       product.className = "product";
-      
+
 //       //productImageDiv
 //       var productImageDiv = document.createElement("div");
 //       productImageDiv.className = "productImageDiv";
 //       product.appendChild(productImageDiv);
-  
+
 //       //productFirstImage
 //       var productFirstImage = document.createElement("img");
 //       productFirstImage.className = "productImage";
@@ -235,7 +235,7 @@
 //       .catch((error) => {
 //         console.log(error);
 //       });
-      
+
 //       //productSecondImage
 //       var productSecondImage = document.createElement("img");
 //       productSecondImage.className = "productSecondImage";
@@ -246,23 +246,23 @@
 //       .catch((error) => {
 //         console.log(error);
 //       });
-  
+
 //       //Append First and Second Image to productImageDiv
 //       productImageDiv.appendChild(productFirstImage);
 //       productImageDiv.appendChild(productSecondImage);
 //       product.appendChild(productImageDiv);
-  
+
 //       //productDividerLine
 //       var productDividerLine = document.createElement("div");
 //       productDividerLine.className = "productDividerLine";
 //       product.appendChild(productDividerLine);
-  
+
 //       //productName
 //       var productName = document.createElement("a");
 //       productName.className = "productName";
 //       productName.innerText = qdoc.data().name;
 //       productDividerLine.appendChild(productName);
-  
+
 //       //productPriceBeforeSale
 //       if(!isNaN(qdoc.data().priceBeforeSale))
 //       {
@@ -271,14 +271,14 @@
 //         productPriceBeforeSale.innerText = "$" + qdoc.data().priceBeforeSale + ".00";
 //         productDividerLine.appendChild(productPriceBeforeSale);
 //       }
-  
+
 //       //productPrice
 //       var productPrice = document.createElement("a");
 //       productPrice.className = "productPrice";
 //       var price =  qdoc.data().price;
 //       productPrice.innerText =  "$" + price + ".00";
 //       productDividerLine.appendChild(productPrice);
-  
+
 //       //productAvailableSizes
 //       var productAvailableSizes = document.createElement("a");
 //       productAvailableSizes.className = "productAvailableSizes";
@@ -289,17 +289,16 @@
 //         if(i == arraySize-1)
 //         {
 //           sizes = sizes + qdoc.data().sizes[i];
-//         } 
+//         }
 //         else
 //         {
 //           sizes = sizes + qdoc.data().sizes[i] + ", ";
 //         }
-          
+
 //       }
 //       productAvailableSizes.innerText = "Available sizes: " + sizes;
 //       productDividerLine.appendChild(productAvailableSizes);
-  
-  
+
 //       //productAvailableColors
 //       var productAvailableColors = document.createElement("div");
 //       productAvailableColors.className = "productColors";
@@ -317,9 +316,9 @@
 //         productAvailableColors.appendChild(productColorCircle);
 //       }
 //       productDividerLine.appendChild(productAvailableColors);
-  
+
 //       product.appendChild(productDividerLine);
-  
+
 //       document.getElementById("productOutput").insertBefore(product, paginationDiv);
 //     });
 //   }else if(sortBy=="priceHL")
@@ -339,10 +338,10 @@
 //           }
 //           preQuery = query(preQuery, limit(resultsUntilStart));
 //         }
-  
+
 //         else
 //         {
-//           preQuery = query(collection(db, "women"), where("price", "<=", maxprice),where("price", ">=", minprice), orderBy("price", "desc")); 
+//           preQuery = query(collection(db, "women"), where("price", "<=", maxprice),where("price", ">=", minprice), orderBy("price", "desc"));
 //           for(var i=1;i<=whereSize.length-1;i++)
 //           {
 //             preQuery = query(preQuery,where(whereSize[i],"==",true));
@@ -354,11 +353,11 @@
 //         preQuery = query(collection(db, "women"), where("price", "<=", maxprice),where("price", ">=", minprice), orderBy("price", "desc"), where("type", "in", whereType), limit(resultsUntilStart));
 //       else
 //         preQuery = query(collection(db, "women"), where("price", "<=", maxprice),where("price", ">=", minprice), orderBy("price", "desc"), limit(resultsUntilStart));
-  
+
 //       const preQuerySnapshots = await getDocs(preQuery);
 //       var lastVisibleQueryFromPrevPage = preQuerySnapshots.docs[preQuerySnapshots.docs.length - 1];
 //       console.log(lastVisibleQueryFromPrevPage.id);
-  
+
 //       if(whereSize.length-1 != 0)
 //       {
 //         if(whereType.length != 0)
@@ -383,7 +382,7 @@
 //       else if(whereType.length != 0)
 //         q = query(collection(db, "women"), where("price", "<=", maxprice),where("price", ">=", minprice), orderBy("price", "desc"), where("type", "in", whereType), startAfter(lastVisibleQueryFromPrevPage), limit(18));
 //       else
-//         q = query(collection(db, "women"), where("price", "<=", maxprice),where("price", ">=", minprice), orderBy("price", "desc"), startAfter(lastVisibleQueryFromPrevPage), limit(18)); 
+//         q = query(collection(db, "women"), where("price", "<=", maxprice),where("price", ">=", minprice), orderBy("price", "desc"), startAfter(lastVisibleQueryFromPrevPage), limit(18));
 //     }
 //     else
 //     {
@@ -419,16 +418,16 @@
 //       //console.log(new Date(qdoc.data().date * 1000));
 //       // idd++;
 //       // const docRef = setDoc(doc(db, "women",idd.toString()),qdoc.data());
-  
+
 //       //product item
 //       var product = document.createElement("div");
 //       product.className = "product";
-      
+
 //       //productImageDiv
 //       var productImageDiv = document.createElement("div");
 //       productImageDiv.className = "productImageDiv";
 //       product.appendChild(productImageDiv);
-  
+
 //       //productFirstImage
 //       var productFirstImage = document.createElement("img");
 //       productFirstImage.className = "productImage";
@@ -439,7 +438,7 @@
 //       .catch((error) => {
 //         console.log(error);
 //       });
-      
+
 //       //productSecondImage
 //       var productSecondImage = document.createElement("img");
 //       productSecondImage.className = "productSecondImage";
@@ -450,23 +449,23 @@
 //       .catch((error) => {
 //         console.log(error);
 //       });
-  
+
 //       //Append First and Second Image to productImageDiv
 //       productImageDiv.appendChild(productFirstImage);
 //       productImageDiv.appendChild(productSecondImage);
 //       product.appendChild(productImageDiv);
-  
+
 //       //productDividerLine
 //       var productDividerLine = document.createElement("div");
 //       productDividerLine.className = "productDividerLine";
 //       product.appendChild(productDividerLine);
-  
+
 //       //productName
 //       var productName = document.createElement("a");
 //       productName.className = "productName";
 //       productName.innerText = qdoc.data().name;
 //       productDividerLine.appendChild(productName);
-  
+
 //       //productPriceBeforeSale
 //       if(!isNaN(qdoc.data().priceBeforeSale))
 //       {
@@ -475,14 +474,14 @@
 //         productPriceBeforeSale.innerText = "$" + qdoc.data().priceBeforeSale + ".00";
 //         productDividerLine.appendChild(productPriceBeforeSale);
 //       }
-  
+
 //       //productPrice
 //       var productPrice = document.createElement("a");
 //       productPrice.className = "productPrice";
 //       var price =  qdoc.data().price;
 //       productPrice.innerText =  "$" + price + ".00";
 //       productDividerLine.appendChild(productPrice);
-  
+
 //       //productAvailableSizes
 //       var productAvailableSizes = document.createElement("a");
 //       productAvailableSizes.className = "productAvailableSizes";
@@ -493,17 +492,16 @@
 //         if(i == arraySize-1)
 //         {
 //           sizes = sizes + qdoc.data().sizes[i];
-//         } 
+//         }
 //         else
 //         {
 //           sizes = sizes + qdoc.data().sizes[i] + ", ";
 //         }
-          
+
 //       }
 //       productAvailableSizes.innerText = "Available sizes: " + sizes;
 //       productDividerLine.appendChild(productAvailableSizes);
-  
-  
+
 //       //productAvailableColors
 //       var productAvailableColors = document.createElement("div");
 //       productAvailableColors.className = "productColors";
@@ -521,9 +519,9 @@
 //         productAvailableColors.appendChild(productColorCircle);
 //       }
 //       productDividerLine.appendChild(productAvailableColors);
-  
+
 //       product.appendChild(productDividerLine);
-  
+
 //       document.getElementById("productOutput").insertBefore(product, paginationDiv);
 //     });
 //   } else if(sortBy=="priceLH")
@@ -543,10 +541,10 @@
 //           }
 //           preQuery = query(preQuery, limit(resultsUntilStart));
 //         }
-  
+
 //         else
 //         {
-//           preQuery = query(collection(db, "women"), where("price", "<=", maxprice),where("price", ">=", minprice), orderBy("price", "asc")); 
+//           preQuery = query(collection(db, "women"), where("price", "<=", maxprice),where("price", ">=", minprice), orderBy("price", "asc"));
 //           for(var i=1;i<=whereSize.length-1;i++)
 //           {
 //             preQuery = query(preQuery,where(whereSize[i],"==",true));
@@ -558,11 +556,11 @@
 //         preQuery = query(collection(db, "women"), where("price", "<=", maxprice),where("price", ">=", minprice), orderBy("price", "asc"), where("type", "in", whereType), limit(resultsUntilStart));
 //       else
 //         preQuery = query(collection(db, "women"), where("price", "<=", maxprice),where("price", ">=", minprice), orderBy("price", "asc"), limit(resultsUntilStart));
-  
+
 //       const preQuerySnapshots = await getDocs(preQuery);
 //       var lastVisibleQueryFromPrevPage = preQuerySnapshots.docs[preQuerySnapshots.docs.length - 1];
 //       console.log(lastVisibleQueryFromPrevPage.id);
-  
+
 //       if(whereSize.length-1 != 0)
 //       {
 //         if(whereType.length != 0)
@@ -587,7 +585,7 @@
 //       else if(whereType.length != 0)
 //         q = query(collection(db, "women"), where("price", "<=", maxprice),where("price", ">=", minprice), orderBy("price", "asc"), where("type", "in", whereType), startAfter(lastVisibleQueryFromPrevPage), limit(18));
 //       else
-//         q = query(collection(db, "women"), where("price", "<=", maxprice),where("price", ">=", minprice), orderBy("price", "asc"), startAfter(lastVisibleQueryFromPrevPage), limit(18)); 
+//         q = query(collection(db, "women"), where("price", "<=", maxprice),where("price", ">=", minprice), orderBy("price", "asc"), startAfter(lastVisibleQueryFromPrevPage), limit(18));
 //     }
 //     else
 //     {
@@ -624,16 +622,16 @@
 //       //console.log(new Date(qdoc.data().date * 1000));
 //       // idd++;
 //       // const docRef = setDoc(doc(db, "women",idd.toString()),qdoc.data());
-  
+
 //       //product item
 //       var product = document.createElement("div");
 //       product.className = "product";
-      
+
 //       //productImageDiv
 //       var productImageDiv = document.createElement("div");
 //       productImageDiv.className = "productImageDiv";
 //       product.appendChild(productImageDiv);
-  
+
 //       //productFirstImage
 //       var productFirstImage = document.createElement("img");
 //       productFirstImage.className = "productImage";
@@ -644,7 +642,7 @@
 //       .catch((error) => {
 //         console.log(error);
 //       });
-      
+
 //       //productSecondImage
 //       var productSecondImage = document.createElement("img");
 //       productSecondImage.className = "productSecondImage";
@@ -655,23 +653,23 @@
 //       .catch((error) => {
 //         console.log(error);
 //       });
-  
+
 //       //Append First and Second Image to productImageDiv
 //       productImageDiv.appendChild(productFirstImage);
 //       productImageDiv.appendChild(productSecondImage);
 //       product.appendChild(productImageDiv);
-  
+
 //       //productDividerLine
 //       var productDividerLine = document.createElement("div");
 //       productDividerLine.className = "productDividerLine";
 //       product.appendChild(productDividerLine);
-  
+
 //       //productName
 //       var productName = document.createElement("a");
 //       productName.className = "productName";
 //       productName.innerText = qdoc.data().name;
 //       productDividerLine.appendChild(productName);
-  
+
 //       //productPriceBeforeSale
 //       if(!isNaN(qdoc.data().priceBeforeSale))
 //       {
@@ -680,14 +678,14 @@
 //         productPriceBeforeSale.innerText = "$" + qdoc.data().priceBeforeSale + ".00";
 //         productDividerLine.appendChild(productPriceBeforeSale);
 //       }
-  
+
 //       //productPrice
 //       var productPrice = document.createElement("a");
 //       productPrice.className = "productPrice";
 //       var price =  qdoc.data().price;
 //       productPrice.innerText =  "$" + price + ".00";
 //       productDividerLine.appendChild(productPrice);
-  
+
 //       //productAvailableSizes
 //       var productAvailableSizes = document.createElement("a");
 //       productAvailableSizes.className = "productAvailableSizes";
@@ -698,17 +696,16 @@
 //         if(i == arraySize-1)
 //         {
 //           sizes = sizes + qdoc.data().sizes[i];
-//         } 
+//         }
 //         else
 //         {
 //           sizes = sizes + qdoc.data().sizes[i] + ", ";
 //         }
-          
+
 //       }
 //       productAvailableSizes.innerText = "Available sizes: " + sizes;
 //       productDividerLine.appendChild(productAvailableSizes);
-  
-  
+
 //       //productAvailableColors
 //       var productAvailableColors = document.createElement("div");
 //       productAvailableColors.className = "productColors";
@@ -726,9 +723,9 @@
 //         productAvailableColors.appendChild(productColorCircle);
 //       }
 //       productDividerLine.appendChild(productAvailableColors);
-  
+
 //       product.appendChild(productDividerLine);
-  
+
 //       document.getElementById("productOutput").insertBefore(product, paginationDiv);
 //     });
 //   }

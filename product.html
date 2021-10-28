@@ -1,218 +1,263 @@
 <html lang="en">
-  <head>
-    <link rel="icon" href="resources/icons/favicon.png" />
-    <link rel="stylesheet" href="styles/product.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="UTF-8" />
-    <title>Timed - Women</title>
-    <script src = "resources/productPage/productDetails.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-  </head>
-  <body>
-    <div id="TimedShopMainLogo">
-      <img src="resources/icons/TimedShopMainLogo.svg" alt="TIMED SHOP" />
-    </div>
-    <nav class="navMenu" id="navMenu">
-      <a href="Sale.html">SALE</a>
-      <a href="Women.html" id="women">WOMEN</a>
-      <a href="Men.html">MEN</a>
-      <a href="Accessories.html">ACCESSORIES</a>
-      <a href="LogIn.html" id="LogIn">LOG IN</a>
-      <a href="Register.html">REGISTER</a>
-      <a href="Cart.html" id="cart" class="icon-badge-container">
-        <img
-          class="icon-badge-icon"
-          alt="CART"
-          src="/resources/icons/Cart.svg"
-          onmouseover="this.src='resources/icons/CartPurple.svg'"
-          onmouseout="this.src='resources/icons/Cart.svg'"
-        />
-        <div class="icon-badge">6</div>
-      </a>
-      <div class="dot" id="dott"></div>
-    </nav>
+    <head>
+        <link rel="icon" href="resources/icons/favicon.png" />
+        <link rel="stylesheet" href="styles/product.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8" />
+        <title>Timed - Product</title>
+        <script src="resources/productPage/productDetails.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+        <script>
+            // Initialize Firebase
+            // TODO: Replace with your project's customized code snippet
+            var config = {
+                apiKey: "AIzaSyCkBvDNzSvorpEdz2twDAVI09x-FaVsDGg",
+                authDomain: "timedshop-a5a66.firebaseapp.com",
+                projectId: "timedshop-a5a66",
+                storageBucket: "timedshop-a5a66.appspot.com",
+                messagingSenderId: "172835576987",
+                appId: "1:172835576987:web:2e588ca7a77cc008affa3e",
+                measurementId: "G-3VCHXLRX5K",
+            };
+            firebase.initializeApp(config);
 
-    <div id="mainDiv">
-      <div id="leftMainDiv">
-        <div id="photosDiv">
-          <img
-            class="images"
-            id="img1"
-            alt="photo1"
-          />
-          <img
-            class="images"
-            id="img2"
-            alt="photo2"
-          />
-          <img
-            class="images"
-            id="img3"
-            alt="photo3"
-          />
-          <img
-            class="images"
-            id="img4"
-            alt="photo4"
-          />
-        </div>
-      </div>
-      <div id="rightMainDiv">
-        <a id="productTitle">GREY HOODIE</a>
-        <div id="productSaleDiv">
-          <a id="productPriceBeforeSale">$120.00</a>
-          <a id="productSaleDot">●</a>
-          <a id="productSaleAmount">40%</a>
-        </div>
-        <a id="productPrice">$100.00</a>
-        <div id="sizeDiv">
-          <div class="bigDot"></div>
-          <a id="sizeText">SIZE</a>
-          <div class="bigDot"></div>
-        </div>
-        <div id="sizeSelectDiv">
+            firebase.auth().onAuthStateChanged((user) => {
+                if (user) {
+                    var uid = user.uid;
+                    console.log("logged in user: ", user.email);
+                    document.getElementById("LogIn").style.display = "none";
+                    document.getElementById("register").style.display = "none";
+                    document.getElementById("account").style.display = "flex";
+                } else {
+                    // User is signed out
+                    console.log("sign out");
+                    document.getElementById("account").style.display = "none";
+                    document.getElementById("LogIn").style.display = "flex";
+                    document.getElementById("register").style.display = "flex";
+                }
+            });
 
+            function signOut() {
+                firebase
+                    .auth()
+                    .signOut()
+                    .then(() => {
+                        // Sign-out successful.
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
+            }
+        </script>
+    </head>
+    <body>
+        <div id="TimedShopMainLogo">
+            <img src="resources/icons/TimedShopMainLogo.svg" alt="TIMED SHOP" />
         </div>
-        <div id="colorDiv">
-          <div class="bigDot"></div>
-          <a id="colorText">COLOR</a>
-          <div class="bigDot"></div>
-        </div>
-        <div id="colorsDiv">
+        <nav class="navMenu" id="navMenu">
+            <a href="Sale.html">SALE</a>
+            <a href="Women.html" id="women">WOMEN</a>
+            <a href="Men.html">MEN</a>
+            <a href="Accessories.html">ACCESSORIES</a>
+            <a onclick="signOut()" id="account">
+                <img
+                    alt="ACCOUNT"
+                    src="/resources/icons/User.svg"
+                    onmouseover="this.src='resources/icons/UserPurple.svg'"
+                    onmouseout="this.src='resources/icons/User.svg'"
+                />
+            </a>
+            <a href="LogIn.html" id="LogIn">LOG IN</a>
+            <a href="Register.html" id="register">REGISTER</a>
+            <a href="Cart.html" id="cart" class="icon-badge-container">
+                <img
+                    class="icon-badge-icon"
+                    alt="CART"
+                    src="/resources/icons/Cart.svg"
+                    onmouseover="this.src='resources/icons/CartPurple.svg'"
+                    onmouseout="this.src='resources/icons/Cart.svg'"
+                />
+                <div id="cartCount" class="icon-badge">0</div>
+            </a>
+            <div class="dot" id="dott"></div>
+        </nav>
 
+        <div id="mainDiv">
+            <div id="leftMainDiv">
+                <div id="photosDiv">
+                    <img class="images" id="img1" alt="photo1" />
+                    <img class="images" id="img2" alt="photo2" />
+                    <img class="images" id="img3" alt="photo3" />
+                    <img class="images" id="img4" alt="photo4" />
+                </div>
+            </div>
+            <div id="rightMainDiv">
+                <a id="productTitle">GREY HOODIE</a>
+                <div id="productSaleDiv">
+                    <a id="productPriceBeforeSale">$120.00</a>
+                    <a id="productSaleDot">●</a>
+                    <a id="productSaleAmount">40%</a>
+                </div>
+                <a id="productPrice">$100.00</a>
+                <div id="sizeDiv">
+                    <div class="bigDot"></div>
+                    <a id="sizeText">SIZE</a>
+                    <div class="bigDot"></div>
+                </div>
+                <div id="sizeSelectDiv"></div>
+                <div id="colorDiv">
+                    <div class="bigDot"></div>
+                    <a id="colorText">COLOR</a>
+                    <div class="bigDot"></div>
+                </div>
+                <div id="colorsDiv"></div>
+                <a id="addToCartError"></a>
+                <button id="addToCartButton" onclick="addToCart()">
+                    ADD TO CART
+                </button>
+                <a
+                    onclick="displayProductDetailsModal()"
+                    id="viewProductDetails"
+                    >View Product Details</a
+                >
+                <div id="divider"></div>
+                <div id="deliveryDiv">
+                    <div id="deliveryTitleDiv">
+                        <img
+                            id="deliveryIcon"
+                            src="resources/icons/deliveryIcon.svg"
+                            alt="deliveryIcon"
+                        />
+                        <a id="deliveryTitle">Delivery</a>
+                    </div>
+                    <div id="deliveryTextDiv">
+                        <a id="deliveryText"
+                            >Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua.</a
+                        >
+                        <a id="learnMoreDelivery">Learn more</a>
+                    </div>
+                </div>
+                <div id="returnDiv">
+                    <div id="returnTitleDiv">
+                        <img
+                            id="returnIcon"
+                            src="resources/icons/returnIcon.svg"
+                            alt="returnIcon"
+                        />
+                        <a id="returnTitle">Returns</a>
+                    </div>
+                    <div id="returnTextDiv">
+                        <a id="returnText"
+                            >Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua.</a
+                        >
+                        <a id="learnMoreReturn">Learn more</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <a id="addToCartError"></a>
-        <button id="addToCartButton" onclick="addToCart()">ADD TO CART</button>
-        <a onclick="displayProductDetailsModal()" id="viewProductDetails"
-          >View Product Details</a
-        >
-        <div id="divider"></div>
-        <div id="deliveryDiv">
-          <div id="deliveryTitleDiv">
-            <img
-              id="deliveryIcon"
-              src="resources/icons/deliveryIcon.svg"
-              alt="deliveryIcon"
-            />
-            <a id="deliveryTitle">Delivery</a>
-          </div>
-          <div id="deliveryTextDiv">
-            <a id="deliveryText"
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.</a
+        <div id="productDetailsModal">
+            <div id="modalDiv">
+                <button
+                    onclick="closeProductDetailsModal()"
+                    title="Close"
+                    id="productDetailsModalCloseButton"
+                >
+                    <img
+                        id="closePDImg"
+                        src="/resources/icons/closeButton.svg"
+                        alt="close"
+                    />
+                </button>
+                <a id="titlePD">Product Details</a>
+                <div id="contentPD">
+                    <a id="productSpecificType"></a>
+                    <a id="titleOfCriteria"></a>
+                    <div id="criteriaDiv">
+                        <ul id="criteriaUL"></ul>
+                    </div>
+                    <a id="typeof"></a>
+                    <a id="madeOf"></a>
+                </div>
+            </div>
+        </div>
+        <div id="fullScreenImageModal">
+            <button
+                onclick="closeImage()"
+                title="Close"
+                id="fullScreenModalCloseButton"
             >
-            <a id="learnMoreDelivery">Learn more</a>
-          </div>
+                <img
+                    id="closeFullscreenImg"
+                    src="/resources/icons/closeButton.svg"
+                    alt="close"
+                />
+            </button>
+            <div id="fullScreenContainerDiv">
+                <img id="fullScreenImage" alt="full screen image" />
+            </div>
         </div>
-        <div id="returnDiv">
-          <div id="returnTitleDiv">
-            <img
-              id="returnIcon"
-              src="resources/icons/returnIcon.svg"
-              alt="returnIcon"
-            />
-            <a id="returnTitle">Returns</a>
-          </div>
-          <div id="returnTextDiv">
-            <a id="returnText"
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.</a
-            >
-            <a id="learnMoreReturn">Learn more</a>
-          </div>
+        <div id="footer">
+            <div id="followUsDiv">
+                <a id="followUsText"> FOLLOW US </a>
+                <div id="iconsDiv">
+                    <div id="iconsDivTop">
+                        <a id="instagram" href="https://www.instagram.com">
+                            <img
+                                src="resources/icons/socials/instagram.svg"
+                                alt="instagram"
+                            />
+                        </a>
+                        <a id="tiktok">
+                            <img
+                                src="resources/icons/socials/tiktok.svg"
+                                alt="tiktok"
+                            />
+                        </a>
+                    </div>
+                    <div id="iconsDivBottom">
+                        <a id="twitter">
+                            <img
+                                src="resources/icons/socials/twitter.svg"
+                                alt="twitter"
+                            />
+                        </a>
+                        <a id="facebook">
+                            <img
+                                src="resources/icons/socials/facebook.svg"
+                                alt="facebook"
+                            />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="helpAndInfoDiv">
+                <a id="helpAndInfoText"> HELP AND INFORMATION </a>
+                <div id="HILinks">
+                    <a class="alink">Help</a>
+                    <a class="alink">Privacy Policy</a>
+                    <a class="alink">Terms & Conditions</a>
+                    <a class="alink">Delivery</a>
+                    <a class="alink">Return</a>
+                    <a class="alink">FAQ</a>
+                </div>
+            </div>
+            <div id="timedShopDiv">
+                <a id="timedShopText">TIMED SHOP</a>
+                <div id="timedShopLinks">
+                    <a class="alink">About</a>
+                    <a class="alink">Contact</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div id="productDetailsModal">
-      <div id="modalDiv">
-        <button
-          onclick="closeProductDetailsModal()"
-          title="Close"
-          id="productDetailsModalCloseButton"
-        >
-          <img
-            id="closePDImg"
-            src="/resources/icons/closeButton.svg"
-            alt="close"
-          />
-        </button>
-        <a id="titlePD">Product Details</a>
-        <div id="contentPD">
-          <a id="productSpecificType"></a>
-          <a id="titleOfCriteria"></a>
-          <div id="criteriaDiv">
-            <ul id="criteriaUL">
-             
-            </ul>
-          </div>
-          <a id="typeof"></a>
-          <a id="madeOf"></a>
-        </div>
-      </div>
-    </div>
-    <div id="fullScreenImageModal">
-      <button
-        onclick="closeImage()"
-        title="Close"
-        id="fullScreenModalCloseButton"
-      >
-        <img
-          id="closeFullscreenImg"
-          src="/resources/icons/closeButton.svg"
-          alt="close"
-        />
-      </button>
-      <div id="fullScreenContainerDiv">
-        <img id="fullScreenImage" alt="full screen image">
-      </div>
-    </div>
-    <div id="footer">
-      <div id="followUsDiv">
-        <a id="followUsText"> FOLLOW US </a>
-        <div id="iconsDiv">
-          <div id="iconsDivTop">
-            <a id="instagram" href="https://www.instagram.com">
-              <img
-                src="resources/icons/socials/instagram.svg"
-                alt="instagram"
-              />
-            </a>
-            <a id="tiktok">
-              <img src="resources/icons/socials/tiktok.svg" alt="tiktok" />
-            </a>
-          </div>
-          <div id="iconsDivBottom">
-            <a id="twitter">
-              <img src="resources/icons/socials/twitter.svg" alt="twitter" />
-            </a>
-            <a id="facebook">
-              <img src="resources/icons/socials/facebook.svg" alt="facebook" />
-            </a>
-          </div>
-        </div>
-      </div>
-      <div id="helpAndInfoDiv">
-        <a id="helpAndInfoText"> HELP AND INFORMATION </a>
-        <div id="HILinks">
-          <a class="alink">Help</a>
-          <a class="alink">Privacy Policy</a>
-          <a class="alink">Terms & Conditions</a>
-          <a class="alink">Delivery</a>
-          <a class="alink">Return</a>
-          <a class="alink">FAQ</a>
-        </div>
-      </div>
-      <div id="timedShopDiv">
-        <a id="timedShopText">TIMED SHOP</a>
-        <div id="timedShopLinks">
-          <a class="alink">About</a>
-          <a class="alink">Contact</a>
-        </div>
-      </div>
-    </div>
-    <script src="resources/productPage/product.js"></script>
-    <script src="resources/productPage/addToCart.js"></script>
-  </body>
+        <script src="cart.js"></script>
+        <script src="resources/productPage/product.js"></script>
+        <script src="resources/productPage/addToCart.js"></script>
+    </body>
 </html>

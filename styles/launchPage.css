@@ -1,304 +1,317 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,800;1,900&display=swap");
 
 body {
-  background: #ffffff;
-  font-family: "Nunito", sans-serif;
-  overflow: hidden;
+    background: #ffffff;
+    font-family: "Nunito", sans-serif;
+    overflow: hidden;
 }
 
 #TimedShopMainLogo {
-  float:left;
-  margin-left:4%;
-  margin-top:1%;
+    float: left;
+    margin-left: 4%;
+    margin-top: 1%;
 }
 
 .navMenu {
-  position: absolute;
-  top: 5%;
-  left: 22.5%;
-  width: 100%;
+    position: absolute;
+    top: 5%;
+    left: 22.5%;
+    width: 100%;
 }
 
 .navMenu a {
-  float:left;
-  text-align: center;
-  color: #2A2A2A;
-  text-decoration: none;
-  font-size: 1.125em;
-  text-transform: uppercase;
-  font-weight: 700;
-  width: 5%;
-  margin-right:2%;
+    float: left;
+    text-align: center;
+    color: #2a2a2a;
+    text-decoration: none;
+    font-size: 1.125em;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 5%;
+    margin-right: 2%;
 }
 #LogIn {
-  margin-left:28%;
+    margin-left: 28%;
 }
 
 #selectedTab {
-  color: #5A189A;
+    color: #5a189a;
 }
 .navMenu a:hover {
-  color: #5A189A;
+    color: #5a189a;
 }
 
-#women{
-  width:100px;
+#women {
+    width: 100px;
 }
-
-@media screen and (max-width:1080px){
-  .navMenu a{
-    margin-right:2%;
-    margin-left:2%;
-  }
-  #LogIn{
-    margin-left:10%;
-  }
+#account {
+    margin-left: 39%;
+    width: 23px;
+}
+@media screen and (max-width: 1080px) {
+    .navMenu a {
+        margin-right: 2%;
+        margin-left: 2%;
+    }
+    #LogIn {
+        margin-left: 10%;
+    }
 }
 .icon-badge-container {
-  position:relative;
+    position: relative;
 }
 
 .icon-badge-icon {
-  position: relative;
-  width:23px;
+    position: relative;
+    width: 23px;
 }
 
-@media screen and (min-width:800px){
-  .icon-badge{
-    margin:0;
-    position:absolute;
-    top:-10;
-    right:20;
-  }
+@media screen and (min-width: 800px) {
+    .icon-badge {
+        margin: 0;
+        position: absolute;
+        top: -10;
+        right: 20;
+    }
 }
 @media screen and (max-width: 800px) {
-  .navMenu a {
-    width:100%;
-    display: flex;
-    justify-content: center;
-  }
-  .navMenu{
-    left:0;
-    top:15vw;
-  }
-  
-  #LogIn{
-    margin-left:2%;
-  }
-  #cart{
-    width:100%;
-  }
-  #TimedShopMainLogo{
-    margin:0;
-    width:100%;
-    display: flex;
-    justify-content: center;
-  }
-  #women{
-    width:100%;
-  }
-}
+    .navMenu a {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .navMenu {
+        left: 0;
+        top: 15vw;
+    }
 
+    #LogIn {
+        margin-left: 2%;
+    }
+    #cart {
+        width: 100%;
+    }
+    #TimedShopMainLogo {
+        margin: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    #women {
+        width: 100%;
+    }
+}
 
 .icon-badge {
-  background-color: #FF2C2C;
-  font-size: 15px;
-  color: white;
-  text-align: center;
-  width:21px;
-  height:21px;
-  border-radius: 100%;
+    background-color: #ff2c2c;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    width: 21px;
+    height: 21px;
+    border-radius: 100%;
 }
 
-#leftBubble{
-  float:left;
-  width:62.5vw;
-  height: 62.5vw;
-  background-color: #E3C8FF;
-  border-radius: 100%;
-  position:absolute;
-  top:19%;
-  left:-22%;
+#leftBubble {
+    float: left;
+    width: 62.5vw;
+    height: 62.5vw;
+    background-color: #e3c8ff;
+    border-radius: 100%;
+    position: absolute;
+    top: 19%;
+    left: -22%;
 }
 
-#rightBubble{
-  float:right;
-  width: 62.5vw;
-  height: 62.5vw;
-  background-color: #E3C8FF;
-  border-radius: 100%;
-  position:absolute;
-  top:20%;
-  left:45%;
+#rightBubble {
+    float: right;
+    width: 62.5vw;
+    height: 62.5vw;
+    background-color: #e3c8ff;
+    border-radius: 100%;
+    position: absolute;
+    top: 20%;
+    left: 45%;
 }
 
-#mainModel{
-  float:right;
-  position: absolute;
-  right:5vw;
-  pointer-events:none;
+#mainModel {
+    float: right;
+    position: absolute;
+    right: 5vw;
+    pointer-events: none;
 }
-@media screen and (max-width:1500px){
-  #mainModel{
-    right:0;
-  }
+@media screen and (max-width: 1500px) {
+    #mainModel {
+        right: 0;
+    }
 }
-@media screen and (max-width:1300px){
-  #mainModel{
-    right:-5vw;
-  }
+@media screen and (max-width: 1300px) {
+    #mainModel {
+        right: -5vw;
+    }
 }
-@media screen and (max-width:1200px){
-  #mainModel{
-    width:50vw;
-    height: auto;
-    bottom:0;
-  }
-  #rightBubble{
-    top:32vh;
-    left:50vw;
-  }
-  #leftBubble{
-    top:32vh;
-    left:-17vw;
-  }
+@media screen and (max-width: 1200px) {
+    #mainModel {
+        width: 50vw;
+        height: auto;
+        bottom: 0;
+    }
+    #rightBubble {
+        top: 32vh;
+        left: 50vw;
+    }
+    #leftBubble {
+        top: 32vh;
+        left: -17vw;
+    }
 }
-@media screen and (min-width:800px) and (max-width:1200px){
-  #rightBubble{
-    top:50vh;
-  }
-  #leftBubble{
-    top:50vh;
-  }
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+    #rightBubble {
+        top: 50vh;
+    }
+    #leftBubble {
+        top: 50vh;
+    }
 }
 #leftMainDiv {
-  position:absolute;
-  top:40%;
-  left:5%;
-  width:25%;
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    width: 25%;
 }
-@media screen and (max-width:1200px){
-  #leftMainDiv{
-    top:60vh;
-  }
+@media screen and (max-width: 1200px) {
+    #leftMainDiv {
+        top: 60vh;
+    }
 }
-#littleDot{
-  width:0.6vw;
-  height: 1.2vh;
-  background-color: #2A2A2A;
-  border-radius: 100%;
-  margin-left:10%;
-  margin-right:10%;
+#littleDot {
+    width: 0.6vw;
+    height: 1.2vh;
+    background-color: #2a2a2a;
+    border-radius: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 #saleDiv {
-  display:flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 #saleTextLeft {
-  font-size: 1.8vw;
-  font-weight: 400;
-  color: #2A2A2A;
+    font-size: 1.8vw;
+    font-weight: 400;
+    color: #2a2a2a;
 }
 #saleTextRight {
-  font-size: 1.8vw;
-  font-weight: 400;
-  color: #2A2A2A;
+    font-size: 1.8vw;
+    font-weight: 400;
+    color: #2a2a2a;
 }
 #mainProductName {
-  font-size:5.5vw;
-  font-weight: 700;
-  line-height: 100%;
-  margin-left:2.1vw;
-  margin-top:4vh;
-  color: #2A2A2A;
+    font-size: 5.5vw;
+    font-weight: 700;
+    line-height: 100%;
+    margin-left: 2.1vw;
+    margin-top: 4vh;
+    color: #2a2a2a;
 }
-#buttonDiv{
-  margin-top:3vh;
-  display:flex;
-  flex-direction: row;
-  align-items: center;  
-  margin-left:2.25vw;
+#buttonDiv {
+    margin-top: 3vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 2.25vw;
 }
-#shopNowText{
-  font-size: .9vw;
-  font-weight: 700;
-  color: #2A2A2A;
-  text-decoration: none;
+#shopNowText {
+    font-size: 0.9vw;
+    font-weight: 700;
+    color: #2a2a2a;
+    text-decoration: none;
 }
-
-
-
-
-
 
 #mainScreenArrowButton {
-  margin-right:1vw;
-  position: relative;
-  width:3.266vw;
-  height:6.66vh;
-  border: none;
-  box-shadow: 0 0 0 0 #5A189A;
-  border-radius: 50%;
-  background-size:cover;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  -webkit-animation: pulse 3s infinite cubic-bezier(0.1, 0, 0, 1);
-  -moz-animation: pulse 3s infinite cubic-bezier(0.1, 0, 0, 1);
-  -ms-animation: pulse 3s infinite cubic-bezier(0.1, 0, 0, 1);
-  animation: pulse 3s infinite cubic-bezier(0.1, 0, 0, 1);
+    margin-right: 1vw;
+    position: relative;
+    width: 3.266vw;
+    height: 6.66vh;
+    border: none;
+    box-shadow: 0 0 0 0 #5a189a;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-animation: pulse 3s infinite cubic-bezier(0.1, 0, 0, 1);
+    -moz-animation: pulse 3s infinite cubic-bezier(0.1, 0, 0, 1);
+    -ms-animation: pulse 3s infinite cubic-bezier(0.1, 0, 0, 1);
+    animation: pulse 3s infinite cubic-bezier(0.1, 0, 0, 1);
 }
-#mainScreenArrowButton:hover 
-{
-  -webkit-animation: none;-moz-animation: none;-ms-animation: none;animation: none;
-}
-
-@-webkit-keyframes pulse {to {box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);}}
-@-moz-keyframes pulse {to {box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);}}
-@-ms-keyframes pulse {to {box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);}}
-@keyframes pulse {to {box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);}}
-
-
-
-.splash{
-  position:fixed;
-  top:0;
-  left:0;
-  width: 100%;
-  height: 100vh;
-  background-color: #D5C5E6;
-  z-index:200;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#mainScreenArrowButton:hover {
+    -webkit-animation: none;
+    -moz-animation: none;
+    -ms-animation: none;
+    animation: none;
 }
 
-.splash.display-none{
-  position:fixed;
-  opacity: 0;
-  top:0;
-  left:0;
-  width: 100%;
-  height: 100vh;
-  background-color: #D5C5E6;
-  z-index:-1000;
-  color:white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.5s;
+@-webkit-keyframes pulse {
+    to {
+        box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);
+    }
+}
+@-moz-keyframes pulse {
+    to {
+        box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);
+    }
+}
+@-ms-keyframes pulse {
+    to {
+        box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);
+    }
+}
+@keyframes pulse {
+    to {
+        box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);
+    }
 }
 
-@keyframes fadeIn{
-  to{
-    opacity: 1;
-  }
+.splash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #d5c5e6;
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.fade-in{
-  width:30vw;
-  height: auto;
-  opacity: 0;
-  animation: fadeIn 1s ease-in forwards;
+.splash.display-none {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #d5c5e6;
+    z-index: -1000;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    width: 30vw;
+    height: auto;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
 }

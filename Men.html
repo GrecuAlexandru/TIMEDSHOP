@@ -1,42 +1,64 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Timed</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap');
+    <head>
+        <meta charset="UTF-8" />
+        <title>Timed</title>
+        <link rel="stylesheet" href="styles.css" />
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap");
         </style>
-</head>
-<body>
-    <nav class="navMenu">
-        <a href="index.html" onmouseout="mouseOut()" onmouseover="mouseHoverHome()">Home</a>
-        <a href="Women.html" onmouseout="mouseOut()" onmouseover="mouseHoverWomen()">Women</a>
-        <a href="Men.html" onmouseout="mouseOut()" onmouseover="mouseHoverMen()"  id="selectedTab">Men</a>
-        <a href="About.html" onmouseout="mouseOut()" onmouseover="mouseHoverAbout()">About</a>
-        <div class="dot" id="dott"></div>
-    </nav>
-    <script>
-        document.getElementById("dott").style.transform = "translate(258px)";
-        function mouseOut()
-        {
-            document.getElementById("dott").style.transform = "translate(258px)";
-        }
-        function mouseHoverHome()
-        {
-            document.getElementById("dott").style.transform = "translate(48px)";
-        }
-        function mouseHoverWomen()
-        {
-            document.getElementById("dott").style.transform = "translate(153px)";
-        }
-        function mouseHoverMen()
-        {
-            document.getElementById("dott").style.transform = "translate(258px)";
-        }
-        function mouseHoverAbout()
-        {
-            document.getElementById("dott").style.transform = "translate(361px)";
-        }
-    </script>
-</body>
+    </head>
+    <body>
+        <nav class="navMenu">
+            <a
+                href="index.html"
+                onmouseout="mouseOut()"
+                onmouseover="mouseHoverHome()"
+                >Home</a
+            >
+            <a
+                href="Women.html"
+                onmouseout="mouseOut()"
+                onmouseover="mouseHoverWomen()"
+                >Women</a
+            >
+            <a
+                href="Men.html"
+                onmouseout="mouseOut()"
+                onmouseover="mouseHoverMen()"
+                id="selectedTab"
+                >Men</a
+            >
+            <a
+                href="About.html"
+                onmouseout="mouseOut()"
+                onmouseover="mouseHoverAbout()"
+                >About</a
+            >
+            <div class="dot" id="dott"></div>
+        </nav>
+        <script>
+            document.getElementById("dott").style.transform =
+                "translate(258px)";
+            function mouseOut() {
+                document.getElementById("dott").style.transform =
+                    "translate(258px)";
+            }
+            function mouseHoverHome() {
+                document.getElementById("dott").style.transform =
+                    "translate(48px)";
+            }
+            function mouseHoverWomen() {
+                document.getElementById("dott").style.transform =
+                    "translate(153px)";
+            }
+            function mouseHoverMen() {
+                document.getElementById("dott").style.transform =
+                    "translate(258px)";
+            }
+            function mouseHoverAbout() {
+                document.getElementById("dott").style.transform =
+                    "translate(361px)";
+            }
+        </script>
+    </body>
 </html>
