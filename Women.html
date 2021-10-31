@@ -26,7 +26,7 @@
         </div>
         <nav class="navMenu" id="navMenu">
             <a href="Sale.html">SALE</a>
-            <a href="Women.html" id="women">WOMEN</a>
+            <a href="Women.html?sortBy=newArrival&type=" id="women">WOMEN</a>
             <a href="Men.html">MEN</a>
             <a href="Accessories.html">ACCESSORIES</a>
             <a onclick="signOut()" id="account">
@@ -694,7 +694,7 @@
                             }
                             numberOfProducts =
                                 document.getElementById("productOutput")
-                                    .children.length;
+                                    .children.length+1;
                             if (numberOfProducts <= 6) {
                                 document.getElementById(
                                     "fullProductsDiv"
@@ -702,6 +702,7 @@
                             } else {
                                 var marginTop =
                                     150 + ~~((numberOfProducts - 6) / 3) * 70;
+                                console.log("numberOf: ", numberOfProducts);
                                 if (numberOfProducts % 3 != 0) {
                                     marginTop += 70;
                                 }
@@ -739,31 +740,39 @@
                             var productFirstImage =
                                 document.createElement("img");
                             productFirstImage.className = "productImage";
-                            storage
-                                .ref()
-                                .child(qdoc.id + "01.jpg")
-                                .getDownloadURL()
-                                .then((url) => {
-                                    productFirstImage.src = url;
-                                })
-                                .catch((error) => {
-                                    //console.log(error);
-                                });
+                            productFirstImage.src =
+                                "https://timedshop.b-cdn.net/" +
+                                qdoc.id +
+                                "01.jpg";
+                            // storage
+                            //     .ref()
+                            //     .child(qdoc.id + "01.jpg")
+                            //     .getDownloadURL()
+                            //     .then((url) => {
+                            //         productFirstImage.src = url;
+                            //     })
+                            //     .catch((error) => {
+                            //         //console.log(error);
+                            //     });
 
                             //productSecondImage
                             var productSecondImage =
                                 document.createElement("img");
                             productSecondImage.className = "productSecondImage";
-                            storage
-                                .ref()
-                                .child(qdoc.id + "02.jpg")
-                                .getDownloadURL()
-                                .then((url) => {
-                                    productSecondImage.src = url;
-                                })
-                                .catch((error) => {
-                                    //console.log(error);
-                                });
+                            productSecondImage.src =
+                                "https://timedshop.b-cdn.net/" +
+                                qdoc.id +
+                                "02.jpg";
+                            // storage
+                            //     .ref()
+                            //     .child(qdoc.id + "02.jpg")
+                            //     .getDownloadURL()
+                            //     .then((url) => {
+                            //         productSecondImage.src = url;
+                            //     })
+                            //     .catch((error) => {
+                            //         //console.log(error);
+                            //     });
 
                             //Append First and Second Image to productImageDiv
                             productImageDiv.appendChild(productFirstImage);
@@ -885,7 +894,7 @@
                                 .getElementById("productOutput")
                                 .insertBefore(product, paginationDiv);
                         });
-                    });
+                    }).catch((error)=>{console.log(error)});
                 } else if (sortBy == "priceHL") {
                     if (currentPage > 1) {
                         if (whereSize.length - 1 != 0) {
@@ -1051,7 +1060,6 @@
                     var numberOfProducts = 0;
                     q.get().then((querySnapshot) => {
                         querySnapshot.forEach((qdoc) => {
-                            console.log("asd");
                             resultsNumber++;
                             if (resultsNumber == currentPage * 18) {
                                 currentPage++;
@@ -1077,17 +1085,17 @@
                                 querySnapshot.docs[
                                     querySnapshot.docs.length - 1
                                 ];
-                            //var docRef;
-                            //console.log(new Date(qdoc.data().date * 1000));
+                            // var docRef;
+                            // console.log(new Date(qdoc.data().date * 1000));
                             // for(var x = 1; x<=1; x++)
                             // {
                             //   idd++;
-                            //   if(idd <= 1220)
-                            //     docRef = setDoc(doc(db, "women",idd.toString()),qdoc.data());
+                            //   if(idd <= 1240)
+                            //     db.collection("women").doc(idd.toString()).set(qdoc.data())
                             // }
 
                             //product item
-                            var product = document.createElement("div");
+                            var product = document.createElement("a");
                             product.setAttribute(
                                 "href",
                                 "/product.html?id=" + qdoc.id
@@ -1103,31 +1111,39 @@
                             var productFirstImage =
                                 document.createElement("img");
                             productFirstImage.className = "productImage";
-                            storage
-                                .ref()
-                                .child(qdoc.id + "01.jpg")
-                                .getDownloadURL()
-                                .then((url) => {
-                                    productFirstImage.src = url;
-                                })
-                                .catch((error) => {
-                                    console.log(error);
-                                });
+                            productFirstImage.src =
+                                "https://timedshop.b-cdn.net/" +
+                                qdoc.id +
+                                "01.jpg";
+                            // storage
+                            //     .ref()
+                            //     .child(qdoc.id + "01.jpg")
+                            //     .getDownloadURL()
+                            //     .then((url) => {
+                            //         productFirstImage.src = url;
+                            //     })
+                            //     .catch((error) => {
+                            //         //console.log(error);
+                            //     });
 
                             //productSecondImage
                             var productSecondImage =
                                 document.createElement("img");
                             productSecondImage.className = "productSecondImage";
-                            storage
-                                .ref()
-                                .child(qdoc.id + "02.jpg")
-                                .getDownloadURL()
-                                .then((url) => {
-                                    productSecondImage.src = url;
-                                })
-                                .catch((error) => {
-                                    console.log(error);
-                                });
+                            productSecondImage.src =
+                                "https://timedshop.b-cdn.net/" +
+                                qdoc.id +
+                                "02.jpg";
+                            // storage
+                            //     .ref()
+                            //     .child(qdoc.id + "02.jpg")
+                            //     .getDownloadURL()
+                            //     .then((url) => {
+                            //         productSecondImage.src = url;
+                            //     })
+                            //     .catch((error) => {
+                            //         //console.log(error);
+                            //     });
 
                             //Append First and Second Image to productImageDiv
                             productImageDiv.appendChild(productFirstImage);
@@ -1148,15 +1164,42 @@
 
                             //productPriceBeforeSale
                             if (!isNaN(qdoc.data().priceBeforeSale)) {
+                                var productSaleDiv =
+                                    document.createElement("div");
+                                productSaleDiv.className = "productSaleDiv";
+
                                 var productPriceBeforeSale =
                                     document.createElement("a");
                                 productPriceBeforeSale.className =
                                     "productPriceBeforeSale";
                                 productPriceBeforeSale.innerText =
                                     "$" + qdoc.data().priceBeforeSale + ".00";
-                                productDividerLine.appendChild(
+
+                                var productSaleDot =
+                                    document.createElement("a");
+                                productSaleDot.className = "productSaleDivDot";
+                                productSaleDot.innerText = "●";
+
+                                var productSaleAmount =
+                                    document.createElement("a");
+                                productSaleAmount.className =
+                                    "productSaleAmount";
+                                productSaleAmount.innerText =
+                                    (
+                                        (Math.abs(
+                                            qdoc.data().priceBeforeSale -
+                                                qdoc.data().price
+                                        ) /
+                                            qdoc.data().priceBeforeSale) *
+                                        100
+                                    ).toFixed() + "%";
+
+                                productSaleDiv.appendChild(
                                     productPriceBeforeSale
                                 );
+                                productSaleDiv.appendChild(productSaleDot);
+                                productSaleDiv.appendChild(productSaleAmount);
+                                productDividerLine.appendChild(productSaleDiv);
                             }
 
                             //productPrice
@@ -1413,17 +1456,17 @@
                                 querySnapshot.docs[
                                     querySnapshot.docs.length - 1
                                 ];
-                            //var docRef;
-                            //console.log(new Date(qdoc.data().date * 1000));
+                            // var docRef;
+                            // console.log(new Date(qdoc.data().date * 1000));
                             // for(var x = 1; x<=1; x++)
                             // {
                             //   idd++;
-                            //   if(idd <= 1220)
-                            //     docRef = setDoc(doc(db, "women",idd.toString()),qdoc.data());
+                            //   if(idd <= 1240)
+                            //     db.collection("women").doc(idd.toString()).set(qdoc.data())
                             // }
 
                             //product item
-                            var product = document.createElement("div");
+                            var product = document.createElement("a");
                             product.setAttribute(
                                 "href",
                                 "/product.html?id=" + qdoc.id
@@ -1439,31 +1482,39 @@
                             var productFirstImage =
                                 document.createElement("img");
                             productFirstImage.className = "productImage";
-                            storage
-                                .ref()
-                                .child(qdoc.id + "01.jpg")
-                                .getDownloadURL()
-                                .then((url) => {
-                                    productFirstImage.src = url;
-                                })
-                                .catch((error) => {
-                                    console.log(error);
-                                });
+                            productFirstImage.src =
+                                "https://timedshop.b-cdn.net/" +
+                                qdoc.id +
+                                "01.jpg";
+                            // storage
+                            //     .ref()
+                            //     .child(qdoc.id + "01.jpg")
+                            //     .getDownloadURL()
+                            //     .then((url) => {
+                            //         productFirstImage.src = url;
+                            //     })
+                            //     .catch((error) => {
+                            //         //console.log(error);
+                            //     });
 
                             //productSecondImage
                             var productSecondImage =
                                 document.createElement("img");
                             productSecondImage.className = "productSecondImage";
-                            storage
-                                .ref()
-                                .child(qdoc.id + "02.jpg")
-                                .getDownloadURL()
-                                .then((url) => {
-                                    productSecondImage.src = url;
-                                })
-                                .catch((error) => {
-                                    console.log(error);
-                                });
+                            productSecondImage.src =
+                                "https://timedshop.b-cdn.net/" +
+                                qdoc.id +
+                                "02.jpg";
+                            // storage
+                            //     .ref()
+                            //     .child(qdoc.id + "02.jpg")
+                            //     .getDownloadURL()
+                            //     .then((url) => {
+                            //         productSecondImage.src = url;
+                            //     })
+                            //     .catch((error) => {
+                            //         //console.log(error);
+                            //     });
 
                             //Append First and Second Image to productImageDiv
                             productImageDiv.appendChild(productFirstImage);
@@ -1484,15 +1535,42 @@
 
                             //productPriceBeforeSale
                             if (!isNaN(qdoc.data().priceBeforeSale)) {
+                                var productSaleDiv =
+                                    document.createElement("div");
+                                productSaleDiv.className = "productSaleDiv";
+
                                 var productPriceBeforeSale =
                                     document.createElement("a");
                                 productPriceBeforeSale.className =
                                     "productPriceBeforeSale";
                                 productPriceBeforeSale.innerText =
                                     "$" + qdoc.data().priceBeforeSale + ".00";
-                                productDividerLine.appendChild(
+
+                                var productSaleDot =
+                                    document.createElement("a");
+                                productSaleDot.className = "productSaleDivDot";
+                                productSaleDot.innerText = "●";
+
+                                var productSaleAmount =
+                                    document.createElement("a");
+                                productSaleAmount.className =
+                                    "productSaleAmount";
+                                productSaleAmount.innerText =
+                                    (
+                                        (Math.abs(
+                                            qdoc.data().priceBeforeSale -
+                                                qdoc.data().price
+                                        ) /
+                                            qdoc.data().priceBeforeSale) *
+                                        100
+                                    ).toFixed() + "%";
+
+                                productSaleDiv.appendChild(
                                     productPriceBeforeSale
                                 );
+                                productSaleDiv.appendChild(productSaleDot);
+                                productSaleDiv.appendChild(productSaleAmount);
+                                productDividerLine.appendChild(productSaleDiv);
                             }
 
                             //productPrice

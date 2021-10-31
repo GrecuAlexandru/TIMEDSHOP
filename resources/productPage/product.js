@@ -22,7 +22,12 @@ function closeImage() {
 // Initialize Firebase
 const db = firebase.firestore();
 const storage = firebase.storage();
-db.collection("women")
+var collec;
+if(params.get("id").toString().indexOf(0) == "0")
+    collec = "women";
+else
+    collec = "men";
+db.collection(collec)
     .doc(params.get("id"))
     .get()
     .then((doc) => {
@@ -101,51 +106,26 @@ db.collection("women")
             let img2 = document.getElementById("img2");
             let img3 = document.getElementById("img3");
             let img4 = document.getElementById("img4");
-
-            storage
-                .ref()
-                .child(doc.id + "01big.jpg")
-                .getDownloadURL()
-                .then((url) => {
-                    img1.src = url;
-                    img1.setAttribute("onclick", `openImage("${url}")`);
-                })
-                .catch((error) => {
-                    //console.log(error);
-                });
-            storage
-                .ref()
-                .child(doc.id + "02big.jpg")
-                .getDownloadURL()
-                .then((url) => {
-                    img2.src = url;
-                    img2.setAttribute("onclick", `openImage("${url}")`);
-                })
-                .catch((error) => {
-                    //console.log(error);
-                });
-            storage
-                .ref()
-                .child(doc.id + "03big.jpg")
-                .getDownloadURL()
-                .then((url) => {
-                    img3.src = url;
-                    img3.setAttribute("onclick", `openImage("${url}")`);
-                })
-                .catch((error) => {
-                    //console.log(error);
-                });
-            storage
-                .ref()
-                .child(doc.id + "04big.jpg")
-                .getDownloadURL()
-                .then((url) => {
-                    img4.src = url;
-                    img4.setAttribute("onclick", `openImage("${url}")`);
-                })
-                .catch((error) => {
-                    //console.log(error);
-                });
+            img1.src = "https://cdn.timedshop.com/"+doc.id+"01big.jpg";
+            img1.setAttribute("onclick", `openImage("https://cdn.timedshop.com/${doc.id}01big.jpg")`);
+            img2.src = "https://cdn.timedshop.com/"+doc.id+"02big.jpg";
+            img2.setAttribute("onclick", `openImage("https://cdn.timedshop.com/${doc.id}02big.jpg")`);
+            img3.src = "https://cdn.timedshop.com/"+doc.id+"03big.jpg";
+            img3.setAttribute("onclick", `openImage("https://cdn.timedshop.com/${doc.id}03big.jpg")`);
+            img4.src = "https://cdn.timedshop.com/"+doc.id+"04big.jpg";
+            img4.setAttribute("onclick", `openImage("https://cdn.timedshop.com/${doc.id}04big.jpg")`);
+            // storage
+            //     .ref()
+            //     .child(doc.id + "01big.jpg")
+            //     .getDownloadURL()
+            //     .then((url) => {
+            //         img1.src = url;
+            //         img1.setAttribute("onclick", `openImage("${url}")`);
+            //     })
+            //     .catch((error) => {
+            //         //console.log(error);
+            //     });
+            
         } else {
             console.log("doc not found");
         }

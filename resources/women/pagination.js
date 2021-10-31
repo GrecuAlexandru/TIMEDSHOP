@@ -23,7 +23,8 @@ var MCheckbox = document.getElementById("MCheckbox");
 var LCheckbox = document.getElementById("LCheckbox");
 var XLCheckbox = document.getElementById("XLCheckbox");
 var XXLCheckbox = document.getElementById("XXLCheckbox");
-
+let openlink;
+var ok=0;
 let type = params.get("type");
 if (type == null) type = "";
 if (type.includes("hoodies")) hoodiesCheckbox.checked = true;
@@ -37,10 +38,7 @@ if (
     !type.includes("sweatsh") &&
     window.location.search.includes("type")
 )
-    window.open(
-        window.location.pathname + window.location.search.replace("&type=", ""),
-        "_self"
-    );
+    ok=1;
 
 let size = params.get("size");
 if (size == null) size = "";
@@ -81,10 +79,16 @@ sortByPriceLH.setAttribute(
 );
 if (sortBy == null) {
     currentPage = 1;
-    window.open(
-        "/women.html?sortBy=newArrival" + "&type=" + type + "&size=" + size,
-        "_self"
-    );
+    if(ok==0)
+        window.open(
+            "/women.html?sortBy=newArrival" + "&type=" + type + "&size=" + size,
+            "_self"
+        );
+    else
+        window.open(
+            "/women.html?sortBy=newArrival&size=" + size,
+            "_self"
+        );
 }
 
 function hoodiesCheckboxPress() {
@@ -133,19 +137,40 @@ function XXLCheckboxPress() {
 }
 
 function ApplyFilterButton() {
+    var minPriceDatabase = localStorage.getItem(
+        "minPriceFromDatabase"
+    );
+    var maxPriceDatabase = localStorage.getItem(
+        "maxPriceFromDatabase"
+    );
     var minPrice = document.getElementById("sliderMin").value;
     var maxPrice = document.getElementById("sliderMax").value;
-    window.open(
-        "/women.html?sortBy=" +
-            sortBy +
-            "&type=" +
-            type +
-            "&size=" +
-            size +
-            "&minPrice=" +
-            minPrice +
-            "&maxPrice=" +
-            maxPrice,
-        "_self"
-    );
+    if(minPriceDatabase == minPrice && maxPriceDatabase == maxPrice)
+    {
+        window.open(
+            "/women.html?sortBy=" +
+                sortBy +
+                "&type=" +
+                type +
+                "&size=" +
+                size,
+            "_self"
+        );
+    }
+    else
+    {
+        window.open(
+            "/women.html?sortBy=" +
+                sortBy +
+                "&type=" +
+                type +
+                "&size=" +
+                size +
+                "&minPrice=" +
+                minPrice +
+                "&maxPrice=" +
+                maxPrice,
+            "_self"
+        );
+    }
 }

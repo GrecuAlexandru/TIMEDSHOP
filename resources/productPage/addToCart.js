@@ -40,27 +40,48 @@ function addToCart() {
             "Error! You must select a size and a color!";
     } else {
         var productSelectionString =
-            params.get("id").toString() +
-            selectedSize.toString() +
+            params.get("id").toString() + "-" + 
+            selectedSize.toString() + "-" + 
             selectedColor.toString();
         db.collection("users")
             .doc(firebase.auth().currentUser.uid)
             .get()
             .then((data) => {
-                if (data.data().cart.includes(productSelectionString)) {
-                    document.getElementById("addToCartError").innerText =
-                        "You already added this to your cart!";
-                } else {
+                if(data.data().cart)
+                {
+                    if (data.data().cart.includes(productSelectionString)) {
+                        document.getElementById("addToCartError").innerText =
+                            "You already added this to your cart!";
+                    } else {
+                        document.getElementById("addToCartError").innerText = "";
+                        console.log("ITEM ADDED");
+                        db.collection("users")
+                            .doc(firebase.auth().currentUser.uid)
+                            .update({
+                                cart: firebase.firestore.FieldValue.arrayUnion(
+                                    productSelectionString
+                                ),
+                            })
+                        .then(() => {
+                            document.getElementById("cartCount").innerText =
+                                parseInt(
+                                    document.getElementById("cartCount").innerText
+                                ) + 1;
+                        }).catch((error) => {
+                            console.log(error);
+                        });
+                    }
+                }
+                else
+                {
                     document.getElementById("addToCartError").innerText = "";
                     console.log("ITEM ADDED");
                     db.collection("users")
                         .doc(firebase.auth().currentUser.uid)
                         .update({
-                            cart: firebase.firestore.FieldValue.arrayUnion(
-                                productSelectionString
-                            ),
-                        });
-                    then(() => {
+                            cart: productSelectionString
+                        })
+                    .then(() => {
                         document.getElementById("cartCount").innerText =
                             parseInt(
                                 document.getElementById("cartCount").innerText

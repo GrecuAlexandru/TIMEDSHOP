@@ -1,16 +1,14 @@
 <html lang="en">
     <head>
         <link rel="icon" href="resources/icons/favicon.png" />
-        <link rel="stylesheet" href="styles/cart.css" />
+        <link rel="stylesheet" href="styles/account.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charset="UTF-8" />
-        <title>Timed - Product</title>
+        <title>Timed - Account</title>
         <script src="resources/productPage/productDetails.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-functions.js"></script>
         <script src="https://js.stripe.com/v3/"></script>
     </head>
     <body>
@@ -25,7 +23,7 @@
             <a href="account.html" id="account">
                 <img
                     alt="ACCOUNT"
-                    src="/resources/icons/User.svg"
+                    src="/resources/icons/UserPurple.svg"
                     onmouseover="this.src='resources/icons/UserPurple.svg'"
                     onmouseout="this.src='resources/icons/User.svg'"
                 />
@@ -36,7 +34,7 @@
                 <img
                     class="icon-badge-icon"
                     alt="CART"
-                    src="/resources/icons/CartPurple.svg"
+                    src="/resources/icons/Cart.svg"
                     onmouseover="this.src='resources/icons/CartPurple.svg'"
                     onmouseout="this.src='resources/icons/Cart.svg'"
                 />
@@ -47,57 +45,52 @@
 
         <div id="mainDiv">
             <div id="leftDiv">
-                <a id="cartTitle">CART</a>
-                <div id="cartOutput">
-                    <!-- <div class="cartItem">
+                <a id="accountTitle">ACCOUNT</a>
+                <div id="accountImgDiv">
+                    <img src="resources/icons/User.svg" alt="userIcon" id="accountUserIcon">
+                    <a id="accountName">Grecu Alexandru</a>
+                    <a id="signOut" onclick="signOut()">Sign Out</a>
+                </div>
+                <div id="divider"></div>
+                <div id="accountInfo">
+                    <div id="firstNameDiv">
+                        <a id="firstNameText">First Name: </a>
+                        <a id="firstName">Grecu</a>
+                    </div>
+                    <div id="lastNameDiv">
+                        <a id="lastNameText">Last Name: </a>
+                        <a id="lastName">Alexandru</a>
+                    </div>
+                    <div id=emailDiv>
+                        <a id="emailText">Email: </a>
+                        <a id="email">alexandru.grecu27@gmail.com</a>
+                    </div>
+                    <div id="genderDiv">
+                        <a id="genderText">Gender: </a>
+                        <a id="gender">Male</a>
+                    </div>
+                </div>
+            </div>
+            <div id="orders">
+                <a id="ordersTitle">YOUR ORDERS</a>
+                <div id="ordersDiv">
+                    <div class="cartItem">
                         <img class="cartImage" src="resources/icons/productPageImages/120101.jpg" alt="img">
                         <div class="cartTextDiv">
                             <a class="cartItemTitle">Grey Hoodie</a>
-                            <a
-                                onclick="closeImage()"
-                                class="removeButton"
-                            >
-                                Remove
-                            </a>
                             <a class="cartItemType">Men's hoodie</a>
-                            <div class="colorDiv">
-                                <a class="cartItemColorTitle">Color:</a>
-                                <div class="cartItemColor"></div>
-                            </div>
-
+                            <a class="orderedDate">Ordered on: 27.11.2021</a>
                             <div class="cartItemOptions">
-                                <a class="cartItemSizeTitle">Size:</a>
-                                <select class="sizeSelected">
-                                    <option value="S">S</option>
-                                    <option value="M">M</option>
-                                    <option value="XL">XL</option>
-                                    <option value="2XL" selected="selected">2XL</option>
-                                </select>
-                                <a class="cartItemQuantityTitle">Quantity:</a>
-                                <select class="quantitySelected">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
+                                <div class="colorDiv">
+                                    <a class="cartItemColorTitle">Color:</a>
+                                    <div class="cartItemColor"></div>
+                                </div>
+                                <a class="cartItemSizeTitle">Size: S</a>
+                                <a class="cartItemQuantityTitle">Quantity: 3</a>
                             </div>
                             <a class="cartItemPrice">$200.00</a>
                         </div>
-                    </div> -->
-                </div>
-            </div>
-            <div id="rightDiv">
-                <a id="summaryTitle">SUMMARY</a>
-                <div id="summaryDiv">
-                    <div id="totalDiv">
-                        <a id="totalText">Total: </a>
-                        <a id="totalValue">$0.00</a>
                     </div>
-                    <div id="divider"></div>
-                    <button id="checkoutButton" onclick="checkout()">
-                        CHECKOUT
-                    </button>
                 </div>
             </div>
         </div>
@@ -169,7 +162,6 @@
             };
             firebase.initializeApp(config);
             const db = firebase.firestore();
-            const storage = firebase.storage();
             let cartCount = document.getElementById("cartCount");
             firebase.auth().onAuthStateChanged((user) => {
                 if (user) {
@@ -202,7 +194,20 @@
                     document.getElementById("register").style.display = "flex";
                 }
             });
+
+            function signOut() {
+                firebase
+                    .auth()
+                    .signOut()
+                    .then(() => {
+                        // Sign-out successful.
+                        window.open("/login.html","_self");
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+            }
         </script>
-        <script src="cart.js"></script>
+        <script src="/resources/account/account.js"></script>
     </body>
 </html>

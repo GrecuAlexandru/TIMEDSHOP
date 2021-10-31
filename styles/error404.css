@@ -204,40 +204,6 @@ body {
 }
 
 
-#mainDiv{
-    display: flex;
-    width: 100%;
-    height: 90vh;
-    margin-top: 10vh;
-}
-#leftDiv{
-    float: left;
-    display: flex;
-    flex-direction: column;
-    width: 40vw;
-    height: 100%;
-    margin-left:16vw;
-}
-#rightDiv{
-    margin-left: 5vw;
-}
-#cartTitle{
-    font-size: 2vw;
-    font-weight: 700;
-    margin-bottom:2vh;
-    color:#2a2a2a;
-}
-
-#summaryTitle{
-    font-size: 2vw;
-    font-weight: 700;
-    color:#2a2a2a;
-}
-
-#cartOutput{
-    display: flex;
-    flex-direction: column;
-}
 .cartItem{
     display: flex;
     flex-direction: row;
@@ -249,13 +215,6 @@ body {
     border-width: 1 1px;
     margin-bottom:2vh;
 }
-.removeButton{
-    position:absolute;
-    bottom:2vh;
-    right:2vh;
-    text-decoration: underline;
-    cursor: pointer;
-}
 .cartImage{
     width: 14vh;
     height: 21vh;
@@ -266,6 +225,9 @@ body {
 }
 .cartItemOptions{
     position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     bottom:2vh;
 }
 .cartTextDiv{
@@ -278,8 +240,8 @@ body {
 }
 .cartItemTitle{
     font-size:3vh;
-    color:#2a2a2a;
     margin-top:1vh;
+    color:#2a2a2a;
 }
 .cartItemType{
     font-size:2vh;
@@ -295,6 +257,7 @@ body {
 .cartItemSizeTitle{
     font-size:2vh;
     color:#2a2a2a;
+    margin-left:2vh;
 }
 .cartItemColorTitle{
     font-size:2vh;
@@ -303,22 +266,9 @@ body {
 .cartItemQuantityTitle{
     font-size:2vh;
     color:#2a2a2a;
-}
-.sizeSelected{
-    width: 6vh;
-    height: 3vh;
-    font-size:2vh;
-    font-family: "Nunito", sans-serif;
-    font-weight: 600;
-    color:#2a2a2a;
-    border-radius: 5px;
-    border: solid #2a2a2a;
-    border-width: 1 1px;
-    margin-right:3vh;
-    margin-left: 1vh;
+    margin-left:2vh;
 }
 .colorDiv{
-    margin-top:3vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -331,97 +281,29 @@ body {
     border-width: 1 1px;
     margin-left:1vh;
 }
-.quantitySelected{
-    width: 6vh;
-    height: 3vh;
-    font-size:2vh;
-    font-family: "Nunito", sans-serif;
-    font-weight: 600;
+.orderedDate{
     color:#2a2a2a;
-    border-radius: 5px;
-    border: solid #2a2a2a;
-    border-width: 1 1px;
-    margin-left: 1vh;
+    font-size: 2vh;
+    margin-top:3vh;
 }
 
-#summaryDiv{
+#mainDiv{
     display: flex;
     flex-direction: column;
-    width: 20vw;
-    margin-top:2vh;
-    position: relative;
-}
-
-#subtotalDiv{
-    display: flex;
-    flex-direction: row;
-    width:100%;
-}
-#subtotalText{
-    font-size:2.5vh;
-    color:#2a2a2a;
-}
-#subtotalValue{
-    font-size:2.5vh;
-    color:#2a2a2a;
-    position: absolute;
-    right:0;
-}
-#taxDiv{
-    margin-top:3vh;
-    display: flex;
-    flex-direction: row;
-    width:100%;
-}
-#taxText{
-    font-size:2.5vh;
-    color:#2a2a2a;
-}
-#taxValue{
-    font-size:2.5vh;
-    color:#2a2a2a;
-    position: absolute;
-    right:0;
-}
-#totalDiv{
-    display: flex;
-    flex-direction: row;
-    width:100%;
-}
-#totalText{
-    font-size:2.5vh;
-    color:#2a2a2a;
-}
-#totalValue{
-    font-size:2.5vh;
-    color:#2a2a2a;
-    position: absolute;
-    right:0;
-}
-#divider {
+    align-items: center;
+    justify-content:center;
     width: 100%;
-    height: 1px;
-    background-color: #2a2a2a;
-    margin-top: 3vh;
-    margin-bottom: 3vh;
+    height: 91vh;
 }
-#checkoutButton {
-    display: inline-block;
-    width: 100%;
-    height: 5.5vh;
-    text-align: center;
+#text404{
+    margin-top:-10vh;
     color: #2a2a2a;
-    text-decoration: none;
-    font-family: "Nunito", sans-serif;
-    font-weight: 800;
-    font-size: 1.1vw;
-    border-radius: 6px;
-    border: solid #2a2a2a;
-    border-width: 1 1px;
-    background-color: #e3c8ff;
-    cursor: pointer;
-    margin-top:1vh;
+    font-size: 30vh;
+    font-weight: 900;
 }
-#checkoutButton:hover {
-    background-color: #c894ff;
+#pageNotFound{
+    color: #2a2a2a;
+    font-size:5vh;
+    font-weight: 900;
+    margin-top:-10vh;
 }
