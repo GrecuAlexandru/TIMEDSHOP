@@ -169,3 +169,4 @@ function rememberMePressed() {
         rememberMe = false;
     }
 }
+loader(true);

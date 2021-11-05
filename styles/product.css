@@ -41,6 +41,21 @@ body {
 .navMenu a:hover {
     color: #5a189a;
 }
+#favorites{
+    margin-right: 0;
+    position: relative;
+}
+#favoritesIMG{
+    width:28px;
+}
+.icon-badge-container-favorites {
+    position: relative;
+}
+
+.icon-badge-icon-favorites {
+    position: relative;
+    width: 23px;
+}
 
 #women {
     width: 100px;
@@ -69,6 +84,11 @@ body {
         position: absolute;
         top: -10;
         right: 20;
+    }
+    .icon-badge-favorites {
+        position: absolute;
+        top:-10;
+        right:15;
     }
 }
 @media screen and (max-width: 800px) {
@@ -99,10 +119,19 @@ body {
     }
 }
 #account {
-    margin-left: 39%;
+    margin-left: 33vw;
     width: 23px;
 }
 .icon-badge {
+    background-color: #ff2c2c;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    width: 21px;
+    height: 21px;
+    border-radius: 100%;
+}
+.icon-badge-favorites {
     background-color: #ff2c2c;
     font-size: 15px;
     color: white;
@@ -364,16 +393,50 @@ body {
     border-width: 1 1px;
     background-color: #e3c8ff;
     cursor: pointer;
+    margin-top: 6vh;
 }
 #addTocartButton:hover {
     background-color: #c894ff;
 }
 #addToCartError {
-    margin-top: 6vh;
     margin-bottom: 1vh;
     color: #ff2c2c;
     font-size: 1vw;
     font-weight: 700;
+}
+#addToFavorites {
+    margin-top:1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24vw;
+    height: 5.5vh;
+    text-align: center;
+    color: #2a2a2a;
+    text-decoration: none;
+    font-family: "Nunito", sans-serif;
+    font-weight: 800;
+    font-size: 1.1vw;
+    border-radius: 6px;
+    border: solid #2a2a2a;
+    border-width: 1 1px;
+    background-color: white;
+    cursor: pointer;
+    flex-direction: row;
+}
+#addToFavorites:hover {
+    background-color: #cacaca;
+}
+#addToFavoritesError {
+    margin-bottom: 1vh;
+    color: #ff2c2c;
+    font-size: 1vw;
+    font-weight: 700;
+}
+#favoritesIMGButton{
+    margin-left:1vw;
+    width: 2.2vh;
+    height: auto;
 }
 #leftMainDiv {
     float: left;
@@ -617,4 +680,62 @@ body {
     border-radius: 10px;
     border-width: 1 1px;
     background-color: #d3d3d3;
+}
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    z-index: 10000000;
+    background-color: #e3c8ff;
+}
+#THEDIV {
+    display: none;
+}
+
+
+.hourglass{
+    display:block;
+    background:#e3c8ff;
+    margin:3em auto;
+    width:3em;
+    height:6em;
+    animation:hourglass 1s linear infinite;
+}
+
+.outer{
+    fill:#2a2a2a;
+}
+
+.middle{
+    fill:#e3c8ff;
+}
+
+@keyframes hourglass{
+    0%{
+        transform:rotate(0deg);
+        box-shadow:
+            inset #2a2a2a 0 -0em 0 0,
+            inset #e3c8ff 0 -3em 0 0,
+            inset #2a2a2a 0 -6em 0 0;
+    }
+    80%{
+        transform:rotate(0deg);
+        box-shadow:
+            inset #2a2a2a 0 -3em 0 0,
+            inset #e3c8ff 0 -3em 0 0,
+            inset #2a2a2a 0 -3em 0 0;
+    }
+    100%{
+        transform:rotate(180deg);
+        box-shadow:
+            inset #2a2a2a 0 -3em 0 0,
+            inset #e3c8ff 0 -3em 0 0,
+            inset #2a2a2a 0 -3em 0 0;
+    }
 }

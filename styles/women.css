@@ -47,7 +47,7 @@ body {
     color: #5a189a;
 }
 #account {
-    margin-left: 39%;
+    margin-left: 33%;
     width: 23px;
 }
 @media screen and (max-width: 1080px) {
@@ -74,6 +74,11 @@ body {
         position: absolute;
         top: -10;
         right: 20;
+    }
+    .icon-badge-favorites {
+        position: absolute;
+        top:-10;
+        right:15;
     }
 }
 @media screen and (max-width: 800px) {
@@ -113,7 +118,15 @@ body {
     height: 21px;
     border-radius: 100%;
 }
-
+.icon-badge-favorites {
+    background-color: #ff2c2c;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    width: 21px;
+    height: 21px;
+    border-radius: 100%;
+}
 #sectionSpecifier {
     float: left;
     color: #2a2a2a;
@@ -986,4 +999,77 @@ body {
     margin-top: 0.5vh;
     color: #4b4b4b;
     text-decoration: none;
+}
+
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    z-index: 10000000;
+    background-color: #e3c8ff;
+}
+#THEDIV {
+    display: none;
+}
+
+#favorites{
+    margin-right: 0;
+    position: relative;
+}
+#favoritesIMG{
+    width:28px;
+}
+.icon-badge-container-favorites {
+    position: relative;
+}
+
+.icon-badge-icon-favorites {
+    position: relative;
+    width: 23px;
+}
+.hourglass{
+    display:block;
+    background:#e3c8ff;
+    margin:3em auto;
+    width:3em;
+    height:6em;
+    animation:hourglass 1s linear infinite;
+}
+
+.outer{
+    fill:#2a2a2a;
+}
+
+.middle{
+    fill:#e3c8ff;
+}
+
+@keyframes hourglass{
+    0%{
+        transform:rotate(0deg);
+        box-shadow:
+            inset #2a2a2a 0 -0em 0 0,
+            inset #e3c8ff 0 -3em 0 0,
+            inset #2a2a2a 0 -6em 0 0;
+    }
+    80%{
+        transform:rotate(0deg);
+        box-shadow:
+            inset #2a2a2a 0 -3em 0 0,
+            inset #e3c8ff 0 -3em 0 0,
+            inset #2a2a2a 0 -3em 0 0;
+    }
+    100%{
+        transform:rotate(180deg);
+        box-shadow:
+            inset #2a2a2a 0 -3em 0 0,
+            inset #e3c8ff 0 -3em 0 0,
+            inset #2a2a2a 0 -3em 0 0;
+    }
 }

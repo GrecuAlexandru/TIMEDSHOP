@@ -1,15 +1,15 @@
 <html lang="en">
     <head>
         <link rel="icon" href="resources/icons/favicon.png" />
-        <link rel="stylesheet" href="styles/product.css" />
+        <link rel="stylesheet" href="styles/error.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charset="UTF-8" />
-        <title>Timed - Product</title>
+        <title>Timed - Account</title>
         <script src="resources/productPage/productDetails.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+        <script src="https://js.stripe.com/v3/"></script>
     </head>
     <body>
         <div id="THEDIV">
@@ -50,134 +50,20 @@
                         onmouseover="this.src='resources/icons/CartPurple.svg'"
                         onmouseout="this.src='resources/icons/Cart.svg'"
                     />
-                    <div id="cartCount" class="icon-badge">0</div>
+                    <div id="cartCount" class="icon-badge">6</div>
                 </a>
                 <div class="dot" id="dott"></div>
             </nav>
 
             <div id="mainDiv">
-                <div id="leftMainDiv">
-                    <div id="photosDiv">
-                        <img class="images" id="img1" alt="photo1" />
-                        <img class="images" id="img2" alt="photo2" />
-                        <img class="images" id="img3" alt="photo3" />
-                        <img class="images" id="img4" alt="photo4" />
-                    </div>
-                </div>
-                <div id="rightMainDiv">
-                    <a id="productTitle">GREY HOODIE</a>
-                    <div id="productSaleDiv">
-                        <a id="productPriceBeforeSale">$120.00</a>
-                        <a id="productSaleDot">●</a>
-                        <a id="productSaleAmount">40%</a>
-                    </div>
-                    <a id="productPrice">$100.00</a>
-                    <div id="sizeDiv">
-                        <div class="bigDot"></div>
-                        <a id="sizeText">SIZE</a>
-                        <div class="bigDot"></div>
-                    </div>
-                    <div id="sizeSelectDiv"></div>
-                    <div id="colorDiv">
-                        <div class="bigDot"></div>
-                        <a id="colorText">COLOR</a>
-                        <div class="bigDot"></div>
-                    </div>
-                    <div id="colorsDiv"></div>
-                    <button id="addToCartButton" onclick="addToCart()">
-                        ADD TO CART
-                    </button>
-                    <a id="addToCartError"></a>
-                    <button id="addToFavorites" onclick="addToFavorites()">
-                        &nbsp;&nbsp;&nbsp;&nbsp;FAVORITES
-                        <img src="resources/icons/favorites.svg" id="favoritesIMGButton">
-                    </button>
-                    <a id="addToFavoritesError"></a>
-                    <a
-                        onclick="displayProductDetailsModal()"
-                        id="viewProductDetails"
-                        >View Product Details</a
-                    >
-                    <div id="divider"></div>
-                    <div id="deliveryDiv">
-                        <div id="deliveryTitleDiv">
-                            <img
-                                id="deliveryIcon"
-                                src="resources/icons/deliveryIcon.svg"
-                                alt="deliveryIcon"
-                            />
-                            <a id="deliveryTitle">Delivery</a>
-                        </div>
-                        <div id="deliveryTextDiv">
-                            <a id="deliveryText"
-                                >Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit, sed do eiusmod tempor incididunt ut labore et
-                                dolore magna aliqua.</a
-                            >
-                            <a id="learnMoreDelivery">Learn more</a>
-                        </div>
-                    </div>
-                    <div id="returnDiv">
-                        <div id="returnTitleDiv">
-                            <img
-                                id="returnIcon"
-                                src="resources/icons/returnIcon.svg"
-                                alt="returnIcon"
-                            />
-                            <a id="returnTitle">Returns</a>
-                        </div>
-                        <div id="returnTextDiv">
-                            <a id="returnText"
-                                >Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit, sed do eiusmod tempor incididunt ut labore et
-                                dolore magna aliqua.</a
-                            >
-                            <a id="learnMoreReturn">Learn more</a>
-                        </div>
-                    </div>
+                <a id="error">ERROR</a>
+                <div id="infoDiv">
+                    <a href="help.html" class="btn">HELP</a>
+                    <a href="contact.html" class="btn">CONTACT</a>
+                    <a href="report-a-bug.html" class="btn">REPORT A PROBLEM</a>
                 </div>
             </div>
-            <div id="productDetailsModal">
-                <div id="modalDiv">
-                    <button
-                        onclick="closeProductDetailsModal()"
-                        title="Close"
-                        id="productDetailsModalCloseButton"
-                    >
-                        <img
-                            id="closePDImg"
-                            src="/resources/icons/closeButton.svg"
-                            alt="close"
-                        />
-                    </button>
-                    <a id="titlePD">Product Details</a>
-                    <div id="contentPD">
-                        <a id="productSpecificType"></a>
-                        <a id="titleOfCriteria"></a>
-                        <div id="criteriaDiv">
-                            <ul id="criteriaUL"></ul>
-                        </div>
-                        <a id="typeof"></a>
-                        <a id="madeOf"></a>
-                    </div>
-                </div>
-            </div>
-            <div id="fullScreenImageModal">
-                <button
-                    onclick="closeImage()"
-                    title="Close"
-                    id="fullScreenModalCloseButton"
-                >
-                    <img
-                        id="closeFullscreenImg"
-                        src="/resources/icons/closeButton.svg"
-                        alt="close"
-                    />
-                </button>
-                <div id="fullScreenContainerDiv">
-                    <img id="fullScreenImage" alt="full screen image" />
-                </div>
-            </div>
+
             <div id="footer">
                 <div id="followUsDiv">
                     <a id="followUsText"> FOLLOW US </a>
@@ -259,6 +145,8 @@
                 }
             }
             loader(false);
+        </script>
+        <script>
             // Initialize Firebase
             // TODO: Replace with your project's customized code snippet
             var config = {
@@ -271,7 +159,8 @@
                 measurementId: "G-3VCHXLRX5K",
             };
             firebase.initializeApp(config);
-
+            const db = firebase.firestore();
+            let cartCount = document.getElementById("cartCount");
             firebase.auth().onAuthStateChanged((user) => {
                 if (user) {
                     var uid = user.uid;
@@ -301,7 +190,11 @@
                             {
                                 favoritesCount.innerText = 0;
                             }
+                            loader(true);
                         })
+                        .catch((error) => {
+                            console.error(error);
+                        });
                 } else {
                     // User is signed out
                     console.log("sign out");
@@ -309,10 +202,22 @@
                     document.getElementById("favorites").style.display = "none";
                     document.getElementById("LogIn").style.display = "flex";
                     document.getElementById("register").style.display = "flex";
+                    loader(true);
                 }
             });
+
+            function signOut() {
+                firebase
+                    .auth()
+                    .signOut()
+                    .then(() => {
+                        // Sign-out successful.
+                        window.open("/login.html","_self");
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+            }
         </script>
-        <script src="resources/productPage/product.js"></script>
-        <script src="resources/productPage/addToCart.js"></script>
     </body>
 </html>

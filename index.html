@@ -7,6 +7,7 @@
         <title>Timed Shop</title>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     </head>
     <body>
         <div class="splash">
@@ -25,13 +26,24 @@
             <a href="Women.html?sortBy=newArrival&type=" id="women">WOMEN</a>
             <a href="Men.html">MEN</a>
             <a href="Accessories.html">ACCESSORIES</a>
-            <a onclick="signOut()" id="account">
+            <a href="account.html" id="account">
                 <img
                     alt="ACCOUNT"
                     src="/resources/icons/User.svg"
                     onmouseover="this.src='resources/icons/UserPurple.svg'"
                     onmouseout="this.src='resources/icons/User.svg'"
                 />
+            </a>
+            <a href="favorites.html" id="favorites">
+                <img
+                    class="icon-badge-icon-favorites"
+                    id="favoritesIMG"
+                    alt="FAVORITES"
+                    src="/resources/icons/favorites.svg"
+                    onmouseover="this.src='resources/icons/favoritesPurple.svg'"
+                    onmouseout="this.src='resources/icons/favorites.svg'"
+                />
+                <div id="favoritesCount" class="icon-badge-favorites">6</div>
             </a>
             <a href="LogIn.html" id="LogIn">LOG IN</a>
             <a href="Register.html" id="register">REGISTER</a>
@@ -43,7 +55,7 @@
                     onmouseover="this.src='resources/icons/CartPurple.svg'"
                     onmouseout="this.src='resources/icons/Cart.svg'"
                 />
-                <div class="icon-badge">6</div>
+                <div id="cartCount" class="icon-badge">6</div>
             </a>
             <div class="dot" id="dott"></div>
         </nav>
@@ -71,7 +83,62 @@
                 <a id="shopNowText" href="Sale.html">SHOP NOW</a>
             </div>
         </div>
+        <script>
+             // Initialize Firebase
+            // TODO: Replace with your project's customized code snippet
+            var config = {
+                apiKey: "AIzaSyCkBvDNzSvorpEdz2twDAVI09x-FaVsDGg",
+                authDomain: "timedshop-a5a66.firebaseapp.com",
+                projectId: "timedshop-a5a66",
+                storageBucket: "timedshop-a5a66.appspot.com",
+                messagingSenderId: "172835576987",
+                appId: "1:172835576987:web:2e588ca7a77cc008affa3e",
+                measurementId: "G-3VCHXLRX5K",
+            };
+            firebase.initializeApp(config);
+            const db = firebase.firestore();
+            let cartCount = document.getElementById("cartCount");
+            let favoritesCount = document.getElementById("favoritesCount");
+            firebase.auth().onAuthStateChanged((user) => {
+                if (user) {
+                    var uid = user.uid;
+                    console.log("logged in user: ", user.email);
+                    document.getElementById("LogIn").style.display = "none";
+                    document.getElementById("register").style.display = "none";
+                    document.getElementById("account").style.display = "flex";
+                    document.getElementById("favorites").style.display = "block";
+                    db.collection("users")
+                        .doc(uid)
+                        .get()
+                        .then((data) => {
+                            if(data.data().cart)
+                            {
+                                cartCount.innerText = data.data().cart.length;
+                            }
+                            else
+                            {
+                                cartCount.innerText = 0;
+                            }
+
+                            if(data.data().favorites)
+                            {
+                                favoritesCount.innerText = data.data().favorites.length;
+                            }
+                            else
+                            {
+                                favoritesCount.innerText = 0;
+                            }
+                        })
+                } else {
+                    // User is signed out
+                    console.log("sign out");
+                    document.getElementById("account").style.display = "none";
+                    document.getElementById("favorites").style.display = "none";
+                    document.getElementById("LogIn").style.display = "flex";
+                    document.getElementById("register").style.display = "flex";
+                }
+            });
+        </script>
         <script src="splashscreen.js"></script>
-        <script src="userLoggedIn.js"></script>
     </body>
 </html>

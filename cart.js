@@ -1,45 +1,59 @@
 var total = 0;
 function checkout() {
-    var items = [];
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            db.collection("users")
-                .doc(user.uid)
-                .get()
-                .then((data) => {
-                    data.data().cart.forEach((cartItemData) => {
-                        const words = cartItemData.split("-");
-                        var collec =
-                            cartItemData.charAt(0) == "0" ? "women" : "men";
-                        var productID = words[0];
-                        var color = words[2];
-                        var sizeSelect = document.getElementById(
-                            cartItemData + "sizeSelect"
-                        );
-                        var quantitySelect = document.getElementById(
-                            cartItemData + "quantitySelect"
-                        );
-                        size =
-                            sizeSelect.options[sizeSelect.selectedIndex].value;
-                        var quantity =
-                            quantitySelect.options[quantitySelect.selectedIndex]
-                                .value;
-                        console.log(productID, size, quantity, color);
+    if(document.getElementById("cartOutput").children.length > 0)
+    {
+        document.getElementById("checkoutError").innerText = "";
+        var items = [];
+        firebase.auth().onAuthStateChanged(function (user) {
+            let metadataProductIDs = "";
+            if (user) {
+                db.collection("users")
+                    .doc(user.uid)
+                    .get()
+                    .then((data) => {
+                        data.data().cart.forEach((cartItemData) => {
+                            if (metadataProductIDs == "") {
+                                metadataProductIDs = cartItemData.toString();
+                            } else {
+                                metadataProductIDs += "+" + cartItemData.toString();
+                            }
+                            const words = cartItemData.split("-");
+                            var collec =
+                                cartItemData.charAt(0) == "0" ? "women" : "men";
+                            var productID = words[0];
+                            var color = words[2];
+                            var sizeSelect = document.getElementById(
+                                cartItemData + "sizeSelect"
+                            );
+                            var quantitySelect = document.getElementById(
+                                cartItemData + "quantitySelect"
+                            );
+                            size =
+                                sizeSelect.options[sizeSelect.selectedIndex].value;
+                            var quantity =
+                                quantitySelect.options[quantitySelect.selectedIndex]
+                                    .value;
+                            console.log(productID, size, quantity, color);
 
-                        let obj = {
-                            productID: productID,
-                            size: size,
-                            quantity: quantity,
-                            color: color,
-                        };
-                        items.push(obj);
+                            let obj = {
+                                productID: productID,
+                                size: size,
+                                quantity: quantity,
+                                color: color,
+                            };
+                            items.push(obj);
+                        });
+                        callFunction(items, user.uid, metadataProductIDs); // here the firestore cloud function is called
                     });
-                    callFunction(items); // here the firestore cloud function is called
-                });
-        }
-    });
+            }
+        });
+    }
+    else
+    {
+        document.getElementById("checkoutError").innerText = "Cart is empty!"
+    }
 }
-function callFunction(items) {
+function callFunction(items, userID, metadataProductIDs) {
     const createStripeCheckout = firebase
         .app()
         .functions("europe-west3")
@@ -48,7 +62,11 @@ function callFunction(items) {
         "pk_test_51JjMu9BKwB7V1OnRcwrPosArKwGOJORreGvWAnLmXbei1rDQzgsX8UIXFZTbSfhH5dmakmwyoLvVhteLeywH3zM400QT4cae9Y"
     );
     console.log(items.length);
-    createStripeCheckout({ items: items }).then((response) => {
+    createStripeCheckout({
+        items: items,
+        userID: userID,
+        metadataProductIDs: metadataProductIDs,
+    }).then((response) => {
         console.log(response);
         const sessionId = response.data.id;
         stripe.redirectToCheckout({
@@ -94,7 +112,6 @@ firebase.auth().onAuthStateChanged(function (user) {
             .get()
             .then((data) => {
                 if (data.data().cart) {
-                    console.log("cart", data.data().cart);
                     data.data().cart.forEach((cartData) => {
                         const words = cartData.split("-");
                         var collec =
@@ -104,12 +121,6 @@ firebase.auth().onAuthStateChanged(function (user) {
                         var color = words[2];
 
                         console.log(productID, size, color);
-                        if (cartData.charAt(0) == "0") {
-                            // if starts with 0 means is women product else...
-                            collec = "women";
-                        } else {
-                            collec = "men";
-                        }
 
                         db.collection(collec)
                             .doc(productID)
@@ -136,9 +147,15 @@ firebase.auth().onAuthStateChanged(function (user) {
                                 let cartImage = document.createElement("img");
                                 cartImage.src =
                                     "https://cdn.timedshop.com/" +
-                                    prodData.data().id +
+                                    prodData.id +
                                     "01.jpg";
                                 cartImage.className = "cartImage";
+                                cartImage.setAttribute(
+                                    "onclick",
+                                    "window.open('/product.html?id=" +
+                                        prodData.id +
+                                        "', '_self')"
+                                );
                                 cartImage.alt = prodData.data().name;
                                 cartItem.appendChild(cartImage);
 
@@ -148,6 +165,12 @@ firebase.auth().onAuthStateChanged(function (user) {
 
                                 let cartItemTitle = document.createElement("a");
                                 cartItemTitle.className = "cartItemTitle";
+                                cartItemTitle.setAttribute(
+                                    "onclick",
+                                    "window.open('/product.html?id=" +
+                                        prodData.id +
+                                        "', '_self')"
+                                );
                                 cartItemTitle.innerText = prodData.data().name;
                                 cartTextDiv.appendChild(cartItemTitle);
 
@@ -260,14 +283,17 @@ firebase.auth().onAuthStateChanged(function (user) {
                                 cartOutput.appendChild(cartItem);
                             });
                     });
+                    loader(true);
                 } else {
                     cartCount.innerText = 0;
+                    loader(true);
                 }
             })
             .catch((error) => {
-                console.error(error);
+                window.open("/error.html", "_self");
             });
     } else {
+        loader(true);
         // No user is signed in.
     }
 });
@@ -281,6 +307,9 @@ function removeButton(id) {
                 .doc(user.uid)
                 .update({
                     cart: firebase.firestore.FieldValue.arrayRemove(id),
+                })
+                .catch((error) => {
+                    window.open("/error.html", "_self");
                 });
         }
     });

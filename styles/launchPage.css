@@ -40,12 +40,26 @@ body {
 .navMenu a:hover {
     color: #5a189a;
 }
+#favorites{
+    margin-right: 0;
+    position: relative;
+}
+#favoritesIMG{
+    width:28px;
+}
+.icon-badge-container-favorites {
+    position: relative;
+}
 
+.icon-badge-icon-favorites {
+    position: relative;
+    width: 23px;
+}
 #women {
     width: 100px;
 }
 #account {
-    margin-left: 39%;
+    margin-left: 33%;
     width: 23px;
 }
 @media screen and (max-width: 1080px) {
@@ -65,13 +79,26 @@ body {
     position: relative;
     width: 23px;
 }
-
+.icon-badge-favorites {
+    background-color: #ff2c2c;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    width: 21px;
+    height: 21px;
+    border-radius: 100%;
+}
 @media screen and (min-width: 800px) {
     .icon-badge {
         margin: 0;
         position: absolute;
         top: -10;
         right: 20;
+    }
+    .icon-badge-favorites {
+        position: absolute;
+        top:-10;
+        right:15;
     }
 }
 @media screen and (max-width: 800px) {

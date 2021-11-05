@@ -41,7 +41,13 @@ body {
 .navMenu a:hover {
     color: #5a189a;
 }
-
+#favorites{
+    margin-right: 0;
+    position: relative;
+}
+#favoritesIMG{
+    width:28px;
+}
 #women {
     width: 100px;
 }
@@ -62,6 +68,14 @@ body {
     position: relative;
     width: 23px;
 }
+.icon-badge-container-favorites {
+    position: relative;
+}
+
+.icon-badge-icon-favorites {
+    position: relative;
+    width: 23px;
+}
 
 @media screen and (min-width: 800px) {
     .icon-badge {
@@ -69,6 +83,11 @@ body {
         position: absolute;
         top: -10;
         right: 20;
+    }
+    .icon-badge-favorites {
+        position: absolute;
+        top:-10;
+        right:15;
     }
 }
 @media screen and (max-width: 800px) {
@@ -99,10 +118,19 @@ body {
     }
 }
 #account {
-    margin-left: 39%;
+    margin-left: 33%;
     width: 23px;
 }
 .icon-badge {
+    background-color: #ff2c2c;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    width: 21px;
+    height: 21px;
+    border-radius: 100%;
+}
+.icon-badge-favorites {
     background-color: #ff2c2c;
     font-size: 15px;
     color: white;
@@ -208,7 +236,7 @@ body {
     display: flex;
     width: 100%;
     height: 90vh;
-    margin-top: 10vh;
+    margin-top: 15vh;
 }
 #leftDiv{
     float: left;
@@ -263,6 +291,7 @@ body {
     border: solid #2a2a2a;
     border-width: 1 1px;
     margin-left:0.5vw;
+    cursor: pointer;
 }
 .cartItemOptions{
     position: absolute;
@@ -280,6 +309,7 @@ body {
     font-size:3vh;
     color:#2a2a2a;
     margin-top:1vh;
+    cursor: pointer;
 }
 .cartItemType{
     font-size:2vh;
@@ -424,4 +454,71 @@ body {
 }
 #checkoutButton:hover {
     background-color: #c894ff;
+}
+
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    z-index: 10000000;
+    background-color: #e3c8ff;
+}
+#THEDIV {
+    display: none;
+}
+
+
+.hourglass{
+    display:block;
+    background:#e3c8ff;
+    margin:3em auto;
+    width:3em;
+    height:6em;
+    animation:hourglass 1s linear infinite;
+}
+
+.outer{
+    fill:#2a2a2a;
+}
+
+.middle{
+    fill:#e3c8ff;
+}
+
+@keyframes hourglass{
+    0%{
+        transform:rotate(0deg);
+        box-shadow:
+            inset #2a2a2a 0 -0em 0 0,
+            inset #e3c8ff 0 -3em 0 0,
+            inset #2a2a2a 0 -6em 0 0;
+    }
+    80%{
+        transform:rotate(0deg);
+        box-shadow:
+            inset #2a2a2a 0 -3em 0 0,
+            inset #e3c8ff 0 -3em 0 0,
+            inset #2a2a2a 0 -3em 0 0;
+    }
+    100%{
+        transform:rotate(180deg);
+        box-shadow:
+            inset #2a2a2a 0 -3em 0 0,
+            inset #e3c8ff 0 -3em 0 0,
+            inset #2a2a2a 0 -3em 0 0;
+    }
+}
+
+#checkoutError{
+    color:#ff2c2c;
+    font-size:2vh;
+    font-weight: 400;
+    text-align: center;
+    margin-top:1vh;
 }

@@ -113,7 +113,7 @@ body {
     border-top: 1px solid #2a2a2a;
     float: left;
     width: 100%;
-    height: 30vh;
+    height: 40vh;
     background-color: #e3c8ff;
     display: flex;
     flex-direction: row;
@@ -411,7 +411,8 @@ body {
     border: solid #2a2a2a;
     border-width: 1 1px;
     position: relative;
-    margin-top: -20vh;
+    margin-top: 20vh;
+    margin-bottom: 50vh;
 }
 
 #accountCreatedTitle {
@@ -464,4 +465,64 @@ body {
 }
 #okButton:hover {
     background-color: #c894ff;
+}
+
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    z-index: 10000000;
+    background-color: #e3c8ff;
+}
+#THEDIV {
+    display: none;
+    flex-direction: column;
+}
+
+
+.hourglass{
+    display:block;
+    background:#e3c8ff;
+    margin:3em auto;
+    width:3em;
+    height:6em;
+    animation:hourglass 1s linear infinite;
+}
+
+.outer{
+    fill:#2a2a2a;
+}
+
+.middle{
+    fill:#e3c8ff;
+}
+
+@keyframes hourglass{
+    0%{
+        transform:rotate(0deg);
+        box-shadow:
+            inset #2a2a2a 0 -0em 0 0,
+            inset #e3c8ff 0 -3em 0 0,
+            inset #2a2a2a 0 -6em 0 0;
+    }
+    80%{
+        transform:rotate(0deg);
+        box-shadow:
+            inset #2a2a2a 0 -3em 0 0,
+            inset #e3c8ff 0 -3em 0 0,
+            inset #2a2a2a 0 -3em 0 0;
+    }
+    100%{
+        transform:rotate(180deg);
+        box-shadow:
+            inset #2a2a2a 0 -3em 0 0,
+            inset #e3c8ff 0 -3em 0 0,
+            inset #2a2a2a 0 -3em 0 0;
+    }
 }

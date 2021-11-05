@@ -85,33 +85,48 @@ function searchPress() {
                     productImageDiv.className = "productImageDiv";
                     product.appendChild(productImageDiv);
 
+                    //productImageDiv
+                    var productImageDiv = document.createElement("div");
+                    productImageDiv.className = "productImageDiv";
+                    product.appendChild(productImageDiv);
+
                     //productFirstImage
-                    var productFirstImage = document.createElement("img");
+                    var productFirstImage =
+                        document.createElement("img");
                     productFirstImage.className = "productImage";
-                    storage
-                        .ref()
-                        .child(qdoc.objectID + "01.jpg")
-                        .getDownloadURL()
-                        .then((url) => {
-                            productFirstImage.src = url;
-                        })
-                        .catch((error) => {
-                            //console.log(error);
-                        });
+                    productFirstImage.src =
+                        "https://timedshop.b-cdn.net/" +
+                        qdoc.id +
+                        "01.jpg";
+                    // storage
+                    //     .ref()
+                    //     .child(qdoc.id + "01.jpg")
+                    //     .getDownloadURL()
+                    //     .then((url) => {
+                    //         productFirstImage.src = url;
+                    //     })
+                    //     .catch((error) => {
+                    //         //console.log(error);
+                    //     });
 
                     //productSecondImage
-                    var productSecondImage = document.createElement("img");
+                    var productSecondImage =
+                        document.createElement("img");
                     productSecondImage.className = "productSecondImage";
-                    storage
-                        .ref()
-                        .child(qdoc.objectID + "02.jpg")
-                        .getDownloadURL()
-                        .then((url) => {
-                            productSecondImage.src = url;
-                        })
-                        .catch((error) => {
-                            //console.log(error);
-                        });
+                    productSecondImage.src =
+                        "https://timedshop.b-cdn.net/" +
+                        qdoc.id +
+                        "02.jpg";
+                    // storage
+                    //     .ref()
+                    //     .child(qdoc.id + "02.jpg")
+                    //     .getDownloadURL()
+                    //     .then((url) => {
+                    //         productSecondImage.src = url;
+                    //     })
+                    //     .catch((error) => {
+                    //         //console.log(error);
+                    //     });
 
                     //Append First and Second Image to productImageDiv
                     productImageDiv.appendChild(productFirstImage);
@@ -211,6 +226,9 @@ function searchPress() {
                         .getElementById("productOutput")
                         .insertBefore(product, paginationDiv);
                 });
+            })
+            .catch((error)=>{
+                window.open("/error.html","_self");
             });
     }
 }

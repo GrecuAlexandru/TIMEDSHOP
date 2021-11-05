@@ -127,9 +127,38 @@ db.collection(collec)
             //     });
             
         } else {
-            console.log("doc not found");
+            window.open("/error.html","_self");
         }
+        loader(true);
     })
     .catch((error) => {
-        console.log("Error getting document:", error);
+        window.open("/error.html","_self");
     });
+let heart = document.getElementById("favoritesIMGButton");
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        var uid = user.uid;
+        db.collection("users")
+            .doc(uid)
+            .get()
+            .then((data) => {
+                if(data.data().favorites)
+                {
+                    if(data.data().favorites.find(a => a.includes(params.get("id"))))
+                    {
+                        heart.setAttribute("src","/resources/icons/selectedFavorites.svg");
+                    }
+                    else
+                    {
+                        heart.setAttribute("src","/resources/icons/favorites.svg");
+                    }
+                }
+            })
+            .catch((error) => {
+                window.open("/error.html","_self");
+            });
+    } else {
+        //user is signed out
+        heart.remove();
+    }
+});

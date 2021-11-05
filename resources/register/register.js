@@ -48,12 +48,6 @@ function confirmPressed() {
     confirmPasswordError = document.getElementById("confirmPasswordError");
     genderError = document.getElementById("genderError");
 
-    console.log("firstName:", firstName);
-    console.log("lastName", lastName);
-    console.log("email", email);
-    console.log("password", password);
-    console.log("confirmPassword", confirmPassword);
-    console.log("gender", selectedGender);
     if (!firstName) {
         firstNameError.innerText = "Please insert your first name!";
         firstNameError.style.display = "flex";
@@ -119,14 +113,12 @@ function confirmPressed() {
     }
 
     if (noError) {
-        console.log("asd");
         firebase
             .auth()
             .createUserWithEmailAndPassword(email, password)
             .then((userCredential) => {
                 // Signed in
                 var user = userCredential.user;
-                console.log(user.uid);
 
                 db.collection("users")
                     .doc(user.uid)
@@ -136,6 +128,8 @@ function confirmPressed() {
                         lastName: lastName,
                         gender: selectedGender,
                         cart:[],
+                        orders:[],
+                        favorites:[],
                     })
                     .then(() => {
                         if (noError) {
@@ -168,7 +162,6 @@ function confirmPressed() {
                 noError = false;
                 var errorCode = error.code;
                 var errorMessage = error.message;
-                console.log(errorCode, errorMessage);
                 if (errorCode == "auth/weak-password") {
                     passwordError.innerText = errorMessage;
                     passwordError.style.display = "flex";
@@ -228,3 +221,4 @@ function okPressed() {
     if (selectedGender == "female") window.open("/Women.html", "_self");
     if (selectedGender == "other") window.open("/Sale.html", "_self");
 }
+loader(true);

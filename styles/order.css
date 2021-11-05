@@ -302,166 +302,8 @@ body {
     width: 100%;
     min-height: 100vh;
     margin-top:18vh;
-    margin-left:13vw;
-}
-#accountTitle{
-    color:#2a2a2a;
-    font-weight: 700;
-    font-size: 4vh;
-}
-#accountImgDiv{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom:3vh;
-    margin-top:3vh;
-    position: relative;
-}
-#accountUserIcon{
-    width: 3vh;
-}
-#accountName{
-    font-size:3vh;
-    font-weight: 600;
-    color:#2a2a2a;
-    margin-left:1vh;
-}
-#divider {
-    width: 25vw;
-    height: 1px;
-    background-color: #cacaca;
-    margin-bottom: 3vh;
 }
 
-#accountInfo{
-    display: flex;
-    flex-direction: column;
-}
-#firstNameDiv{
-    position: relative;
-    color:#2a2a2a;
-    font-size: 2vh;
-    font-weight: 500;
-    width: 25vw;
-    margin-bottom:1vh;
-}
-#firstName{
-    position: absolute;
-    right:0;
-    font-weight: 600;
-}
-
-#lastNameDiv{
-    position: relative;
-    color:#2a2a2a;
-    font-size: 2vh;
-    font-weight: 500;
-    width: 25vw;
-    margin-bottom:1vh;
-}
-#lastName{
-    position: absolute;
-    right:0;
-    font-weight: 600;
-}
-#emailDiv{
-    position: relative;
-    color:#2a2a2a;
-    font-size: 2vh;
-    font-weight: 500;
-    width: 25vw;
-    margin-bottom:1vh;
-}
-#email{
-    position: absolute;
-    right:0;
-    font-weight: 600;
-}
-#genderDiv{
-    position: relative;
-    color:#2a2a2a;
-    font-size: 2vh;
-    font-weight: 500;
-    width: 25vw;
-    margin-bottom:1vh;
-}
-#gender{
-    position: absolute;
-    right:0;
-    font-weight: 600;
-}
-
-#orders{
-    display: flex;
-    flex-direction: column;
-    margin-left:10vw;
-}
-#ordersTitle{
-    color:#2a2a2a;
-    font-size: 4vh;
-    font-weight: 700;
-    margin-bottom:3vh;
-}
-#signOut{
-    position: absolute;
-    right:0;
-    color:#2a2a2a;
-    text-decoration: underline;
-    cursor: pointer;
-    font-weight: 500;
-    font-size:2vh
-}
-
-.orderItem{
-    display: flex;
-    flex-direction: column;
-    width: 38.8vw;
-    min-height: 23vh;
-    border-radius: 10px;
-    border: solid #2a2a2a;
-    border-width: 1 1px;
-    margin-bottom:2vh;
-}
-.orderImage{
-    width: 14vh;
-    height: 21vh;
-    border-radius: 10px;
-    border: solid #2a2a2a;
-    border-width: 1 1px;
-    margin-bottom:2vh;
-}
-.orderDate {
-    font-size:2.5vh;
-    font-weight: 700;
-    color:#2a2a2a;
-}
-.orderImages{
-    display: flex;
-    flex-direction: row;
-    margin-top:1vh;
-    margin-left:1vw;
-    flex-wrap: wrap;
-    gap:0.5vw;
-}
-.orderDateViewDiv{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left:1vw;
-    margin-top:1vh;
-}
-.orderButton{
-    color:#2a2a2a;
-    text-decoration: underline;
-    font-size: 2.5vh;
-    font-weight: 700;
-}
-.littleDot{
-    font-size:2vh;
-    color:#2a2a2a;
-    margin-left:1vw;
-    margin-right: 1vw;
-}
 #loading {
     position: fixed;
     top: 0;
@@ -519,4 +361,329 @@ body {
             inset #e3c8ff 0 -3em 0 0,
             inset #2a2a2a 0 -3em 0 0;
     }
+}
+
+#leftDiv{
+    float:left;
+    width: 40vw;
+    margin-left:10vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column
+}
+#rightDiv{
+    float:left;
+    width: 50vw;
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+}
+#orderTitle{
+    font-size:4vh;
+    font-weight: 700;
+    color:#2a2a2a;
+}
+#orderDate{
+    margin-top:2vh;
+    font-size:2.5vh;
+    font-weight: 400;
+    color:#2a2a2a;
+}
+#orderID{
+    font-size:2.5vh;
+    font-weight: 400;
+    color:#2a2a2a;
+}
+#orderShippingDiv{
+    display: flex;
+    flex-direction: column;
+}
+#shippingTitle{
+    font-size:3vh;
+    font-weight: 700;
+    color:#2a2a2a;
+}
+#shippingAddressDiv{
+    display: flex;
+    flex-direction: column;
+}
+#countryDiv{
+    margin-top:2vh;
+    position: relative;
+    color:#2a2a2a;
+    font-size: 2vh;
+    font-weight: 500;
+    width: 25vw;
+    margin-bottom:1vh;
+}
+#country{
+    position: absolute;
+    right:0;
+    font-weight: 600;
+}
+#cityDiv{
+    position: relative;
+    color:#2a2a2a;
+    font-size: 2vh;
+    font-weight: 500;
+    width: 25vw;
+    margin-bottom:1vh;
+}
+#city{
+    position: absolute;
+    right:0;
+    font-weight: 600;
+}
+#stateDiv{
+    position: relative;
+    color:#2a2a2a;
+    font-size: 2vh;
+    font-weight: 500;
+    width: 25vw;
+    margin-bottom:1vh;
+}
+#state{
+    position: absolute;
+    right:0;
+    font-weight: 600;
+}
+#Line1Div{
+    position: relative;
+    color:#2a2a2a;
+    font-size: 2vh;
+    font-weight: 500;
+    width: 25vw;
+    margin-bottom:1vh;
+}
+#line1{
+    position: absolute;
+    right:0;
+    font-weight: 600;
+}
+#Line2Div{
+    position: relative;
+    color:#2a2a2a;
+    font-size: 2vh;
+    font-weight: 500;
+    width: 25vw;
+    margin-bottom:1vh;
+}
+#line2{
+    position: absolute;
+    right:0;
+    font-weight: 600;
+}
+#postalCodeDiv{
+    position: relative;
+    color:#2a2a2a;
+    font-size: 2vh;
+    font-weight: 500;
+    width: 25vw;
+    margin-bottom:1vh;
+}
+#postalCode{
+    position: absolute;
+    right:0;
+    font-weight: 600;
+}
+#clientInfo{
+    display: flex;
+    flex-direction: column;
+}
+#clientInfoTitle{
+    font-size:3vh;
+    font-weight: 700;
+    color:#2a2a2a;
+    margin-bottom:2vh;
+}
+#clientNameDiv{
+    position: relative;
+    color:#2a2a2a;
+    font-size: 2vh;
+    font-weight: 500;
+    width: 25vw;
+    margin-bottom:1vh;
+}
+#clientName{
+    position: absolute;
+    right:0;
+    font-weight: 600;
+}
+#emailDiv{
+    position: relative;
+    color:#2a2a2a;
+    font-size: 2vh;
+    font-weight: 500;
+    width: 25vw;
+    margin-bottom:1vh;
+}
+#email{
+    position: absolute;
+    right:0;
+    font-weight: 600;
+}
+#phoneDiv{
+    position: relative;
+    color:#2a2a2a;
+    font-size: 2vh;
+    font-weight: 500;
+    width: 25vw;
+}
+#phone{
+    position: absolute;
+    right:0;
+    font-weight: 600;
+}
+#divider {
+    width: 25vw;
+    height: 1px;
+    background-color: #2a2a2a;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+#summaryTitle{
+    font-size:4vh;
+    font-weight: 700;
+    color:#2a2a2a;
+}
+#summaryDiv{
+    margin-top:2vh;
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    position: relative;
+}
+
+#subtotalDiv{
+    display: flex;
+    flex-direction: row;
+}
+#subtotalText{
+    font-size:2.5vh;
+    color:#2a2a2a;
+}
+#subtotalValue{
+    font-size:2.5vh;
+    color:#2a2a2a;
+    position: absolute;
+    right:0;
+    font-weight: 600;
+}
+#shippingCostsDiv{
+    display: flex;
+    flex-direction: row;
+    margin-top:1vh;
+}
+#shippingCostsText{
+    font-size:2.5vh;
+    color:#2a2a2a;
+}
+#shippingCostsValue{
+    font-size:2.5vh;
+    color:#2a2a2a;
+    position: absolute;
+    right:0;
+    font-weight: 600;
+}
+
+#totalDiv{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+}
+#totalText{
+    font-size:2.5vh;
+    color:#2a2a2a;
+}
+#totalValue{
+    font-size:2.5vh;
+    color:#2a2a2a;
+    position: absolute;
+    right:0;
+    font-weight: 600;
+}
+#orderContentTitle{
+    font-size:4vh;
+    font-weight: 700;
+    color:#2a2a2a;
+    margin-top:5vh;
+    margin-bottom:2vh;
+}
+#orderContent{
+    display: flex;
+    flex-direction: column;
+}
+.orderItem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 40vw;
+    height: 23vh;
+    border-radius: 10px;
+    border: solid #2a2a2a;
+    border-width: 1 1px;
+    margin-bottom:2vh;
+}
+.orderImage{
+    width: 14vh;
+    height: 21vh;
+    border-radius: 10px;
+    border: solid #2a2a2a;
+    border-width: 1 1px;
+    margin-left:0.5vw;
+}
+.orderItemOptions{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    bottom:2vh;
+}
+.orderTextDiv{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-left:1vw;
+}
+.orderItemTitle{
+    font-size:3vh;
+    color:#2a2a2a;
+    margin-top:1vh;
+}
+.orderItemType{
+    font-size:2vh;
+    color:#4b4b4b;
+}
+.orderItemPrice{
+    position: absolute;
+    right: 2vh;
+    top:2vh;
+    font-size: 2.5vh;
+    color:#2a2a2a;
+}
+.orderItemSizeTitle{
+    font-size:2vh;
+    color:#2a2a2a;
+    margin-left:2vh;
+}
+.orderItemColorTitle{
+    font-size:2vh;
+    color:#2a2a2a;
+}
+
+.colorDiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.orderItemColor{
+    width: 3vh;
+    height: 3vh;
+    border-radius: 5px;
+    border: solid #2a2a2a;
+    border-width: 1 1px;
+    margin-left:1vh;
 }
