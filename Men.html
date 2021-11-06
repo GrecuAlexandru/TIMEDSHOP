@@ -1,64 +1,1318 @@
 <html lang="en">
     <head>
+        <link rel="icon" href="resources/icons/favicon.png" />
+        <link rel="stylesheet" href="styles/men.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charset="UTF-8" />
-        <title>Timed</title>
-        <link rel="stylesheet" href="styles.css" />
-        <style>
-            @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap");
-        </style>
+        <title>Men - Timed</title>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js"
+            integrity="sha256-EXPXz4W6pQgfYY3yTpnDa3OH8/EPn16ciVsPQ/ypsjk="
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js"
+            integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM="
+            crossorigin="anonymous"
+        ></script>
     </head>
     <body>
-        <nav class="navMenu">
-            <a
-                href="index.html"
-                onmouseout="mouseOut()"
-                onmouseover="mouseHoverHome()"
-                >Home</a
-            >
-            <a
-                href="Women.html"
-                onmouseout="mouseOut()"
-                onmouseover="mouseHoverWomen()"
-                >Women</a
-            >
-            <a
-                href="Men.html"
-                onmouseout="mouseOut()"
-                onmouseover="mouseHoverMen()"
-                id="selectedTab"
-                >Men</a
-            >
-            <a
-                href="About.html"
-                onmouseout="mouseOut()"
-                onmouseover="mouseHoverAbout()"
-                >About</a
-            >
-            <div class="dot" id="dott"></div>
-        </nav>
+        <div id="THEDIV">
+            <div id="TimedShopMainLogo">
+                <img src="resources/icons/TimedShopMainLogo.svg" alt="TIMED SHOP" />
+            </div>
+            <nav class="navMenu" id="navMenu">
+                <a href="sale.html">SALE</a>
+                <a href="women.html?sortBy=newArrival&type=">WOMEN</a>
+                <a href="men.html" id="women">MEN</a>
+                <a href="about.html">ABOUT</a>
+                <a href="account.html" id="account">
+                    <img
+                        alt="ACCOUNT"
+                        src="/resources/icons/User.svg"
+                        onmouseover="this.src='resources/icons/UserPurple.svg'"
+                        onmouseout="this.src='resources/icons/User.svg'"
+                    />
+                </a>
+                <a href="favorites.html" id="favorites">
+                    <img
+                        class="icon-badge-icon-favorites"
+                        id="favoritesIMG"
+                        alt="FAVORITES"
+                        src="/resources/icons/favorites.svg"
+                        onmouseover="this.src='resources/icons/favoritesPurple.svg'"
+                        onmouseout="this.src='resources/icons/favorites.svg'"
+                    />
+                    <div id="favoritesCount" class="icon-badge-favorites">6</div>
+                </a>
+                <a href="login.html" id="LogIn">LOG IN</a>
+                <a href="register.html" id="register">REGISTER</a>
+                <a href="cart.html" id="cart" class="icon-badge-container">
+                    <img
+                        class="icon-badge-icon"
+                        alt="CART"
+                        src="/resources/icons/Cart.svg"
+                        onmouseover="this.src='resources/icons/CartPurple.svg'"
+                        onmouseout="this.src='resources/icons/Cart.svg'"
+                    />
+                    <div id="cartCount" class="icon-badge">6</div>
+                </a>
+                <div class="dot" id="dott"></div>
+            </nav>
+            <div id="sectionSpecifier">MEN</div>
+
+            <div id="fullProductsDiv">
+                <div id="leftBar">
+                    <div id="search">
+                        <input
+                            type="text"
+                            id="searchbox"
+                            placeholder="Search"
+                            minlength="4"
+                            maxlength="40"
+                        />
+                        <button id="searchButton" onclick="searchPress()">
+                            <img
+                                src="resources/icons/searchIcon.svg"
+                                id="searchIcon"
+                                alt="searchIcon"
+                            />
+                        </button>
+                    </div>
+                    <div id="sorter">
+                        <a id="sortBy">SORT BY:</a>
+                        <div class="dropdown">
+                            <button onclick="dropdownFunction()" class="dropbtn">
+                                <a id="dropdownTitle">New Arrival</a
+                                ><img
+                                    id="dropdownArrowImg"
+                                    src="resources/icons/dropdownArrow.svg"
+                                />
+                            </button>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a id="newArrival" onclick="newArrivalClicked()"
+                                    >New Arrival</a
+                                >
+                                <a id="PriceLH" onclick="PriceLHClicked()"
+                                    >Price (Low to High)</a
+                                >
+                                <a id="PriceHL" onclick="PriceHLClicked()"
+                                    >Pirce (Hight to Low)</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div id="customizer">
+                        <div id="clothingDiv">
+                            <div class="bigDot"></div>
+                            <a id="clothingText">CLOTHING</a>
+                            <div class="bigDot"></div>
+                        </div>
+                        <div id="clothingCheckboxList">
+                            <label class="checkBoxContainer">
+                                <input
+                                    type="checkbox"
+                                    id="hoodiesCheckbox"
+                                    onclick="hoodiesCheckboxPress()"
+                                />
+                                <span class="checkmark"></span>
+                                <a class="checkBoxText">Hoodies</a>
+                            </label>
+                            <div class="checkBoxDivider"></div>
+                            <label class="checkBoxContainer">
+                                <input
+                                    type="checkbox"
+                                    id="tshirtsCheckbox"
+                                    onclick="tshirtsCheckboxPress()"
+                                />
+                                <span class="checkmark"></span>
+                                <a class="checkBoxText">T-shirts & Tops</a>
+                            </label>
+                            <div class="checkBoxDivider"></div>
+                            <label class="checkBoxContainer">
+                                <input
+                                    type="checkbox"
+                                    id="shirtsCheckbox"
+                                    onclick="shirtsCheckboxPress()"
+                                />
+                                <span class="checkmark"></span>
+                                <a class="checkBoxText">Shirts</a>
+                            </label>
+                            <div class="checkBoxDivider"></div>
+                            <label class="checkBoxContainer">
+                                <input
+                                    type="checkbox"
+                                    id="sweatshirtsCheckbox"
+                                    onclick="sweatshirtsCheckboxPress()"
+                                />
+                                <span class="checkmark"></span>
+                                <a class="checkBoxText">Sweatshirts</a>
+                            </label>
+                        </div>
+
+                        <div id="clothingDiv">
+                            <div class="bigDot"></div>
+                            <a id="clothingText">PRICE</a>
+                            <div class="bigDot"></div>
+                        </div>
+
+                        <div id="rangeSlider" class="range-slider">
+                            <div class="range-group">
+                                <input
+                                    class="range-input"
+                                    id="sliderMin"
+                                    value="10"
+                                    min="1"
+                                    max="300"
+                                    step="1"
+                                    type="range"
+                                />
+                                <input
+                                    class="range-input"
+                                    id="sliderMax"
+                                    value="300"
+                                    min="1"
+                                    max="300"
+                                    step="1"
+                                    type="range"
+                                />
+                            </div>
+                            <div class="number-group">
+                                <span class="textbox">
+                                    &nbsp;&nbsp;$
+                                    <input
+                                        class="number-input"
+                                        id="numberInputLeft"
+                                        type="number"
+                                        value="10"
+                                        min="1"
+                                        max="300"
+                                    />
+                                </span>
+                                <span class="textbox">
+                                    &nbsp;&nbsp;$
+                                    <input
+                                        class="number-input"
+                                        id="numberInputRight"
+                                        type="number"
+                                        value="300"
+                                        min="1"
+                                        max="300"
+                                    />
+                                </span>
+                            </div>
+                        </div>
+                        <button
+                            onclick="ApplyFilterButton()"
+                            id="submitPriceButton"
+                        >
+                            APPLY
+                        </button>
+                    </div>
+                </div>
+                <div id="productOutput">
+                    <!-- <div class="product" onmouseover="">
+            <div class="productImageDiv">
+                <img src="resources/icons/greyHoodie.png" alt="Grey Hoodie" class="productImage">
+                <img src="resources/icons/hoodieModel3by2.png" alt="Grey Hoodie Second Image" class="productSecondImage">
+            </div>
+            <div class="productDividerLine">
+                <a class="productName">
+                Grey Hoodie
+                </a>
+                <div class="productSaleDiv">
+                        <a class="productPriceBeforeSale">
+                            $100.00
+                        </a>
+                        <a class="productSaleDivDot">
+                        ●
+                        </a>
+                        <a class="productSaleAmount">
+                        40%
+                        </a>
+                    </div>
+                    <a class="productPrice">
+                        $60.00
+                    </a>
+                    <a class="productAvailableSizes">Available sizes:&nbsp;&nbsp;S, M, L, XL, XXL</a>
+                    <div class="productColors">
+                        <a class="productAvailableColorsText">Available colors:</a>
+                        <div class="productColorCircle"></div>
+                        <div class="productColorCircle"></div>
+                        <div class="productColorCircle"></div>
+                        <div class="productColorCircle"></div>
+                    </div>
+                </div>
+            </div> -->
+                </div>
+            </div>
+            <div id="footer">
+                <div id="followUsDiv">
+                    <a id="followUsText"> FOLLOW US </a>
+                    <div id="iconsDiv">
+                        <div id="iconsDivTop">
+                            <a id="instagram" href="https://www.instagram.com">
+                                <img
+                                    src="resources/icons/socials/instagram.svg"
+                                    alt="instagram"
+                                />
+                            </a>
+                            <a id="tiktok">
+                                <img
+                                    src="resources/icons/socials/tiktok.svg"
+                                    alt="tiktok"
+                                />
+                            </a>
+                        </div>
+                        <div id="iconsDivBottom">
+                            <a id="twitter">
+                                <img
+                                    src="resources/icons/socials/twitter.svg"
+                                    alt="twitter"
+                                />
+                            </a>
+                            <a id="facebook">
+                                <img
+                                    src="resources/icons/socials/facebook.svg"
+                                    alt="facebook"
+                                />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="helpAndInfoDiv">
+                    <a id="helpAndInfoText"> HELP AND INFORMATION </a>
+                    <div id="HILinks">
+                        <a class="alink">Help</a>
+                        <a class="alink">Privacy Policy</a>
+                        <a class="alink">Terms & Conditions</a>
+                        <a class="alink">Delivery</a>
+                        <a class="alink">Return</a>
+                        <a class="alink">FAQ</a>
+                    </div>
+                </div>
+                <div id="timedShopDiv">
+                    <a id="timedShopText">TIMED SHOP</a>
+                    <div id="timedShopLinks">
+                        <a class="alink">About</a>
+                        <a class="alink">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="loading">
+            <div class="wrapper">
+                <svg class="hourglass" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 206" preserveAspectRatio="none">
+                    <path class="middle" d="M120 0H0v206h120V0zM77.1 133.2C87.5 140.9 92 145 92 152.6V178H28v-25.4c0-7.6 4.5-11.7 14.9-19.4 6-4.5 13-9.6 17.1-17 4.1 7.4 11.1 12.6 17.1 17zM60 89.7c-4.1-7.3-11.1-12.5-17.1-17C32.5 65.1 28 61 28 53.4V28h64v25.4c0 7.6-4.5 11.7-14.9 19.4-6 4.4-13 9.6-17.1 16.9z"/>
+                    <path class="outer" d="M93.7 95.3c10.5-7.7 26.3-19.4 26.3-41.9V0H0v53.4c0 22.5 15.8 34.2 26.3 41.9 3 2.2 7.9 5.8 9 7.7-1.1 1.9-6 5.5-9 7.7C15.8 118.4 0 130.1 0 152.6V206h120v-53.4c0-22.5-15.8-34.2-26.3-41.9-3-2.2-7.9-5.8-9-7.7 1.1-2 6-5.5 9-7.7zM70.6 103c0 18 35.4 21.8 35.4 49.6V192H14v-39.4c0-27.9 35.4-31.6 35.4-49.6S14 81.2 14 53.4V14h92v39.4C106 81.2 70.6 85 70.6 103z"/>
+                </svg>
+            </div>
+        </div>
+        <script src="resources/men/priceSlider.js"></script>
+        <script src="resources/men/dropdown.js"></script>
+        <script src="resources/men/pagination.js"></script>
         <script>
-            document.getElementById("dott").style.transform =
-                "translate(258px)";
-            function mouseOut() {
-                document.getElementById("dott").style.transform =
-                    "translate(258px)";
+            function loader(loaded)
+            {
+                if(loaded)
+                {
+                    setTimeout(()=>{
+                        document.getElementById("loading").style.display = "none";
+                        document.getElementById("THEDIV").style.display = "block";
+                    }, 1000);
+                }
+                else
+                {
+                    setTimeout(()=>{
+                        document.getElementById("THEDIV").style.display = "none";
+                        document.getElementById("loading").style.display = "flex";
+                    }, 1000);
+                }
             }
-            function mouseHoverHome() {
-                document.getElementById("dott").style.transform =
-                    "translate(48px)";
+            loader(false);
+            var currentSearchPage = 0;
+            var isSearching = false;
+            var resultsSearchNumber = 0;
+            var totalResults = 0;
+            let searchInput = document.getElementById("searchbox");
+            var lastSearchInputValue = "123456789";
+        </script>
+        <script>
+            // Initialize Firebase
+            // TODO: Replace with your project's customized code snippet
+            var config = {
+                apiKey: "AIzaSyCkBvDNzSvorpEdz2twDAVI09x-FaVsDGg",
+                authDomain: "timedshop-a5a66.firebaseapp.com",
+                projectId: "timedshop-a5a66",
+                storageBucket: "timedshop-a5a66.appspot.com",
+                messagingSenderId: "172835576987",
+                appId: "1:172835576987:web:2e588ca7a77cc008affa3e",
+                measurementId: "G-3VCHXLRX5K",
+            };
+            firebase.initializeApp(config);
+
+            // Initialize Firebase
+            const db = firebase.firestore();
+            let querySnapshot;
+            params = new URLSearchParams(location.search);
+            let footer = document.getElementById("footer");
+            var minPrice, maxPrice;
+            if (
+                params.get("minPrice") == null &&
+                params.get("maxPrice") == null
+            ) {
+                db.collection("men")
+                    .doc("pages")
+                    .get()
+                    .then((docSnap) => {
+                        if (docSnap.exists) {
+                            document.getElementById("sliderMin").value =
+                                docSnap.data().minPrice;
+                            document.getElementById("sliderMin").min =
+                                docSnap.data().minPrice;
+                            document.getElementById("sliderMin").max =
+                                docSnap.data().maxPrice;
+                            document.getElementById("numberInputLeft").value =
+                                docSnap.data().minPrice;
+                            document.getElementById("numberInputLeft").min =
+                                docSnap.data().minPrice;
+                            document.getElementById("numberInputLeft").max =
+                                docSnap.data().maxPrice;
+
+                            document.getElementById("sliderMax").value =
+                                docSnap.data().maxPrice;
+                            document.getElementById("sliderMax").max =
+                                docSnap.data().maxPrice;
+                            document.getElementById("sliderMax").min =
+                                docSnap.data().minPrice;
+                            document.getElementById("numberInputRight").value =
+                                docSnap.data().maxPrice;
+                            document.getElementById("numberInputRight").max =
+                                docSnap.data().maxPrice;
+                            document.getElementById("numberInputRight").min =
+                                docSnap.data().minPrice;
+
+                            localStorage.setItem(
+                                "minPriceFromDatabase",
+                                JSON.stringify(docSnap.data().minPrice)
+                            );
+                            localStorage.setItem(
+                                "maxPriceFromDatabase",
+                                JSON.stringify(docSnap.data().maxPrice)
+                            );
+                            // if (
+                            //   params.get("minPrice") == null &&
+                            //   params.get("maxPrice") == null
+                            // ) {
+                            //   params.append("minPrice", docSnap.data().minPrice);
+                            //   params.append("maxPrice", docSnap.data().maxPrice);
+                            //   location.search = params;
+                            // }
+                        } else {
+                            // doc.data() will be undefined in this case
+                            console.log("No such document!");
+                        }
+                    })
+            } else {
+                minPrice = params.get("minPrice");
+                maxPrice = params.get("maxPrice");
+                var minPriceDatabase = localStorage.getItem(
+                    "minPriceFromDatabase"
+                );
+                var maxPriceDatabase = localStorage.getItem(
+                    "maxPriceFromDatabase"
+                );
+                document.getElementById("sliderMin").value = minPrice;
+                document.getElementById("sliderMin").min = minPriceDatabase;
+                document.getElementById("sliderMin").max = maxPriceDatabase;
+                document.getElementById("numberInputLeft").value = minPrice;
+                document.getElementById("numberInputLeft").min =
+                    minPriceDatabase;
+                document.getElementById("numberInputLeft").max =
+                    maxPriceDatabase;
+
+                document.getElementById("sliderMax").value = maxPrice;
+                document.getElementById("sliderMax").max = maxPriceDatabase;
+                document.getElementById("sliderMax").min = minPriceDatabase;
+                document.getElementById("numberInputRight").value = maxPrice;
+                document.getElementById("numberInputRight").max =
+                    maxPriceDatabase;
+                document.getElementById("numberInputRight").min =
+                    minPriceDatabase;
             }
-            function mouseHoverWomen() {
-                document.getElementById("dott").style.transform =
-                    "translate(153px)";
+            minPrice = parseInt(minPrice);
+            maxPrice = parseInt(maxPrice);
+            var sortBy = params.get("sortBy");
+            if (params.get("type") != null) type = params.get("type");
+            let whereType = [];
+            let q;
+            const productOutput = document.getElementById("productOutput");
+            const paginationDiv = document.getElementById("paginationDiv");
+            var idd = 1203;
+
+            if (type != undefined) {
+                if (type.includes("hoodies")) whereType.push("hoodie");
+                if (type.includes("tshir")) whereType.push("tshirt");
+                if (type.includes("shirts")) whereType.push("shirt");
+                if (type.includes("sweatsh")) whereType.push("sweatshirt");
             }
-            function mouseHoverMen() {
-                document.getElementById("dott").style.transform =
-                    "translate(258px)";
+            window.addEventListener("scroll", () => {
+                // console.log("scrollHeight:",document.documentElement.scrollHeight);
+                // console.log("windowHeight:",window.scrollY) //scrolled from top
+                // console.log("windowInnerHeight:",window.innerHeight) //visible part of screen
+                if (
+                    window.scrollY + window.innerHeight >=
+                    document.documentElement.scrollHeight
+                ) {
+                    console.log("reached bottom");
+                    console.log(isSearching);
+                    if (isSearching) {
+                        if (totalResults > resultsSearchNumber) {
+                            searchPress();
+                            isSearching = true;
+                        }
+                    } else {
+                        loadProducts();
+                        isSearching = false;
+                    }
+                }
+            });
+            if (!isSearching) loadProducts();
+            var currentPage = 1;
+            var lastVisibleQueryFromPrevPage;
+            function loadProducts() {
+                isSearching = false;
+                if (sortBy == "newArrival") {
+                    if (currentPage > 1) {
+                        if (whereType.length != 0) {
+                            if (!isNaN(minPrice))
+                                q = db
+                                    .collection("men")
+                                    .orderBy("price", "asc")
+                                    .where("price", "<=", maxPrice)
+                                    .where("price", ">=", minPrice)
+                                    .orderBy("date", "desc")
+                                    .where("type", "in", whereType)
+                                    .startAfter(lastVisibleQueryFromPrevPage);
+                            else
+                                q = db
+                                    .collection("men")
+                                    .orderBy("date", "desc")
+                                    .where("type", "in", whereType)
+                                    .startAfter(lastVisibleQueryFromPrevPage);
+                            q = q.limit(18);
+                        } else {
+                            if (!isNaN(minPrice))
+                                q = db
+                                    .collection("men")
+                                    .orderBy("price", "asc")
+                                    .where("price", "<=", maxPrice)
+                                    .where("price", ">=", minPrice)
+                                    .orderBy("date", "desc")
+                                    .startAfter(lastVisibleQueryFromPrevPage);
+                            else
+                                q = db
+                                    .collection("men")
+                                    .orderBy("date", "desc")
+                                    .startAfter(lastVisibleQueryFromPrevPage);
+                            q = q.limit(18);
+                        }
+                    } else {
+                        if (whereType.length != 0) {
+                            if (!isNaN(minPrice))
+                                q = db
+                                    .collection("men")
+                                    .orderBy("price", "asc")
+                                    .where("price", "<=", maxPrice)
+                                    .where("price", ">=", minPrice)
+                                    .orderBy("date", "desc")
+                                    .where("type", "in", whereType);
+                            else
+                                q = db
+                                    .collection("men")
+                                    .orderBy("date", "desc")
+                                    .where("type", "in", whereType);
+                            q = q.limit(18);
+                        } else {
+                            if (!isNaN(minPrice))
+                                q = db
+                                    .collection("men")
+                                    .orderBy("price", "asc")
+                                    .where("price", "<=", maxPrice)
+                                    .where("price", ">=", minPrice)
+                                    .orderBy("date", "desc");
+                            else
+                                q = db
+                                    .collection("men")
+                                    .orderBy("date", "desc");
+                            q = q.limit(18);
+                        }
+                    }
+                    var resultsNumber = 0;
+                    var idd = 1221;
+                    q.get().then((querySnapshot) => {
+                        querySnapshot.forEach((qdoc) => {
+                            resultsNumber++;
+                            if (resultsNumber == currentPage * 18) {
+                                currentPage++;
+                            }
+                            lastVisibleQueryFromPrevPage =
+                                querySnapshot.docs[
+                                    querySnapshot.docs.length - 1
+                                ];
+                            // var docRef;
+                            // console.log(new Date(qdoc.data().date * 1000));
+                            // for(var x = 1; x<=1; x++)
+                            // {
+                            //   idd++;
+                            //   if(idd <= 1240)
+                            //     db.collection("men").doc(idd.toString()).set(qdoc.data())
+                            // }
+
+                            //product item
+                            var product = document.createElement("a");
+                            product.setAttribute(
+                                "href",
+                                "/product.html?id=" + qdoc.id
+                            );
+                            product.className = "product";
+
+                            //productImageDiv
+                            var productImageDiv = document.createElement("div");
+                            productImageDiv.className = "productImageDiv";
+                            product.appendChild(productImageDiv);
+
+                            //productFirstImage
+                            var productFirstImage =
+                                document.createElement("img");
+                            productFirstImage.className = "productImage";
+                            productFirstImage.src =
+                                "https://timedshop.b-cdn.net/" +
+                                qdoc.id +
+                                "01.jpg";
+                            // storage
+                            //     .ref()
+                            //     .child(qdoc.id + "01.jpg")
+                            //     .getDownloadURL()
+                            //     .then((url) => {
+                            //         productFirstImage.src = url;
+                            //     })
+                            //     .catch((error) => {
+                            //         //console.log(error);
+                            //     });
+
+                            //productSecondImage
+                            var productSecondImage =
+                                document.createElement("img");
+                            productSecondImage.className = "productSecondImage";
+                            productSecondImage.src =
+                                "https://timedshop.b-cdn.net/" +
+                                qdoc.id +
+                                "02.jpg";
+                            // storage
+                            //     .ref()
+                            //     .child(qdoc.id + "02.jpg")
+                            //     .getDownloadURL()
+                            //     .then((url) => {
+                            //         productSecondImage.src = url;
+                            //     })
+                            //     .catch((error) => {
+                            //         //console.log(error);
+                            //     });
+
+                            //Append First and Second Image to productImageDiv
+                            productImageDiv.appendChild(productFirstImage);
+                            productImageDiv.appendChild(productSecondImage);
+                            product.appendChild(productImageDiv);
+
+                            //productDividerLine
+                            var productDividerLine =
+                                document.createElement("div");
+                            productDividerLine.className = "productDividerLine";
+                            product.appendChild(productDividerLine);
+
+                            //productName
+                            var productName = document.createElement("a");
+                            productName.className = "productName";
+                            productName.innerText = qdoc.data().name;
+                            productDividerLine.appendChild(productName);
+
+                            //productPriceBeforeSale
+                            if (!isNaN(qdoc.data().priceBeforeSale)) {
+                                var productSaleDiv =
+                                    document.createElement("div");
+                                productSaleDiv.className = "productSaleDiv";
+
+                                var productPriceBeforeSale =
+                                    document.createElement("a");
+                                productPriceBeforeSale.className =
+                                    "productPriceBeforeSale";
+                                productPriceBeforeSale.innerText =
+                                    "$" + qdoc.data().priceBeforeSale + ".00";
+
+                                var productSaleDot =
+                                    document.createElement("a");
+                                productSaleDot.className = "productSaleDivDot";
+                                productSaleDot.innerText = "●";
+
+                                var productSaleAmount =
+                                    document.createElement("a");
+                                productSaleAmount.className =
+                                    "productSaleAmount";
+                                productSaleAmount.innerText =
+                                    (
+                                        (Math.abs(
+                                            qdoc.data().priceBeforeSale -
+                                                qdoc.data().price
+                                        ) /
+                                            qdoc.data().priceBeforeSale) *
+                                        100
+                                    ).toFixed() + "%";
+
+                                productSaleDiv.appendChild(
+                                    productPriceBeforeSale
+                                );
+                                productSaleDiv.appendChild(productSaleDot);
+                                productSaleDiv.appendChild(productSaleAmount);
+                                productDividerLine.appendChild(productSaleDiv);
+                            }
+
+                            //productPrice
+                            var productPrice = document.createElement("a");
+                            productPrice.className = "productPrice";
+                            var price = qdoc.data().price;
+                            productPrice.innerText = "$" + price + ".00";
+                            productDividerLine.appendChild(productPrice);
+
+                            //productAvailableSizes
+                            var productAvailableSizes =
+                                document.createElement("a");
+                            productAvailableSizes.className =
+                                "productAvailableSizes";
+                            let sizes = "";
+                            var arraySize = qdoc.data().sizes.length;
+                            for (let i = 0; i < arraySize; i++) {
+                                if (i == arraySize - 1) {
+                                    sizes = sizes + qdoc.data().sizes[i];
+                                } else {
+                                    sizes = sizes + qdoc.data().sizes[i] + ", ";
+                                }
+                            }
+                            productAvailableSizes.innerText =
+                                "Available sizes: " + sizes;
+                            productDividerLine.appendChild(
+                                productAvailableSizes
+                            );
+
+                            //productAvailableColors
+                            var productAvailableColors =
+                                document.createElement("div");
+                            productAvailableColors.className = "productColors";
+                            var productAvailableColorsText =
+                                document.createElement("a");
+                            productAvailableColorsText.innerText =
+                                "Available colors:";
+                            productAvailableColorsText.className =
+                                "productAvailableColorsText";
+                            productAvailableColors.appendChild(
+                                productAvailableColorsText
+                            );
+                            var productColorsLength = qdoc.data().colors.length;
+                            var productColorCircle;
+                            for (let i = 0; i < productColorsLength; i++) {
+                                productColorCircle =
+                                    document.createElement("div");
+                                productColorCircle.className =
+                                    "productColorCircle";
+                                productColorCircle.style.backgroundColor =
+                                    qdoc.data().colors[i];
+                                productAvailableColors.appendChild(
+                                    productColorCircle
+                                );
+                            }
+                            productDividerLine.appendChild(
+                                productAvailableColors
+                            );
+
+                            product.appendChild(productDividerLine);
+
+                            document
+                                .getElementById("productOutput")
+                                .insertBefore(product, paginationDiv);
+                        });
+                    }).then(()=>{
+                        loader(true);
+                    });
+                } else if (sortBy == "priceHL") {
+                    if (currentPage > 1) {
+                        if (whereType.length != 0) {
+                            if (!isNaN(minPrice))
+                                q = db
+                                    .collection("men")
+                                    .orderBy("price", "desc")
+                                    .where("price", "<=", maxPrice)
+                                    .where("price", ">=", minPrice)
+                                    .where("type", "in", whereType)
+                                    .startAfter(lastVisibleQueryFromPrevPage);
+                            else
+                                q = db
+                                    .collection("men")
+                                    .orderBy("price", "desc")
+                                    .where("type", "in", whereType)
+                                    .startAfter(lastVisibleQueryFromPrevPage);
+                            q = q.limit(18);
+                        } else {
+                            if (!isNaN(minPrice))
+                                q = db
+                                    .collection("men")
+                                    .orderBy("price", "desc")
+                                    .where("price", "<=", maxPrice)
+                                    .where("price", ">=", minPrice)
+                                    .startAfter(lastVisibleQueryFromPrevPage);
+                            else
+                                q = db
+                                    .collection("men")
+                                    .orderBy("price", "desc")
+                                    .startAfter(lastVisibleQueryFromPrevPage);
+                            q = q.limit(18);
+                        }
+                    } else {
+                        if (whereType.length != 0) {
+                            if (!isNaN(minPrice))
+                                q = db
+                                    .collection("men")
+                                    .orderBy("price", "desc")
+                                    .where("price", "<=", maxPrice)
+                                    .where("price", ">=", minPrice)
+                                    .where("type", "in", whereType);
+                            else
+                                q = db
+                                    .collection("men")
+                                    .orderBy("price", "desc")
+                                    .where("type", "in", whereType);
+                            q = q.limit(18);
+                        } else {
+                            if (!isNaN(minPrice))
+                                q = db
+                                    .collection("men")
+                                    .orderBy("price", "desc")
+                                    .where("price", "<=", maxPrice)
+                                    .where("price", ">=", minPrice);
+                            else
+                                q = db
+                                    .collection("men")
+                                    .orderBy("price", "desc");
+                            q = q.limit(18);
+                        }
+                    }
+                    var resultsNumber = 0;
+                    var idd = 1201;
+                    q.get().then((querySnapshot) => {
+                        querySnapshot.forEach((qdoc) => {
+                            resultsNumber++;
+                            if (resultsNumber == currentPage * 18) {
+                                currentPage++;
+                            }
+                            lastVisibleQueryFromPrevPage =
+                                querySnapshot.docs[
+                                    querySnapshot.docs.length - 1
+                                ];
+                            // var docRef;
+                            // console.log(new Date(qdoc.data().date * 1000));
+                            // for(var x = 1; x<=1; x++)
+                            // {
+                            //   idd++;
+                            //   if(idd <= 1240)
+                            //     db.collection("men").doc(idd.toString()).set(qdoc.data())
+                            // }
+
+                            //product item
+                            var product = document.createElement("a");
+                            product.setAttribute(
+                                "href",
+                                "/product.html?id=" + qdoc.id
+                            );
+                            product.className = "product";
+
+                            //productImageDiv
+                            var productImageDiv = document.createElement("div");
+                            productImageDiv.className = "productImageDiv";
+                            product.appendChild(productImageDiv);
+
+                            //productFirstImage
+                            var productFirstImage =
+                                document.createElement("img");
+                            productFirstImage.className = "productImage";
+                            productFirstImage.src =
+                                "https://timedshop.b-cdn.net/" +
+                                qdoc.id +
+                                "01.jpg";
+                            // storage
+                            //     .ref()
+                            //     .child(qdoc.id + "01.jpg")
+                            //     .getDownloadURL()
+                            //     .then((url) => {
+                            //         productFirstImage.src = url;
+                            //     })
+                            //     .catch((error) => {
+                            //         //console.log(error);
+                            //     });
+
+                            //productSecondImage
+                            var productSecondImage =
+                                document.createElement("img");
+                            productSecondImage.className = "productSecondImage";
+                            productSecondImage.src =
+                                "https://timedshop.b-cdn.net/" +
+                                qdoc.id +
+                                "02.jpg";
+                            // storage
+                            //     .ref()
+                            //     .child(qdoc.id + "02.jpg")
+                            //     .getDownloadURL()
+                            //     .then((url) => {
+                            //         productSecondImage.src = url;
+                            //     })
+                            //     .catch((error) => {
+                            //         //console.log(error);
+                            //     });
+
+                            //Append First and Second Image to productImageDiv
+                            productImageDiv.appendChild(productFirstImage);
+                            productImageDiv.appendChild(productSecondImage);
+                            product.appendChild(productImageDiv);
+
+                            //productDividerLine
+                            var productDividerLine =
+                                document.createElement("div");
+                            productDividerLine.className = "productDividerLine";
+                            product.appendChild(productDividerLine);
+
+                            //productName
+                            var productName = document.createElement("a");
+                            productName.className = "productName";
+                            productName.innerText = qdoc.data().name;
+                            productDividerLine.appendChild(productName);
+
+                            //productPriceBeforeSale
+                            if (!isNaN(qdoc.data().priceBeforeSale)) {
+                                var productSaleDiv =
+                                    document.createElement("div");
+                                productSaleDiv.className = "productSaleDiv";
+
+                                var productPriceBeforeSale =
+                                    document.createElement("a");
+                                productPriceBeforeSale.className =
+                                    "productPriceBeforeSale";
+                                productPriceBeforeSale.innerText =
+                                    "$" + qdoc.data().priceBeforeSale + ".00";
+
+                                var productSaleDot =
+                                    document.createElement("a");
+                                productSaleDot.className = "productSaleDivDot";
+                                productSaleDot.innerText = "●";
+
+                                var productSaleAmount =
+                                    document.createElement("a");
+                                productSaleAmount.className =
+                                    "productSaleAmount";
+                                productSaleAmount.innerText =
+                                    (
+                                        (Math.abs(
+                                            qdoc.data().priceBeforeSale -
+                                                qdoc.data().price
+                                        ) /
+                                            qdoc.data().priceBeforeSale) *
+                                        100
+                                    ).toFixed() + "%";
+
+                                productSaleDiv.appendChild(
+                                    productPriceBeforeSale
+                                );
+                                productSaleDiv.appendChild(productSaleDot);
+                                productSaleDiv.appendChild(productSaleAmount);
+                                productDividerLine.appendChild(productSaleDiv);
+                            }
+
+                            //productPrice
+                            var productPrice = document.createElement("a");
+                            productPrice.className = "productPrice";
+                            var price = qdoc.data().price;
+                            productPrice.innerText = "$" + price + ".00";
+                            productDividerLine.appendChild(productPrice);
+
+                            //productAvailableSizes
+                            var productAvailableSizes =
+                                document.createElement("a");
+                            productAvailableSizes.className =
+                                "productAvailableSizes";
+                            let sizes = "";
+                            var arraySize = qdoc.data().sizes.length;
+                            for (let i = 0; i < arraySize; i++) {
+                                if (i == arraySize - 1) {
+                                    sizes = sizes + qdoc.data().sizes[i];
+                                } else {
+                                    sizes = sizes + qdoc.data().sizes[i] + ", ";
+                                }
+                            }
+                            productAvailableSizes.innerText =
+                                "Available sizes: " + sizes;
+                            productDividerLine.appendChild(
+                                productAvailableSizes
+                            );
+
+                            //productAvailableColors
+                            var productAvailableColors =
+                                document.createElement("div");
+                            productAvailableColors.className = "productColors";
+                            var productAvailableColorsText =
+                                document.createElement("a");
+                            productAvailableColorsText.innerText =
+                                "Available colors:";
+                            productAvailableColorsText.className =
+                                "productAvailableColorsText";
+                            productAvailableColors.appendChild(
+                                productAvailableColorsText
+                            );
+                            var productColorsLength = qdoc.data().colors.length;
+                            var productColorCircle;
+                            for (let i = 0; i < productColorsLength; i++) {
+                                productColorCircle =
+                                    document.createElement("div");
+                                productColorCircle.className =
+                                    "productColorCircle";
+                                productColorCircle.style.backgroundColor =
+                                    qdoc.data().colors[i];
+                                productAvailableColors.appendChild(
+                                    productColorCircle
+                                );
+                            }
+                            productDividerLine.appendChild(
+                                productAvailableColors
+                            );
+
+                            product.appendChild(productDividerLine);
+
+                            document
+                                .getElementById("productOutput")
+                                .insertBefore(product, paginationDiv);
+                        });
+                    }).then(()=>{
+                        loader(true);
+                    });
+                } else if (sortBy == "priceLH") {
+                    if (currentPage > 1) {
+                        if (whereType.length != 0) {
+                            if (!isNaN(minPrice))
+                                q = db
+                                    .collection("men")
+                                    .orderBy("price", "asc")
+                                    .where("price", "<=", maxPrice)
+                                    .where("price", ">=", minPrice)
+                                    .where("type", "in", whereType)
+                                    .startAfter(lastVisibleQueryFromPrevPage);
+                            else
+                                q = db
+                                    .collection("men")
+                                    .orderBy("price", "asc")
+                                    .where("type", "in", whereType)
+                                    .startAfter(lastVisibleQueryFromPrevPage);
+                            q = q.limit(18);
+                        } else {
+                            if (!isNaN(minPrice))
+                                q = db
+                                    .collection("men")
+                                    .orderBy("price", "asc")
+                                    .where("price", "<=", maxPrice)
+                                    .where("price", ">=", minPrice)
+                                    .startAfter(lastVisibleQueryFromPrevPage);
+                            else
+                                q = db
+                                    .collection("men")
+                                    .orderBy("price", "asc")
+                                    .startAfter(lastVisibleQueryFromPrevPage);
+                            q = q.limit(18);
+                        }
+                    } else {
+                        if (whereType.length != 0) {
+                            if (!isNaN(minPrice))
+                                q = db
+                                    .collection("men")
+                                    .orderBy("price", "asc")
+                                    .where("price", "<=", maxPrice)
+                                    .where("price", ">=", minPrice)
+                                    .where("type", "in", whereType);
+                            else
+                                q = db
+                                    .collection("men")
+                                    .orderBy("price", "asc")
+                                    .where("type", "in", whereType);
+                            q = q.limit(18);
+                        } else {
+                            if (!isNaN(minPrice))
+                                q = db
+                                    .collection("men")
+                                    .orderBy("price", "asc")
+                                    .where("price", "<=", maxPrice)
+                                    .where("price", ">=", minPrice);
+                            else
+                                q = db
+                                    .collection("men")
+                                    .orderBy("price", "asc");
+                            q = q.limit(18);
+                        }
+                    }
+                    var resultsNumber = 0;
+                    var idd = 1201;
+                    q.get().then((querySnapshot) => {
+                        querySnapshot.forEach((qdoc) => {
+                            resultsNumber++;
+                            if (resultsNumber == currentPage * 18) {
+                                currentPage++;
+                            }
+                            lastVisibleQueryFromPrevPage =
+                                querySnapshot.docs[
+                                    querySnapshot.docs.length - 1
+                                ];
+                            // var docRef;
+                            // console.log(new Date(qdoc.data().date * 1000));
+                            // for(var x = 1; x<=1; x++)
+                            // {
+                            //   idd++;
+                            //   if(idd <= 1240)
+                            //     db.collection("men").doc(idd.toString()).set(qdoc.data())
+                            // }
+
+                            //product item
+                            var product = document.createElement("a");
+                            product.setAttribute(
+                                "href",
+                                "/product.html?id=" + qdoc.id
+                            );
+                            product.className = "product";
+
+                            //productImageDiv
+                            var productImageDiv = document.createElement("div");
+                            productImageDiv.className = "productImageDiv";
+                            product.appendChild(productImageDiv);
+
+                            //productFirstImage
+                            var productFirstImage =
+                                document.createElement("img");
+                            productFirstImage.className = "productImage";
+                            productFirstImage.src =
+                                "https://timedshop.b-cdn.net/" +
+                                qdoc.id +
+                                "01.jpg";
+                            // storage
+                            //     .ref()
+                            //     .child(qdoc.id + "01.jpg")
+                            //     .getDownloadURL()
+                            //     .then((url) => {
+                            //         productFirstImage.src = url;
+                            //     })
+                            //     .catch((error) => {
+                            //         //console.log(error);
+                            //     });
+
+                            //productSecondImage
+                            var productSecondImage =
+                                document.createElement("img");
+                            productSecondImage.className = "productSecondImage";
+                            productSecondImage.src =
+                                "https://timedshop.b-cdn.net/" +
+                                qdoc.id +
+                                "02.jpg";
+                            // storage
+                            //     .ref()
+                            //     .child(qdoc.id + "02.jpg")
+                            //     .getDownloadURL()
+                            //     .then((url) => {
+                            //         productSecondImage.src = url;
+                            //     })
+                            //     .catch((error) => {
+                            //         //console.log(error);
+                            //     });
+
+                            //Append First and Second Image to productImageDiv
+                            productImageDiv.appendChild(productFirstImage);
+                            productImageDiv.appendChild(productSecondImage);
+                            product.appendChild(productImageDiv);
+
+                            //productDividerLine
+                            var productDividerLine =
+                                document.createElement("div");
+                            productDividerLine.className = "productDividerLine";
+                            product.appendChild(productDividerLine);
+
+                            //productName
+                            var productName = document.createElement("a");
+                            productName.className = "productName";
+                            productName.innerText = qdoc.data().name;
+                            productDividerLine.appendChild(productName);
+
+                            //productPriceBeforeSale
+                            if (!isNaN(qdoc.data().priceBeforeSale)) {
+                                var productSaleDiv =
+                                    document.createElement("div");
+                                productSaleDiv.className = "productSaleDiv";
+
+                                var productPriceBeforeSale =
+                                    document.createElement("a");
+                                productPriceBeforeSale.className =
+                                    "productPriceBeforeSale";
+                                productPriceBeforeSale.innerText =
+                                    "$" + qdoc.data().priceBeforeSale + ".00";
+
+                                var productSaleDot =
+                                    document.createElement("a");
+                                productSaleDot.className = "productSaleDivDot";
+                                productSaleDot.innerText = "●";
+
+                                var productSaleAmount =
+                                    document.createElement("a");
+                                productSaleAmount.className =
+                                    "productSaleAmount";
+                                productSaleAmount.innerText =
+                                    (
+                                        (Math.abs(
+                                            qdoc.data().priceBeforeSale -
+                                                qdoc.data().price
+                                        ) /
+                                            qdoc.data().priceBeforeSale) *
+                                        100
+                                    ).toFixed() + "%";
+
+                                productSaleDiv.appendChild(
+                                    productPriceBeforeSale
+                                );
+                                productSaleDiv.appendChild(productSaleDot);
+                                productSaleDiv.appendChild(productSaleAmount);
+                                productDividerLine.appendChild(productSaleDiv);
+                            }
+
+                            //productPrice
+                            var productPrice = document.createElement("a");
+                            productPrice.className = "productPrice";
+                            var price = qdoc.data().price;
+                            productPrice.innerText = "$" + price + ".00";
+                            productDividerLine.appendChild(productPrice);
+
+                            //productAvailableSizes
+                            var productAvailableSizes =
+                                document.createElement("a");
+                            productAvailableSizes.className =
+                                "productAvailableSizes";
+                            let sizes = "";
+                            var arraySize = qdoc.data().sizes.length;
+                            for (let i = 0; i < arraySize; i++) {
+                                if (i == arraySize - 1) {
+                                    sizes = sizes + qdoc.data().sizes[i];
+                                } else {
+                                    sizes = sizes + qdoc.data().sizes[i] + ", ";
+                                }
+                            }
+                            productAvailableSizes.innerText =
+                                "Available sizes: " + sizes;
+                            productDividerLine.appendChild(
+                                productAvailableSizes
+                            );
+
+                            //productAvailableColors
+                            var productAvailableColors =
+                                document.createElement("div");
+                            productAvailableColors.className = "productColors";
+                            var productAvailableColorsText =
+                                document.createElement("a");
+                            productAvailableColorsText.innerText =
+                                "Available colors:";
+                            productAvailableColorsText.className =
+                                "productAvailableColorsText";
+                            productAvailableColors.appendChild(
+                                productAvailableColorsText
+                            );
+                            var productColorsLength = qdoc.data().colors.length;
+                            var productColorCircle;
+                            for (let i = 0; i < productColorsLength; i++) {
+                                productColorCircle =
+                                    document.createElement("div");
+                                productColorCircle.className =
+                                    "productColorCircle";
+                                productColorCircle.style.backgroundColor =
+                                    qdoc.data().colors[i];
+                                productAvailableColors.appendChild(
+                                    productColorCircle
+                                );
+                            }
+                            productDividerLine.appendChild(
+                                productAvailableColors
+                            );
+
+                            product.appendChild(productDividerLine);
+
+                            document
+                                .getElementById("productOutput")
+                                .insertBefore(product, paginationDiv);
+                        });
+                    })
+                    .then(()=>{
+                        loader(true);
+                    });
+                }
             }
-            function mouseHoverAbout() {
-                document.getElementById("dott").style.transform =
-                    "translate(361px)";
-            }
+        </script>
+        <script src="resources/men/search.js"></script>
+        <script>
+            firebase.auth().onAuthStateChanged((user) => {
+                if (user) {
+                    var uid = user.uid;
+                    console.log("logged in user: ", user.email);
+                    document.getElementById("LogIn").style.display = "none";
+                    document.getElementById("register").style.display = "none";
+                    document.getElementById("account").style.display = "flex";
+                    document.getElementById("favorites").style.display = "block";
+                    db.collection("users")
+                        .doc(uid)
+                        .get()
+                        .then((data) => {
+                            if(data.data().cart)
+                            {
+                                cartCount.innerText = data.data().cart.length;
+                            }
+                            else
+                            {
+                                cartCount.innerText = 0;
+                            }
+
+                            if(data.data().favorites)
+                            {
+                                favoritesCount.innerText = data.data().favorites.length;
+                            }
+                            else
+                            {
+                                favoritesCount.innerText = 0;
+                            }
+                        })
+                } else {
+                    // User is signed out
+                    console.log("sign out");
+                    document.getElementById("account").style.display = "none";
+                    document.getElementById("favorites").style.display = "none";
+                    document.getElementById("LogIn").style.display = "flex";
+                    document.getElementById("register").style.display = "flex";
+                    if(localStorage.getItem("cartCount"))
+                    {
+                        document.getElementById("cartCount").innerText = localStorage.getItem("cartCount");
+                    }
+                    else
+                    {
+                        document.getElementById("cartCount").innerText = "0";
+                    }
+                }
+            });
         </script>
     </body>
 </html>

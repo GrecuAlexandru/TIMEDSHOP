@@ -44,7 +44,7 @@ db.collection(collec)
                     "productPriceBeforeSale"
                 );
                 productPriceBeforeSale.innerText =
-                    "$" + doc.data().priceBeforeSale + ".00";
+                    "€" + doc.data().priceBeforeSale + ".00";
                 let priceSaleAmount =
                     document.getElementById("priceSaleAmount");
                 productSaleAmount.innerText =
@@ -62,7 +62,7 @@ db.collection(collec)
 
             //productPrice
             let productPrice = document.getElementById("productPrice");
-            productPrice.innerText = "$" + doc.data().price + ".00";
+            productPrice.innerText = "€" + doc.data().price + ".00";
 
             //sizes
             let sizes = doc.data().sizes;

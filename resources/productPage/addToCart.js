@@ -44,25 +44,50 @@ function addToCart() {
             params.get("id").toString() + "-" + 
             selectedSize.toString() + "-" + 
             selectedColor.toString();
-        db.collection("users")
-            .doc(firebase.auth().currentUser.uid)
-            .get()
-            .then((data) => {
-                if(data.data().cart)
-                {
-                    if (data.data().cart.includes(productSelectionString)) {
-                        document.getElementById("addToCartError").innerText =
-                            "You already added this to your cart!";
-                    } else {
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                db.collection("users")
+                .doc(firebase.auth().currentUser.uid)
+                .get()
+                .then((data) => {
+                    if(data.data().cart)
+                    {
+                        if (data.data().cart.includes(productSelectionString)) {
+                            document.getElementById("addToCartError").innerText =
+                                "You already added this to your cart!";
+                        } else {
+                            document.getElementById("addToCartError").innerText = "";
+                            console.log("ITEM ADDED");
+                            document.getElementById("addToCartButton").innerText = "ADDED";
+                            db.collection("users")
+                                .doc(firebase.auth().currentUser.uid)
+                                .update({
+                                    cart: firebase.firestore.FieldValue.arrayUnion(
+                                        productSelectionString
+                                    ),
+                                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                                })
+                            .then(() => {
+                                document.getElementById("cartCount").innerText =
+                                    parseInt(
+                                        document.getElementById("cartCount").innerText
+                                    ) + 1;
+                            }).catch((error) => {
+                                if(error.code != "permission-denied")
+                                    window.open("/error.html","_self");
+                            });
+                        }
+                    }
+                    else
+                    {
                         document.getElementById("addToCartError").innerText = "";
                         console.log("ITEM ADDED");
                         document.getElementById("addToCartButton").innerText = "ADDED";
                         db.collection("users")
                             .doc(firebase.auth().currentUser.uid)
                             .update({
-                                cart: firebase.firestore.FieldValue.arrayUnion(
-                                    productSelectionString
-                                ),
+                                cart: productSelectionString,
+                                timestamp: firebase.firestore.FieldValue.serverTimestamp()
                             })
                         .then(() => {
                             document.getElementById("cartCount").innerText =
@@ -70,32 +95,54 @@ function addToCart() {
                                     document.getElementById("cartCount").innerText
                                 ) + 1;
                         }).catch((error) => {
-                            console.log(error);
+                            if(error.code != "permission-denied")
+                                window.open("/error.html","_self");
                         });
+                    }
+                })
+                .catch((error) => {
+                    if(error.code != "permission-denied")
+                        window.open("/error.html","_self");
+                });
+            }
+            else
+            {
+                if(localStorage.getItem("cart"))
+                {
+                    var storageCart = JSON.parse(localStorage.getItem("cart"))
+                    if(storageCart.includes(productSelectionString))
+                    {
+                        document.getElementById("addToCartError").innerText =
+                                "You already added this to your cart!";
+                    }
+                    else
+                    {
+                        document.getElementById("addToCartError").innerText = "";
+                        storageCart.push(productSelectionString);
+                        localStorage.setItem("cart", JSON.stringify(storageCart));
+                        localStorage.setItem("cartCount", JSON.stringify(JSON.parse(localStorage.getItem("cartCount"))+1));
+                        document.getElementById("addToCartButton").innerText = "ADDED";
+                        document.getElementById("cartCount").innerText =
+                            parseInt(
+                                document.getElementById("cartCount").innerText
+                            ) + 1;
                     }
                 }
                 else
                 {
                     document.getElementById("addToCartError").innerText = "";
-                    console.log("ITEM ADDED");
-                    db.collection("users")
-                        .doc(firebase.auth().currentUser.uid)
-                        .update({
-                            cart: productSelectionString
-                        })
-                    .then(() => {
-                        document.getElementById("cartCount").innerText =
-                            parseInt(
-                                document.getElementById("cartCount").innerText
-                            ) + 1;
-                    }).catch((error) => {
-                        window.open("/error.html","_self");
-                    });
+                    var storageCart = [];
+                    storageCart.push(productSelectionString);
+                    localStorage.setItem("cart", JSON.stringify(storageCart));
+                    localStorage.setItem("cartCount", JSON.stringify(JSON.parse(localStorage.getItem("cartCount"))+1));
+                    document.getElementById("addToCartButton").innerText = "ADDED";
+                    document.getElementById("cartCount").innerText =
+                        parseInt(
+                            document.getElementById("cartCount").innerText
+                        ) + 1;
                 }
-            })
-            .catch((error) => {
-                window.open("/error.html","_self");
-            });
+            }
+        });
     }
 }
 
@@ -120,6 +167,7 @@ function addToFavorites()
                             favorites: firebase.firestore.FieldValue.arrayRemove(
                                 productSelectionString
                                 ),
+                            timestamp: firebase.firestore.FieldValue.serverTimestamp()
                             })
                             .then(() => {
                                 document.getElementById("favoritesCount").innerText =
@@ -128,7 +176,8 @@ function addToFavorites()
                                 ) - 1;
                                 heart.setAttribute("src","/resources/icons/favorites.svg");
                         }).catch((error) => {
-                            window.open("/error.html","_self");
+                            if(error.code != "permission-denied")
+                                window.open("/error.html","_self");
                         });
                     } else {
                         document.getElementById("addToFavoritesError").innerText = "";
@@ -138,6 +187,7 @@ function addToFavorites()
                             favorites: firebase.firestore.FieldValue.arrayUnion(
                                 productSelectionString
                                 ),
+                            timestamp: firebase.firestore.FieldValue.serverTimestamp()
                             })
                             .then(() => {
                                 document.getElementById("favoritesCount").innerText =
@@ -146,7 +196,8 @@ function addToFavorites()
                                 ) + 1;
                                 heart.setAttribute("src","/resources/icons/selectedFavorites.svg");
                         }).catch((error) => {
-                            window.open("/error.html","_self");
+                            if(error.code != "permission-denied")
+                                window.open("/error.html","_self");
                         });
                     }
                 }
@@ -156,7 +207,8 @@ function addToFavorites()
                     db.collection("users")
                         .doc(firebase.auth().currentUser.uid)
                         .update({
-                            favorites: productSelectionString
+                            favorites: productSelectionString,
+                            timestamp: firebase.firestore.FieldValue.serverTimestamp()
                         })
                     .then(() => {
                         document.getElementById("favoritesCount").innerText =
@@ -164,12 +216,14 @@ function addToFavorites()
                                 document.getElementById("favoritesCount").innerText
                             ) + 1;
                     }).catch((error) => {
-                        window.open("/error.html","_self");
+                        if(error.code != "permission-denied")
+                            window.open("/error.html","_self");
                     });
                 }
             }
         })
         .catch((error) => {
-            window.open("/error.html","_self");
+            if(error.code != "permission-denied")
+                window.open("/error.html","_self");
         });
 }

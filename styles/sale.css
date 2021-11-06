@@ -130,8 +130,8 @@ body {
 }
 #sectionSpecifier {
     float: left;
-    color: #2a2a2a;
-    background-color: #e3c8ff;
+    color: white;
+    background-color: #FFB300;
     border-radius: 10px;
     border: solid #2a2a2a;
     border-width: 1 1px;
@@ -140,17 +140,65 @@ body {
     justify-content: center;
     align-items: center;
     width: 92.36vw;
-    height: 8vh;
+    height: 10vh;
     margin-left: 3.9vw;
     margin-top: 4vh;
     font-size: 2.5vw;
     font-weight: bold;
 }
-
+#genderCategory{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 92.46vw;
+    height: 8vh;
+    margin-top:2vh;
+    margin-left: 3.9vw;
+    float:left;
+}
+#menCategory{
+    float: left;
+    color: #2a2a2a;
+    background-color: #E3C8FF;
+    border-radius: 10px 0px 0px 10px;
+    border: solid #2a2a2a;
+    border-width: 1 1px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 46.18vw;
+    font-size: 2.5vw;
+    font-weight: bold;
+    cursor: pointer;
+}
+#menCategory:hover{
+    background-color: #c894ff !important;
+}
+#womenCategory{
+    margin-left:-1px;
+    float: left;
+    color: #2a2a2a;
+    background-color: white;
+    border-radius: 0px 10px 10px 0px;
+    border: solid #2a2a2a;
+    border-width: 1 1px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 46.18vw;
+    font-size: 2.5vw;
+    font-weight: bold;
+    cursor: pointer;
+}
+#womenCategory:hover{
+    background-color: #c894ff !important;
+}
 #fullProductsDiv {
     float: left;
     width: 96vw;
-    min-height: 300vh;
+    height: 300vh;
     margin-left: 3.9vw;
     margin-top: 5.5vh;
 }
@@ -190,6 +238,15 @@ body {
     border-radius: 10px;
 }
 #clothingCheckboxList {
+    border-radius: 10px;
+    border: solid #2a2a2a;
+    border-width: 1 1px;
+    width: 84%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#sizeCheckboxList {
     border-radius: 10px;
     border: solid #2a2a2a;
     border-width: 1 1px;
@@ -278,7 +335,7 @@ body {
 #productOutput {
     float: left;
     width: 71.5vw;
-    min-height: 150vh;
+    height: 150vh;
 }
 
 .product {
@@ -726,6 +783,104 @@ body {
 .show {
     display: block;
 }
+
+#paginationDiv {
+    width: 100%;
+    float: left;
+    display: flex;
+    justify-content: center;
+}
+#paginationBox {
+    display: flex;
+    width: 30vw;
+    height: 6vh;
+    margin-left: 3.1289vw;
+}
+#previousButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1vw;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+    width: 5vw;
+    border: none;
+    border: solid #2a2a2a;
+    border-width: 1 1px;
+    border-radius: 10px 0px 0px 10px;
+    background-color: #ffffff;
+    color: #2a2a2a;
+    cursor: pointer;
+}
+#nextButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1vw;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+    width: 5vw;
+    border: none;
+    border: solid #2a2a2a;
+    border-width: 1 1px;
+    border-radius: 0px 10px 10px 0px;
+    background-color: #ffffff;
+    color: #2a2a2a;
+    border-left-width: 0px;
+    cursor: pointer;
+}
+.pageNumber {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1vw;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+    width: 5vw;
+    border: none;
+    border: solid #2a2a2a;
+    border-width: 1 1px;
+    border-left-width: 0px;
+    background-color: #ffffff;
+    color: #2a2a2a;
+    cursor: pointer;
+    text-decoration: none;
+}
+.pageDots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1vw;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+    width: 5vw;
+    border: none;
+    border: solid #2a2a2a;
+    border-width: 1 1px;
+    background-color: #ffffff;
+    border-left-width: 0px;
+    color: #2a2a2a;
+}
+#previousButton:hover,
+#previousButton:focus {
+    background-color: #e7e7e7;
+}
+#nextButton:hover,
+#nextButton:focus {
+    background-color: #e7e7e7;
+}
+.pageNumber:hover,
+.pageNumber:focus {
+    background-color: #e7e7e7;
+}
+#selectedPage {
+    background-color: #e3c8ff;
+}
+
 #submitPriceButton {
     width: 84%;
     height: 5.5vh;

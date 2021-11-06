@@ -128,6 +128,7 @@ firebase.auth().onAuthStateChanged((user) => {
                     orderOutput.appendChild(orderItem);
                     i++;
                 });
+                loader(true);
             })
             .catch((error) => {
                 console.error(error);

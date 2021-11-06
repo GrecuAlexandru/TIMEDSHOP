@@ -130,6 +130,7 @@ function confirmPressed() {
                         cart:[],
                         orders:[],
                         favorites:[],
+                        timestamp: firebase.firestore.FieldValue.serverTimestamp()
                     })
                     .then(() => {
                         if (noError) {
@@ -217,8 +218,8 @@ function selectGender(gender) {
 }
 
 function okPressed() {
-    if (selectedGender == "male") window.open("/Men.html", "_self");
-    if (selectedGender == "female") window.open("/Women.html", "_self");
-    if (selectedGender == "other") window.open("/Sale.html", "_self");
+    if (selectedGender == "male") window.open("/men.html", "_self");
+    if (selectedGender == "female") window.open("/women.html", "_self");
+    if (selectedGender == "other") window.open("/sale.html", "_self");
 }
 loader(true);

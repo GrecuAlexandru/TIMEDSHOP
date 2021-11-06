@@ -42,25 +42,25 @@ if (sortBy == "priceHL")
 
 sortByNewArrival.setAttribute(
     "href",
-    "/women.html?sortBy=newArrival" + "&type=" + type
+    "/men.html?sortBy=newArrival" + "&type=" + type
 );
 sortByPriceHL.setAttribute(
     "href",
-    "/women.html?sortBy=priceHL" + "&type=" + type
+    "/men.html?sortBy=priceHL" + "&type=" + type
 );
 sortByPriceLH.setAttribute(
     "href",
-    "/women.html?sortBy=priceLH" + "&type=" + type
+    "/men.html?sortBy=priceLH" + "&type=" + type
 );
 if (sortBy == null) {
     if(ok==0)
         window.open(
-            "/women.html?sortBy=newArrival" + "&type=" + type,
+            "/men.html?sortBy=newArrival" + "&type=" + type,
             "_self"
         );
     else
         window.open(
-            "/women.html?sortBy=newArrival",
+            "/men.html?sortBy=newArrival",
             "_self"
         );
 }
@@ -97,7 +97,7 @@ function ApplyFilterButton() {
     if(minPriceDatabase == minPrice && maxPriceDatabase == maxPrice)
     {
         window.open(
-            "/women.html?sortBy=" +
+            "/men.html?sortBy=" +
                 sortBy +
                 "&type=" +
                 type,
@@ -107,7 +107,7 @@ function ApplyFilterButton() {
     else
     {
         window.open(
-            "/women.html?sortBy=" +
+            "/men.html?sortBy=" +
                 sortBy +
                 "&type=" +
                 type +

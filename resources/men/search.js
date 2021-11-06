@@ -38,7 +38,7 @@ function searchPress() {
             "UGZLD73BEY",
             "a5406a665a110ab2f485d9ed3ecc207b"
         );
-        const index = client.initIndex("womenIndex");
+        const index = client.initIndex("menIndex");
         console.log("currentSEarchpeage", currentSearchPage);
         index
             .search(searchInput.value, {

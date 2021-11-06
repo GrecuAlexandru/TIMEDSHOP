@@ -103,20 +103,23 @@ firebase.auth().onAuthStateChanged((user) => {
                         let cartItemPrice = document.createElement("a");
                         cartItemPrice.className = "cartItemPrice";
                         cartItemPrice.innerText =
-                            "$" + prodData.data().price + ".00";
+                            "€" + prodData.data().price + ".00";
                         cartTextDiv.appendChild(cartItemPrice);
                         cartOutput.appendChild(cartItem);
                     })
                     .catch((error)=>{
-                        window.open("/error.html","_self");
+                        if(error.code != "permission.denied")
+                            window.open("/error.html","_self");
                     });
             });
         }).catch((error)=>{
-            window.open("/error.html","_self");
+            if(error.code != "permission.denied")
+                window.open("/error.html","_self");
         });
     } else
     {
-        window.open("/error.html","_self");
+        if(error.code != "permission.denied")
+            window.open("/error.html","_self");
     }
 })
 
@@ -133,9 +136,11 @@ function removeButton(item)
                 .doc(user.uid)
                 .update({
                     favorites: firebase.firestore.FieldValue.arrayRemove(item),
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
             })
             .catch((error)=>{
-                window.open("/error.html","_self");
+                if(error.code != "permission.denied")
+                    window.open("/error.html","_self");
             });
         }
     });

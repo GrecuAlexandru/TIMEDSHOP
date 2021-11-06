@@ -1,6 +1,5 @@
 let params = new URLSearchParams(location.search);
 var currentPage = params.get("page");
-var sortBy = params.get("sortBy");
 var box1 = document.getElementById("box1");
 var box2 = document.getElementById("box2");
 var box3 = document.getElementById("box3");
@@ -10,60 +9,63 @@ var dots1 = document.getElementById("dots1");
 var dots2 = document.getElementById("dots2");
 var previousButton = document.getElementById("previousButton");
 var nextButton = document.getElementById("nextButton");
-var sortByNewArrival = document.getElementById("newArrival");
-var sortByPriceLH = document.getElementById("PriceLH");
-var sortByPriceHL = document.getElementById("PriceHL");
+var maxPages = parseInt(params.get("maxPages"));
 var hoodiesCheckbox = document.getElementById("hoodiesCheckbox");
 var tshirtsCheckbox = document.getElementById("tshirtsCheckbox");
 var shirtsCheckbox = document.getElementById("shirtsCheckbox");
 var sweatshirtsCheckbox = document.getElementById("sweatshirtsCheckbox");
+var SCheckbox = document.getElementById("SCheckbox");
+var MCheckbox = document.getElementById("MCheckbox");
+var LCheckbox = document.getElementById("LCheckbox");
+var XLCheckbox = document.getElementById("XLCheckbox");
+var XXLCheckbox = document.getElementById("XXLCheckbox");
+var c = params.get("c");
 let openlink;
 var ok=0;
+var minPrice = document.getElementById("sliderMin").value;
+var maxPrice = document.getElementById("sliderMax").value;
 let type = params.get("type");
 if (type == null) type = "";
 if (type.includes("hoodies")) hoodiesCheckbox.checked = true;
 if (type.includes("tshir")) tshirtsCheckbox.checked = true;
 if (type.includes("shirts")) shirtsCheckbox.checked = true;
 if (type.includes("sweatsh")) sweatshirtsCheckbox.checked = true;
-if (
-    !type.includes("hoodies") &&
-    !type.includes("tshir") &&
-    !type.includes("shirts") &&
-    !type.includes("sweatsh") &&
-    window.location.search.includes("type")
-)
-    ok=1;
-if (sortBy == "newArrival")
-    document.getElementById("dropdownTitle").innerText = "New Arrival";
-if (sortBy == "priceLH")
-    document.getElementById("dropdownTitle").innerText = "Price (Low to High)";
-if (sortBy == "priceHL")
-    document.getElementById("dropdownTitle").innerText = "Price (High to Low)";
+// if (
+//     !type.includes("hoodies") &&
+//     !type.includes("tshir") &&
+//     !type.includes("shirts") &&
+//     !type.includes("sweatsh") &&
+//     window.location.search.includes("type") &&
+//     params.get("minPrice")
+// )
+// {
+//     if(params.get("minPrice"))
+//     {
+//         window.open(
+//             "/sale.html?c="+c+
+//                 "&type=" +
+//                 type +
+//                 "&size=" +
+//                 size +
+//                 "&minPrice=" +
+//                 minPrice +
+//                 "&maxPrice=" +
+//                 maxPrice,
+//             "_self"
+//         );
+//     }
+//     else
+//         window.open(
+//             "/sale.html?c="+c+"&size=" + size,
+//             "_self"
+//         );
+// }
+// else
+//     window.open(
+//         "/sale.html?c="+c+ + "&type=" + type + "&size=" + size,
+//         "_self"
+//     );
 
-sortByNewArrival.setAttribute(
-    "href",
-    "/women.html?sortBy=newArrival" + "&type=" + type
-);
-sortByPriceHL.setAttribute(
-    "href",
-    "/women.html?sortBy=priceHL" + "&type=" + type
-);
-sortByPriceLH.setAttribute(
-    "href",
-    "/women.html?sortBy=priceLH" + "&type=" + type
-);
-if (sortBy == null) {
-    if(ok==0)
-        window.open(
-            "/women.html?sortBy=newArrival" + "&type=" + type,
-            "_self"
-        );
-    else
-        window.open(
-            "/women.html?sortBy=newArrival",
-            "_self"
-        );
-}
 
 function hoodiesCheckboxPress() {
     if (hoodiesCheckbox.checked == true) type += "hoodies";
@@ -86,19 +88,30 @@ function sweatshirtsCheckboxPress() {
 }
 
 function ApplyFilterButton() {
-    var minPriceDatabase = localStorage.getItem(
-        "minPriceFromDatabase"
-    );
-    var maxPriceDatabase = localStorage.getItem(
-        "maxPriceFromDatabase"
-    );
+    if(c=="men")
+    {
+        var minPriceDatabase = localStorage.getItem(
+            "minPriceFromDatabaseMen"
+        );
+        var maxPriceDatabase = localStorage.getItem(
+            "maxPriceFromDatabaseMen"
+        );
+    }
+    else
+    {
+        var minPriceDatabase = localStorage.getItem(
+            "minPriceFromDatabaseWomen"
+        );
+        var maxPriceDatabase = localStorage.getItem(
+            "maxPriceFromDatabaseWomen"
+        );
+    }
     var minPrice = document.getElementById("sliderMin").value;
     var maxPrice = document.getElementById("sliderMax").value;
     if(minPriceDatabase == minPrice && maxPriceDatabase == maxPrice)
     {
         window.open(
-            "/women.html?sortBy=" +
-                sortBy +
+            "/sale.html?c="+c+
                 "&type=" +
                 type,
             "_self"
@@ -107,8 +120,7 @@ function ApplyFilterButton() {
     else
     {
         window.open(
-            "/women.html?sortBy=" +
-                sortBy +
+            "/sale.html?c="+c+
                 "&type=" +
                 type +
                 "&minPrice=" +

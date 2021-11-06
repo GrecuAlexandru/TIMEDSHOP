@@ -1,17 +1,15 @@
 <html lang="en">
     <head>
         <link rel="icon" href="resources/icons/favicon.png" />
-        <link rel="stylesheet" href="styles/favorites.css" />
+        <link rel="stylesheet" href="styles/report-a-problem.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charset="UTF-8" />
-        <title>Timed - Product</title>
+        <title>Report A Problem - Timed</title>
         <script src="resources/productPage/productDetails.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-functions.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-functions.js"></script>
-        <script src="https://js.stripe.com/v3/"></script>
     </head>
     <body>
         <div id="THEDIV">
@@ -36,7 +34,7 @@
                         class="icon-badge-icon-favorites"
                         id="favoritesIMG"
                         alt="FAVORITES"
-                        src="/resources/icons/favoritesPurple.svg"
+                        src="/resources/icons/favorites.svg"
                         onmouseover="this.src='resources/icons/favoritesPurple.svg'"
                         onmouseout="this.src='resources/icons/favorites.svg'"
                     />
@@ -56,32 +54,39 @@
                 </a>
                 <div class="dot" id="dott"></div>
             </nav>
-
             <div id="mainDiv">
-                <a id="cartTitle">FAVORITES</a>
-                <div id="cartOutput">
-                    <!-- <div class="cartItem">
-                        <img class="cartImage" src="resources/icons/productPageImages/120101.jpg" alt="img">
-                        <div class="cartTextDiv">
-                            <a class="cartItemTitle">Grey Hoodie</a>
-                            <a
-                                onclick="closeImage()"
-                                class="removeButton"
-                            >
-                                Remove
-                            </a>
-                            <a class="cartItemType">Men's hoodie</a>
+                <div id="reportDiv">
+                    <a id="reportTitle">REPORT A PROBLEM</a>
+                    <a id="reportDescriptionTitle">If you need a response to your problem, please go to SUPPORT and send us an email.</a>
+                    
+                    <a id="title">Title</a>
+                    <div id="titleInputDiv">
+                        <input id="titleInput" type="text" maxlength="200" placeholder="Compact description of your problem"></input>
+                    </div>
+                    <a id="titleError"></a>
+                    <a id="descriptionTitle">Description</a>
+                    <div id="descriptionInputDiv">
+                        <textarea id="descriptionInput" type="text" maxlength="2000" placeholder="Describe your problem as good as you can. Please include every detail"></textarea>
+                    </div>
+                    <a id="descriptionError"></a>
+                    <button id="sendButton" onclick="submitPress()">SUBMIT</button>
+                </div>
 
-                            <div class="cartItemOptions">
-                                <div class="colorDiv">
-                                    <a class="cartItemColorTitle">Color:</a>
-                                    <div class="cartItemColor"></div>
-                                </div>
-                                <a class="cartItemSizeTitle">Size: S</a>
-                            </div>
-                            <a class="cartItemPrice">$200.00</a>
-                        </div>
-                    </div>  -->
+                <div id="success">
+                    <a id="successTitle">Problem sent successfully!</a>
+                    <img id="successIcon" src="/resources/icons/Success.svg">
+                    <a id="successDescription">Thank you for reporting the problem. It's very helpful for us!</a>
+    
+                    <a id="backHomeButton" href="/sale.html">LEAVE THIS PAGE</a>
+    
+                    <a id="reportAnotherProblem" href="/report-a-problem.html">Report another problem</a>
+                </div>
+
+                <div id="error">
+                    <a id="errorTitle">Something went wrong...</a>
+                    <img id="successIcon" src="/resources/icons/Error.svg">
+                    <a id="errorDescription">Please try again or contact our support team at support@timedshop.com</a>
+                    <a id="tryAgainButton" href="/report-a-problem.html">TRY AGAIN</a>
                 </div>
             </div>
 
@@ -166,6 +171,8 @@
                 }
             }
             loader(false);
+        </script>
+        <script>
             // Initialize Firebase
             // TODO: Replace with your project's customized code snippet
             var config = {
@@ -179,7 +186,6 @@
             };
             firebase.initializeApp(config);
             const db = firebase.firestore();
-            const storage = firebase.storage();
             let cartCount = document.getElementById("cartCount");
             firebase.auth().onAuthStateChanged((user) => {
                 if (user) {
@@ -212,19 +218,43 @@
                             }
                             loader(true);
                         })
+                        .catch((error) => {
+                            console.error(error);
+                        });
                 } else {
-                    window.open("/error.html","_self");
                     // User is signed out
                     console.log("sign out");
                     document.getElementById("account").style.display = "none";
                     document.getElementById("favorites").style.display = "none";
                     document.getElementById("LogIn").style.display = "flex";
                     document.getElementById("register").style.display = "flex";
-                    
+
+                    if(localStorage.getItem("cartCount"))
+                    {
+                        document.getElementById("cartCount").innerText = localStorage.getItem("cartCount");
+                    }
+                    else
+                    {
+                        document.getElementById("cartCount").innerText = "0";
+                        document.getElementById("addToFavorites").remove();
+                    }
                     loader(true);
                 }
             });
+
+            function signOut() {
+                firebase
+                    .auth()
+                    .signOut()
+                    .then(() => {
+                        // Sign-out successful.
+                        window.open("/login.html","_self");
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+            }
         </script>
-        <script src="/resources/favorites/favorites.js"></script>
+         <script src="resources/report-a-problem/report-a-problem.js"></script>
     </body>
 </html>

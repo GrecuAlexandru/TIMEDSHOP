@@ -7,7 +7,6 @@
         <title>Women - Timed</title>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
         <script
             src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js"
@@ -26,10 +25,10 @@
                 <img src="resources/icons/TimedShopMainLogo.svg" alt="TIMED SHOP" />
             </div>
             <nav class="navMenu" id="navMenu">
-                <a href="Sale.html">SALE</a>
-                <a href="Women.html?sortBy=newArrival&type=" id="women">WOMEN</a>
-                <a href="Men.html">MEN</a>
-                <a href="Accessories.html">ACCESSORIES</a>
+                <a href="sale.html">SALE</a>
+                <a href="women.html?sortBy=newArrival&type=" id="women">WOMEN</a>
+                <a href="men.html">MEN</a>
+                <a href="about.html">ABOUT</a>
                 <a href="account.html" id="account">
                     <img
                         alt="ACCOUNT"
@@ -49,9 +48,9 @@
                     />
                     <div id="favoritesCount" class="icon-badge-favorites">6</div>
                 </a>
-                <a href="LogIn.html" id="LogIn">LOG IN</a>
-                <a href="Register.html" id="register">REGISTER</a>
-                <a href="Cart.html" id="cart" class="icon-badge-container">
+                <a href="login.html" id="LogIn">LOG IN</a>
+                <a href="register.html" id="register">REGISTER</a>
+                <a href="cart.html" id="cart" class="icon-badge-container">
                     <img
                         class="icon-badge-icon"
                         alt="CART"
@@ -151,63 +150,6 @@
                                 />
                                 <span class="checkmark"></span>
                                 <a class="checkBoxText">Sweatshirts</a>
-                            </label>
-                        </div>
-
-                        <div id="clothingDiv">
-                            <div class="bigDot"></div>
-                            <a id="clothingText">SIZE</a>
-                            <div class="bigDot"></div>
-                        </div>
-                        <div id="sizeCheckboxList">
-                            <label class="checkBoxContainer">
-                                <input
-                                    type="checkbox"
-                                    id="SCheckbox"
-                                    onclick="SCheckboxPress()"
-                                />
-                                <span class="checkmark"></span>
-                                <a class="checkBoxText">S</a>
-                            </label>
-                            <div class="checkBoxDivider"></div>
-                            <label class="checkBoxContainer">
-                                <input
-                                    type="checkbox"
-                                    id="MCheckbox"
-                                    onclick="MCheckboxPress()"
-                                />
-                                <span class="checkmark"></span>
-                                <a class="checkBoxText">M</a>
-                            </label>
-                            <div class="checkBoxDivider"></div>
-                            <label class="checkBoxContainer">
-                                <input
-                                    type="checkbox"
-                                    id="LCheckbox"
-                                    onclick="LCheckboxPress()"
-                                />
-                                <span class="checkmark"></span>
-                                <a class="checkBoxText">L</a>
-                            </label>
-                            <div class="checkBoxDivider"></div>
-                            <label class="checkBoxContainer">
-                                <input
-                                    type="checkbox"
-                                    id="XLCheckbox"
-                                    onclick="XLCheckboxPress()"
-                                />
-                                <span class="checkmark"></span>
-                                <a class="checkBoxText">XL</a>
-                            </label>
-                            <div class="checkBoxDivider"></div>
-                            <label class="checkBoxContainer">
-                                <input
-                                    type="checkbox"
-                                    id="XXLCheckbox"
-                                    onclick="XXLCheckboxPress()"
-                                />
-                                <span class="checkmark"></span>
-                                <a class="checkBoxText">XXL</a>
                             </label>
                         </div>
 
@@ -414,7 +356,6 @@
 
             // Initialize Firebase
             const db = firebase.firestore();
-            const storage = firebase.storage();
             let querySnapshot;
             params = new URLSearchParams(location.search);
             let footer = document.getElementById("footer");
@@ -506,10 +447,7 @@
             maxPrice = parseInt(maxPrice);
             var sortBy = params.get("sortBy");
             if (params.get("type") != null) type = params.get("type");
-            if (params.get("size") != null) size = params.get("size");
             let whereType = [];
-            let whereSize = [];
-            whereSize[0] = "coco";
             let q;
             const productOutput = document.getElementById("productOutput");
             const paginationDiv = document.getElementById("paginationDiv");
@@ -520,13 +458,6 @@
                 if (type.includes("tshir")) whereType.push("tshirt");
                 if (type.includes("shirts")) whereType.push("shirt");
                 if (type.includes("sweatsh")) whereType.push("sweatshirt");
-            }
-            if (size != undefined) {
-                if (size.includes("small")) whereSize.push("S");
-                if (size.includes("medium")) whereSize.push("M");
-                if (size.includes("large")) whereSize.push("L");
-                if (size.includes("extral")) whereSize.push("XL");
-                if (size.includes("extraxl")) whereSize.push("XXL");
             }
             window.addEventListener("scroll", () => {
                 // console.log("scrollHeight:",document.documentElement.scrollHeight);
@@ -556,65 +487,7 @@
                 isSearching = false;
                 if (sortBy == "newArrival") {
                     if (currentPage > 1) {
-                        if (whereSize.length - 1 != 0) {
-                            if (whereType.length != 0) {
-                                if (!isNaN(minPrice)) {
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("price", "asc")
-                                        .where("price", "<=", maxPrice)
-                                        .where("price", ">=", minPrice)
-                                        .orderBy("date", "desc")
-                                        .where("type", "in", whereType)
-                                        .startAfter(
-                                            lastVisibleQueryFromPrevPage
-                                        );
-                                } else {
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("date", "desc")
-                                        .where("type", "in", whereType)
-                                        .startAfter(
-                                            lastVisibleQueryFromPrevPage
-                                        );
-                                }
-                                for (
-                                    var i = 1;
-                                    i <= whereSize.length - 1;
-                                    i++
-                                ) {
-                                    q = q.where(whereSize[i], "==", true);
-                                }
-                                q = q.limit(18);
-                            } else {
-                                if (!isNaN(minPrice)) {
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("price", "asc")
-                                        .where("price", "<=", maxPrice)
-                                        .where("price", ">=", minPrice)
-                                        .orderBy("date", "desc")
-                                        .startAfter(
-                                            lastVisibleQueryFromPrevPage
-                                        );
-                                } else {
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("date", "desc")
-                                        .startAfter(
-                                            lastVisibleQueryFromPrevPage
-                                        );
-                                }
-                                for (
-                                    var i = 1;
-                                    i <= whereSize.length - 1;
-                                    i++
-                                ) {
-                                    q = q.where(whereSize[i], "==", true);
-                                }
-                                q = q.limit(18);
-                            }
-                        } else if (whereType.length != 0) {
+                        if (whereType.length != 0) {
                             if (!isNaN(minPrice))
                                 q = db
                                     .collection("women")
@@ -648,51 +521,7 @@
                             q = q.limit(18);
                         }
                     } else {
-                        if (whereSize.length - 1 != 0) {
-                            if (whereType.length != 0) {
-                                if (!isNaN(minPrice))
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("price", "asc")
-                                        .where("price", "<=", maxPrice)
-                                        .where("price", ">=", minPrice)
-                                        .orderBy("date", "desc")
-                                        .where("type", "in", whereType);
-                                else
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("date", "desc")
-                                        .where("type", "in", whereType);
-                                for (
-                                    var i = 1;
-                                    i <= whereSize.length - 1;
-                                    i++
-                                ) {
-                                    q = q.where(whereSize[i], "==", true);
-                                }
-                                q = q.limit(18);
-                            } else {
-                                if (!isNaN(minPrice))
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("price", "asc")
-                                        .where("price", "<=", maxPrice)
-                                        .where("price", ">=", minPrice)
-                                        .orderBy("date", "desc");
-                                else
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("date", "desc");
-                                for (
-                                    var i = 1;
-                                    i <= whereSize.length - 1;
-                                    i++
-                                ) {
-                                    q = q.where(whereSize[i], "==", true);
-                                }
-                                q = q.limit(18);
-                            }
-                        } else if (whereType.length != 0) {
+                        if (whereType.length != 0) {
                             if (!isNaN(minPrice))
                                 q = db
                                     .collection("women")
@@ -724,30 +553,11 @@
                     }
                     var resultsNumber = 0;
                     var idd = 1221;
-                    var numberOfProducts = 0;
                     q.get().then((querySnapshot) => {
                         querySnapshot.forEach((qdoc) => {
                             resultsNumber++;
                             if (resultsNumber == currentPage * 18) {
                                 currentPage++;
-                            }
-                            numberOfProducts =
-                                document.getElementById("productOutput")
-                                    .children.length+1;
-                            if (numberOfProducts <= 6) {
-                                document.getElementById(
-                                    "fullProductsDiv"
-                                ).style.height = "150vh";
-                            } else {
-                                var marginTop =
-                                    150 + ~~((numberOfProducts - 6) / 3) * 70;
-                                console.log("numberOf: ", numberOfProducts);
-                                if (numberOfProducts % 3 != 0) {
-                                    marginTop += 70;
-                                }
-                                document.getElementById(
-                                    "fullProductsDiv"
-                                ).style.height = marginTop + "vh";
                             }
                             lastVisibleQueryFromPrevPage =
                                 querySnapshot.docs[
@@ -938,63 +748,7 @@
                     });
                 } else if (sortBy == "priceHL") {
                     if (currentPage > 1) {
-                        if (whereSize.length - 1 != 0) {
-                            if (whereType.length != 0) {
-                                if (!isNaN(minPrice)) {
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("price", "desc")
-                                        .where("price", "<=", maxPrice)
-                                        .where("price", ">=", minPrice)
-                                        .where("type", "in", whereType)
-                                        .startAfter(
-                                            lastVisibleQueryFromPrevPage
-                                        );
-                                } else {
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("price", "desc")
-                                        .where("type", "in", whereType)
-                                        .startAfter(
-                                            lastVisibleQueryFromPrevPage
-                                        );
-                                }
-                                for (
-                                    var i = 1;
-                                    i <= whereSize.length - 1;
-                                    i++
-                                ) {
-                                    q = q.where(whereSize[i], "==", true);
-                                }
-                                q = q.limit(18);
-                            } else {
-                                if (!isNaN(minPrice)) {
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("price", "desc")
-                                        .where("price", "<=", maxPrice)
-                                        .where("price", ">=", minPrice)
-                                        .startAfter(
-                                            lastVisibleQueryFromPrevPage
-                                        );
-                                } else {
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("price", "desc")
-                                        .startAfter(
-                                            lastVisibleQueryFromPrevPage
-                                        );
-                                }
-                                for (
-                                    var i = 1;
-                                    i <= whereSize.length - 1;
-                                    i++
-                                ) {
-                                    q = q.where(whereSize[i], "==", true);
-                                }
-                                q = q.limit(18);
-                            }
-                        } else if (whereType.length != 0) {
+                        if (whereType.length != 0) {
                             if (!isNaN(minPrice))
                                 q = db
                                     .collection("women")
@@ -1026,49 +780,7 @@
                             q = q.limit(18);
                         }
                     } else {
-                        if (whereSize.length - 1 != 0) {
-                            if (whereType.length != 0) {
-                                if (!isNaN(minPrice))
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("price", "desc")
-                                        .where("price", "<=", maxPrice)
-                                        .where("price", ">=", minPrice)
-                                        .where("type", "in", whereType);
-                                else
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("price", "desc")
-                                        .where("type", "in", whereType);
-                                for (
-                                    var i = 1;
-                                    i <= whereSize.length - 1;
-                                    i++
-                                ) {
-                                    q = q.where(whereSize[i], "==", true);
-                                }
-                                q = q.limit(18);
-                            } else {
-                                if (!isNaN(minPrice))
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("price", "desc")
-                                        .where("price", "<=", maxPrice)
-                                        .where("price", ">=", minPrice);
-                                else
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("price", "desc");
-                                for (
-                                    var i = 1;
-                                    i <= whereSize.length - 1;
-                                    i++
-                                ) {
-                                    q = q.where(whereSize[i], "==", true);
-                                }
-                                q = q.limit(18);
-                            }
-                        } else if (whereType.length != 0) {
+                        if (whereType.length != 0) {
                             if (!isNaN(minPrice))
                                 q = db
                                     .collection("women")
@@ -1098,29 +810,11 @@
                     }
                     var resultsNumber = 0;
                     var idd = 1201;
-                    var numberOfProducts = 0;
                     q.get().then((querySnapshot) => {
                         querySnapshot.forEach((qdoc) => {
                             resultsNumber++;
                             if (resultsNumber == currentPage * 18) {
                                 currentPage++;
-                            }
-                            numberOfProducts =
-                                document.getElementById("productOutput")
-                                    .children.length;
-                            if (numberOfProducts <= 6) {
-                                document.getElementById(
-                                    "fullProductsDiv"
-                                ).style.height = "150vh";
-                            } else {
-                                var marginTop =
-                                    150 + ~~((numberOfProducts - 6) / 3) * 70;
-                                if (numberOfProducts % 3 != 0) {
-                                    marginTop += 70;
-                                }
-                                document.getElementById(
-                                    "fullProductsDiv"
-                                ).style.height = marginTop + "vh";
                             }
                             lastVisibleQueryFromPrevPage =
                                 querySnapshot.docs[
@@ -1311,63 +1005,7 @@
                     });
                 } else if (sortBy == "priceLH") {
                     if (currentPage > 1) {
-                        if (whereSize.length - 1 != 0) {
-                            if (whereType.length != 0) {
-                                if (!isNaN(minPrice)) {
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("price", "asc")
-                                        .where("price", "<=", maxPrice)
-                                        .where("price", ">=", minPrice)
-                                        .where("type", "in", whereType)
-                                        .startAfter(
-                                            lastVisibleQueryFromPrevPage
-                                        );
-                                } else {
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("price", "asc")
-                                        .where("type", "in", whereType)
-                                        .startAfter(
-                                            lastVisibleQueryFromPrevPage
-                                        );
-                                }
-                                for (
-                                    var i = 1;
-                                    i <= whereSize.length - 1;
-                                    i++
-                                ) {
-                                    q = q.where(whereSize[i], "==", true);
-                                }
-                                q = q.limit(18);
-                            } else {
-                                if (!isNaN(minPrice)) {
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("price", "asc")
-                                        .where("price", "<=", maxPrice)
-                                        .where("price", ">=", minPrice)
-                                        .startAfter(
-                                            lastVisibleQueryFromPrevPage
-                                        );
-                                } else {
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("price", "asc")
-                                        .startAfter(
-                                            lastVisibleQueryFromPrevPage
-                                        );
-                                }
-                                for (
-                                    var i = 1;
-                                    i <= whereSize.length - 1;
-                                    i++
-                                ) {
-                                    q = q.where(whereSize[i], "==", true);
-                                }
-                                q = q.limit(18);
-                            }
-                        } else if (whereType.length != 0) {
+                        if (whereType.length != 0) {
                             if (!isNaN(minPrice))
                                 q = db
                                     .collection("women")
@@ -1399,49 +1037,7 @@
                             q = q.limit(18);
                         }
                     } else {
-                        if (whereSize.length - 1 != 0) {
-                            if (whereType.length != 0) {
-                                if (!isNaN(minPrice))
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("price", "asc")
-                                        .where("price", "<=", maxPrice)
-                                        .where("price", ">=", minPrice)
-                                        .where("type", "in", whereType);
-                                else
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("price", "asc")
-                                        .where("type", "in", whereType);
-                                for (
-                                    var i = 1;
-                                    i <= whereSize.length - 1;
-                                    i++
-                                ) {
-                                    q = q.where(whereSize[i], "==", true);
-                                }
-                                q = q.limit(18);
-                            } else {
-                                if (!isNaN(minPrice))
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("price", "asc")
-                                        .where("price", "<=", maxPrice)
-                                        .where("price", ">=", minPrice);
-                                else
-                                    q = db
-                                        .collection("women")
-                                        .orderBy("price", "asc");
-                                for (
-                                    var i = 1;
-                                    i <= whereSize.length - 1;
-                                    i++
-                                ) {
-                                    q = q.where(whereSize[i], "==", true);
-                                }
-                                q = q.limit(18);
-                            }
-                        } else if (whereType.length != 0) {
+                        if (whereType.length != 0) {
                             if (!isNaN(minPrice))
                                 q = db
                                     .collection("women")
@@ -1471,29 +1067,11 @@
                     }
                     var resultsNumber = 0;
                     var idd = 1201;
-                    var numberOfProducts = 0;
                     q.get().then((querySnapshot) => {
                         querySnapshot.forEach((qdoc) => {
                             resultsNumber++;
                             if (resultsNumber == currentPage * 18) {
                                 currentPage++;
-                            }
-                            numberOfProducts =
-                                document.getElementById("productOutput")
-                                    .children.length;
-                            if (numberOfProducts <= 6) {
-                                document.getElementById(
-                                    "fullProductsDiv"
-                                ).style.height = "150vh";
-                            } else {
-                                var marginTop =
-                                    150 + ~~((numberOfProducts - 6) / 3) * 70;
-                                if (numberOfProducts % 3 != 0) {
-                                    marginTop += 70;
-                                }
-                                document.getElementById(
-                                    "fullProductsDiv"
-                                ).style.height = marginTop + "vh";
                             }
                             lastVisibleQueryFromPrevPage =
                                 querySnapshot.docs[
@@ -1725,6 +1303,14 @@
                     document.getElementById("favorites").style.display = "none";
                     document.getElementById("LogIn").style.display = "flex";
                     document.getElementById("register").style.display = "flex";
+                    if(localStorage.getItem("cartCount"))
+                    {
+                        document.getElementById("cartCount").innerText = localStorage.getItem("cartCount");
+                    }
+                    else
+                    {
+                        document.getElementById("cartCount").innerText = "0";
+                    }
                 }
             });
         </script>

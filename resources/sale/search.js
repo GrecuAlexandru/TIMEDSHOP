@@ -38,7 +38,16 @@ function searchPress() {
             "UGZLD73BEY",
             "a5406a665a110ab2f485d9ed3ecc207b"
         );
-        const index = client.initIndex("womenIndex");
+        let index;
+        if(isMen)
+        {
+            index = client.initIndex("menIndex");
+        }
+        else
+        {
+            index = client.initIndex("womenIndex");
+        }
+        const paginationDiv = document.getElementById("paginationDiv");
         console.log("currentSEarchpeage", currentSearchPage);
         index
             .search(searchInput.value, {
@@ -228,7 +237,8 @@ function searchPress() {
                 });
             })
             .catch((error)=>{
-                window.open("/error.html","_self");
+               // window.open("/error.html","_self");
+               console.error(error);
             });
     }
 }

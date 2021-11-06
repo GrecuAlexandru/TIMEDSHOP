@@ -6,9 +6,9 @@ body {
     overflow-x: hidden;
     min-height: 100vh;
     margin: 0;
-    color:#2a2a2a;
     display: flex;
     flex-direction: column;
+    color:#2a2a2a;
 }
 
 #TimedShopMainLogo {
@@ -238,28 +238,116 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:center;
     width: 100%;
     height: 91vh;
 }
-#error{
-    margin-top:-10vh;
-    color: #2a2a2a;
-    font-size: 15vw;
-    font-weight: 900;
+#reportDiv{
+    display: flex;
+    flex-direction: column;
+    margin-top:10vh;
 }
-#description{
-    font-size: 2vh;
+#reportTitle{
+    font-size: 4.5vh;
+    font-weight: 800;
+    color:#2a2a2a;
+}
+#reportDescriptionTitle{
+    font-size: 2.5vh;
+    width: 35vw;
     font-weight: 600;
     color:#2a2a2a;
-    width: 30vw;
-    margin-bottom: 3vh;
-    margin-top:-6vh;
+    margin-top: 2vh;
 }
-
-.btn {
+#title{
+    font-size: 3vh;
+    font-weight: 700;
+    color:#2a2a2a;
+    margin-top:2vh;
+}
+#titleInputDiv{
+    float: left;
+    width: 35vw;
+    height: 5vh;
+    margin-top:0vh;
+    border-radius: 8px;
+    border: solid #2a2a2a;
+    border-width: 1 1px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#titleInput{
+    margin-left: 0.5vw;
+    border: 0;
+    background-color: transparent;
+    float: left;
+    outline: none;
+    width: 100%;
+    font-size: 2vh;
+    font-family: "Nunito", sans-serif;
+}
+#descriptionTitle{
+    font-size: 3vh;
+    font-weight: 700;
+    color:#2a2a2a;
+    margin-top:2vh;
+}
+#descriptionInputDiv{
+    float: left;
+    width: 35vw;
+    height: 30vh;
+    border-radius: 8px;
+    border: solid #2a2a2a;
+    border-width: 1 1px;
+}
+#descriptionInput{
+    margin-left: 0.5vw;
+    border: 0;
+    background-color: transparent;
+    float: left;
+    outline: none;
+    width: 95%;
+    height: 100%;
+    resize: none;
+    font-size: 2vh;
+    font-family: "Nunito", sans-serif;
+}
+#success{
+    display: none;
+    flex-direction: column;
+    margin-top:15vh;
+}
+#successTitle{
+    color:#2a2a2a;
+    font-size: 5vh;
+    font-weight: 700;
+}
+#successIcon{
+    align-self:center;
+    margin-top:3vh;
+    width: 8vw;
+    height: auto;
+}
+#successDescription{
+    color:#2a2a2a;
+    font-size: 2.5vh;
+    font-weight: 500;
+    width: 30vw;
+    margin-top:5vh;
+}
+#titleError{
+    font-size:2vh;
+    font-weight: 500;
+    color:#ff2c2c;
+}
+#descriptionError{
+    font-size:2vh;
+    font-weight: 500;
+    color:#ff2c2c;
+}
+#backHomeButton{
     display: inline-block;
-    width: 14vw;
+    width: 30vw;
     height: 5.5vh;
     text-align: center;
     color: #2a2a2a;
@@ -273,10 +361,83 @@ body {
     border-width: 1 1px;
     background-color: #e3c8ff;
     cursor: pointer;
-    margin-left:1vw;
-    margin-right: 1vw;
+    margin-top:3vh;
 }
-.btn:hover {
+#backHomeButton:hover {
+    background-color: #c894ff;
+}
+#reportAnotherProblem{
+    color:#2a2a2a;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 600;
+    font-size:2vh;
+    text-align:center;
+    margin-top:2vh;
+}
+#error{
+    display: none;
+    flex-direction: column;
+    margin-top:15vh;
+}
+#errorTitle{
+    color:#2a2a2a;
+    font-size: 5vh;
+    font-weight: 700;
+}
+#errorIcon{
+    align-self:center;
+    margin-top:3vh;
+    width: 8vw;
+    height: auto;
+}
+#errorDescription{
+    color:#2a2a2a;
+    font-size: 2.5vh;
+    font-weight: 500;
+    width: 30vw;
+    margin-top:5vh;
+}
+#tryAgainButton{
+    display: inline-block;
+    width: 30vw;
+    height: 5.5vh;
+    text-align: center;
+    color: #2a2a2a;
+    line-height: 5.5vh;
+    text-decoration: none;
+    font-family: "Nunito", sans-serif;
+    font-weight: 800;
+    font-size: 1.1vw;
+    border-radius: 6px;
+    border: solid #2a2a2a;
+    border-width: 1 1px;
+    background-color: #e3c8ff;
+    cursor: pointer;
+    margin-top:3vh;
+}
+#tryAgainButton:hover {
+    background-color: #c894ff;
+}
+#sendButton{
+    display: inline-block;
+    width: 35.1vw;
+    height: 5.5vh;
+    text-align: center;
+    color: #2a2a2a;
+    line-height: 5.5vh;
+    text-decoration: none;
+    font-family: "Nunito", sans-serif;
+    font-weight: 800;
+    font-size: 1.1vw;
+    border-radius: 6px;
+    border: solid #2a2a2a;
+    border-width: 1 1px;
+    background-color: #e3c8ff;
+    cursor: pointer;
+    margin-top:3vh;
+}
+#sendButton:hover {
     background-color: #c894ff;
 }
 #loading {

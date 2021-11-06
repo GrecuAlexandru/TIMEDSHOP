@@ -70,11 +70,11 @@ function confirmPressed() {
                         console.log(data.data());
                         gender = data.data().gender;
                         if (gender == "male")
-                                    window.open("/Men.html", "_self");
+                                    window.open("/men.html", "_self");
                                 if (gender == "female")
-                                    window.open("/Women.html", "_self");
+                                    window.open("/women.html", "_self");
                                 if (gender == "other")
-                                    window.open("/Sale.html", "_self");
+                                    window.open("/sale.html", "_self");
                             })
                             .catch((error) => {
                                 passwordError.innerText = "INTERNAL ERROR!";
