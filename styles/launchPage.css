@@ -1,145 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,800;1,900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
 body {
     background: #ffffff;
     font-family: "Nunito", sans-serif;
-    color:#2a2a2a;
     overflow: hidden;
+    min-width: 100vw;
+    min-height: 100vh;
+    margin:0;
 }
-
-#TimedShopMainLogo {
-    float: left;
-    margin-left: 4%;
-    margin-top: 1%;
-}
-
-.navMenu {
-    position: absolute;
-    top: 5%;
-    left: 22.5%;
-    width: 100%;
-}
-
-.navMenu a {
-    float: left;
-    text-align: center;
-    color: #2a2a2a;
-    text-decoration: none;
-    font-size: 1.125em;
-    text-transform: uppercase;
-    font-weight: 700;
-    width: 5%;
-    margin-right: 2%;
-}
-#LogIn {
-    margin-left: 28%;
-}
-
-#selectedTab {
-    color: #5a189a;
-}
-.navMenu a:hover {
-    color: #5a189a;
-}
-#favorites{
-    margin-right: 0;
-    position: relative;
-}
-#favoritesIMG{
-    width:28px;
-}
-.icon-badge-container-favorites {
-    position: relative;
-}
-
-.icon-badge-icon-favorites {
-    position: relative;
-    width: 23px;
-}
-#women {
-    width: 100px;
-}
-#account {
-    margin-left: 33%;
-    width: 23px;
-}
-@media screen and (max-width: 1080px) {
-    .navMenu a {
-        margin-right: 2%;
-        margin-left: 2%;
-    }
-    #LogIn {
-        margin-left: 10%;
-    }
-}
-.icon-badge-container {
-    position: relative;
-}
-
-.icon-badge-icon {
-    position: relative;
-    width: 23px;
-}
-.icon-badge-favorites {
-    background-color: #ff2c2c;
-    font-size: 15px;
-    color: white;
-    text-align: center;
-    width: 21px;
-    height: 21px;
-    border-radius: 100%;
-}
-@media screen and (min-width: 800px) {
-    .icon-badge {
-        margin: 0;
-        position: absolute;
-        top: -10;
-        right: 20;
-    }
-    .icon-badge-favorites {
-        position: absolute;
-        top:-10;
-        right:15;
-    }
-}
-@media screen and (max-width: 800px) {
-    .navMenu a {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    .navMenu {
-        left: 0;
-        top: 15vw;
-    }
-
-    #LogIn {
-        margin-left: 2%;
-    }
-    #cart {
-        width: 100%;
-    }
-    #TimedShopMainLogo {
-        margin: 0;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    #women {
-        width: 100%;
-    }
-}
-
-.icon-badge {
-    background-color: #ff2c2c;
-    font-size: 15px;
-    color: white;
-    text-align: center;
-    width: 21px;
-    height: 21px;
-    border-radius: 100%;
-}
-
 #leftBubble {
     float: left;
     width: 62.5vw;
@@ -167,16 +35,6 @@ body {
     position: absolute;
     right: 5vw;
     pointer-events: none;
-}
-@media screen and (max-width: 1500px) {
-    #mainModel {
-        right: 0;
-    }
-}
-@media screen and (max-width: 1300px) {
-    #mainModel {
-        right: -5vw;
-    }
 }
 @media screen and (max-width: 1200px) {
     #mainModel {
@@ -269,44 +127,12 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
-    -webkit-animation: pulse 3s infinite cubic-bezier(0.1, 0, 0, 1);
-    -moz-animation: pulse 3s infinite cubic-bezier(0.1, 0, 0, 1);
-    -ms-animation: pulse 3s infinite cubic-bezier(0.1, 0, 0, 1);
-    animation: pulse 3s infinite cubic-bezier(0.1, 0, 0, 1);
 }
-#mainScreenArrowButton:hover {
-    -webkit-animation: none;
-    -moz-animation: none;
-    -ms-animation: none;
-    animation: none;
-}
-
-@-webkit-keyframes pulse {
-    to {
-        box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);
-    }
-}
-@-moz-keyframes pulse {
-    to {
-        box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);
-    }
-}
-@-ms-keyframes pulse {
-    to {
-        box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);
-    }
-}
-@keyframes pulse {
-    to {
-        box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);
-    }
-}
-
 .splash {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-color: #d5c5e6;
     z-index: 200;
@@ -320,7 +146,7 @@ body {
     opacity: 0;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-color: #d5c5e6;
     z-index: -1000;
@@ -342,4 +168,315 @@ body {
     height: auto;
     opacity: 0;
     animation: fadeIn 1s ease-in forwards;
+}
+#THEDIV
+{
+    width: 100%;
+    height: 100%;
+}
+@media screen and (max-width:480px) {
+    .fade-in {
+        width: 50vw;
+        height: auto;
+        opacity: 0;
+        animation: fadeIn 1s ease-in forwards;
+    }
+    #topBubble{
+        float: left;
+        background-color: #e3c8ff;
+        border-radius: 100%;
+        position: absolute;
+        top:-85vw;
+        left:-15vw;
+        width: 130vw;
+        height: 130vw;
+        z-index: -1;
+    }
+    #titleDiv{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: center;
+        margin-top:2vh;
+    }
+    #timedTitle{
+        font-size: 11vw;
+        font-weight: 650;
+        color:#2a2a2a;
+        font-family: 'Raleway', sans-serif;
+    }
+    #shopTitle{
+        font-size: 11vw;
+        font-weight: 650;
+        margin-top:-2vh;
+        color:#2a2a2a;
+        font-family: 'Raleway', sans-serif;
+    }
+    #THEDIV{
+        overflow: hidden;
+        position: relative;
+    }
+    #leftBubble{
+        width: 100vw;
+        height: 100vw;
+        left:-50vw;
+        top:38vw;
+    }
+    #rightBubble{
+        width: 60vh;
+        height: 60vh;
+        left:20vw;
+        bottom:-20vh;
+        top:unset;
+    }
+    #extraBubble{
+        float: left;
+        background-color: #e3c8ff;
+        border-radius: 100%;
+        position: absolute;
+        width:40vw;
+        height:40vw;
+        right:-6vw;
+        top:52vw;
+        z-index: -1;
+    }
+    #leftMainDiv{
+        width: 50vw;
+        top:70vw;
+        left:1vw;
+    }
+    #saleDiv{
+        justify-content:inherit !important;
+    }
+    #saleTextLeft{
+        font-size:3vw;
+        margin-left:2.8vw;
+    }
+    #mainProductName{
+        font-size:10vw;
+        margin-top:2vh;
+    }
+    #buttonDiv a img{
+        width: 8vw;
+        height: 8vw;
+    }
+    #shopNowText{
+        font-size:4vw;
+        margin-left:2vw;
+    }
+    #mainModel{
+        width: 45vh;
+        right:-20vw;
+    }
+}
+@media screen and (min-width:481px) and (max-width:768px) {
+    #THEDIV{
+        overflow: hidden;
+        position: relative;
+    }
+    #topBubble{
+        float: left;
+        background-color: #e3c8ff;
+        border-radius: 100%;
+        position: absolute;
+        top:-85vw;
+        left:-15vw;
+        width: 130vw;
+        height: 130vw;
+        z-index: -1;
+    }
+    #titleDiv{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: center;
+        margin-top:2vh;
+    }
+    #timedTitle{
+        font-size: 11vw;
+        font-weight: 650;
+        color:#2a2a2a;
+        font-family: 'Raleway', sans-serif;
+    }
+    #shopTitle{
+        font-size: 11vw;
+        font-weight: 650;
+        margin-top:-2vh;
+        color:#2a2a2a;
+        font-family: 'Raleway', sans-serif;
+    }
+    #leftBubble{
+        width: 100vw;
+        height: 100vw;
+        left:-50vw;
+        top:38vw;
+    }
+    #rightBubble{
+        width: 60vh;
+        height: 60vh;
+        left:45vw;
+        bottom:-25vh;
+        top:unset;
+    }
+    #leftMainDiv{
+        width: 50vw;
+        top:70vw;
+        left:1vw;
+    }
+    #saleDiv{
+        justify-content:inherit !important;
+    }
+    #saleTextLeft{
+        font-size:3vw;
+        margin-left:2.8vw;
+    }
+    #mainProductName{
+        font-size:10vw;
+        margin-top:2vh;
+    }
+    #buttonDiv a img{
+        width: 8vw;
+        height: 8vw;
+    }
+    #shopNowText{
+        font-size:4vw;
+        margin-left:2vw;
+    }
+    #mainModel{
+        width: 55vh;
+        right:-20vw;
+    }
+}
+@media screen and (min-width:620px) and (max-width:768px) {
+    #rightBubble{
+        width: 60vh;
+        height: 60vh;
+        left:60vw;
+        bottom:-25vh;
+        top:unset;
+    }
+    #mainModel{
+        width: 55vh;
+        right:-12vw;
+    }
+}
+@media screen and (min-width:769px) and (max-width:1200px) {
+    #THEDIV{
+        overflow: hidden;
+        position: relative;
+    }
+    #leftBubble{
+        width: 70vw;
+        height: 70vw;
+        left:-35vw;
+        top:20vh;
+    }
+    #leftMainDiv{
+        width: 50vw;
+        top:50vh;
+        left:1vw;
+    }
+    #saleDiv{
+        justify-content:inherit !important;
+    }
+    #saleTextLeft{
+        font-size:2.2vw;
+        margin-left:2.8vw;
+    }
+    #mainProductName{
+        font-size:7vw;
+        margin-top:2vh;
+    }
+    #buttonDiv a img{
+        width: 6vw;
+        height: 6vw;
+    }
+    #shopNowText{
+        font-size:2.5vw;
+        margin-left:1vw;
+    }
+    #mainModel{
+        width: 70vh;
+        right:-12vw;
+    }
+    #rightBubble{
+        width: 90vh;
+        height: 90vh;
+        left:40vw;
+        bottom:-25vh;
+        top:unset;
+    }
+    #extraBubble{
+        float: left;
+        background-color: #e3c8ff;
+        border-radius: 100%;
+        position: absolute;
+        width:30vh;
+        height:30vh;
+        left:30vw;
+        top:10vw;
+        z-index: -1;
+    }
+}
+@media screen and (min-width:1050px) and (max-width:1200px) {
+    #THEDIV{
+        overflow: hidden;
+        position: relative;
+    }
+    #mainModel{
+        width: 70vh;
+        right:-10vw;
+    }
+    #rightBubble{
+        width: 90vh;
+        height: 90vh;
+        left:50vw;
+        bottom:-25vh;
+        top:unset;
+    }
+}
+@media screen and (min-width:1201px) {
+    #THEDIV{
+        overflow: hidden;
+        position: relative;
+    }
+    #mainModel{
+        width: 80vh;
+        right:0vw;
+        left:unset;
+        position: absolute;
+        bottom:0;
+    }
+    #rightBubble{
+        width: 90vh;
+        height: 90vh;
+        left:unset;
+        right:-5vw;
+        bottom:-25vh;
+        top:unset;
+    }
+    #leftMainDiv{
+        width: 50vw;
+        top:40vh;
+        left:1vw;
+    }
+    #saleDiv{
+        justify-content:inherit !important;
+    }
+    #saleTextLeft{
+        font-size:2.2vw;
+        margin-left:2.8vw;
+    }
+    #mainProductName{
+        font-size:7vw;
+        margin-top:2vh;
+    }
+    #buttonDiv a img{
+        width: 4.5vw;
+        height: 4.5vw;
+    }
+    #shopNowText{
+        font-size:2vw;
+        margin-left:1vw;
+    }
 }

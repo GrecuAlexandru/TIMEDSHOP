@@ -1,0 +1,154 @@
+#footer {
+    border-top: 1px solid #2a2a2a;
+    float: left;
+    width: 100%;
+    height: 30vh;
+    background-color: #e3c8ff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#followUsDiv {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+}
+#followUsText {
+    font-size: 1.3vw;
+    font-weight: 700;
+    color: #2a2a2a;
+}
+#iconsDiv {
+    display: flex;
+    flex-direction: column;
+}
+#instagram {
+    width: 2.5vw;
+    height: 2.5vw;
+    margin: 0.3vw;
+}
+#facebook {
+    margin-top: 0.5vh;
+    width: 2vw;
+    height: 2vw;
+    margin: 0.55vw;
+}
+#tiktok {
+    margin-top: 0.5vh;
+    width: 2vw;
+    height: 2vw;
+    margin: 0.4vw;
+}
+#twitter {
+    width: 2.5vw;
+    height: 2.5vw;
+    margin: 0.3vw;
+}
+
+#iconsDivTop {
+    display: flex;
+    justify-content: space-evenly;
+}
+#iconsDivBottom {
+    display: flex;
+    justify-content: space-evenly;
+}
+#helpAndInfoDiv {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+}
+#helpAndInfoText {
+    font-size: 1.3vw;
+    font-weight: 700;
+    color: #2a2a2a;
+}
+#HILinks {
+    display: flex;
+    flex-direction: column;
+}
+
+#timedShopDiv {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+}
+#timedShopText {
+    font-size: 1.3vw;
+    font-weight: 700;
+    color: #2a2a2a;
+}
+#timedShopLinks {
+    display: flex;
+    flex-direction: column;
+}
+.alink {
+    font-size: 0.9vw;
+    margin-top: 0.5vh;
+    color: #4b4b4b;
+    text-decoration: none;
+}
+
+@media screen and (max-width:768px) {
+    #footer{
+        height: unset;
+        min-height: 30vh;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #followUsDiv{
+        margin-top:4vh;
+        width: 50%;
+        float:left;
+        margin-left:15vw;
+    }
+    #followUsText{
+        font-size:5vw;
+    }
+    #instagram{
+        width: 10vw;
+        height: 10vw;
+    }
+    #iconsDiv{
+        width: 60%;
+    }
+    #iconsDivTop{
+        justify-content: space-between;
+    }
+    #iconsDivBottom{
+        margin-top:2vh;
+        justify-content: space-between;
+    }
+    #tiktok{
+        width: 8vw;
+        height: 8vw;
+        margin-top:1vw;
+    }
+    #twitter{
+        width: 10vw;
+        height: 10vw;
+    }
+    #facebook{
+        width: 8.5vw;
+        height: 8.5vw;
+        margin-top:1vw;
+    }
+    #helpAndInfoDiv{
+        float:left;
+        margin-left:15vw;
+    }
+    #timedShopDiv{
+        float:left;
+        margin-left:15vw;
+        margin-bottom:4vh;
+    }
+    #helpAndInfoText{
+        font-size:5vw;
+    }
+    .alink{
+        font-size:4vw;
+    }
+    #timedShopText{
+        font-size:5vw;
+    }
+}

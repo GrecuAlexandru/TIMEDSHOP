@@ -1,8 +1,10 @@
 <html lang="en">
     <head>
         <link rel="icon" href="resources/icons/favicon.png" />
+        <link rel="stylesheet" href="styles/menu.css"/>
         <link rel="stylesheet" href="styles/launchPage.css" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta charset="UTF-8" />
         <title>Timed Shop</title>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
@@ -10,77 +12,94 @@
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     </head>
     <body>
-        <div class="splash">
-            <img
-                class="fade-in"
-                src="resources/icons/TimedLogoClock.svg"
-                alt="TIMED"
-            />
-        </div>
+        <div id="THEDIV">
+            <div class="splash">
+                <img
+                    class="fade-in"
+                    src="resources/icons/TimedLogoClock.svg"
+                    alt="TIMED"
+                />
+            </div>
 
-        <div id="TimedShopMainLogo">
-            <img src="resources/icons/TimedShopMainLogo.svg" alt="TIMED SHOP" />
-        </div>
-        <nav class="navMenu" id="navMenu">
-            <a href="sale.html?c=men&type=">SALE</a>
-            <a href="women.html?sortBy=newArrival&type=" id="women">WOMEN</a>
-            <a href="men.html">MEN</a>
-            <a href="about.html">ABOUT</a>
-            <a href="account.html" id="account">
-                <img
-                    alt="ACCOUNT"
-                    src="/resources/icons/User.svg"
-                    onmouseover="this.src='resources/icons/UserPurple.svg'"
-                    onmouseout="this.src='resources/icons/User.svg'"
-                />
-            </a>
-            <a href="favorites.html" id="favorites">
-                <img
-                    class="icon-badge-icon-favorites"
-                    id="favoritesIMG"
-                    alt="FAVORITES"
-                    src="/resources/icons/favorites.svg"
-                    onmouseover="this.src='resources/icons/favoritesPurple.svg'"
-                    onmouseout="this.src='resources/icons/favorites.svg'"
-                />
-                <div id="favoritesCount" class="icon-badge-favorites">6</div>
-            </a>
-            <a href="login.html" id="LogIn">LOG IN</a>
-            <a href="register.html" id="register">REGISTER</a>
-            <a href="cart.html" id="cart" class="icon-badge-container">
-                <img
-                    class="icon-badge-icon"
-                    alt="CART"
-                    src="/resources/icons/Cart.svg"
-                    onmouseover="this.src='resources/icons/CartPurple.svg'"
-                    onmouseout="this.src='resources/icons/Cart.svg'"
-                />
-                <div id="cartCount" class="icon-badge">6</div>
-            </a>
-            <div class="dot" id="dott"></div>
-        </nav>
-        <div id="leftBubble"></div>
-        <div id="rightBubble"></div>
-        <img src="resources/icons/hoodieModel.png" id="mainModel" />
-        <div id="leftMainDiv">
-            <div id="saleDiv">
-                <a id="saleTextLeft"
-                    >ON SALE&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;40%
-                    OFF</a
-                >
+            <div id="TimedShopMainLogo">
+                <img src="resources/icons/TimedShopMainLogo.svg" alt="TIMED SHOP" />
             </div>
-            <div id="mainProductName">
-                <a class="mainProductNameText">BLACK</a>
-                <a class="mainProductNameText">HOODIE</a>
+            <div id="clockLogo">
+                <img src="/resources/icons/clockLogo.svg" alt="TIMED SHOP"/>
             </div>
-            <div id="buttonDiv">
-                <a href="sale.html"
-                    ><img
-                        src="resources/icons/mainScreenArrowButton.svg"
-                        alt=""
-                        id="mainScreenArrowButton"
-                /></a>
-                <a id="shopNowText" href="sale.html">SHOP NOW</a>
+            <div id="menu">
+                <div id="row">
+                    <a href="account.html" id="account" class="icons">
+                        <img
+                            alt="ACCOUNT"
+                            src="/resources/icons/User.svg"
+                            onmouseover="this.src='resources/icons/UserPurple.svg'"
+                            onmouseout="this.src='resources/icons/User.svg'"
+                        />
+                    </a>
+                    <a href="favorites.html" id="favorites" class="icons">
+                        <img
+                            class="icon-badge-icon-favorites"
+                            id="favoritesIMG"
+                            alt="FAVORITES"
+                            src="/resources/icons/favorites.svg"
+                            onmouseover="this.src='resources/icons/favoritesPurple.svg'"
+                            onmouseout="this.src='resources/icons/favorites.svg'"
+                        />
+                        <div id="favoritesCount" class="icon-badge-favorites">6</div>
+                    </a>
+                    <a href="cart.html" id="cart" class="icon-badge-container" class="icons">
+                        <img
+                            class="icon-badge-icon"
+                            alt="CART"
+                            src="/resources/icons/Cart.svg"
+                            onmouseover="this.src='resources/icons/CartPurple.svg'"
+                            onmouseout="this.src='resources/icons/Cart.svg'"
+                        />
+                        <div id="cartCount" class="icon-badge">6</div>
+                    </a>
+                    <a href="javascript:void(0);" id="expandMenu" class="icon" onclick="expandMenu()">
+                        <img src="/resources/icons/expandMenu.svg">
+                    </a>
+                </div>
+                <nav class="navMenu" id="navMenu">
+                    <a href="sale.html?c=men&type=">SALE</a>
+                    <a href="women.html?sortBy=newArrival&type=" id="women">WOMEN</a>
+                    <a href="men.html">MEN</a>
+                    <a href="about.html">ABOUT</a>
+                    <a href="register.html" id="register">REGISTER</a>
+                    <a href="login.html" id="LogIn">LOG IN</a>
+                </nav>
+            </div>
+            <div id="topBubble"></div>
+            <div id="leftBubble"></div>
+            <div id="rightBubble"></div>
+            <div id="extraBubble"></div>
+            <div id="titleDiv">
+                <a id="timedTitle">TIMED</a>
+                <a id="shopTitle">SHOP</a>
+            </div>
+            <img src="resources/icons/hoodieModel.png" id="mainModel" />
+            <div id="leftMainDiv">
+                <div id="saleDiv">
+                    <a id="saleTextLeft"
+                        >ON SALE&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;40%
+                        OFF</a
+                    >
+                </div>
+                <div id="mainProductName">
+                    <a class="mainProductNameText">BLACK</a>
+                    <a class="mainProductNameText">HOODIE</a>
+                </div>
+                <div id="buttonDiv">
+                    <a href="sale.html"
+                        ><img
+                            src="resources/icons/mainScreenArrowButton.svg"
+                            alt=""
+                            id="mainScreenArrowButton"
+                    /></a>
+                    <a id="shopNowText" href="sale.html">SHOP NOW</a>
+                </div>
             </div>
         </div>
         <script>
@@ -97,16 +116,28 @@
             };
             firebase.initializeApp(config);
             const db = firebase.firestore();
+            console.log(window.innerWidth);
             let cartCount = document.getElementById("cartCount");
             let favoritesCount = document.getElementById("favoritesCount");
+            var w = window.innerWidth
+                || document.documentElement.clientWidth
+                || document.body.clientWidth;
             firebase.auth().onAuthStateChanged((user) => {
                 if (user) {
                     var uid = user.uid;
                     console.log("logged in user: ", user.email);
-                    document.getElementById("LogIn").style.display = "none";
-                    document.getElementById("register").style.display = "none";
+                    document.getElementById("LogIn").setAttribute("style","display: none !important")
+                    document.getElementById("register").setAttribute("style","display: none !important")
                     document.getElementById("account").style.display = "flex";
-                    document.getElementById("favorites").style.display = "block";
+                    if(w > 768)
+                    {
+                        document.getElementById("titleDiv").setAttribute("style","display:none !important;");
+                    }
+                    if(w > 768 && w <= 1024)
+                    {
+                        document.getElementById("navMenu").setAttribute("style", "width:50vw !important");
+                    }
+                    document.getElementById("favorites").style.display = "inline";
                     db.collection("users")
                         .doc(uid)
                         .get()
@@ -132,10 +163,16 @@
                 } else {
                     // User is signed out
                     console.log("sign out");
-                    document.getElementById("account").style.display = "none";
-                    document.getElementById("favorites").style.display = "none";
+                    document.getElementById("account").setAttribute("style","display: none !important")
+                    document.getElementById("favorites").setAttribute("style","display: none !important")
                     document.getElementById("LogIn").style.display = "flex";
+                    if(w > 768)
+                    {
+                        document.getElementById("row").setAttribute("style","margin-left: 0 !important; width: 10% !important");
+                        document.getElementById("titleDiv").setAttribute("style","display:none !important;");
+                    }
                     document.getElementById("register").style.display = "flex";
+
                     if(localStorage.getItem("cartCount"))
                     {
                         document.getElementById("cartCount").innerText = localStorage.getItem("cartCount");
@@ -146,6 +183,15 @@
                     }
                 }
             });
+            function expandMenu() {
+                console.log('coco')
+                var x = document.getElementById("navMenu");
+                if (x.className === "navMenu") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "navMenu";
+                }
+            }
         </script>
         <script src="splashscreen.js"></script>
     </body>
