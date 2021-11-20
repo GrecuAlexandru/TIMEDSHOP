@@ -621,9 +621,8 @@ body {
     border: solid #2a2a2a;
     border-width: 1 1px;
     background-color: #e3c8ff;
-    margin-top: 5vh;
+    margin-top: calc(58.6vh - (31vh + (6.6vw + 18%)));
     cursor: pointer;
-    margin-top: 6.8vh;
 }
 
 #submitPriceButton:hover,
@@ -945,46 +944,349 @@ body {
     }
 
 }
-@media screen and (min-width:769px) and (max-width:1200px) {
-    #sectionSpecifier{
-        font-size: 3vh;
-        margin-top:2vh;
-    }
-    #fullProductsDiv{
-        margin-top:2vh;
-    }
-    #productOutput{
-        margin-left:30.08vw;
-    }
+@media screen and (min-width:769px) {
     #leftBar{
-        width: 30.08vw;
-        position:fixed;
-        top:22.3vh;
-    }
-    #search{
-        width:30.08vw;
-    }
-    #sorter{
-        width: 30.08vw;
-    }
-    #customizer{
-        width: 30.08vw;
-    }
-}
-@media screen and (min-width:1201px) {
-    #productOutput{
-        margin-left:21vw;
-    }
-}
-@media screen and (min-width:768px) {
-    #leftBar{
-        top:24.8vh;
         position: absolute;
     }
     .range-slider .range-group .range-input{
         left:1.75vw;
     }
+}
+@media screen and (min-width:769px) and (max-width:1024px) {
+    #sectionSpecifier{
+        font-size: 3vh;
+        margin-top:2vh;
+    }
+    #productOutput{
+        margin-left:30.08vw;
+    }
+    #fullProductsDiv{
+        margin-top:2vh;
+    }
+    #leftBar{
+        width: 30.08vw;
+        position:fixed;
+    }
+    #search{
+        width:30.08vw;
+    }
+    #searchBox{
+        font-size:100%
+    }
     #searchButton{
-        height: 105%;
+        height: 103%;
+        width: 25%;
+    }
+    #searchIcon{
+        width: 60%;
+        height: 60%;
+    }
+    #sorter{
+        width: 30.08vw;
+    }
+    #sortBy{
+        float:left;
+        width: 35%;
+        font-size:100%;
+    }
+    .dropdown{
+        margin-left:calc(30.08vw - (40% + (1.3vw + (58% + 2%))));
+        float:right;
+        width: 58%;
+    }
+    .dropbtn{
+        width: 100%;
+    }
+    #dropdownTitle{
+        font-size:1.85vw;
+    }
+    #dropdownArrowImg{
+        width: 15%;
+    }
+    .dropdown-content{
+        width: 100%;
+        left:1vw;
+        top:6vh;
+    }
+    #customizer{
+        width: 30.08vw;
+    }
+    .product{
+        width: 30.08vw;
+    }
+    #clothingText{
+        font-size:100%;
+    }
+    .bigDot{
+        width: 1vw;
+        height: 1vw;
+    }
+    #clothingCheckboxList{
+        border-radius:8px;
+    }
+    .checkBoxContainer{
+        padding-top:1.4vh;
+        padding-bottom:1.4vh;
+    }
+    .checkmark{
+        width: 1.3vw;
+        height: 1.3vw;
+        border-radius:4px;
+    }
+    .checkBoxContainer .checkmark:after{
+        width: 0.2vw;
+        height: 0.6vw;
+        margin-left:0.4vw;
+        margin-top:0.2vw;
+    }
+    .checkBoxText{
+        font-size:1.5vw;
+    }
+    .range-slider .range-group .range-input {
+        left:8%;
+        width:84%;
+        margin-top:-3vh;
+    }
+    .textbox{
+        padding:0% 0%;
+        font-size:2vw;
+    }
+    .textbox:first-of-type{
+        margin-right:0;
+        margin-left:9%;
+    }
+    .range-slider{
+        width: 100%;
+    }
+    .range-slider .number-group .number-input  {
+        font-size:1.7vw;
+        padding:0.5% 1%;
+    }
+    .range-slider .number-group {
+        margin-top:5vh;
+    }
+    #submitPriceButton{
+        font-size:2vw;
+        margin-top:4vh;
+    }
+    .productDividerLine{
+        width:30.08vw;
+    }
+    .productName{
+        font-size:2.3vw;
+    }
+    .productPriceBeforeSale{
+        font-size: 1.5vw;
+    }
+    .productSaleAmount{
+        font-size:1.5vw;
+    }
+    .productSaleDivDot{
+        font-size:1.5vw;
+    }
+    .productPrice{
+        font-size:2.2vw;
+    }
+    .productAvailableSizes{
+        font-size:1.5vw;
+    }
+    .productColors{
+        font-size:1.5vw;
+    }
+    .productColorCircle{
+        width: 1.5vw;
+        height: 1.5vw;
+    }
+}
+@media screen and (min-width:1025px) and (max-width:1200px) {
+    #sectionSpecifier{
+        font-size: 3vh;
+        margin-top:4vh;
+    }
+    #productOutput{
+        margin-left:30.08vw;
+    }
+    #fullProductsDiv{
+        margin-top:2vh;
+    }
+    #leftBar{
+        width: 30.08vw;
+        position:fixed;
+    }
+    #search{
+        width:30.08vw;
+    }
+    #searchBox{
+        font-size:100%
+    }
+    #searchButton{
+        height: 103%;
+        width: 25%;
+    }
+    #searchIcon{
+        width: 60%;
+        height: 60%;
+    }
+    #sorter{
+        width: 30.08vw;
+    }
+    #sortBy{
+        float:left;
+        width: 35%;
+        font-size:100%;
+    }
+    .dropdown{
+        margin-left:calc(30.08vw - (40% + (1.3vw + (58% + 0.5%))));
+        float:right;
+        width: 58%;
+    }
+    .dropbtn{
+        width: 100%;
+    }
+    #dropdownTitle{
+        font-size:1.65vw;
+    }
+    #dropdownArrowImg{
+        width: 15%;
+    }
+    .dropdown-content{
+        width: 100%;
+        left:1vw;
+        top:6vh;
+    }
+    #customizer{
+        width: 30.08vw;
+    }
+    .product{
+        width: 30.08vw;
+    }
+    #clothingText{
+        font-size:100%;
+    }
+    .bigDot{
+        width: 1vw;
+        height: 1vw;
+    }
+    #clothingCheckboxList{
+        border-radius:8px;
+    }
+    .checkBoxContainer{
+        padding-top:1.12vh;
+        padding-bottom:1.12vh;
+    }
+    .checkmark{
+        width: 1.3vw;
+        height: 1.3vw;
+        border-radius:4px;
+    }
+    .checkBoxContainer .checkmark:after{
+        width: 0.2vw;
+        height: 0.6vw;
+        margin-left:0.4vw;
+        margin-top:0.2vw;
+    }
+    .checkBoxText{
+        font-size:1.5vw;
+    }
+    .range-slider .range-group .range-input {
+        left:8%;
+        width:84%;
+        margin-top:-3vh;
+    }
+    .textbox{
+        padding:0% 0%;
+        font-size:1.5vw;
+    }
+    .textbox:first-of-type{
+        margin-right:0;
+        margin-left:16%;
+    }
+    .range-slider{
+        width: 100%;
+    }
+    .range-slider .number-group .number-input  {
+        font-size:1.4vw;
+        padding:0.5% 1%;
+    }
+    .range-slider .number-group {
+        margin-top:5vh;
+    }
+    #submitPriceButton{
+        font-size:2vw;
+        margin-top:3vh;
+    }
+    .productDividerLine{
+        width:30.08vw;
+    }
+    .productName{
+        font-size:2.3vw;
+    }
+    .productPriceBeforeSale{
+        font-size: 1.5vw;
+    }
+    .productSaleAmount{
+        font-size:1.5vw;
+    }
+    .productSaleDivDot{
+        font-size:1.5vw;
+    }
+    .productPrice{
+        font-size:2.2vw;
+    }
+    .productAvailableSizes{
+        font-size:1.5vw;
+    }
+    .productColors{
+        font-size:1.5vw;
+    }
+    .productColorCircle{
+        width: 1.5vw;
+        height: 1.5vw;
+    }
+    #submitPriceButton{
+        margin-top:5vh;
+    }
+
+}
+@media screen and (min-width:1201px) and (max-width:1350px) {
+    #productOutput{
+        margin-left:21vw;
+    }
+    .dropbtn{
+        font-size:1.3vw;
+    }
+    .checkBoxContainer{
+        padding-top:1.1vh;
+        padding-bottom:1.1vh;
+    }
+    .checkBoxText{
+        font-size:1.3vw;
+    }
+    .textbox{
+        padding:0% 0%;
+        font-size:1vw;
+        border-radius:5px;
+    }
+    .textbox:first-of-type{
+        margin-right:0;
+        margin-left:12.5%;
+    }
+    .range-slider{
+        width: 100%;
+    }
+    .range-slider .number-group .number-input  {
+        font-size:1vw;
+        padding:0% 1%;
+    }
+    .range-slider .number-group {
+        margin-top:3.9vh;
+    }
+    #submitPriceButton{
+        margin-top:5vh;
+    }
+}
+@media screen and (min-width:1201px) {
+    #productOutput{
+        margin-left:21vw;
     }
 }

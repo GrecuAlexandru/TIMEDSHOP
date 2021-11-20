@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charset="UTF-8" />
         <title>Women - Timed</title>
+        <script src="reload.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
@@ -394,26 +395,29 @@
             var h,vw;
             var border;
             //sticky customizer
-             window.addEventListener("scroll", () => {
-                 console.log(document.getElementById("sectionSpecifier").getBoundingClientRect());
-                // console.log("scrollHeight:",document.documentElement.scrollHeight);
-                // console.log("windowHeight:",window.scrollY) //scrolled from top
-                // console.log("windowInnerHeight:",window.innerHeight) //visible part of screen
-                h = window.innerHeight
-                    || document.documentElement.clientHeight
-                    || document.body.clientHeight;
+            window.addEventListener("scroll", () => {
                 vw = window.innerWidth
-                    || document.documentElement.clientWidth
-                    || document.body.clientWidth;
-                // console.log((document.documentElement.scrollHeight - h*0.30) - vw*0.294);
-                border = document.body.getBoundingClientRect().height - h*0.40; 
-                if(window.scrollY >= h * 0.248 && window.scrollY + window.innerHeight - (window.innerHeight - document.getElementById("leftBar").getBoundingClientRect().height - 0.01*h) < border) {
-                    document.getElementById("leftBar").setAttribute("style","position: fixed; top:1vh")
-                } else {
-                    if(window.scrollY + window.innerHeight - (window.innerHeight - document.getElementById("leftBar").getBoundingClientRect().height - 0.01*h) >= border)
-                        document.getElementById("leftBar").setAttribute("style", "position: absolute; top:"+(border-0.766*h)+"px")
-                    else
-                        document.getElementById("leftBar").setAttribute("style", "position: absolute; top:24.8vh")
+                        || document.documentElement.clientWidth
+                        || document.body.clientWidth;
+                if(vw > 768)
+                {
+                    console.log(document.getElementById("sectionSpecifier").getBoundingClientRect());
+                    // console.log("scrollHeight:",document.documentElement.scrollHeight);
+                    // console.log("windowHeight:",window.scrollY) //scrolled from top
+                    // console.log("windowInnerHeight:",window.innerHeight) //visible part of screen
+                    h = window.innerHeight
+                        || document.documentElement.clientHeight
+                        || document.body.clientHeight;
+                    // console.log((document.documentElement.scrollHeight - h*0.30) - vw*0.294);
+                    border = document.body.getBoundingClientRect().height - h*0.40; 
+                    if(window.scrollY >= h * 0.248 && window.scrollY + window.innerHeight - (window.innerHeight - document.getElementById("leftBar").getBoundingClientRect().height - 0.01*h) < border) {
+                        document.getElementById("leftBar").setAttribute("style","position: fixed; top:1vh")
+                    } else {
+                        if(window.scrollY + window.innerHeight - (window.innerHeight - document.getElementById("leftBar").getBoundingClientRect().height - 0.01*h) >= border)
+                            document.getElementById("leftBar").setAttribute("style", "position: absolute; top:"+(border-0.766*h)+"px")
+                        else
+                            document.getElementById("leftBar").setAttribute("style", "position: absolute;")
+                    }
                 }
             });
         </script>

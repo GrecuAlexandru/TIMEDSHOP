@@ -2,9 +2,12 @@
     <head>
         <link rel="icon" href="resources/icons/favicon.png" />
         <link rel="stylesheet" href="styles/favorites.css" />
+        <link rel="stylesheet" href="styles/menu.css" />
+        <link rel="stylesheet" href="styles/footer.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charset="UTF-8" />
         <title>Timed - Product</title>
+        <script src="reload.js"></script>
         <script src="resources/productPage/productDetails.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
@@ -14,137 +17,148 @@
         <script src="https://js.stripe.com/v3/"></script>
     </head>
     <body>
-        <div id="THEDIV">
-            <div id="TimedShopMainLogo">
-                <img src="resources/icons/TimedShopMainLogo.svg" alt="TIMED SHOP" />
-            </div>
-            <nav class="navMenu" id="navMenu">
-                <a href="sale.html">SALE</a>
-                <a href="women.html?sortBy=newArrival&type=" id="women">WOMEN</a>
-                <a href="men.html">MEN</a>
-                <a href="about.html">ABOUT</a>
-                <a href="account.html" id="account">
-                    <img
-                        alt="ACCOUNT"
-                        src="/resources/icons/User.svg"
-                        onmouseover="this.src='resources/icons/UserPurple.svg'"
-                        onmouseout="this.src='resources/icons/User.svg'"
-                    />
-                </a>
-                <a href="favorites.html" id="favorites">
-                    <img
-                        class="icon-badge-icon-favorites"
-                        id="favoritesIMG"
-                        alt="FAVORITES"
-                        src="/resources/icons/favoritesPurple.svg"
-                        onmouseover="this.src='resources/icons/favoritesPurple.svg'"
-                        onmouseout="this.src='resources/icons/favorites.svg'"
-                    />
-                    <div id="favoritesCount" class="icon-badge-favorites">6</div>
-                </a>
-                <a href="login.html" id="LogIn">LOG IN</a>
-                <a href="register.html" id="register">REGISTER</a>
-                <a href="cart.html" id="cart" class="icon-badge-container">
-                    <img
-                        class="icon-badge-icon"
-                        alt="CART"
-                        src="/resources/icons/Cart.svg"
-                        onmouseover="this.src='resources/icons/CartPurple.svg'"
-                        onmouseout="this.src='resources/icons/Cart.svg'"
-                    />
-                    <div id="cartCount" class="icon-badge">6</div>
-                </a>
-                <div class="dot" id="dott"></div>
-            </nav>
+        <div id="bigdiv">
+            <div id="THEDIV">
+                <div id="TimedShopMainLogo">
+                    <img src="resources/icons/TimedShopMainLogo.svg" alt="TIMED SHOP" />
+                </div>
+                <div id="clockLogo">
+                    <img src="/resources/icons/clockLogo.svg" alt="TIMED SHOP"/>
+                </div>
+                <div id="menu">
+                    <div id="row">
+                        <a href="account.html" id="account" class="icons">
+                            <img
+                                alt="ACCOUNT"
+                                src="/resources/icons/UserPurple.svg"
+                                onmouseover="this.src='resources/icons/UserPurple.svg'"
+                                onmouseout="this.src='resources/icons/User.svg'"
+                            />
+                        </a>
+                        <a href="favorites.html" id="favorites" class="icons">
+                            <img
+                                class="icon-badge-icon-favorites"
+                                id="favoritesIMG"
+                                alt="FAVORITES"
+                                src="/resources/icons/favorites.svg"
+                                onmouseover="this.src='resources/icons/favoritesPurple.svg'"
+                                onmouseout="this.src='resources/icons/favorites.svg'"
+                            />
+                            <div id="favoritesCount" class="icon-badge-favorites">6</div>
+                        </a>
+                        <a href="cart.html" id="cart" class="icon-badge-container" class="icons">
+                            <img
+                                class="icon-badge-icon"
+                                alt="CART"
+                                src="/resources/icons/Cart.svg"
+                                onmouseover="this.src='resources/icons/CartPurple.svg'"
+                                onmouseout="this.src='resources/icons/Cart.svg'"
+                            />
+                            <div id="cartCount" class="icon-badge">6</div>
+                        </a>
+                        <a href="javascript:void(0);" id="expandMenu" class="icon" onclick="expandMenu()">
+                            <img src="/resources/icons/expandMenu.svg">
+                        </a>
+                    </div>
+                    <nav class="navMenu" id="navMenu">
+                        <a href="sale.html?c=men&type=">SALE</a>
+                        <a href="women.html?sortBy=newArrival&type=" id="women">WOMEN</a>
+                        <a href="men.html">MEN</a>
+                        <a href="about.html">ABOUT</a>
+                        <a href="register.html" id="register">REGISTER</a>
+                        <a href="login.html" id="LogIn">LOG IN</a>
+                    </nav>
+                </div>
 
-            <div id="mainDiv">
-                <a id="cartTitle">FAVORITES</a>
-                <div id="cartOutput">
-                    <!-- <div class="cartItem">
-                        <img class="cartImage" src="resources/icons/productPageImages/120101.jpg" alt="img">
-                        <div class="cartTextDiv">
-                            <a class="cartItemTitle">Grey Hoodie</a>
-                            <a
-                                onclick="closeImage()"
-                                class="removeButton"
-                            >
-                                Remove
-                            </a>
-                            <a class="cartItemType">Men's hoodie</a>
+                <div id="mainDiv">
+                    <a id="cartTitle">FAVORITES</a>
+                    <div id="cartOutput">
+                        <!-- <div class="cartItem">
+                            <img class="cartImage" src="resources/icons/productPageImages/120101.jpg" alt="img">
+                            <div class="cartTextDiv">
+                                <a class="cartItemTitle">Grey Hoodie</a>
+                                <a
+                                    onclick="closeImage()"
+                                    class="removeButton"
+                                >
+                                    Remove
+                                </a>
+                                <a class="cartItemType">Men's hoodie</a>
 
-                            <div class="cartItemOptions">
-                                <div class="colorDiv">
-                                    <a class="cartItemColorTitle">Color:</a>
-                                    <div class="cartItemColor"></div>
+                                <div class="cartItemOptions">
+                                    <div class="colorDiv">
+                                        <a class="cartItemColorTitle">Color:</a>
+                                        <div class="cartItemColor"></div>
+                                    </div>
+                                    <a class="cartItemSizeTitle">Size: S</a>
                                 </div>
-                                <a class="cartItemSizeTitle">Size: S</a>
+                                <a class="cartItemPrice">$200.00</a>
                             </div>
-                            <a class="cartItemPrice">$200.00</a>
-                        </div>
-                    </div>  -->
+                        </div>  -->
+                    </div>
                 </div>
-            </div>
 
-            <div id="footer">
-                <div id="followUsDiv">
-                    <a id="followUsText"> FOLLOW US </a>
-                    <div id="iconsDiv">
-                        <div id="iconsDivTop">
-                            <a id="instagram" href="https://www.instagram.com">
-                                <img
-                                    src="resources/icons/socials/instagram.svg"
-                                    alt="instagram"
-                                />
-                            </a>
-                            <a id="tiktok">
-                                <img
-                                    src="resources/icons/socials/tiktok.svg"
-                                    alt="tiktok"
-                                />
-                            </a>
-                        </div>
-                        <div id="iconsDivBottom">
-                            <a id="twitter">
-                                <img
-                                    src="resources/icons/socials/twitter.svg"
-                                    alt="twitter"
-                                />
-                            </a>
-                            <a id="facebook">
-                                <img
-                                    src="resources/icons/socials/facebook.svg"
-                                    alt="facebook"
-                                />
-                            </a>
+                <div id="footer">
+                    <div id="followUsDiv">
+                        <a id="followUsText"> FOLLOW US </a>
+                        <div id="iconsDiv">
+                            <div id="iconsDivTop">
+                                <a id="instagram" href="https://www.instagram.com">
+                                    <img
+                                        src="resources/icons/socials/instagram.svg"
+                                        alt="instagram"
+                                    />
+                                </a>
+                                <a id="tiktok">
+                                    <img
+                                        src="resources/icons/socials/tiktok.svg"
+                                        alt="tiktok"
+                                    />
+                                </a>
+                            </div>
+                            <div id="iconsDivBottom">
+                                <a id="twitter">
+                                    <img
+                                        src="resources/icons/socials/twitter.svg"
+                                        alt="twitter"
+                                    />
+                                </a>
+                                <a id="facebook">
+                                    <img
+                                        src="resources/icons/socials/facebook.svg"
+                                        alt="facebook"
+                                    />
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div id="helpAndInfoDiv">
-                    <a id="helpAndInfoText"> HELP AND INFORMATION </a>
-                    <div id="HILinks">
-                        <a class="alink">Help</a>
-                        <a class="alink">Privacy Policy</a>
-                        <a class="alink">Terms & Conditions</a>
-                        <a class="alink">Delivery</a>
-                        <a class="alink">Return</a>
-                        <a class="alink">FAQ</a>
+                    <div id="helpAndInfoDiv">
+                        <a id="helpAndInfoText"> HELP AND INFORMATION </a>
+                        <div id="HILinks">
+                            <a class="alink">Help</a>
+                            <a class="alink">Privacy Policy</a>
+                            <a class="alink">Terms & Conditions</a>
+                            <a class="alink">Delivery</a>
+                            <a class="alink">Return</a>
+                            <a class="alink">FAQ</a>
+                        </div>
                     </div>
-                </div>
-                <div id="timedShopDiv">
-                    <a id="timedShopText">TIMED SHOP</a>
-                    <div id="timedShopLinks">
-                        <a class="alink">About</a>
-                        <a class="alink">Contact</a>
+                    <div id="timedShopDiv">
+                        <a id="timedShopText">TIMED SHOP</a>
+                        <div id="timedShopLinks">
+                            <a class="alink">About</a>
+                            <a class="alink">Contact</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="loading">
-            <div class="wrapper">
-                <svg class="hourglass" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 206" preserveAspectRatio="none">
-                    <path class="middle" d="M120 0H0v206h120V0zM77.1 133.2C87.5 140.9 92 145 92 152.6V178H28v-25.4c0-7.6 4.5-11.7 14.9-19.4 6-4.5 13-9.6 17.1-17 4.1 7.4 11.1 12.6 17.1 17zM60 89.7c-4.1-7.3-11.1-12.5-17.1-17C32.5 65.1 28 61 28 53.4V28h64v25.4c0 7.6-4.5 11.7-14.9 19.4-6 4.4-13 9.6-17.1 16.9z"/>
-                    <path class="outer" d="M93.7 95.3c10.5-7.7 26.3-19.4 26.3-41.9V0H0v53.4c0 22.5 15.8 34.2 26.3 41.9 3 2.2 7.9 5.8 9 7.7-1.1 1.9-6 5.5-9 7.7C15.8 118.4 0 130.1 0 152.6V206h120v-53.4c0-22.5-15.8-34.2-26.3-41.9-3-2.2-7.9-5.8-9-7.7 1.1-2 6-5.5 9-7.7zM70.6 103c0 18 35.4 21.8 35.4 49.6V192H14v-39.4c0-27.9 35.4-31.6 35.4-49.6S14 81.2 14 53.4V14h92v39.4C106 81.2 70.6 85 70.6 103z"/>
-                </svg>
+            <div id="loading">
+                <div class="wrapper">
+                    <svg class="hourglass" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 206" preserveAspectRatio="none">
+                        <path class="middle" d="M120 0H0v206h120V0zM77.1 133.2C87.5 140.9 92 145 92 152.6V178H28v-25.4c0-7.6 4.5-11.7 14.9-19.4 6-4.5 13-9.6 17.1-17 4.1 7.4 11.1 12.6 17.1 17zM60 89.7c-4.1-7.3-11.1-12.5-17.1-17C32.5 65.1 28 61 28 53.4V28h64v25.4c0 7.6-4.5 11.7-14.9 19.4-6 4.4-13 9.6-17.1 16.9z"/>
+                        <path class="outer" d="M93.7 95.3c10.5-7.7 26.3-19.4 26.3-41.9V0H0v53.4c0 22.5 15.8 34.2 26.3 41.9 3 2.2 7.9 5.8 9 7.7-1.1 1.9-6 5.5-9 7.7C15.8 118.4 0 130.1 0 152.6V206h120v-53.4c0-22.5-15.8-34.2-26.3-41.9-3-2.2-7.9-5.8-9-7.7 1.1-2 6-5.5 9-7.7zM70.6 103c0 18 35.4 21.8 35.4 49.6V192H14v-39.4c0-27.9 35.4-31.6 35.4-49.6S14 81.2 14 53.4V14h92v39.4C106 81.2 70.6 85 70.6 103z"/>
+                    </svg>
+                </div>
             </div>
         </div>
         <script>
@@ -181,14 +195,21 @@
             const db = firebase.firestore();
             const storage = firebase.storage();
             let cartCount = document.getElementById("cartCount");
+            var w = window.innerWidth
+                || document.documentElement.clientWidth
+                || document.body.clientWidth;
             firebase.auth().onAuthStateChanged((user) => {
                 if (user) {
                     var uid = user.uid;
                     console.log("logged in user: ", user.email);
-                    document.getElementById("LogIn").style.display = "none";
-                    document.getElementById("register").style.display = "none";
+                    document.getElementById("LogIn").setAttribute("style","display: none !important")
+                    document.getElementById("register").setAttribute("style","display: none !important")
                     document.getElementById("account").style.display = "flex";
-                    document.getElementById("favorites").style.display = "block";
+                    if(w > 768 && w <= 1024)
+                    {
+                        document.getElementById("navMenu").setAttribute("style", "width:50vw !important");
+                    }
+                    document.getElementById("favorites").style.display = "inline";
                     db.collection("users")
                         .doc(uid)
                         .get()
@@ -213,15 +234,8 @@
                             loader(true);
                         })
                 } else {
-                    window.open("/error.html","_self");
                     // User is signed out
-                    console.log("sign out");
-                    document.getElementById("account").style.display = "none";
-                    document.getElementById("favorites").style.display = "none";
-                    document.getElementById("LogIn").style.display = "flex";
-                    document.getElementById("register").style.display = "flex";
-                    
-                    loader(true);
+                    window.open("/error.html", "_self");
                 }
             });
         </script>

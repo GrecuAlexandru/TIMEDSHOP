@@ -103,14 +103,14 @@
         margin-left:15vw;
     }
     #followUsText{
-        font-size:5vw;
+        font-size:100%;
     }
     #instagram{
-        width: 10vw;
-        height: 10vw;
+        width: 50%;
+        height: 50%;
     }
     #iconsDiv{
-        width: 60%;
+        width: 30%;
     }
     #iconsDivTop{
         justify-content: space-between;
@@ -120,17 +120,17 @@
         justify-content: space-between;
     }
     #tiktok{
-        width: 8vw;
-        height: 8vw;
+        width: 40%;
+        height: 40%;
         margin-top:1vw;
     }
     #twitter{
-        width: 10vw;
-        height: 10vw;
+        width: 80%;
+        height: 80%;
     }
     #facebook{
-        width: 8.5vw;
-        height: 8.5vw;
+        width:70%;
+        height: 70%;
         margin-top:1vw;
     }
     #helpAndInfoDiv{
@@ -143,12 +143,89 @@
         margin-bottom:4vh;
     }
     #helpAndInfoText{
-        font-size:5vw;
+        font-size:100%;
     }
     .alink{
-        font-size:4vw;
+        font-size:100%;
     }
     #timedShopText{
-        font-size:5vw;
+        font-size:100%;
+    }
+}
+@media screen and (min-width:769px) and (max-width:1200px) {
+    #followUsText {
+        font-size: 1.7vw;
+        font-weight: 700;
+        color: #2a2a2a;
+    }
+    #iconsDiv {
+        display: flex;
+        flex-direction: column;
+    }
+    #instagram {
+        width: 3vw;
+        height: 3vw;
+        margin: 0.3vw;
+    }
+    #facebook {
+        margin-top: 0.5vh;
+        width: 2.5vw;
+        height: 2.5vw;
+        margin: 0.55vw;
+    }
+    #tiktok {
+        margin-top: 0.5vh;
+        width: 2.5vw;
+        height: 2.5vw;
+        margin: 0.4vw;
+    }
+    #twitter {
+        width: 3vw;
+        height: 3vw;
+        margin: 0.3vw;
+    }
+    
+    #iconsDivTop {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #iconsDivBottom {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #helpAndInfoDiv {
+        display: flex;
+        flex-direction: column;
+        margin-top: 5vh;
+    }
+    #helpAndInfoText {
+        font-size: 1.7vw;
+        font-weight: 700;
+        color: #2a2a2a;
+    }
+    #HILinks {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #timedShopDiv {
+        display: flex;
+        flex-direction: column;
+        margin-top: 5vh;
+    }
+    #timedShopText {
+        font-size: 1.7vw;
+        font-weight: 700;
+        color: #2a2a2a;
+    }
+    #timedShopLinks {
+        display: flex;
+        flex-direction: column;
+    }
+    .alink {
+        font-size: 1.3vw;
+        margin-top: 0.5vh;
+        color: #4b4b4b;
+        text-decoration: none;
     }
 }
