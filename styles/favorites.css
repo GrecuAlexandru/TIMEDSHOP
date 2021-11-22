@@ -79,6 +79,10 @@ body {
 .cartItemTitle{
     font-size:3vh;
     color:#2a2a2a;
+}
+.limit{
+    width:70%;
+    word-wrap: break-word;
     margin-top:1vh;
 }
 .cartItemType{

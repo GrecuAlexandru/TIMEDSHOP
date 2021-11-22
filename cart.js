@@ -97,7 +97,7 @@ function callFunction(items, userID, metadataProductIDs) {
         .functions("europe-west3")
         .httpsCallable("createStripeCheckout");
     const stripe = Stripe(
-        "pk_test_51JjMu9BKwB7V1OnRcwrPosArKwGOJORreGvWAnLmXbei1rDQzgsX8UIXFZTbSfhH5dmakmwyoLvVhteLeywH3zM400QT4cae9Y"
+        "pk_test_51Jyak4DLdZkGDN4tX7gMQNZv5lB5oSrYsXfPfqCSzmDDo0z4MArnHYHPodyLICivIeRfztZBdhCQy1b8rRe2ljT0009vsXy970"
     );
     console.log(items.length);
     createStripeCheckout({
@@ -201,6 +201,9 @@ firebase.auth().onAuthStateChanged(function (user) {
                                 cartTextDiv.className = "cartTextDiv";
                                 cartItem.appendChild(cartTextDiv);
 
+                                let cartItemContainerTitle = document.createElement("div");
+                                cartItemContainerTitle.className = "limit";
+
                                 let cartItemTitle = document.createElement("a");
                                 cartItemTitle.className = "cartItemTitle";
                                 cartItemTitle.setAttribute(
@@ -210,7 +213,10 @@ firebase.auth().onAuthStateChanged(function (user) {
                                         "', '_self')"
                                 );
                                 cartItemTitle.innerText = prodData.data().name;
-                                cartTextDiv.appendChild(cartItemTitle);
+                                cartItemContainerTitle.appendChild(cartItemTitle);
+                                cartTextDiv.appendChild(cartItemContainerTitle);
+
+                                
 
                                 let removeButton = document.createElement("a");
                                 removeButton.className = "removeButton";

@@ -45,11 +45,15 @@ firebase.auth().onAuthStateChanged((user) => {
                         cartTextDiv.className = "cartTextDiv";
                         cartItem.appendChild(cartTextDiv);
 
+                        let cartItemLimitTitle = document.createElement("div");
+                        cartItemLimitTitle.className = "limit";
+
                         let cartItemTitle = document.createElement("a");
                         cartItemTitle.className = "cartItemTitle";
                         cartItemTitle.setAttribute("onclick","window.open('/product.html?id="+prodData.id+"', '_self')");
                         cartItemTitle.innerText = prodData.data().name;
-                        cartTextDiv.appendChild(cartItemTitle);
+                        cartItemLimitTitle.appendChild(cartItemTitle);
+                        cartTextDiv.appendChild(cartItemLimitTitle);
 
                         let removeButton = document.createElement("a");
                         removeButton.className = "removeButton";
