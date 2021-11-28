@@ -1,18 +1,3 @@
-// Initialize Firebase
-// TODO: Replace with your project's customized code snippet
-var config = {
-    apiKey: "AIzaSyCkBvDNzSvorpEdz2twDAVI09x-FaVsDGg",
-    authDomain: "timedshop-a5a66.firebaseapp.com",
-    projectId: "timedshop-a5a66",
-    storageBucket: "timedshop-a5a66.appspot.com",
-    messagingSenderId: "172835576987",
-    appId: "1:172835576987:web:2e588ca7a77cc008affa3e",
-    measurementId: "G-3VCHXLRX5K",
-};
-firebase.initializeApp(config);
-
-// Initialize Firebase
-const db = firebase.firestore();
 let firstName = document.getElementById("firstName").value;
 let lastName = document.getElementById("lastName").value;
 let email = document.getElementById("email").value;

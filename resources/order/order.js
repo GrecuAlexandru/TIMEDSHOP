@@ -52,7 +52,7 @@ firebase.auth().onAuthStateChanged((user) => {
                     orderImage.setAttribute(
                         "onclick",
                         "window.open('/product.html?id=" +
-                            data.data().desc_img[i].description.split(data.data().desc_img[i].description.indexOf("Product ID: ") + "Product ID: ".length) +
+                        data.data().desc_img[i].description.slice(data.data().desc_img[i].description.indexOf("Product ID: ") + "Product ID: ".length) +
                             "', '_self')"
                     );
                     orderImage.alt = data.data().desc_img[i].name;

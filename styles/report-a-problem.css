@@ -10,229 +10,11 @@ body {
     flex-direction: column;
     color:#2a2a2a;
 }
-
-#TimedShopMainLogo {
-    float: left;
-    margin-left: 4vw;
-    margin-top: 2vh;
-}
-
-.navMenu {
-    position: absolute;
-    top: 5%;
-    left: 22.5%;
-    width: 101.4%;
-}
-
-.navMenu a {
-    float: left;
-    text-align: center;
-    color: #2a2a2a;
-    text-decoration: none;
-    font-size: 1.125em;
-    text-transform: uppercase;
-    font-weight: 700;
-    width: 5%;
-    margin-right: 2%;
-}
-#LogIn {
-    margin-left: 28%;
-}
-
-.navMenu a:hover {
-    color: #5a189a;
-}
-#favorites{
-    margin-right: 0;
+#bigdiv{
     position: relative;
-}
-#favoritesIMG{
-    width:28px;
-}
-.icon-badge-container-favorites {
-    position: relative;
-}
-
-.icon-badge-icon-favorites {
-    position: relative;
-    width: 23px;
-}
-.icon-badge-favorites {
-    background-color: #ff2c2c;
-    font-size: 15px;
-    color: white;
-    text-align: center;
-    width: 21px;
-    height: 21px;
-    border-radius: 100%;
-}
-#women {
-    width: 100px;
-}
-@media screen and (max-width: 1080px) {
-    .navMenu a {
-        margin-right: 2%;
-        margin-left: 2%;
-    }
-    #LogIn {
-        margin-left: 10%;
-    }
-}
-.icon-badge-container {
-    position: relative;
-}
-
-.icon-badge-icon {
-    position: relative;
-    width: 23px;
-}
-
-@media screen and (min-width: 800px) {
-    .icon-badge {
-        margin: 0;
-        position: absolute;
-        top: -10;
-        right: 20;
-    }
-    .icon-badge-favorites {
-        position: absolute;
-        top:-10;
-        right:15;
-    }
-}
-@media screen and (max-width: 800px) {
-    .navMenu a {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    .navMenu {
-        left: 0;
-        top: 15vw;
-    }
-
-    #LogIn {
-        margin-left: 2%;
-    }
-    #cart {
-        width: 100%;
-    }
-    #TimedShopMainLogo {
-        margin: 0;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    #women {
-        width: 100%;
-    }
-}
-#account {
-    margin-left: 33%;
-    width: 23px;
-}
-.icon-badge {
-    background-color: #ff2c2c;
-    font-size: 15px;
-    color: white;
-    text-align: center;
-    width: 21px;
-    height: 21px;
-    border-radius: 100%;
-}
-
-#footer {
-    border-top: 1px solid #2a2a2a;
-    float: left;
-    width: 100%;
-    height: 30vh;
-    background-color: #e3c8ff;
+    overflow: hidden;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
 }
-#followUsDiv {
-    display: flex;
-    flex-direction: column;
-    margin-top: 5vh;
-}
-#followUsText {
-    font-size: 1.3vw;
-    font-weight: 700;
-    color: #2a2a2a;
-}
-#iconsDiv {
-    display: flex;
-    flex-direction: column;
-}
-#instagram {
-    width: 2.5vw;
-    height: 2.5vw;
-    margin: 0.3vw;
-}
-#facebook {
-    margin-top: 0.5vh;
-    width: 2vw;
-    height: 2vw;
-    margin: 0.55vw;
-}
-#tiktok {
-    margin-top: 0.5vh;
-    width: 2vw;
-    height: 2vw;
-    margin: 0.4vw;
-}
-#twitter {
-    width: 2.5vw;
-    height: 2.5vw;
-    margin: 0.3vw;
-}
-
-#iconsDivTop {
-    display: flex;
-    justify-content: space-evenly;
-}
-#iconsDivBottom {
-    display: flex;
-    justify-content: space-evenly;
-}
-#helpAndInfoDiv {
-    display: flex;
-    flex-direction: column;
-    margin-top: 5vh;
-}
-#helpAndInfoText {
-    font-size: 1.3vw;
-    font-weight: 700;
-    color: #2a2a2a;
-}
-#HILinks {
-    display: flex;
-    flex-direction: column;
-}
-
-#timedShopDiv {
-    display: flex;
-    flex-direction: column;
-    margin-top: 5vh;
-}
-#timedShopText {
-    font-size: 1.3vw;
-    font-weight: 700;
-    color: #2a2a2a;
-}
-#timedShopLinks {
-    display: flex;
-    flex-direction: column;
-}
-.alink {
-    font-size: 0.9vw;
-    margin-top: 0.5vh;
-    color: #4b4b4b;
-    text-decoration: none;
-}
-
-
 
 #mainDiv{
     display: flex;
@@ -315,6 +97,7 @@ body {
 #success{
     display: none;
     flex-direction: column;
+    align-items: center;
     margin-top:15vh;
 }
 #successTitle{
@@ -378,6 +161,7 @@ body {
 #error{
     display: none;
     flex-direction: column;
+    align-items:center;
     margin-top:15vh;
 }
 #errorTitle{
@@ -455,6 +239,8 @@ body {
 }
 #THEDIV {
     display: none;
+    flex-direction: column;
+    width: 100vw;
 }
 .hourglass{
     display:block;
@@ -495,4 +281,136 @@ body {
             inset #e3c8ff 0 -3em 0 0,
             inset #2a2a2a 0 -3em 0 0;
     }
+}
+
+@media screen and (max-width:768px) {
+    #reportDiv{
+        margin-left:5vw;
+        margin-top:5vh;
+    }
+    #reportTitle{
+        text-align: center;
+        font-size:9vw;
+        margin-left:-5vw;
+    }
+    #reportDescriptionTitle{
+        width: 90%;
+    }
+    #titleInputDiv{
+        width: calc(100% - 5vw);
+    }
+    #descriptionInputDiv{
+        width: calc(100% - 5vw);
+    }
+    #sendButton{
+        width: calc(100% - 5vw);
+        font-size:5vw;
+    }
+    #success{
+        margin-top:10vh;
+        margin-left:5vw;
+    }
+    #successTitle{
+        text-align: center;
+        margin-left:-5vw;
+    }
+    #successIcon{
+        width: 25vw;
+    }
+    #successDescription{
+        text-align: center;
+        width: calc(100% - 5vw);
+    }
+    #backHomeButton{
+        width: calc(100% - 5vw);
+        font-size:2.5vh;
+    }
+    #error{
+        margin-top:10vh;
+        margin-left:5vw;
+    }
+    #errorTitle{
+        text-align: center;
+        margin-left:-5vw;
+    }
+    #errorIcon{
+        width: 25vw;
+    }
+    #errorDescription{
+        text-align: center;
+        width: calc(100% - 5vw);
+    }
+    #tryAgainButton{
+        width: calc(100% - 5vw);
+        font-size:2.5vh;
+    }
+
+}
+@media screen and (min-width:769px) and (max-width:1200px) {
+    #reportDiv{
+        margin-left:5vw;
+        margin-top:5vh;
+    }
+    #reportTitle{
+        text-align: center;
+        font-size:5vh;
+        margin-left:-5vw;
+    }
+    #reportDescriptionTitle{
+        width: 90%;
+    }
+    #titleInputDiv{
+        width: calc(100% - 5vw);
+    }
+    #descriptionInputDiv{
+        width: calc(100% - 5vw);
+    }
+    #sendButton{
+        width: calc(100% - 5vw);
+        font-size:vh;
+    }
+    #success{
+        margin-top:10vh;
+        margin-left:5vw;
+    }
+    #successTitle{
+        text-align: center;
+        margin-left:-5vw;
+    }
+    #successIcon{
+        width: 15vw;
+    }
+    #successDescription{
+        text-align: center;
+        width: calc(100% - 5vw);
+    }
+    #backHomeButton{
+        width: calc(100% - 5vw);
+        font-size:2.5vh;
+    }
+    #error{
+        margin-top:10vh;
+        margin-left:5vw;
+    }
+    #errorTitle{
+        text-align: center;
+        margin-left:-5vw;
+    }
+    #errorIcon{
+        width: 15vw;
+    }
+    #errorDescription{
+        text-align: center;
+        width: calc(100% - 5vw);
+    }
+    #tryAgainButton{
+        width: calc(100% - 5vw);
+        font-size:2.5vh;
+    }
+}
+#reportDiv{
+    display:none;
+}
+#error{
+    display:flex;
 }

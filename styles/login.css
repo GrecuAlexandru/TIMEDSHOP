@@ -6,201 +6,14 @@ body {
     overflow-x: hidden;
     min-height: 100vh;
     margin: 0;
+    display: flex;
+    flex-direction: column;
     color:#2a2a2a;
-    display: flex;
-    flex-direction: column;
 }
-
-#TimedShopMainLogo {
-    float: left;
-    margin-left: 4vw;
-    margin-top: 2vh;
-}
-
-.navMenu {
-    position: absolute;
-    top: 5%;
-    left: 22.5%;
-    width: 101.4%;
-}
-
-.navMenu a {
-    float: left;
-    text-align: center;
-    color: #2a2a2a;
-    text-decoration: none;
-    font-size: 1.125em;
-    text-transform: uppercase;
-    font-weight: 700;
-    width: 5%;
-    margin-right: 2%;
-}
-#LogIn {
-    margin-left: 28%;
-}
-
-.navMenu a:hover {
-    color: #5a189a;
-}
-
-#women {
-    width: 100px;
-}
-@media screen and (max-width: 1080px) {
-    .navMenu a {
-        margin-right: 2%;
-        margin-left: 2%;
-    }
-    #LogIn {
-        margin-left: 10%;
-    }
-}
-.icon-badge-container {
+#bigdiv{
     position: relative;
-}
-
-.icon-badge-icon {
-    position: relative;
-    width: 23px;
-}
-
-@media screen and (min-width: 800px) {
-    .icon-badge {
-        margin: 0;
-        position: absolute;
-        top: -10;
-        right: 20;
-    }
-}
-@media screen and (max-width: 800px) {
-    .navMenu a {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    .navMenu {
-        left: 0;
-        top: 15vw;
-    }
-
-    #LogIn {
-        margin-left: 2%;
-    }
-    #cart {
-        width: 100%;
-    }
-    #TimedShopMainLogo {
-        margin: 0;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    #women {
-        width: 100%;
-    }
-}
-
-.icon-badge {
-    background-color: #ff2c2c;
-    font-size: 15px;
-    color: white;
-    text-align: center;
-    width: 21px;
-    height: 21px;
-    border-radius: 100%;
-}
-
-#footer {
-    margin-top:23vh;
-    border-top: 1px solid #2a2a2a;
-    float: left;
-    width: 100%;
-    height:50vh;
-    background-color: #e3c8ff;
+    overflow: hidden;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    z-index: 999;
-}
-#followUsDiv {
-    display: flex;
-    flex-direction: column;
-    margin-top: 5vh;
-}
-#followUsText {
-    font-size: 1.3vw;
-    font-weight: 700;
-    color: #2a2a2a;
-}
-#iconsDiv {
-    display: flex;
-    flex-direction: column;
-}
-#instagram {
-    width: 2.5vw;
-    height: 2.5vw;
-    margin: 0.3vw;
-}
-#facebook {
-    margin-top: 0.5vh;
-    width: 2vw;
-    height: 2vw;
-    margin: 0.55vw;
-}
-#tiktok {
-    margin-top: 0.5vh;
-    width: 2vw;
-    height: 2vw;
-    margin: 0.4vw;
-}
-#twitter {
-    width: 2.5vw;
-    height: 2.5vw;
-    margin: 0.3vw;
-}
-
-#iconsDivTop {
-    display: flex;
-    justify-content: space-evenly;
-}
-#iconsDivBottom {
-    display: flex;
-    justify-content: space-evenly;
-}
-#helpAndInfoDiv {
-    display: flex;
-    flex-direction: column;
-    margin-top: 5vh;
-}
-#helpAndInfoText {
-    font-size: 1.3vw;
-    font-weight: 700;
-    color: #2a2a2a;
-}
-#HILinks {
-    display: flex;
-    flex-direction: column;
-}
-
-#timedShopDiv {
-    display: flex;
-    flex-direction: column;
-    margin-top: 5vh;
-}
-#timedShopText {
-    font-size: 1.3vw;
-    font-weight: 700;
-    color: #2a2a2a;
-}
-#timedShopLinks {
-    display: flex;
-    flex-direction: column;
-}
-.alink {
-    font-size: 0.9vw;
-    margin-top: 0.5vh;
-    color: #4b4b4b;
-    text-decoration: none;
 }
 
 #leftBubble {
@@ -210,8 +23,10 @@ body {
     background-color: #e3c8ff;
     border-radius: 100%;
     position: absolute;
-    bottom: -18vw;
+    bottom: 0vw;
     left: -10vw;
+    z-index: -1;
+
 }
 
 #rightBubble {
@@ -221,8 +36,9 @@ body {
     background-color: #e3c8ff;
     border-radius: 100%;
     position: absolute;
-    bottom: -18vw;
+    bottom: -5vw;
     right: -15vw;
+    z-index: -1;
 }
 #smallBubble {
     float: left;
@@ -231,15 +47,14 @@ body {
     background-color: #e3c8ff;
     border-radius: 100%;
     position: absolute;
-    top: 10vw;
-    left: 10vw;
+    top: 9vw;
+    left: 15vw;
 }
 #mainDiv {
-    width: 100%;
-    height: 100%;
     float: left;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 #loginContainer {
     float: left;
@@ -251,7 +66,7 @@ body {
     border-radius: 10px;
     border: solid #2a2a2a;
     border-width: 1 1px;
-    margin-top: 5vh;
+    margin-top: 15vh;
     position: relative;
 }
 #loginTitle {
@@ -402,7 +217,7 @@ body {
 #THEDIV {
     display: none;
     flex-direction: column;
-    min-height: 100vh;
+    width: 100vw;
 }
 
 
@@ -444,5 +259,167 @@ body {
             inset #2a2a2a 0 -3em 0 0,
             inset #e3c8ff 0 -3em 0 0,
             inset #2a2a2a 0 -3em 0 0;
+    }
+}
+@media screen and (max-width:375px) {
+    #smallBubble{
+        display: none;
+    }
+    #leftBubble{
+        display: none;
+    }
+    #rightBubble{
+        display: none;
+    }
+    #loginContainer{
+        width: 92vw;
+        height: 50vh;
+        margin-bottom:20vh;
+        margin-top:10vw;
+    }
+    .loginInput{
+        width: 87%;
+    }
+    #emailError{
+        font-size:2vw;
+    }
+    #passwordError{
+        font-size:2vw;
+    }
+    .checkBoxContainer{
+        margin-left: 6.5%;
+    }
+    .checkmark{
+        width: 1.8vh;
+        height: 1.8vh;
+        border-radius:25%;
+    }
+    .checkBoxText{
+        font-size:1.8vh;
+        font-weight: 600;
+    }
+    .checkBoxContainer .checkmark:after {
+        width: 0.4vh;
+        height: 0.8vh;
+        border: solid #2a2a2a;
+        border-width: 0 2.5px 2.5px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        margin-left: 0.4vh;
+        margin-top: 0.25vh;
+    }
+    #confirmButton{
+        width: 87%;
+    }
+}
+@media screen and (min-width:376px) and (max-width:768px) {
+    #smallBubble{
+        display: none;
+    }
+    #leftBubble{
+        display: none;
+    }
+    #rightBubble{
+        display: none;
+    }
+    #loginContainer{
+        width: 70vw;
+        height: 76vw;
+        margin-bottom:10vw;
+    }
+    .loginInput{
+        width: 87%;
+    }
+    #emailError{
+        font-size:2vw;
+    }
+    #passwordError{
+        font-size:2vw;
+    }
+    .checkBoxContainer{
+        margin-left: 6.5%;
+    }
+    .checkmark{
+        width: 2.5vw;
+        height: 2.5vw;
+        border-radius:25%;
+    }
+    .checkBoxText{
+        font-size:2.5vw;
+        font-weight: 600;
+    }
+    .checkBoxContainer .checkmark:after {
+        width: 0.5vw;
+        height: 1vw;
+        border: solid #2a2a2a;
+        border-width: 0 2.5px 2.5px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        margin-left: 0.8vw;
+        margin-top: 0.21vh;
+    }
+    #confirmButton{
+        width: 87%;
+    }
+}
+@media screen and (min-width:769px) and (max-width:1200px) {
+    #smallBubble{
+        display: none;
+    }
+    #leftBubble{
+        display: none;
+    }
+    #rightBubble{
+        display: none;
+    }
+    .checkmark{
+        width: 2vh;
+        height: 2vh;
+        border-radius:20%;
+    }
+    .checkBoxText{
+        font-size:2vh;
+        font-weight: 600;
+    }
+    .checkBoxContainer .checkmark:after {
+        width: 3%;
+        height: 30%;
+        border: solid #2a2a2a;
+        border-width: 0 2.5px 2.5px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        margin-left: 3.5%;
+        margin-top: 1%;
+    }
+    #loginContainer{
+        margin-bottom:10vw;
+    }
+}
+@media screen and (min-width:1201px) {
+    .checkmark{
+        width: 2vh;
+        height: 2vh;
+        border-radius:20%;
+    }
+    .checkBoxText{
+        font-size:2vh;
+        font-weight: 600;
+    }
+    .checkBoxContainer .checkmark:after {
+        width: 3%;
+        height: 30%;
+        border: solid #2a2a2a;
+        border-width: 0 2.5px 2.5px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        margin-left: 3.5%;
+        margin-top: 1%;
+    }
+    #loginContainer{
+        margin-bottom:14vw;
     }
 }

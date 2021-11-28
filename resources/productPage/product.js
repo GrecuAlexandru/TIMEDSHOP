@@ -159,6 +159,6 @@ firebase.auth().onAuthStateChanged((user) => {
             });
     } else {
         //user is signed out
-        heart.remove();
+        document.getElementById("addToFavorites").remove();
     }
 });

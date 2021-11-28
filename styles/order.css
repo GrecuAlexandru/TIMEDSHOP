@@ -85,7 +85,7 @@ body {
     flex-direction: row;
     width: 100%;
     min-height: 100vh;
-    margin-top:18vh;
+    margin-top:8vh;
 }
 
 #loading {
@@ -472,7 +472,7 @@ body {
     margin-left:1vh;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:900px) {
     #mainDiv{
         width:100vw;
         flex-direction: column;
@@ -504,5 +504,150 @@ body {
     }
     #postalCodeDiv {
         width:calc(100% - 5vw);
+    }
+
+    #clientNameDiv {
+        width:calc(100% - 5vw);
+    }
+    #emailDiv{
+        width:calc(100% - 5vw);
+    }
+    #phoneDiv{
+        width:calc(100% - 5vw);
+    }
+
+    #rightDiv{
+        width:calc(100% - 5vw);
+        margin-left:5vw;
+        min-height: 80vh;
+        height: unset;
+    }
+    #summaryDiv{
+        width:100%;
+    }
+    #subtotalDiv{
+        width:calc(100% - 5vw);
+        position: relative;
+    }
+    #shippingCostsDiv{
+        width:calc(100% - 5vw);
+        position: relative;
+    }
+    #totalDiv{
+        width:calc(100% - 5vw);
+        position: relative;
+    }
+    .orderItem{
+        width:calc(100% - 5vw);
+    }
+    .orderImage{
+        margin-left:0.9vh;
+    }
+    .orderItemTitle{
+        font-size:2vh;
+    }
+    .orderItemPrice{
+        font-size:2vh;
+        font-weight: bold;
+        position: unset;
+    }
+    .orderItemType{
+        font-size:1.5vh;
+    }
+    .orderItemColorTitle{
+        font-size:1.8vh;
+    }
+    .orderItemQuantityTitle{
+        font-size:1.8vh;
+    }
+    .orderItemSizeTitle{
+        font-size:1.8vh;
+    }
+    .orderItemColor{
+        width:2.5vh;
+        height:2.5vh;
+    }
+}
+@media screen and (min-width:901px) and (max-width:1200px) {
+    #mainDiv{
+        width:100vw;
+        margin-top:7vh;
+    }
+    #leftDiv{
+        width:40%;
+        margin-left:5vw;
+        min-height: 80vh;
+        height: unset;
+    }
+    #countryDiv{
+        width:100%;
+    }
+    #cityDiv{
+        width:100%;
+    }
+    #Line1Div {
+        width:100%;
+    }
+    #Line2Div {
+        width:100%;
+    }
+    #stateDiv {
+        width:100%;
+    }
+    #postalCodeDiv {
+        width:100%;
+    }
+
+    #clientNameDiv {
+        width:100%;
+    }
+    #emailDiv{
+        width:100%;
+    }
+    #phoneDiv{
+        width:100%;
+    }
+    #divider{
+        width:100%;
+    }
+    #rightDiv{
+        width:calc(50% - 5vw);
+        margin-left:5vw;
+        min-height: 80vh;
+        height: unset;
+    }
+    #summaryDiv{
+        width:100%;
+    }
+
+    .orderItem{
+        width:100%;
+    }
+    .orderImage{
+        margin-left:0.9vh;
+    }
+    .orderItemTitle{
+        font-size:2vh;
+    }
+    .orderItemPrice{
+        font-size:2vh;
+        font-weight: bold;
+        position: unset;
+    }
+    .orderItemType{
+        font-size:1.5vh;
+    }
+    .orderItemColorTitle{
+        font-size:1.8vh;
+    }
+    .orderItemQuantityTitle{
+        font-size:1.8vh;
+    }
+    .orderItemSizeTitle{
+        font-size:1.8vh;
+    }
+    .orderItemColor{
+        width:2.5vh;
+        height:2.5vh;
     }
 }
