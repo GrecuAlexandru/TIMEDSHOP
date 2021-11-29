@@ -22,8 +22,6 @@ var XXLCheckbox = document.getElementById("XXLCheckbox");
 var c = params.get("c");
 let openlink;
 var ok=0;
-var minPrice = document.getElementById("sliderMin").value;
-var maxPrice = document.getElementById("sliderMax").value;
 let type = params.get("type");
 if (type == null) type = "";
 if (type.includes("hoodies")) hoodiesCheckbox.checked = true;
@@ -88,46 +86,10 @@ function sweatshirtsCheckboxPress() {
 }
 
 function ApplyFilterButton() {
-    if(c=="men")
-    {
-        var minPriceDatabase = localStorage.getItem(
-            "minPriceFromDatabaseMen"
-        );
-        var maxPriceDatabase = localStorage.getItem(
-            "maxPriceFromDatabaseMen"
-        );
-    }
-    else
-    {
-        var minPriceDatabase = localStorage.getItem(
-            "minPriceFromDatabaseWomen"
-        );
-        var maxPriceDatabase = localStorage.getItem(
-            "maxPriceFromDatabaseWomen"
-        );
-    }
-    var minPrice = document.getElementById("sliderMin").value;
-    var maxPrice = document.getElementById("sliderMax").value;
-    if(minPriceDatabase == minPrice && maxPriceDatabase == maxPrice)
-    {
-        window.open(
-            "/sale.html?c="+c+
-                "&type=" +
-                type,
-            "_self"
-        );
-    }
-    else
-    {
-        window.open(
-            "/sale.html?c="+c+
-                "&type=" +
-                type +
-                "&minPrice=" +
-                minPrice +
-                "&maxPrice=" +
-                maxPrice,
-            "_self"
-        );
-    }
+    window.open(
+        "/sale.html?c="+c+
+            "&type=" +
+            type,
+        "_self"
+    );
 }

@@ -86,36 +86,11 @@ function sweatshirtsCheckboxPress() {
 }
 
 function ApplyFilterButton() {
-    var minPriceDatabase = localStorage.getItem(
-        "minPriceFromDatabase"
+    window.open(
+        "/men.html?sortBy=" +
+            sortBy +
+            "&type=" +
+            type,
+        "_self"
     );
-    var maxPriceDatabase = localStorage.getItem(
-        "maxPriceFromDatabase"
-    );
-    var minPrice = document.getElementById("sliderMin").value;
-    var maxPrice = document.getElementById("sliderMax").value;
-    if(minPriceDatabase == minPrice && maxPriceDatabase == maxPrice)
-    {
-        window.open(
-            "/men.html?sortBy=" +
-                sortBy +
-                "&type=" +
-                type,
-            "_self"
-        );
-    }
-    else
-    {
-        window.open(
-            "/men.html?sortBy=" +
-                sortBy +
-                "&type=" +
-                type +
-                "&minPrice=" +
-                minPrice +
-                "&maxPrice=" +
-                maxPrice,
-            "_self"
-        );
-    }
 }

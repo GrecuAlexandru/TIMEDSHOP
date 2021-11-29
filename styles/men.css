@@ -40,7 +40,7 @@ body {
 #customizer {
     float: left;
     width: 20.745vw;
-    height: 58.6vh;
+    height: 44.5vh;
     border-radius: 10px;
     border: solid #2a2a2a;
     border-width: 1 1px;
@@ -344,124 +344,6 @@ body {
 
 .product:hover .productColors {
     display: flex;
-}
-
-.range-slider {
-    display: flex;
-    align-items: center;
-}
-.textbox {
-    width: 5vw;
-    height: 3.5vh;
-    text-align: center;
-    color: #2a2a2a;
-    font-weight: bold;
-    font-size: 0.9vw;
-    border-radius: 6px;
-    border: solid #2a2a2a;
-    border-width: 1 1px;
-}
-.range-slider .number-group .number-input {
-    text-align: center;
-    color: #2a2a2a;
-    font-weight: bold;
-    font-size: 0.9vw;
-    border: 0;
-}
-.number-group {
-    width: 100%;
-    margin-top: 2vh;
-}
-.textbox:first-of-type {
-    margin-right: 3.5vw;
-}
-.textbox:last-of-type {
-    margin-left: 3.5vw;
-}
-#numberInputRight {
-    margin-right: 0.25vw;
-}
-.range-slider .number-group .number-input::-webkit-outer-spin-button,
-.range-slider .number-group .number-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-}
-.range-slider .range-group .range-input {
-    position: absolute;
-    left: 5.6vw;
-    -webkit-appearance: none;
-    width: 17.2vw;
-    margin-top: -4vh;
-}
-.range-slider .range-group .range-input:focus {
-    outline: 0;
-}
-.range-slider .range-group .range-input::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 8px;
-    cursor: pointer;
-    animation: 0.2s;
-    background: #e3c8ff;
-    border-radius: 10px;
-    box-shadow: none;
-    border: 0;
-}
-.range-slider .range-group .range-input::-webkit-slider-thumb {
-    z-index: 2;
-    position: relative;
-    height: 18px;
-    width: 18px;
-    border-radius: 50%;
-    background: #2a2a2a;
-    cursor: pointer;
-    -webkit-appearance: none;
-    margin-top: -4px;
-}
-.range-slider .range-group .range-input::-moz-range-track {
-    width: 100%;
-    height: 2px;
-    cursor: pointer;
-    animation: 0.2s;
-    background: #2a2a2a;
-    border-radius: 1px;
-    box-shadow: none;
-    border: 0;
-    margin-top: -2px;
-}
-.range-slider .range-group .range-input::-moz-range-thumb {
-    z-index: 2;
-    position: relative;
-    box-shadow: 0px 0px 0px #000;
-    border: 1px solid #2a2a2a;
-    height: 18px;
-    width: 18px;
-    border-radius: 50%;
-    background: #2a2a2a;
-    cursor: pointer;
-}
-.range-slider .range-group .range-input::-ms-track {
-    width: 100%;
-    height: 5px;
-    cursor: pointer;
-    animation: 0.2s;
-    background: transparent;
-    border-color: transparent;
-    color: transparent;
-}
-.range-slider .range-group .range-input::-ms-fill-lower,
-.range-slider .range-group .range-input::-ms-fill-upper {
-    background: #2a2a2a;
-    border-radius: 1px;
-    box-shadow: none;
-    border: 0;
-}
-.range-slider .range-group .range-input::-ms-thumb {
-    z-index: 2;
-    position: relative;
-    height: 18px;
-    width: 18px;
-    border-radius: 50%;
-    background: #2a2a2a;
-    cursor: pointer;
 }
 
 #leftBar {
