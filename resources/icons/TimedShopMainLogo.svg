@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="168.435" height="69.094" viewBox="0 0 168.435 69.094">
   <g id="Group_1" data-name="Group 1" transform="translate(-100 -34.869)">
     <rect id="Rectangle_3" data-name="Rectangle 3" width="44.379" height="69.094" rx="22.19" transform="translate(100 34.869)" fill="#5a189a"/>
-    <text id="TIMED" transform="translate(149.435 72.869)" fill="#5a189a" font-size="38" font-family="Nunito-ExtraBold, Nunito" font-weight="800"><tspan x="0" y="0">TIMED</tspan></text>
-    <text id="SHOP" transform="translate(152.435 95.869)" fill="#5a189a" font-size="24" font-family="Nunito-Regular, Nunito"><tspan x="0" y="0">SHOP</tspan></text>
+    <text id="TIMED" transform="translate(149.435 72.869)" fill="#5a189a" font-size="38" font-family="Nunito" font-weight="800"><tspan x="0" y="0">TIMED</tspan></text>
+    <text id="SHOP" transform="translate(152.435 95.869)" fill="#5a189a" font-size="24" font-family="Nunito"><tspan x="0" y="0">SHOP</tspan></text>
     <g id="Layer_2" data-name="Layer 2" transform="translate(103.701 38.982)">
       <g id="Layer_1" data-name="Layer 1" transform="translate(0 0)">
         <path id="Path_13" data-name="Path 13" d="M18.489,36.978A18.489,18.489,0,1,1,36.978,18.489,18.489,18.489,0,0,1,18.489,36.978Zm0-32.553A14.064,14.064,0,1,0,32.553,18.489,14.064,14.064,0,0,0,18.489,4.425Z" transform="translate(0 0)" fill="#fff"/>
