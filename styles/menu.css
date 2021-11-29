@@ -217,6 +217,7 @@
 @media screen and (max-width:480px) {
     .navMenu.responsive {
         position: relative;
+        z-index: 100000!important;
     }
     .navMenu.responsive .icon {
         position: absolute !important;
