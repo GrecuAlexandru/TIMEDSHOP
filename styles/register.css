@@ -422,17 +422,17 @@ body {
         width: 87%;
     }
     #male{
-        width: 7vh;
+        width: 7.5vh;
         height: 3.21vh;
         border-radius:5px;
     }
     #female{
-        width: 7vh;
+        width: 7.5vh;
         height: 3.21vh;
         border-radius:5px;
     }
     #other{
-        width: 7vh;
+        width: 7.5vh;
         height: 3.21vh;
         border-radius:5px;
     }

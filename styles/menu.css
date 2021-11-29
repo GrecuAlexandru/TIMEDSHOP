@@ -2,6 +2,8 @@
     position: absolute;
     top:2vh;
     left:4vw;
+    width: 180px;
+    height: auto;
 }
 
 .navMenu {
