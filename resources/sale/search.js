@@ -105,7 +105,7 @@ function searchPress() {
                     productFirstImage.className = "productImage";
                     productFirstImage.src =
                         "https://timedshop.b-cdn.net/" +
-                        qdoc.id +
+                        qdoc.objectID +
                         "01.jpg";
                     // storage
                     //     .ref()
@@ -124,7 +124,7 @@ function searchPress() {
                     productSecondImage.className = "productSecondImage";
                     productSecondImage.src =
                         "https://timedshop.b-cdn.net/" +
-                        qdoc.id +
+                        qdoc.objectID +
                         "02.jpg";
                     // storage
                     //     .ref()
