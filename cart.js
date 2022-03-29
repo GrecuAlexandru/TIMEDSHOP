@@ -131,7 +131,7 @@ function quantityChange() {
                 .substring(1)
         );
         console.log(itemPrice);
-        newTotal += newTotal + multiplier * itemPrice;
+        newTotal += multiplier * itemPrice;
     }
     document.getElementById("totalValue").innerText = "€" + newTotal + ".00";
 }
