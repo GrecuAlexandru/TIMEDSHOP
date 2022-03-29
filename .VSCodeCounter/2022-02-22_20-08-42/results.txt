@@ -1,0 +1,125 @@
+Date : 2022-02-22 20:08:42
+Directory : c:\Users\Alex\Desktop\timedshop\TIMEDSHOP
+Total : 82 files,  19480 codes, 412 comments, 750 blanks, all 20642 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| CSS        |         15 |      8,672 |         45 |        308 |      9,025 |
+| HTML       |         15 |      6,067 |        187 |        219 |      6,473 |
+| JavaScript |         21 |      2,570 |        178 |        217 |      2,965 |
+| JSON       |          3 |      2,128 |          0 |          3 |      2,131 |
+| XML        |         27 |         42 |          2 |          2 |         46 |
+| Markdown   |          1 |          1 |          0 |          1 |          2 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                     | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                        |         82 |     19,480 |        412 |        750 |     20,642 |
+| resources                                                                                |         45 |      2,080 |        177 |        173 |      2,430 |
+| resources\account                                                                        |          1 |         62 |          3 |         11 |         76 |
+| resources\favorites                                                                      |          1 |        136 |          0 |         15 |        151 |
+| resources\icons                                                                          |         27 |         42 |          2 |          2 |         46 |
+| resources\icons\socials                                                                  |          4 |         19 |          2 |          2 |         23 |
+| resources\login                                                                          |          1 |        148 |          2 |          8 |        158 |
+| resources\men                                                                            |          3 |        307 |         37 |         28 |        372 |
+| resources\order                                                                          |          1 |        122 |          2 |         15 |        139 |
+| resources\productPage                                                                    |          3 |        406 |         20 |         20 |        446 |
+| resources\register                                                                       |          1 |        194 |          1 |         16 |        211 |
+| resources\report-a-problem                                                               |          1 |         77 |          0 |          2 |         79 |
+| resources\sale                                                                           |          3 |        280 |         73 |         28 |        381 |
+| resources\women                                                                          |          3 |        306 |         37 |         28 |        371 |
+| styles                                                                                   |         15 |      8,672 |         45 |        308 |      9,025 |
++------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                 | language   | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\.prettierrc                                    | JSON       |          4 |          0 |          1 |          5 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\README.md                                      | Markdown   |          1 |          0 |          1 |          2 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\about.html                                     | HTML       |         64 |          0 |          1 |         65 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\account.html                                   | HTML       |        295 |         47 |          6 |        348 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\cart.html                                      | HTML       |        262 |         36 |          5 |        303 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\cart.js                                        | JavaScript |        517 |          2 |         43 |        562 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\error.html                                     | HTML       |        248 |          0 |          5 |        253 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\favorites.html                                 | HTML       |        231 |         22 |          4 |        257 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\index.html                                     | HTML       |        199 |          0 |          4 |        203 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\login.html                                     | HTML       |        271 |          0 |          6 |        277 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\men.html                                       | HTML       |      1,105 |         33 |         58 |      1,196 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\order.html                                     | HTML       |        319 |         16 |          5 |        340 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\package-lock.json                              | JSON       |      2,101 |          0 |          1 |      2,102 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\package.json                                   | JSON       |         23 |          0 |          1 |         24 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\product.html                                   | HTML       |        361 |          0 |          5 |        366 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\register.html                                  | HTML       |        307 |          0 |          7 |        314 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\reload.js                                      | JavaScript |          9 |          1 |          1 |         11 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\report-a-problem.html                          | HTML       |        272 |          0 |         10 |        282 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\account\account.js                   | JavaScript |         62 |          3 |         11 |         76 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\favorites\favorites.js               | JavaScript |        136 |          0 |         15 |        151 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\arrow.svg                      | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\cart.svg                       | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\cartPurple.svg                 | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\clock.svg                      | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\clockLogo.svg                  | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\closeButton.svg                | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\deliveryIcon.svg               | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\dropdownArrow.svg              | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\error.svg                      | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\expandMenu.svg                 | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\favorites.svg                  | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\favoritesPurple.svg            | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\filter.svg                     | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\loading.svg                    | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\mainScreenArrowButton.svg      | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\returnIcon.svg                 | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\searchIcon.svg                 | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\selectedFavorites.svg          | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\socials\facebook.svg           | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\socials\instagram.svg          | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\socials\tiktok.svg             | XML        |          8 |          1 |          1 |         10 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\socials\twitter.svg            | XML        |          9 |          1 |          1 |         11 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\success.svg                    | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\timedLogoClock.svg             | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\timedShopMainLogo.svg          | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\user.svg                       | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\icons\userPurple.svg                 | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\login\login.js                       | JavaScript |        148 |          2 |          8 |        158 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\men\dropdown.js                      | JavaScript |         25 |          3 |          2 |         30 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\men\pagination.js                    | JavaScript |         90 |          0 |          7 |         97 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\men\search.js                        | JavaScript |        192 |         34 |         19 |        245 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\order\order.js                       | JavaScript |        122 |          2 |         15 |        139 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\productPage\addToCart.js             | JavaScript |        224 |          0 |          5 |        229 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\productPage\product.js               | JavaScript |        133 |         20 |         11 |        164 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\productPage\productDetails.js        | JavaScript |         49 |          0 |          4 |         53 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\register\register.js                 | JavaScript |        194 |          1 |         16 |        211 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\report-a-problem\report-a-problem.js | JavaScript |         77 |          0 |          2 |         79 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\sale\dropdown.js                     | JavaScript |         25 |          3 |          2 |         30 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\sale\pagination.js                   | JavaScript |         54 |         35 |          7 |         96 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\sale\search.js                       | JavaScript |        201 |         35 |         19 |        255 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\women\dropdown.js                    | JavaScript |         25 |          3 |          2 |         30 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\women\pagination.js                  | JavaScript |         89 |          0 |          7 |         96 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\resources\women\search.js                      | JavaScript |        192 |         34 |         19 |        245 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\sale.html                                      | HTML       |        991 |          0 |         43 |      1,034 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\splashscreen.js                                | JavaScript |          6 |          0 |          2 |          8 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\styles\account.css                             | CSS        |        372 |          0 |         14 |        386 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\styles\cart.css                                | CSS        |        448 |          0 |         20 |        468 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\styles\error.css                               | CSS        |        171 |          0 |          8 |        179 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\styles\favorites.css                           | CSS        |        215 |          0 |         13 |        228 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\styles\footer.css                              | CSS        |        226 |          0 |          5 |        231 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\styles\launchPage.css                          | CSS        |        481 |          0 |          6 |        487 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\styles\login.css                               | CSS        |        401 |          6 |         18 |        425 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\styles\men.css                                 | CSS        |      1,116 |         13 |         45 |      1,174 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\styles\menu.css                                | CSS        |        478 |          0 |          4 |        482 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\styles\order.css                               | CSS        |        634 |          0 |         19 |        653 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\styles\product.css                             | CSS        |        799 |          0 |         36 |        835 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\styles\register.css                            | CSS        |        484 |          0 |         23 |        507 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\styles\report-a-problem.css                    | CSS        |        409 |          0 |          7 |        416 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\styles\sale.css                                | CSS        |      1,322 |         13 |         46 |      1,381 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\styles\women.css                               | CSS        |      1,116 |         13 |         44 |      1,173 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\success.html                                   | HTML       |         37 |          0 |          1 |         38 |
+| c:\Users\Alex\Desktop\timedshop\TIMEDSHOP\women.html                                     | HTML       |      1,105 |         33 |         59 |      1,197 |
+| Total                                                                                    |            |     19,480 |        412 |        750 |     20,642 |
++------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

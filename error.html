@@ -64,7 +64,7 @@
                         <a href="sale.html?c=men&type=">SALE</a>
                         <a href="women.html?sortBy=newArrival&type=" id="women">WOMEN</a>
                         <a href="men.html">MEN</a>
-                        <a href="about.html">ABOUT</a>
+                        <a>ABOUT</a>
                         <a href="register.html" id="register">REGISTER</a>
                         <a href="login.html" id="LogIn">LOG IN</a>
                     </nav>
@@ -176,6 +176,49 @@
             };
             firebase.initializeApp(config);
             const db = firebase.firestore();
+
+
+
+            // db.collection("women").doc("0202").get().then((querySnapshot) => {
+            //     var docData = querySnapshot.data();
+            //     console.log(querySnapshot.data());
+            //     var x=1;
+            //     var type=2;
+            //     for(var i=1;i<=25;i++)
+            //     {
+
+            //         if(x>7)
+            //         {
+            //             x=1;
+            //             type+=1;
+            //         }
+            //         switch(type){
+            //             case 2:
+            //                 docData.name = "Summer Hoodie";
+            //                 docData.type="hoodie"
+            //                 break;
+            //             case 3:
+            //                 docData.name = "Summer Tshirt";
+            //                 docData.type="tshirt"
+            //                 break;
+            //             case 4:
+            //                 docData.name = "Summer Shirt";
+            //                 docData.type="shirt"
+            //                 break;
+            //             case 5:
+            //                 docData.name = "Summer Sweatshirt";
+            //                 docData.type="sweatshirt"
+            //                 break;
+            //         }
+            //         docData.price = Math.floor(Math.random() * 100) + 1;
+            //         db.collection("women").doc("0"+type+"0"+x).set(docData).then(() => {
+            //             console.log("Document successfully written!");
+            //         });
+            //         x++;
+            //     }
+            // })
+
+
             let cartCount = document.getElementById("cartCount");
             var signOutPressed = false;
             var w = window.innerWidth
