@@ -256,7 +256,7 @@ body {
     text-decoration: line-through;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
+    text-decoration:line-through;
 }
 
 .productSaleAmount {

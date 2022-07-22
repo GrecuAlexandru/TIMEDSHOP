@@ -9,7 +9,7 @@ firebase.auth().onAuthStateChanged((user) => {
             .get()
             .then((data) => {
                 document.getElementById("orderDate").innerText = "Order from "+data.data().orderDate;
-                document.getElementById("orderID").innerText = "Order id: "+data.id;
+                document.getElementById("orderID").innerText = "Order id: "+data.name;
                 document.getElementById("country").innerText = data.data().shippingInfo.address.country;
                 document.getElementById("city").innerText = data.data().shippingInfo.address.city;
                 document.getElementById("line1").innerText = data.data().shippingInfo.address.line1;
