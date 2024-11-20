@@ -1,57 +1,88 @@
 # TIMEDSHOP
 
-# WORKING WEBSITE:
-# https://timedshop.vercel.app/
+## LIVE WEBSITE:  
+[https://timedshop.vercel.app/](https://timedshop.vercel.app/)
 
-Descriere
+### Description  
 
-Pagina web "TimedShop" reprezinta un magazin online si functional de haine, pregatit pentru lansare live.
-Designul paginii este unul atractiv, original si usor de navigat, capabil de a se adapta la dimensiunea ecranului oricarui dispozitiv.
+The "TimedShop" webpage is a fully functional online clothing store, ready for a live launch.  
+Its design is attractive, original, and user-friendly, with responsive capabilities that adapt seamlessly to any screen size.  
 
+---
 
+### Features  
 
-Functionalitatile acestui magazin:
+1. **User Account Management:**  
+   - Create and access user accounts with robust security measures.  
 
-- creeare de cont client/accesare de cont client (cu securitate)
-- afisare catalog produse (poza, pret, denumire, reducere, pret redus, marimi si culori valabile in stoc)
-- cautare dinamica a unui produs din baza de date
-- sortarea produselor afisate in functie de anumite criterii
-- alegerea marimii si a culorii produsului ales
-- adaugare produselor in cosul de cumparaturi (chiar daca utilizatorul are cont sau nu)
-- adaugare produselor la favorite
-- schimbarea cantitatii, culorii sau a marimii produselor aflate deja in cos, inainte de checkout
-- checkout: Introducere adresa de email, nume, numar de telefon, adresa de livrare, informatii card -> cumparare
-- adaugarea produselor cumparate in istoricul de cumparari, vizibil in detaliu din contul utilizatorului
-- in cazul in care apare vreo eroare, utilizatorul este intampinat de un mesaj informativ ce ii ofera posibilitatea sa raporteze problema
-- responsive design (telefon, tableta, monitor)
+2. **Product Catalog Display:**  
+   - View product details including images, prices, discounts, reduced prices, sizes, and available colors.  
 
+3. **Dynamic Product Search:**  
+   - Quickly search for products from the database.  
 
+4. **Product Sorting:**  
+   - Sort displayed products based on various criteria.  
 
-Tehnologii folosite:
-    Limbaje de programare:
-        - HTML5
-        - Javascript
-        - Css
-    
-    Framework-uri, API-uri:
-        - Node.js
+5. **Product Customization:**  
+   - Select size and color for any chosen product.  
 
-        - Firebase Database -> baza de date securizata in care sunt stocate informatii precum: datele utilizatorilor, datele fiecarui produs(pret, nume, descriere marimi valabile, etc), comenzi noi, probleme raportate, istoric comenzi utilizatori;
+6. **Cart Management:**  
+   - Add products to the shopping cart, even without an account.  
+   - Modify quantities, colors, or sizes of cart items before proceeding to checkout.  
 
-        - Stripe -> folosit pentru checkout. Am folosit servicile oferite de aceasta platforma pentru gestionarea checkout-urilor (incasari). Datele precum nume, prenume, adresa de livrare, adresa de email, numar de telefon sunt trimise prin intermediul Firebase Functions catre baza noastra de date. In schimb, Stripe se ocupa de inregistrarea datelor confidentiale precum credentialele cardurilor si tranzactiile bancare;
+7. **Wishlist:**  
+   - Save favorite items to a wishlist.  
 
-        - Firebase Functions -> Adaugare dinamica (si securizata impotriva atacurilor) a comenzilor finalizate (platite) in baza noastra de date;
+8. **Checkout Process:**  
+   - Input email address, name, phone number, delivery address, and payment information for secure purchases.  
 
-        - Bunny.net (content delivery network) -> Folosit ca baza de data pentru stocarea de imagini ale produselor. Foarte util pentru reducerea costurilor traficului, folosindu-se de cache-ul browserelor;
+9. **Purchase History:**  
+   - View detailed purchase history in the user's account after a successful order.  
 
-        - Algolia -> Motor de cautare dinamic si eficient, ce nu afecteaza cu nimic experienta utilizatorului, a produselor din baza de date;
-    
+10. **Error Handling:**  
+    - Receive informative error messages with an option to report issues.  
 
-    Motivul principal pentru alegerea acestor API-uri este securitatea utilizatorului. Site-ul este capabil sa fie lansat live fara nicio problema datorita acestui lucru. Datele confidentiale ale utilizatorilor nu pot fii accesate de catre nimeni, inclusiv de mine.
+11. **Responsive Design:**  
+    - Fully optimized for phones, tablets, and monitors.  
 
+---
 
+### Technologies Used  
 
-Cerinte sistem:
+#### **Programming Languages:**  
+- HTML5  
+- JavaScript  
+- CSS  
 
-- acces la internet
-- orice browser
+#### **Frameworks & APIs:**  
+
+1. **Node.js:**  
+   - Backend framework for server-side logic.  
+
+2. **Firebase Database:**  
+   - Securely stores user information, product details (e.g., prices, names, available sizes), new orders, reported issues, and user purchase history.  
+
+3. **Stripe:**  
+   - Used for checkout processes.  
+   - Handles sensitive information like card credentials and financial transactions, ensuring data security.  
+   - Other user details (e.g., name, delivery address, email, and phone) are sent securely to the database via Firebase Functions.  
+
+4. **Firebase Functions:**  
+   - Dynamically (and securely) adds completed orders to the database.  
+
+5. **Bunny.net (Content Delivery Network):**  
+   - Stores product images efficiently.  
+   - Reduces traffic costs by leveraging browser caching.  
+
+6. **Algolia:**  
+   - Provides a dynamic and efficient search engine for the product database, ensuring a seamless user experience.  
+
+#### **Security Focus:**  
+The primary reason for choosing these APIs is user security. The site is fully prepared for a live launch, ensuring that sensitive user data remains inaccessible to unauthorized parties, including developers.  
+
+---
+
+### System Requirements  
+- Internet access  
+- Any modern browser
